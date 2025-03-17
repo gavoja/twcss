@@ -1059,7 +1059,7 @@ function* backdrop(filterRules) {
 // -----------------------------------------------------------------------------
 
 // Global object.
-const tw = {
+export const tw = {
 	instances: new Map(),
 	extend,
 }
