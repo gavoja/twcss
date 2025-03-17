@@ -4,15 +4,17 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "reference": "node ./tools/reference.js",
     "start": "node ./tools/build.js",
-    "lint": "npx @biomejs/biome lint ./src ./test ./tools"
+    "lint": "npx @biomejs/biome lint ./src ./test ./tools",
+    "reference": "node ./tools/reference.js",
+    "changelog": "node ./tools/changelog.js"
   },
   "author": "Michal Kochel",
   "license": "MIT",
   "description": "Fast minimalist utility-first CSS runtime inspired by Tailwind and Twind",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "dotenv": "16.4.7",
     "esbuild": "0.25.1"
   }
 }
