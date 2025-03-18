@@ -11,6 +11,7 @@ function getCss (index) {
 test('default', async ({ page }) => {
   await page.goto('/')
   await expect.poll(async () => page.evaluate(() => document.body.children.length)).toEqual(6)
+  await expect.poll(async () => page.evaluate(() => window.tw.instances.size)).toEqual(2)
 
   // Create expected files if they don't exist.
   if (!fs.existsSync('test/cases/expected-document.css') || !fs.existsSync('test/cases/expected-shadow.css')) {
