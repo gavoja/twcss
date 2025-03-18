@@ -193,7 +193,7 @@ function getRules (props) {
     // Detect colors.
     if (COLOR_PROPS.values().some(p => css.includes(`${p}:`))) {
       if (cls.endsWith('-black')) {
-        rules.set(cls.replace('-black', '-COLOR'), css.replace('oklch(0 0 0)', 'COLOR'))
+        rules.set(cls.replace('-black', '-COLOR'), css.replace('oklch(0 0 0)', 'oklch(...)'))
       }
 
       continue

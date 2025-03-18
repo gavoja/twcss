@@ -2605,7 +2605,7 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ### color
 
 ```css
-.text-COLOR { color: COLOR }
+.text-COLOR { color: oklch(...) }
 ```
 
 ### text-decoration-line
@@ -2615,7 +2615,7 @@ Currently unsupported.
 ### text-decoration-color
 
 ```css
-.decoration-COLOR { text-decoration-color: COLOR }
+.decoration-COLOR { text-decoration-color: oklch(...) }
 ```
 
 ### text-decoration-style
@@ -2905,7 +2905,7 @@ Currently unsupported.
 ### background-color
 
 ```css
-.bg-COLOR { background-color: COLOR }
+.bg-COLOR { background-color: oklch(...) }
 ```
 
 ### background-image
@@ -3375,7 +3375,7 @@ Currently unsupported.
 ### border-color
 
 ```css
-.border-COLOR { border-color: COLOR }
+.border-COLOR { border-color: oklch(...) }
 ```
 
 ### border-style
@@ -3429,7 +3429,7 @@ Currently unsupported.
 ### outline-color
 
 ```css
-.outline-COLOR { outline-color: COLOR }
+.outline-COLOR { outline-color: oklch(...) }
 ```
 
 ### outline-style
@@ -4499,7 +4499,7 @@ Currently unsupported.
 ### accent-color
 
 ```css
-.accent-COLOR { accent-color: COLOR }
+.accent-COLOR { accent-color: oklch(...) }
 ```
 
 ### appearance
@@ -4515,7 +4515,7 @@ Currently unsupported.
 ### caret-color
 
 ```css
-.caret-COLOR { caret-color: COLOR }
+.caret-COLOR { caret-color: oklch(...) }
 ```
 
 ### color-scheme
@@ -4763,13 +4763,13 @@ Currently unsupported.
 ### fill
 
 ```css
-.fill-COLOR { fill: COLOR }
+.fill-COLOR { fill: oklch(...) }
 ```
 
 ### stroke
 
 ```css
-.stroke-COLOR { stroke: COLOR }
+.stroke-COLOR { stroke: oklch(...) }
 ```
 
 ### stroke-width
