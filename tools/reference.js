@@ -4,6 +4,7 @@
  */
 import fs from 'node:fs'
 import { UTILS, COLORS, COLOR_PROPS, FREE_PROPS, RESET, MEDIA_QUERIES, KEYFRAMES, SIZES, SIZES_FRAC } from '../src/tinywind.js'
+import chroma from 'chroma-js'
 
 const hierarchy = {
   'Layout': {
@@ -250,7 +251,9 @@ function generateReference () {
       colorRow.add(`**${cls.replace('-50', '')}**`)
     }
 
-    colorRow.add(`<div style="width: 32px; height: 32px; border-radius: 2px; background-color: oklch(${color});"></div>`)
+    const [l, c, h] = color.split(' ').map(Number)
+    const hex = chroma.oklch(l, c, h).hex()
+    colorRow.add(`$\\color{${hex}}{\\textsf{██}}$`)
 
     if (cls.endsWith('-950')) {
       mdContents.push([...colorRow].join('|'))
