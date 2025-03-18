@@ -1,4 +1,4 @@
-# Tinywind
+# TWCSS
 
 Fast minimalist utility-first CSS runtime inspired by Tailwind and Twind.
 
@@ -16,7 +16,7 @@ Tailwind is awesome, but it requires a build setup. Twind exists, but the projec
 
 In Node, Deno or Bun do:
 ```js
-import 'tinywind'
+import 'twcss'
 ```
 
 Then, somewhere in the markup:
@@ -24,18 +24,18 @@ Then, somewhere in the markup:
 <div tw="p-4 bg-indigo-800 text-slate-50 rounded-xl">Hello, world!</div>
 ```
 
-Once imported, Tinywind detects DOM changes with a mutation observer and generates styles on the fly via constructible stylesheets. CSS reset is included.
+Once imported, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructible stylesheets. CSS reset is included.
 
 > [!NOTE]
-> Tinywind uses `tw` attribute to detect changes. All elements with `tw` attribute and without `class` attribute are hidden by default in order to prevent any unwanted layout shift / repaint. Once `tw` attribute change is detected, all new styles are generated and the `class` attribute is set accordingly.
-> For this feature to work properly, Tinywind needs to be loaded before the page content is added.
+> TWCSS uses `tw` attribute to detect changes. All elements with `tw` attribute and without `class` attribute are hidden by default in order to prevent any unwanted layout shift / repaint. Once `tw` attribute change is detected, all new styles are generated and the `class` attribute is set accordingly.
+> For this feature to work properly, TWCSS needs to be loaded before the page content is added.
 
 ## Extensibility
 
 You can define your own utility classes, colors, animations and media queries with `extend()` function. Overriding existing defaults is also possible.
 
 ```js
-import { extend } from 'tinywind'
+import { extend } from 'twcss'
 
 extend({
   // Keys are class names and values are blobs of CSS.
@@ -67,4 +67,4 @@ extend({
 
 ## Compatibility
 
-Tinywind aims at compatibility with Tailwind 4. This is not always possible without compromising on performance. For this reason, certain features are not supported. Please see the [REFERENCE.md](REFERENCE.md) for the complete list.
+TWCSS aims at compatibility with Tailwind 4. This is not always possible without compromising on performance. For this reason, certain features are not supported. Please see the [REFERENCE.md](REFERENCE.md) for the complete list.

@@ -3,7 +3,7 @@
  * @author Michal Kochel
  */
 import fs from 'node:fs'
-import { UTILS, COLORS, COLOR_PROPS, FREE_PROPS, RESET, MEDIA_QUERIES, KEYFRAMES, SIZES, SIZES_FRAC } from '../src/tinywind.js'
+import { UTILS, COLORS, COLOR_PROPS, FREE_PROPS, RESET, MEDIA_QUERIES, KEYFRAMES, SIZES, SIZES_FRAC } from '../src/twcss.js'
 import chroma from 'chroma-js'
 
 const hierarchy = {

@@ -2,7 +2,7 @@ import { context } from 'esbuild'
 
 async function main () {
   const ctxLib = await context({
-    entryPoints: ['src/tinywind.js',],
+    entryPoints: ['src/twcss.js',],
     format: 'iife',
     bundle: true,
     minify: true,

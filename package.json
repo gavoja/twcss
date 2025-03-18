@@ -1,7 +1,7 @@
 {
-  "name": "tinywind",
+  "name": "twcss",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "src/twcss.js",
   "type": "module",
   "scripts": {
     "start": "node ./tools/build.js",

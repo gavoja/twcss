@@ -1,4 +1,4 @@
-import { UTILS, STATES, MEDIA_QUERIES, extend } from '../../src/tinywind.js'
+import { UTILS, STATES, MEDIA_QUERIES, extend } from '../../src/twcss.js'
 
 function addTestDiv () {
   const div = document.createElement('div')
