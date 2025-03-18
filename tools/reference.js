@@ -235,7 +235,7 @@ function generateReference () {
   mdContents.push('### Keyframes', '')
 
   for (const [name, keyframes] of KEYFRAMES) {
-    mdContents.push(`\`\`\`css\n/* ${name} */\n${keyframes}\n\`\`\``, '')
+    mdContents.push(`\`\`\`css\n@keyframes ${name} {\n  ${keyframes}\n}\n\`\`\``, '')
   }
 
   mdContents.push('### Colors', '')
@@ -253,7 +253,7 @@ function generateReference () {
 
     const [l, c, h] = color.split(' ').map(Number)
     const hex = chroma.oklch(l, c, h).hex()
-    colorRow.add(`$\\color{${hex}}{\\textsf{██}}$`)
+    colorRow.add(`$\\color{${hex}}{\\textsf{█}}$`)
 
     if (cls.endsWith('-950')) {
       mdContents.push([...colorRow].join('|'))
