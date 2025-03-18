@@ -1059,11 +1059,7 @@ function* backdrop(filterRules) {
 // -----------------------------------------------------------------------------
 
 // Global object.
-export const tw = {
-  instances: new Map(),
-  print: () => [...tw.instances.get(document).sheet.rules].toReversed().forEach(r => console.log(r.cssText)),
-  extend,
-}
+export const tw = { instances: new Map(), extend }
 
 function createSheet() {
   const sheet = new CSSStyleSheet()
