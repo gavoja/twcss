@@ -1,7 +1,4 @@
-import { UTILS } from '../src/tinywind.js'
-
-const STATES = ['hover', 'focus', 'focus-visible', 'active']
-const MQS = ['sm', 'md', 'lg', 'dark']
+import { UTILS, STATES, MEDIA_QUERIES, extend } from '../../src/tinywind.js'
 
 function addTestDiv () {
   const div = document.createElement('div')
@@ -35,7 +32,7 @@ function addDivWithPrefixedClasses () {
     classes.push(`${state}:${cls}`)
   }
 
-  for (const mq of MQS) {
+  for (const mq of MEDIA_QUERIES.keys()) {
     classes.push(`${mq}:${cls}`)
     for (const state of STATES) {
       classes.push(`${mq}:${state}:${cls}`)
@@ -65,6 +62,30 @@ function addCustomElement (name) {
   return el
 }
 
+function addDivWithCustmClasses () {
+  extend({
+    classes: {
+      'foo': '{ width: 50px; height: 50px }',
+      'hide-last-child': '> :last-child { display: none }',
+      'animate-spin': '{ animation: spin 3s linear infinite }'
+    },
+    colors: {
+      'octarine': '0.9 0.4 20'
+    },
+    keyframes: {
+      'spin': 'to { transform: rotate(360deg) }'
+    },
+    queries: {
+      'print': '@media print'
+    }
+  })
+
+  const div = document.createElement('div')
+  div.setAttribute('tw', 'm-[30px] foo hide-last-child animate-spin bg-octarine/20 print:bg-red-300 flex items-center justify-center')
+  div.textContent = 'Spin'
+  document.body.appendChild(div)
+}
+
 function delay (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
@@ -73,9 +94,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   addTestDiv()
   addCustomElement('custom-element-1')
   el = addCustomElement('custom-element-2')
-  await delay(100)
+  await delay(10)
   el.remove()
 
-  addDivWithPrefixedClasses()
   addDivWithAllClasses()
+  addDivWithPrefixedClasses()
+  addDivWithCustmClasses()
 })

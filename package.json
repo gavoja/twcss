@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node ./tools/build.js",
+    "test": "npx playwright test",
     "lint": "npx @biomejs/biome lint ./src ./test ./tools",
     "reference": "node ./tools/reference.js",
     "changelog": "node ./tools/changelog.js"
@@ -14,9 +15,10 @@
   "description": "Fast minimalist utility-first CSS runtime inspired by Tailwind and Twind",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@playwright/test": "1.51.1",
     "chroma-js": "3.1.2",
-    "dotenv": "16.4.7",
     "esbuild": "0.25.1",
+    "playwright": "1.51.1",
     "release-it": "18.1.2"
   }
 }

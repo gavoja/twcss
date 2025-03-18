@@ -11,7 +11,7 @@ async function main () {
   })
 
   const ctxTest = await context({
-    entryPoints: ['test/test-script.js', 'test/test-page.html'],
+    entryPoints: ['test/page/main.js', 'test/page/index.html'],
     loader: {'.html': 'copy'},
     format: 'iife',
     bundle: true,
