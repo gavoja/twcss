@@ -3,7 +3,14 @@
  * @author Michal Kochel
  */
 import fs from 'node:fs'
-import { UTILS, COLORS, COLOR_PROPS, FREE_PROPS, RESET, MEDIA_QUERIES, KEYFRAMES, SIZES, SIZES_FRAC } from '../src/twcss.js'
+import { COLORS, COLOR_PROPS } from '../src/colors.js'
+import { SIZES, SIZES_FRAC } from '../src/constants.js'
+import { FREE_PROPS } from '../src/free-props.js'
+import { KEYFRAMES } from '../src/keyframes.js'
+import { QUERIES } from '../src/queries.js'
+import { RESET } from '../src/reset.js'
+import { UTILS } from '../src/utils.js'
+
 import chroma from 'chroma-js'
 
 const hierarchy = {
@@ -228,7 +235,7 @@ function generateReference () {
   mdContents.push('### Media and container queries', '')
   mdContents.push('All container queries are relative to the ancestor with `@container` class.', '')
 
-  for (const [prefix, query] of MEDIA_QUERIES) {
+  for (const [prefix, query] of QUERIES) {
     mdContents.push(`\`\`\`css\n/* ${prefix} */\n${query}\n\`\`\``, '')
   }
 

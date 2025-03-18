@@ -4257,6 +4257,34 @@ Currently unsupported.
 ### rotate
 
 ```css
+.rotate-0 { rotate: 0deg }
+```
+
+```css
+.rotate-1 { rotate: 1deg }
+```
+
+```css
+.rotate-2 { rotate: 2deg }
+```
+
+```css
+.rotate-3 { rotate: 3deg }
+```
+
+```css
+.rotate-6 { rotate: 6deg }
+```
+
+```css
+.rotate-12 { rotate: 12deg }
+```
+
+```css
+.rotate-45 { rotate: 45deg }
+```
+
+```css
 .rotate-90 { rotate: 90deg }
 ```
 
@@ -4265,7 +4293,39 @@ Currently unsupported.
 ```
 
 ```css
-.rotate-270 { rotate: 270deg }
+.-rotate-0 { rotate: -0deg }
+```
+
+```css
+.-rotate-1 { rotate: -1deg }
+```
+
+```css
+.-rotate-2 { rotate: -2deg }
+```
+
+```css
+.-rotate-3 { rotate: -3deg }
+```
+
+```css
+.-rotate-6 { rotate: -6deg }
+```
+
+```css
+.-rotate-12 { rotate: -12deg }
+```
+
+```css
+.-rotate-45 { rotate: -45deg }
+```
+
+```css
+.-rotate-90 { rotate: -90deg }
+```
+
+```css
+.-rotate-180 { rotate: -180deg }
 ```
 
 ### scale

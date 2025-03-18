@@ -1,4 +1,7 @@
-import { UTILS, STATES, MEDIA_QUERIES, extend } from '../../src/twcss.js'
+import { extend } from '../../src/twcss.js'
+import { UTILS } from '../../src/utils.js'
+import { QUERIES } from '../../src/queries.js'
+import { STATES } from '../../src/constants.js'
 
 function addTestDiv () {
   const div = document.createElement('div')
@@ -32,7 +35,7 @@ function addDivWithPrefixedClasses () {
     classes.push(`${state}:${cls}`)
   }
 
-  for (const mq of MEDIA_QUERIES.keys()) {
+  for (const mq of QUERIES.keys()) {
     classes.push(`${mq}:${cls}`)
     for (const state of STATES) {
       classes.push(`${mq}:${state}:${cls}`)
