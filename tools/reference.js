@@ -225,7 +225,7 @@ function generateReference () {
   mdContents.push('### States', '')
   mdContents.push('Supported prefix states are `hover`, `focus`, `focus-visible` and `active`.', '')
 
-  mdContents.push('### Media queries', '')
+  mdContents.push('### Media and container queries', '')
   mdContents.push('All container queries are relative to the ancestor with `@container` class.', '')
 
   for (const [prefix, query] of MEDIA_QUERIES) {

@@ -1009,7 +1009,9 @@ function* gens(cls, options = {}) {
   yield [`${cls}-max`, `${next}{ ${prop}: max-content }`]
   yield [`${cls}-fit`, `${next}{ ${prop}: fit-content }`]
   yield [`${cls}-px`, `${next}{ ${prop}: 1px }`]
+  yield [`-${cls}-px`, `${next}{ ${prop}: -1px }`]
   yield [`${cls}-0.5`, `${next}{ ${prop}: 2px }`]
+  yield [`-${cls}-0.5`, `${next}{ ${prop}: -2px }`]
 
   for (const unit of ['svh', 'lvh', 'dvh', 'svw', 'lvw', 'dvw']) {
     yield [`${cls}-${unit}`, `${next}{ ${prop}: 100${unit} }`]
