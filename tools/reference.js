@@ -202,7 +202,7 @@ function getRules (props) {
     // Detect sizes (and content).
     if (FREE_PROPS.values().some(p => css.includes(` ${p}:`))) {
       if (cls.endsWith('-auto')) {
-        rules.set(cls.replace('-auto', '-SIZE'), css.replace('auto', 'SIZE'))
+        rules.set(cls.replace('-auto', '-SIZE'), css.replace('auto', '...'))
       }
 
       continue

@@ -1036,27 +1036,27 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ### top / right / bottom / left
 
 ```css
-.top-SIZE { top: SIZE }
+.top-SIZE { top: ... }
 ```
 
 ```css
-.right-SIZE { right: SIZE }
+.right-SIZE { right: ... }
 ```
 
 ```css
-.bottom-SIZE { bottom: SIZE }
+.bottom-SIZE { bottom: ... }
 ```
 
 ```css
-.left-SIZE { left: SIZE }
+.left-SIZE { left: ... }
 ```
 
 ```css
-.start-SIZE { inset-inline-start: SIZE }
+.start-SIZE { inset-inline-start: ... }
 ```
 
 ```css
-.end-SIZE { inset-inline-end: SIZE }
+.end-SIZE { inset-inline-end: ... }
 ```
 
 ### visibility
@@ -1108,7 +1108,7 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ### flex-basis
 
 ```css
-.basis-SIZE { flex-basis: SIZE }
+.basis-SIZE { flex-basis: ... }
 ```
 
 ### flex-direction
@@ -1600,15 +1600,15 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ### gap
 
 ```css
-.gap-SIZE { gap: SIZE }
+.gap-SIZE { gap: ... }
 ```
 
 ```css
-.gap-x-SIZE { column-gap: SIZE }
+.gap-x-SIZE { column-gap: ... }
 ```
 
 ```css
-.gap-y-SIZE { row-gap: SIZE }
+.gap-y-SIZE { row-gap: ... }
 ```
 
 ### justify-content
@@ -1889,39 +1889,39 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.p-SIZE { padding: SIZE }
+.p-SIZE { padding: ... }
 ```
 
 ```css
-.px-SIZE { padding-inline: SIZE }
+.px-SIZE { padding-inline: ... }
 ```
 
 ```css
-.py-SIZE { padding-block: SIZE }
+.py-SIZE { padding-block: ... }
 ```
 
 ```css
-.pt-SIZE { padding-top: SIZE }
+.pt-SIZE { padding-top: ... }
 ```
 
 ```css
-.pr-SIZE { padding-right: SIZE }
+.pr-SIZE { padding-right: ... }
 ```
 
 ```css
-.pb-SIZE { padding-bottom: SIZE }
+.pb-SIZE { padding-bottom: ... }
 ```
 
 ```css
-.pl-SIZE { padding-left: SIZE }
+.pl-SIZE { padding-left: ... }
 ```
 
 ```css
-.ps-SIZE { padding-inline-start: SIZE }
+.ps-SIZE { padding-inline-start: ... }
 ```
 
 ```css
-.pe-SIZE { padding-inline-end: SIZE }
+.pe-SIZE { padding-inline-end: ... }
 ```
 
 ### margin
@@ -1954,47 +1954,47 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.m-SIZE { margin: SIZE }
+.m-SIZE { margin: ... }
 ```
 
 ```css
-.mx-SIZE { margin-inline: SIZE }
+.mx-SIZE { margin-inline: ... }
 ```
 
 ```css
-.my-SIZE { margin-block: SIZE }
+.my-SIZE { margin-block: ... }
 ```
 
 ```css
-.mt-SIZE { margin-top: SIZE }
+.mt-SIZE { margin-top: ... }
 ```
 
 ```css
-.mr-SIZE { margin-right: SIZE }
+.mr-SIZE { margin-right: ... }
 ```
 
 ```css
-.ml-SIZE { margin-left: SIZE }
+.ml-SIZE { margin-left: ... }
 ```
 
 ```css
-.mb-SIZE { margin-bottom: SIZE }
+.mb-SIZE { margin-bottom: ... }
 ```
 
 ```css
-.ms-SIZE { margin-inline-start: SIZE }
+.ms-SIZE { margin-inline-start: ... }
 ```
 
 ```css
-.me-SIZE { margin-inline-end: SIZE }
+.me-SIZE { margin-inline-end: ... }
 ```
 
 ```css
-.space-x-SIZE > :not(:last-child) { margin-inline-end: SIZE }
+.space-x-SIZE > :not(:last-child) { margin-inline-end: ... }
 ```
 
 ```css
-.space-y-SIZE > :not(:last-child) { margin-bottom: SIZE }
+.space-y-SIZE > :not(:last-child) { margin-bottom: ... }
 ```
 
 ## Sizing
@@ -2029,19 +2029,19 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.w-SIZE { width: SIZE }
+.w-SIZE { width: ... }
 ```
 
 ### min-width
 
 ```css
-.min-w-SIZE { min-width: SIZE }
+.min-w-SIZE { min-width: ... }
 ```
 
 ### max-width
 
 ```css
-.max-w-SIZE { max-width: SIZE }
+.max-w-SIZE { max-width: ... }
 ```
 
 ### height
@@ -2074,19 +2074,19 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.h-SIZE { height: SIZE }
+.h-SIZE { height: ... }
 ```
 
 ### min-height
 
 ```css
-.min-h-SIZE { min-height: SIZE }
+.min-h-SIZE { min-height: ... }
 ```
 
 ### max-height
 
 ```css
-.max-h-SIZE { max-height: SIZE }
+.max-h-SIZE { max-height: ... }
 ```
 
 ## Typography
@@ -2735,7 +2735,7 @@ Currently unsupported.
 ### text-indent
 
 ```css
-.indent-SIZE { text-indent: SIZE }
+.indent-SIZE { text-indent: ... }
 ```
 
 ### vertical-align
@@ -4027,7 +4027,7 @@ Currently unsupported.
 ### border-spacing
 
 ```css
-.border-spacing-SIZE { border-spacing: SIZE }
+.border-spacing-SIZE { border-spacing: ... }
 ```
 
 ### table-layout
@@ -4625,13 +4625,13 @@ Currently unsupported.
 ### scroll-margin
 
 ```css
-.scroll-m-SIZE { scroll-margin: SIZE }
+.scroll-m-SIZE { scroll-margin: ... }
 ```
 
 ### scroll-padding
 
 ```css
-.scroll-p-SIZE { scroll-padding: SIZE }
+.scroll-p-SIZE { scroll-padding: ... }
 ```
 
 ### scroll-snap-align
