@@ -14,7 +14,9 @@
   "description": "Fast minimalist utility-first CSS runtime inspired by Tailwind and Twind",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "chroma-js": "3.1.2",
     "dotenv": "16.4.7",
-    "esbuild": "0.25.1"
+    "esbuild": "0.25.1",
+    "release-it": "18.1.2"
   }
 }
