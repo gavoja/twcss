@@ -51,7 +51,7 @@ extend({
   },
   // Colors use OKLCH color space.
   colors: {
-    // All colour properties will be able to use this color, e.g. outline-octarine/50
+    // All color properties will be able to use this custom color, e.g. outline-octarine/50
     'octarine': '0.9 0.4 20'
   },
   // Keyframes defined here can be used in classes object.

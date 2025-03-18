@@ -24,7 +24,7 @@ svg { display: block }
 
 Supported prefix states are `hover`, `focus`, `focus-visible` and `active`.
 
-### Media queries
+### Media and container queries
 
 All container queries are relative to the ancestor with `@container` class.
 
