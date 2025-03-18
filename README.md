@@ -47,7 +47,7 @@ extend({
     // .hide-last-child > :last-child { display: none }
     'hide-last-child': '> :last-child { display: none }',
     // You can use custom keyframes here.
-    'animate-spin' '{ animate: spin 1s linear infinite }'
+    'animate-spin': '{ animate: spin 1s linear infinite }'
   },
   // Colors use OKLCH color space.
   colors: {
