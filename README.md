@@ -24,7 +24,7 @@ Then, somewhere in the markup:
 <div tw="p-4 bg-indigo-800 text-slate-50 rounded-xl">Hello, world!</div>
 ```
 
-Once imported, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructible stylesheets. CSS reset is included.
+Once imported, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructable stylesheets. CSS reset is included.
 
 > [!NOTE]
 > TWCSS uses `tw` attribute to detect changes. All elements with `tw` attribute and without `class` attribute are hidden by default in order to prevent any unwanted layout shift / repaint. Once `tw` attribute change is detected, all new styles are generated and the `class` attribute is set accordingly.
