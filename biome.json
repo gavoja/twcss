@@ -14,5 +14,14 @@
       "arrowParentheses": "asNeeded",
       "lineWidth": 240
     }
+  },
+  "files": {
+    "include": [
+      "src/**/*.js",
+      "tools/**/*.js",
+      "test/**/*.js",
+      "test/**/*.html",
+      "*.md"
+    ]
   }
 }
