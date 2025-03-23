@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./tools/build.js",
     "test": "npx playwright test",
-    "lint": "npx @biomejs/biome lint ./src ./test ./tools",
+    "lint": "npx @biomejs/biome lint",
     "reference": "node ./tools/reference.js",
     "release": "node ./tools/release.js"
   },
