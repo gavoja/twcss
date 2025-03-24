@@ -200,8 +200,14 @@ export function init(root) {
   root.adoptedStyleSheets = [instance.sheet]
 
   // Update existing classes.
-  for (const el of root.querySelectorAll('[tw]')) {
-    processElement(instance, el)
+  for (const el of root.querySelectorAll('*')) {
+    if (el.shadowRoot) {
+      init(el.shadowRoot)
+    }
+
+    if (el.hasAttribute('tw')) {
+      processElement(instance, el)
+    }
   }
 
   // Start observing the root.

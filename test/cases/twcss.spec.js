@@ -10,8 +10,8 @@ function getRules (index) {
 
 test('default', async ({ page }) => {
   await page.goto('/')
-  await expect.poll(async () => page.evaluate(() => document.body.children.length)).toEqual(6)
-  await expect.poll(async () => page.evaluate(() => window.tw.instances.size)).toEqual(2)
+  await expect.poll(async () => page.evaluate(() => document.body.children.length)).toEqual(7)
+  await expect.poll(async () => page.evaluate(() => window.tw.instances.size)).toEqual(4)
 
   // Get actual rules from the page.
   const actualRules = {

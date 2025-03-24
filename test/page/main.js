@@ -69,7 +69,7 @@ function addCustomElement(name) {
 		constructor() {
 			super()
 			this.attachShadow({ mode: 'open' })
-			this.shadowRoot.innerHTML = '<div tw="bg-amber-300 p-4 rounded-md border-2">Shadow DOM</div>'
+			this.shadowRoot.innerHTML = `<div tw="bg-amber-300 p-4 rounded-md border-2">Shadow DOM: ${name}</div>`
 		}
 	}
 

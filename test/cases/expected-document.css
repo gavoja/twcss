@@ -380,12 +380,12 @@ ul, ol { list-style: none; }
 .p-4 { padding: calc(16px); }
 .space-y-4 > :not(:last-child) { margin-bottom: calc(16px); }
 .text-2xl { font-size: 24px; line-height: 1.333; }
+.block { display: block; }
 .bg-violet-300 { background-color: oklch(0.811 0.111 293.571); }
 .rounded-md { border-radius: 6px; }
 .w-\[100px\] { width: 100px; }
 .h-\[100px\] { height: 100px; }
 .border-2 { border-width: 2px; }
-.block { display: block; }
 .m-\[30px\] { margin: 30px; }
 .foo { width: 50px; height: 50px; }
 .hide-last-child > :last-child { display: none; }
