@@ -7,10 +7,10 @@
     "commitMessage": "chore: release v${version}"
   },
   "github": {
-    "release": true
+    "release": true,
+    "skipChecks": true
   },
   "npm": {
-    "publish": true,
-    "skipChecks": true
+    "publish": true
   }
 }
