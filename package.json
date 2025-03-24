@@ -8,7 +8,7 @@
     "test": "npx playwright test",
     "lint": "npx @biomejs/biome lint",
     "reference": "node ./tools/reference.js",
-    "release": "node ./tools/release.js"
+    "release": "dotenv release-it --"
   },
   "author": "Michal Kochel",
   "license": "MIT",
