@@ -31,6 +31,8 @@ function addDivWithAllClasses() {
 	classes.push('translate-x-2')
 	classes.push('-translate-y-1/3')
 
+	classes.push('p-[1px_2px_3px_4px]')
+
 	for (const cls of UTILS.keys()) {
 		if (!UTILS.get(cls).includes('$')) {
 			classes.push(cls)

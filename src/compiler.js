@@ -50,30 +50,29 @@ function addRule(instance, cls) {
   }
 
   const { negative, mq, state, util, base, number, fraction, string, raw, custom } = cls.match(tw.parser).groups
-  let css = UTILS.get(util) ?? UTILS.get(base)
 
-  if (css?.includes('$'))  {
-    // Dynamic property is marked with #.
+  let css = UTILS.get(util) // Basic class.
+  if (!css) {
+    css = UTILS.get(base) // Dynamic class.
+    if (!css || !css.includes('$')) {
+      throw new Error(`[TWCSS] Unknown utility class: ${cls}`)
+    }
+
     const minus = negative ? '-' : ''
     if (number) {
       css = css.replace('$', `calc(${minus}${number} * 4px)`)
     } else if (fraction) {
       css = css.replace('$', `calc(${minus}${fraction} * 100%)`)
     } else if (raw) {
-      css = css.replace('$', raw)
+      css = css.replace('$', raw.replace(/_/g, ' '))
     } else if (custom) {
       css = css.replace('$', `var(${custom})`)
     } else if (string && STRING_SIZES[string]) {
       css = css.replace('$', STRING_SIZES[string])
     } else {
-      css = null // Invalid value.
+      throw new Error(`Unknown utility class: [${cls}]`)
     }
-  }
 
-  // Unknown class.
-  if (!css) {
-    console.warn(`Unknown utility class: [${cls}]`)
-    return
   }
 
   // Rules are added in the following order.
@@ -107,8 +106,10 @@ function processElement(instance, el) {
   const classes = (className || '').split(/ +/)
 
   for (const cls of classes) {
-    if (cls) {
+    try {
       addRule(instance, cls)
+    } catch (err) {
+      console.warn(err.message)
     }
   }
 

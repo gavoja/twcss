@@ -418,6 +418,7 @@ ul, ol { list-style: none; }
 .aspect-\[16\/9\] { aspect-ratio: 16 / 9; }
 .translate-x-2 { transform: translateX(calc(8px)); }
 .translate-y-1\/3 { transform: translateY(calc(-33.3333%)); }
+.p-\[1px_2px_3px_4px\] { padding: 1px 2px 3px 4px; }
 .\@container { container-type: inline-size; }
 .aspect-auto { aspect-ratio: auto; }
 .aspect-square { aspect-ratio: 1 / 1; }
