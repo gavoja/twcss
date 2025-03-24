@@ -2,10 +2,10 @@ import { expect, test } from '@playwright/test'
 import fs from 'node:fs'
 
 
-function getCss (index) {
+function getRules (index) {
   const sheet = [...window.tw.instances.values()][index].sheet
   const rules = [...sheet.rules].toReversed().map(r => r.cssText.replace(/{ +$/m, '{'))
-  return `${rules.join('\n')}\n`
+  return rules
 }
 
 test('default', async ({ page }) => {
@@ -13,15 +13,39 @@ test('default', async ({ page }) => {
   await expect.poll(async () => page.evaluate(() => document.body.children.length)).toEqual(6)
   await expect.poll(async () => page.evaluate(() => window.tw.instances.size)).toEqual(2)
 
-  // Create expected files if they don't exist.
-  if (!fs.existsSync('test/cases/expected-document.css') || !fs.existsSync('test/cases/expected-shadow.css')) {
-    fs.writeFileSync('test/cases/expected-document.css', await page.evaluate(getCss, 0))
-    fs.writeFileSync('test/cases/expected-shadow.css', await page.evaluate(getCss, 1))
+  // Get actual rules from the page.
+  const actualRules = {
+    document: await page.evaluate(getRules, 0),
+    shadow: await page.evaluate(getRules, 1)
   }
 
-  const expectedDocumentCss = fs.readFileSync('test/cases/expected-document.css', 'utf8')
-  const expectedShadowCss = fs.readFileSync('test/cases/expected-shadow.css', 'utf8')
+  const actualCss = {
+    document: actualRules.document.join('\n'),
+    shadow: actualRules.shadow.join('\n')
+  }
 
-  await expect.poll(async () => page.evaluate(getCss, 0)).toEqual(expectedDocumentCss)
-  await expect.poll(async () => page.evaluate(getCss, 1)).toEqual(expectedShadowCss)
+  // Make sure there are no empty rules.
+  const emptyRules = []
+  for (const rule of actualRules.document) {
+    if (rule.includes('{ }')) {
+      emptyRules.push(rule)
+    }
+  }
+  await expect(emptyRules).toEqual([])
+
+  // Create expected files if they don't exist.
+  if (!fs.existsSync('test/cases/expected-document.css') || !fs.existsSync('test/cases/expected-shadow.css')) {
+    fs.writeFileSync('test/cases/expected-document.css', actualCss.document)
+    fs.writeFileSync('test/cases/expected-shadow.css', actualCss.shadow)
+  }
+
+  // Get expected rules from files.
+  const expectedCss = {
+    document: fs.readFileSync('test/cases/expected-document.css', 'utf8'),
+    shadow: fs.readFileSync('test/cases/expected-shadow.css', 'utf8')
+  }
+
+  // Compare CSS.
+  await expect(actualCss.document).toEqual(expectedCss.document)
+  await expect(actualCss.shadow).toEqual(expectedCss.shadow)
 })

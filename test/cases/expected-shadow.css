@@ -27,6 +27,6 @@ h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
 ul, ol { list-style: none; }
 *, ::before, ::after { box-sizing: border-box; border-width: 0px; border-style: solid; border-color: currentcolor; margin: 0px; padding: 0px; }
 .bg-amber-300 { background-color: oklch(0.879 0.169 91.605); }
-.p-4 { padding: 16px; }
+.p-4 { padding: calc(16px); }
 .rounded-md { border-radius: 6px; }
 .border-2 { border-width: 2px; }

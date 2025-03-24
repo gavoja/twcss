@@ -267,18 +267,6 @@ function generateReference () {
     }
   }
 
-  mdContents.push('### Sizes', '')
-  mdContents.push('In addition to the sizes below, a custom value can be specified via `-[<value>]` suffix.', '')
-  mdContents.push('|Name|Value|')
-  mdContents.push('|----|-----|')
-  mdContents.push('|**auto**|auto|')
-  mdContents.push('|**full**|100%|')
-  mdContents.push('|**min**|min-content|')
-  mdContents.push('|**max**|max-content|')
-  mdContents.push('|**fit**|fit-content|')
-  mdContents.push('|**px**|1px|')
-  mdContents.push('|**0.5**|2px|')
-
   for (const size of SIZES) {
     mdContents.push(`|**${size}**|${size * 4}px|`)
   }
@@ -303,6 +291,7 @@ function generateReference () {
       }
 
       for (const [cls, css] of rules) {
+        // TODO: Handle dynamic properties.
         mdContents.push(`\`\`\`css\n.${cls} ${css}\n\`\`\``, '')
       }
     }

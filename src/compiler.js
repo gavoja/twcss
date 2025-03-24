@@ -1,20 +1,31 @@
 import { COLOR_PROPS } from './colors.js'
-import { HIGH_PRIORITY_RULES, OPACITIES, STATES } from './constants.js'
-import { FREE_PROPS } from './free-props.js'
+import { HIGH_PRIORITY_RULES, OPACITIES, STATES, STRING_SIZES } from './constants.js'
 import { KEYFRAMES } from './keyframes.js'
 import { QUERIES } from './queries.js'
 import { RESET } from './reset.js'
 import { UTILS } from './utils.js'
 
 // Global object.
-export const tw = { instances: new Map(), extend, parser: null }
+export const tw = { instances: new Map(), extend, parser: getParser() }
 
-function updateParser() {
-  tw.parser = new RegExp(`((?<mq>${[...QUERIES.keys()].join('|')}):)?((?<state>${STATES.join('|')}):)?(?<util>[^\\[]+(\\[(?<value>[^\\]]+)\\])?)`)
-}
-
-function escapeClass(cls) {
-  return cls.replace(/(\/|\[|\]|\.|@)/g, '\\$1')
+function getParser() {
+  return new RegExp([
+    '(?<negative>-?)?', // Minus sign.
+    `((?<mq>${[...QUERIES.keys()].map(mq => mq.replace(/(\.|\\|\+|\*|\?|\^|\$|\(|\)|\[|\]|\{|\})/g, '\\$1')).join('|')}):)?`, // Media or container query.
+    `((?<state>${STATES.join('|')}):)?`, // State.
+    '(?<util>',
+      // Values
+      '((?<base>[a-z-]+)-(',
+        '(?<number>[0-9.]+)|',
+        '(?<fraction>[0-9]+/[0-9]+)|',
+        '(?<string>[a-z]+)|',
+        '(\\[(?<raw>[^\\[]+)\\])|',
+        '(\\((?<custom>--[a-z-]+)\\))',
+      ')$)|',
+      // Default
+      '(.+)',
+    ')'
+  ].join(''))
 }
 
 function createSheet() {
@@ -31,43 +42,58 @@ function createSheet() {
   return sheet
 }
 
-// Rules are added in the following order.
-// 1. Standard rules.
-// 2. High priority standard rules.
-// 3. Media query rules.
-// 4. High priority media query rules.
+
 function addRule(instance, cls) {
   // Skip if empty or already present.
   if (!cls || instance.usedRules.has(cls)) {
     return
   }
 
-  const { mq, state, util, value } = cls.match(tw.parser).groups
+  const { negative, mq, state, util, base, number, fraction, string, raw, custom } = cls.match(tw.parser).groups
+  let css = UTILS.get(util) ?? UTILS.get(base)
 
-  // Get the CSS.
-  let css
-  if (value) {
-    const prop = FREE_PROPS.get(util.split(/-\[/)[0])
-    css = prop ? `{ ${prop}: ${value} }` : null
-  } else {
-    css = UTILS.get(util)
+  if (css?.includes('#'))  {
+    // Dynamic property is marked with #.
+    const minus = negative ? '-' : ''
+    if (number) {
+      css = css.replace('#', `calc(${minus}${number} * 4px)`)
+    } else if (fraction) {
+      css = css.replace('#', `calc(${minus}${fraction} * 100%)`)
+    } else if (raw) {
+      css = css.replace('#', raw)
+    } else if (custom) {
+      css = css.replace('#', `var(${custom})`)
+    } else if (string && STRING_SIZES[string]) {
+      css = css.replace('#', STRING_SIZES[string])
+    } else {
+      css = null // Invalid value.
+    }
   }
 
+  // Unknown class.
   if (!css) {
     console.warn(`Unknown utility class: [${cls}]`)
     return
   }
 
-  const isHighPriority = Boolean(HIGH_PRIORITY_RULES.find(r => util.includes(r)))
 
-  // Resolve rule and index.
-  const escapedUtil = escapeClass(util)
+
+
+  // Rules are added in the following order.
+  // 1. Standard rules.
+  // 2. High priority standard rules.
+  // 3. Media query rules.
+  // 4. High priority media query rules.
+
+  const isHighPriority = Boolean(HIGH_PRIORITY_RULES.find(r => util.includes(r)))
+  const escapedUtil = CSS.escape(util)
   const utilWithState = state ? `${state}\\:${escapedUtil}:${state}` : escapedUtil
+
   let rule
   let index
   if (mq) {
     index = isHighPriority ? instance.sheet.cssRules.length : instance.mqRulesStartIndex
-    rule = `${QUERIES.get(mq)} { .${escapeClass(mq)}\\:${utilWithState} ${css} }`
+    rule = `${QUERIES.get(mq)} { .${CSS.escape(mq)}\\:${utilWithState} ${css} }`
   } else {
     rule = `.${utilWithState} ${css}`
     index = isHighPriority ? instance.mqRulesStartIndex : 0
@@ -94,9 +120,6 @@ function processElement(instance, el) {
 }
 
 export function extend({ classes = {}, colors = {}, keyframes = {}, queries = {} }) {
-  // Add media queries.
-  Object.entries(queries).forEach(([name, query]) => QUERIES.set(name, query))
-
   // Inject keyframes.
   Object.entries(keyframes).forEach(([name, keyframes]) => {
     tw.instances.values().forEach(instance => {
@@ -104,20 +127,22 @@ export function extend({ classes = {}, colors = {}, keyframes = {}, queries = {}
     })
   })
 
-  // Add classes for new colors.
+  // Generate classes for new colors.
   COLOR_PROPS.entries().forEach(([colorClass, colorProp]) => {
-    for (const [colorSuffix, lch] of Object.entries(colors)) {
+    Object.entries(colors).forEach(([colorSuffix, lch]) => {
       classes[`${colorClass}-${colorSuffix}`] = `{ ${colorProp}: oklch(${lch}) }`
-      for (const opacity of OPACITIES) {
+      OPACITIES.forEach(opacity => {
         classes[`${colorClass}-${colorSuffix}/${opacity}`] = `{ ${colorProp}: oklch(${lch} / ${opacity / 100}) }`
-      }
-    }
+      })
+    })
   })
 
-  // Update utils with new classes.
+
+  Object.entries(queries).forEach(([name, query]) => QUERIES.set(name, query))
   Object.entries(classes).forEach(([name, css]) => UTILS.set(name, css))
 
-  updateParser()
+  // Update parser to account for new media queries.
+  tw.parser = getParser()
 }
 
 export function init(root) {
@@ -128,8 +153,6 @@ export function init(root) {
   if (tw.instances.has(root)) {
     return
   }
-
-  updateParser()
 
   const timestamp = Date.now()
   const sheet = createSheet()
