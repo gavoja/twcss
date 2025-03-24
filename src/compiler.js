@@ -52,19 +52,19 @@ function addRule(instance, cls) {
   const { negative, mq, state, util, base, number, fraction, string, raw, custom } = cls.match(tw.parser).groups
   let css = UTILS.get(util) ?? UTILS.get(base)
 
-  if (css?.includes('#'))  {
+  if (css?.includes('$'))  {
     // Dynamic property is marked with #.
     const minus = negative ? '-' : ''
     if (number) {
-      css = css.replace('#', `calc(${minus}${number} * 4px)`)
+      css = css.replace('$', `calc(${minus}${number} * 4px)`)
     } else if (fraction) {
-      css = css.replace('#', `calc(${minus}${fraction} * 100%)`)
+      css = css.replace('$', `calc(${minus}${fraction} * 100%)`)
     } else if (raw) {
-      css = css.replace('#', raw)
+      css = css.replace('$', raw)
     } else if (custom) {
-      css = css.replace('#', `var(${custom})`)
+      css = css.replace('$', `var(${custom})`)
     } else if (string && STRING_SIZES[string]) {
-      css = css.replace('#', STRING_SIZES[string])
+      css = css.replace('$', STRING_SIZES[string])
     } else {
       css = null // Invalid value.
     }
@@ -75,9 +75,6 @@ function addRule(instance, cls) {
     console.warn(`Unknown utility class: [${cls}]`)
     return
   }
-
-
-
 
   // Rules are added in the following order.
   // 1. Standard rules.

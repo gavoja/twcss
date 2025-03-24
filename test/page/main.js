@@ -29,7 +29,7 @@ function addDivWithAllClasses() {
 	classes.push('aspect-[16/9]')
 
 	for (const cls of UTILS.keys()) {
-		if (!UTILS.get(cls).includes('#')) {
+		if (!UTILS.get(cls).includes('$')) {
 			classes.push(cls)
 		}
 	}

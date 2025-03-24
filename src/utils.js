@@ -9,7 +9,7 @@ export const UTILS = new Map([
   ['aspect-auto', '{ aspect-ratio: auto }'],
   ['aspect-square', '{ aspect-ratio: 1 / 1 }'],
   ['aspect-video', '{ aspect-ratio: 16 / 9 }'],
-  ['aspect', '{ aspect-ratio: # }'],
+  ['aspect', '{ aspect-ratio: $ }'],
   // Layout - columns
   ...gen(ii => [`columns-${ii}`, `columns: ${ii}`], [...COLUMNS, 'auto']),
   // Layout - break-after
@@ -51,15 +51,15 @@ export const UTILS = new Map([
   // Layout - position
   ...gen(ii => [`${ii}`, `position: ${ii}`], ['static', 'fixed', 'absolute', 'relative', 'sticky']),
   // Layout - top / right / bottom / left
-  ['inset', '{ inset: # }'],
-  ['inset-x', '{ inset-inline: # }'],
-  ['inset-y', '{ inset-block: # }'],
-  ['start', '{ inset-inline-start: # }'],
-  ['end', '{ inset-inline-end: # }'],
-  ['top', '{ top: # }'],
-  ['right', '{ right: # }'],
-  ['bottom', '{ bottom: # }'],
-  ['left', '{ left: # }'],
+  ['inset', '{ inset: $ }'],
+  ['inset-x', '{ inset-inline: $ }'],
+  ['inset-y', '{ inset-block: $ }'],
+  ['start', '{ inset-inline-start: $ }'],
+  ['end', '{ inset-inline-end: $ }'],
+  ['top', '{ top: $ }'],
+  ['right', '{ right: $ }'],
+  ['bottom', '{ bottom: $ }'],
+  ['left', '{ left: $ }'],
   // Layout - visibility
   ['visible', '{ visibility: visible }'],
   ['invisible', '{ visibility: hidden }'],
@@ -68,7 +68,7 @@ export const UTILS = new Map([
   ...gen(ii => [`z-${ii}`, `z-index: ${ii}`], Z_INDEXES),
   // ---------------------------------------------------------------------------
   // Flexbox & Grid - flex-basis
-  ['basis', '{ flex-basis: # }'],
+  ['basis', '{ flex-basis: $ }'],
   // Flexbox & Grid - flex-direction
   ['flex-row', '{ flex-direction: row }'],
   ['flex-row-reverse', '{ flex-direction: row-reverse }'],
@@ -127,9 +127,9 @@ export const UTILS = new Map([
   ['auto-rows-max', '{ grid-auto-rows: max-content }'],
   ['auto-rows-fr', '{ grid-auto-rows: minmax(0, 1fr) }'],
   // Flexbox & Grid - gap
-  ['gap', '{ gap: # }'],
-  ['gap-x', '{ column-gap: # }'],
-  ['gap-y', '{ row-gap: # }'],
+  ['gap', '{ gap: $ }'],
+  ['gap-x', '{ column-gap: $ }'],
+  ['gap-y', '{ row-gap: $ }'],
   // Flexbox & Grid - justify-content
   ['justify-start', '{ justify-content: flex-start }'],
   ['justify-end', '{ justify-content: flex-end }'],
@@ -181,39 +181,39 @@ export const UTILS = new Map([
   ...gen(ii => [`place-self-${ii}`, `place-self: ${ii}`], ['auto', 'start', 'end', 'center', 'stretch']),
   // ---------------------------------------------------------------------------
   // Spacing - padding
-  ['p', '{ padding: # }'],
-  ['px', '{ padding-inline: # }'],
-  ['py', '{ padding-block: # }'],
-  ['pt', '{ padding-top: # }'],
-  ['pr', '{ padding-right: # }'],
-  ['pb', '{ padding-bottom: # }'],
-  ['pl', '{ padding-left: # }'],
-  ['ps', '{ padding-inline-start: # }'],
-  ['pe', '{ padding-inline-end: # }'],
+  ['p', '{ padding: $ }'],
+  ['px', '{ padding-inline: $ }'],
+  ['py', '{ padding-block: $ }'],
+  ['pt', '{ padding-top: $ }'],
+  ['pr', '{ padding-right: $ }'],
+  ['pb', '{ padding-bottom: $ }'],
+  ['pl', '{ padding-left: $ }'],
+  ['ps', '{ padding-inline-start: $ }'],
+  ['pe', '{ padding-inline-end: $ }'],
   // Spacing - margin
-  ['m', '{ margin: # }'],
-  ['mx', '{ margin-inline: # }'],
-  ['my', '{ margin-block: # }'],
-  ['mt', '{ margin-top: # }'],
-  ['mr', '{ margin-right: # }'],
-  ['mb', '{ margin-bottom: # }'],
-  ['ml', '{ margin-left: # }'],
-  ['ms', '{ margin-inline-start: # }'],
-  ['me', '{ margin-inline-end: # }'],
-  ['space-x', '> :not(:last-child) { margin-inline-end: # }'],
-  ['space-y', '> :not(:last-child) { margin-bottom: # }'],
+  ['m', '{ margin: $ }'],
+  ['mx', '{ margin-inline: $ }'],
+  ['my', '{ margin-block: $ }'],
+  ['mt', '{ margin-top: $ }'],
+  ['mr', '{ margin-right: $ }'],
+  ['mb', '{ margin-bottom: $ }'],
+  ['ml', '{ margin-left: $ }'],
+  ['ms', '{ margin-inline-start: $ }'],
+  ['me', '{ margin-inline-end: $ }'],
+  ['space-x', '> :not(:last-child) { margin-inline-end: $ }'],
+  ['space-y', '> :not(:last-child) { margin-bottom: $ }'],
   // Sizing - width
-  ['w', '{ width: # }'],
+  ['w', '{ width: $ }'],
   // Sizing - min-width
-  ['min-w', '{ min-width: # }'],
+  ['min-w', '{ min-width: $ }'],
   // Sizing - max-width
-  ['max-w', '{ max-width: # }'],
+  ['max-w', '{ max-width: $ }'],
   // Sizing - height
-  ['h', '{ height: # }'],
+  ['h', '{ height: $ }'],
   // Sizing - min-height
-  ['min-h', '{ min-height: # }'],
+  ['min-h', '{ min-height: $ }'],
   // Sizing - max-height
-  ['max-h', '{ max-height: # }'],
+  ['max-h', '{ max-height: $ }'],
   // ---------------------------------------------------------------------------
   // Typography - font-family
   ['font-sans', '{ font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" }'],
@@ -305,7 +305,7 @@ export const UTILS = new Map([
   // Typography - text-wrap
   ...gen(ii => [`text-${ii}`, `text-wrap: ${ii}`], ['wrap', 'nowrap', 'balance', 'pretty']),
   // Typography - text-indent
-  ['indent', '{ text-indent: # }'],
+  ['indent', '{ text-indent: $ }'],
   // Typography - vertical-align
   ...gen(ii => [`align-${ii}`, `vertical-align: ${ii}`], ['baseline', 'top', 'middle', 'bottom', 'text-top', 'text-bottom', 'sub', 'super']),
   // Typography - white-space
@@ -327,7 +327,7 @@ export const UTILS = new Map([
   // Backgrounds - background-color'
   ...genc('bg', 'background-color'),
   // Backgrounds - background-image
-  ['bg', '{ background-image: # }'],
+  ['bg', '{ background-image: $ }'],
   ['bg-none', '{ background-image: none }'],
   // Backgrounds - background-origin
   ...gen(ii => [`bg-${ii}`, `background-origin: ${ii}`], ['border-box', 'padding-box', 'content-box']),
@@ -432,7 +432,7 @@ export const UTILS = new Map([
   ['border-collapse', '{ border-collapse: collapse }'],
   ['border-separate', '{ border-collapse: separate }'],
   // Tables - border-spacing
-  ['border-spacing', '{ border-spacing: # }'],
+  ['border-spacing', '{ border-spacing: $ }'],
   // Tables - table-layout
   ['table-auto', '{ table-layout: auto }'],
   ['table-fixed', '{ table-layout: fixed }'],
@@ -495,8 +495,8 @@ export const UTILS = new Map([
   ['transform-3d', '{ transform-style: preserve-3d }'],
   ['transform-flat', '{ transform-style: flat }'],
   // Transforms - translate
-  ['translate-x', '{ transform: translateX(#) }'],
-  ['translate-y', '{ transform: translateY(#) }'],
+  ['translate-x', '{ transform: translateX($) }'],
+  ['translate-y', '{ transform: translateY($) }'],
   // ---------------------------------------------------------------------------
   // Interactivity - accent-color
   ...genc('accent', 'accent-color'),
