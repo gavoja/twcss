@@ -7,7 +7,8 @@
     "commitMessage": "chore: release v${version}"
   },
   "github": {
-    "release": true
+    "release": true,
+    "tokenRef": "GITHUB_TOKEN_TWCSS"
   },
   "npm": {
     "publish": true
