@@ -1,4 +1,8 @@
 import 'dotenv/config'
 import release from 'release-it'
 
-release()
+console.log(process.env)
+
+const output = await release()
+
+console.log(output)
