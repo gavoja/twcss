@@ -166,6 +166,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 **zinc**|$\color{#fafafa}{\textsf{█}}$|$\color{#f4f4f5}{\textsf{█}}$|$\color{#e4e4e7}{\textsf{█}}$|$\color{#d4d4d8}{\textsf{█}}$|$\color{#9f9fa9}{\textsf{█}}$|$\color{#71717b}{\textsf{█}}$|$\color{#52525c}{\textsf{█}}$|$\color{#3f3f47}{\textsf{█}}$|$\color{#27272a}{\textsf{█}}$|$\color{#18181b}{\textsf{█}}$|$\color{#09090b}{\textsf{█}}$
 **neutral**|$\color{#fafafa}{\textsf{█}}$|$\color{#f5f5f5}{\textsf{█}}$|$\color{#e5e5e5}{\textsf{█}}$|$\color{#d4d4d4}{\textsf{█}}$|$\color{#a1a1a1}{\textsf{█}}$|$\color{#737373}{\textsf{█}}$|$\color{#525252}{\textsf{█}}$|$\color{#404040}{\textsf{█}}$|$\color{#262626}{\textsf{█}}$|$\color{#171717}{\textsf{█}}$|$\color{#0a0a0a}{\textsf{█}}$
 **stone**|$\color{#fafaf9}{\textsf{█}}$|$\color{#f5f5f4}{\textsf{█}}$|$\color{#e7e5e4}{\textsf{█}}$|$\color{#d6d3d1}{\textsf{█}}$|$\color{#a6a09b}{\textsf{█}}$|$\color{#79716b}{\textsf{█}}$|$\color{#57534d}{\textsf{█}}$|$\color{#44403b}{\textsf{█}}$|$\color{#292524}{\textsf{█}}$|$\color{#1c1917}{\textsf{█}}$|$\color{#0c0a09}{\textsf{█}}$
+
 ### Dynamic properties
 
 Dynamic properties can be set by adding a suffix according to the table below. With a few exceptions, this mainly applies to sizing. Note that for simplicity the engine treats all of them equally, which means not all combinations will result in a valid CSS. A good example is background image: `bg-[url(...)]` makes sense, whereas `bg-1/3` does not.
@@ -191,6 +192,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 |`class-min`|`property: min-content`|
 |`class-max`|`property: max-content`|
 |`class-fit`|`property: fit-content`|
+
 ## Layout
 
 ### aspect-ratio

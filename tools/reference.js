@@ -278,6 +278,8 @@ function generateReference () {
     }
   }
 
+  mdContents.push('')
+
   //
   // Size table.
   //
@@ -297,6 +299,8 @@ function generateReference () {
   for (const [name, value] of Object.entries(STRING_SIZES)) {
     mdContents.push(`|\`class-${name}\`|\`property: ${value}\`|`)
   }
+
+  mdContents.push('')
 
   //
   // All static utility classes by hierarchy.
