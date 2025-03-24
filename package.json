@@ -1,6 +1,6 @@
 {
   "name": "twcss",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "src/twcss.js",
   "type": "module",
   "scripts": {
