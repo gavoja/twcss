@@ -166,59 +166,31 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 **zinc**|$\color{#fafafa}{\textsf{█}}$|$\color{#f4f4f5}{\textsf{█}}$|$\color{#e4e4e7}{\textsf{█}}$|$\color{#d4d4d8}{\textsf{█}}$|$\color{#9f9fa9}{\textsf{█}}$|$\color{#71717b}{\textsf{█}}$|$\color{#52525c}{\textsf{█}}$|$\color{#3f3f47}{\textsf{█}}$|$\color{#27272a}{\textsf{█}}$|$\color{#18181b}{\textsf{█}}$|$\color{#09090b}{\textsf{█}}$
 **neutral**|$\color{#fafafa}{\textsf{█}}$|$\color{#f5f5f5}{\textsf{█}}$|$\color{#e5e5e5}{\textsf{█}}$|$\color{#d4d4d4}{\textsf{█}}$|$\color{#a1a1a1}{\textsf{█}}$|$\color{#737373}{\textsf{█}}$|$\color{#525252}{\textsf{█}}$|$\color{#404040}{\textsf{█}}$|$\color{#262626}{\textsf{█}}$|$\color{#171717}{\textsf{█}}$|$\color{#0a0a0a}{\textsf{█}}$
 **stone**|$\color{#fafaf9}{\textsf{█}}$|$\color{#f5f5f4}{\textsf{█}}$|$\color{#e7e5e4}{\textsf{█}}$|$\color{#d6d3d1}{\textsf{█}}$|$\color{#a6a09b}{\textsf{█}}$|$\color{#79716b}{\textsf{█}}$|$\color{#57534d}{\textsf{█}}$|$\color{#44403b}{\textsf{█}}$|$\color{#292524}{\textsf{█}}$|$\color{#1c1917}{\textsf{█}}$|$\color{#0c0a09}{\textsf{█}}$
-### Sizes
+### Dynamic properties
 
-In addition to the sizes below, a custom value can be specified via `-[<value>]` suffix.
+Dynamic properties can be set by adding a suffix according to the table below. With a few exceptions, this mainly applies to sizing. Note that for simplicity the engine treats all of them equally, which means not all combinations will result in a valid CSS. A good example is background image: `bg-[url(...)]` makes sense, whereas `bg-1/3` does not.
 
-|Name|Value|
-|----|-----|
-|**auto**|auto|
-|**full**|100%|
-|**min**|min-content|
-|**max**|max-content|
-|**fit**|fit-content|
-|**px**|1px|
-|**0.5**|2px|
-|**0**|0px|
-|**1**|4px|
-|**2**|8px|
-|**3**|12px|
-|**4**|16px|
-|**5**|20px|
-|**6**|24px|
-|**7**|28px|
-|**8**|32px|
-|**9**|36px|
-|**10**|40px|
-|**11**|44px|
-|**12**|48px|
-|**14**|56px|
-|**16**|64px|
-|**20**|80px|
-|**24**|96px|
-|**28**|112px|
-|**32**|128px|
-|**36**|144px|
-|**40**|160px|
-|**44**|176px|
-|**48**|192px|
-|**52**|208px|
-|**56**|224px|
-|**60**|240px|
-|**64**|256px|
-|**72**|288px|
-|**80**|320px|
-|**96**|384px|
-|**1/2**|50%|
-|**1/3**|33.33%|
-|**2/3**|66.67%|
-|**1/4**|25%|
-|**3/4**|75%|
-|**1/5**|20%|
-|**2/5**|40%|
-|**3/5**|60%|
-|**4/5**|80%|
-
+|Value|Output|
+|-----|------|
+|`class-<number>`|`property: calc(<number> * 4px)`|
+|`-class-<number>`|`property: calc(-<number> * 4px)`|
+|`class-<fraction>`|`property: calc(<fraction> * 100%)`|
+|`-class-<fraction>`|`property: calc(-<fraction> * 100%)`|
+|`class-[<value>]`|`property: <value>`|
+|`class-(--custom-property)`|`property: var(--custom-property)`|
+|`class-auto`|`property: auto`|
+|`class-px`|`property: 1px`|
+|`class-full`|`property: 100%`|
+|`class-screen`|`property: 100vw`|
+|`class-dvw`|`property: 100vw`|
+|`class-dvh`|`property: 100vh`|
+|`class-lvw`|`property: 100lvw`|
+|`class-lvh`|`property: 100lvh`|
+|`class-svw`|`property: 100svw`|
+|`class-svh`|`property: 100svh`|
+|`class-min`|`property: min-content`|
+|`class-max`|`property: max-content`|
+|`class-fit`|`property: fit-content`|
 ## Layout
 
 ### aspect-ratio
@@ -233,6 +205,10 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 
 ```css
 .aspect-video { aspect-ratio: 16 / 9 }
+```
+
+```css
+.aspect-SUFFIX { aspect-ratio: ... }
 ```
 
 ### columns
@@ -348,10 +324,6 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.break-after-all { break-after: all }
-```
-
-```css
 .break-after-avoid-page { break-after: avoid-page }
 ```
 
@@ -377,10 +349,6 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 
 ```css
 .break-before-avoid { break-after: avoid }
-```
-
-```css
-.break-before-all { break-after: all }
 ```
 
 ```css
@@ -414,10 +382,6 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.break-after-all { break-after: all }
-```
-
-```css
 .break-after-avoid-page { break-after: avoid-page }
 ```
 
@@ -443,10 +407,6 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 
 ```css
 .break-before-avoid { break-after: avoid }
-```
-
-```css
-.break-before-all { break-after: all }
 ```
 
 ```css
@@ -480,10 +440,6 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.break-after-all { break-after: all }
-```
-
-```css
 .break-after-avoid-page { break-after: avoid-page }
 ```
 
@@ -509,10 +465,6 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 
 ```css
 .break-before-avoid { break-after: avoid }
-```
-
-```css
-.break-before-all { break-after: all }
 ```
 
 ```css
@@ -1036,27 +988,39 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ### top / right / bottom / left
 
 ```css
-.top-SIZE { top: ... }
+.inset-SUFFIX { inset: ... }
 ```
 
 ```css
-.right-SIZE { right: ... }
+.inset-x-SUFFIX { inset-inline: ... }
 ```
 
 ```css
-.bottom-SIZE { bottom: ... }
+.inset-y-SUFFIX { inset-block: ... }
 ```
 
 ```css
-.left-SIZE { left: ... }
+.start-SUFFIX { inset-inline-start: ... }
 ```
 
 ```css
-.start-SIZE { inset-inline-start: ... }
+.end-SUFFIX { inset-inline-end: ... }
 ```
 
 ```css
-.end-SIZE { inset-inline-end: ... }
+.top-SUFFIX { top: ... }
+```
+
+```css
+.right-SUFFIX { right: ... }
+```
+
+```css
+.bottom-SUFFIX { bottom: ... }
+```
+
+```css
+.left-SUFFIX { left: ... }
 ```
 
 ### visibility
@@ -1108,7 +1072,7 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ### flex-basis
 
 ```css
-.basis-SIZE { flex-basis: ... }
+.basis-SUFFIX { flex-basis: ... }
 ```
 
 ### flex-direction
@@ -1312,10 +1276,6 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.col-start-auto { grid-column-start: auto }
-```
-
-```css
 .col-start-1 { grid-column-start: 1 }
 ```
 
@@ -1365,6 +1325,10 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 
 ```css
 .col-start-13 { grid-column-start: 13 }
+```
+
+```css
+.col-start-auto { grid-column-start: auto }
 ```
 
 ### grid-template-rows
@@ -1484,10 +1448,6 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.row-start-auto { grid-row-start: auto }
-```
-
-```css
 .row-start-1 { grid-row-start: 1 }
 ```
 
@@ -1537,6 +1497,10 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 
 ```css
 .row-start-13 { grid-row-start: 13 }
+```
+
+```css
+.row-start-auto { grid-row-start: auto }
 ```
 
 ### grid-auto-flow
@@ -1600,15 +1564,15 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ### gap
 
 ```css
-.gap-SIZE { gap: ... }
+.gap-SUFFIX { gap: ... }
 ```
 
 ```css
-.gap-x-SIZE { column-gap: ... }
+.gap-x-SUFFIX { column-gap: ... }
 ```
 
 ```css
-.gap-y-SIZE { row-gap: ... }
+.gap-y-SUFFIX { row-gap: ... }
 ```
 
 ### justify-content
@@ -1639,10 +1603,6 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 
 ```css
 .justify-stretch { justify-content: stretch }
-```
-
-```css
-.justify-baseline { justify-content: baseline }
 ```
 
 ```css
@@ -1889,39 +1849,39 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.p-SIZE { padding: ... }
+.p-SUFFIX { padding: ... }
 ```
 
 ```css
-.px-SIZE { padding-inline: ... }
+.px-SUFFIX { padding-inline: ... }
 ```
 
 ```css
-.py-SIZE { padding-block: ... }
+.py-SUFFIX { padding-block: ... }
 ```
 
 ```css
-.pt-SIZE { padding-top: ... }
+.pt-SUFFIX { padding-top: ... }
 ```
 
 ```css
-.pr-SIZE { padding-right: ... }
+.pr-SUFFIX { padding-right: ... }
 ```
 
 ```css
-.pb-SIZE { padding-bottom: ... }
+.pb-SUFFIX { padding-bottom: ... }
 ```
 
 ```css
-.pl-SIZE { padding-left: ... }
+.pl-SUFFIX { padding-left: ... }
 ```
 
 ```css
-.ps-SIZE { padding-inline-start: ... }
+.ps-SUFFIX { padding-inline-start: ... }
 ```
 
 ```css
-.pe-SIZE { padding-inline-end: ... }
+.pe-SUFFIX { padding-inline-end: ... }
 ```
 
 ### margin
@@ -1954,47 +1914,47 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.m-SIZE { margin: ... }
+.m-SUFFIX { margin: ... }
 ```
 
 ```css
-.mx-SIZE { margin-inline: ... }
+.mx-SUFFIX { margin-inline: ... }
 ```
 
 ```css
-.my-SIZE { margin-block: ... }
+.my-SUFFIX { margin-block: ... }
 ```
 
 ```css
-.mt-SIZE { margin-top: ... }
+.mt-SUFFIX { margin-top: ... }
 ```
 
 ```css
-.mr-SIZE { margin-right: ... }
+.mr-SUFFIX { margin-right: ... }
 ```
 
 ```css
-.ml-SIZE { margin-left: ... }
+.mb-SUFFIX { margin-bottom: ... }
 ```
 
 ```css
-.mb-SIZE { margin-bottom: ... }
+.ml-SUFFIX { margin-left: ... }
 ```
 
 ```css
-.ms-SIZE { margin-inline-start: ... }
+.ms-SUFFIX { margin-inline-start: ... }
 ```
 
 ```css
-.me-SIZE { margin-inline-end: ... }
+.me-SUFFIX { margin-inline-end: ... }
 ```
 
 ```css
-.space-x-SIZE > :not(:last-child) { margin-inline-end: ... }
+.space-x-SUFFIX > :not(:last-child) { margin-inline-end: ... }
 ```
 
 ```css
-.space-y-SIZE > :not(:last-child) { margin-bottom: ... }
+.space-y-SUFFIX > :not(:last-child) { margin-bottom: ... }
 ```
 
 ## Sizing
@@ -2029,19 +1989,19 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.w-SIZE { width: ... }
+.w-SUFFIX { width: ... }
 ```
 
 ### min-width
 
 ```css
-.min-w-SIZE { min-width: ... }
+.min-w-SUFFIX { min-width: ... }
 ```
 
 ### max-width
 
 ```css
-.max-w-SIZE { max-width: ... }
+.max-w-SUFFIX { max-width: ... }
 ```
 
 ### height
@@ -2074,19 +2034,19 @@ In addition to the sizes below, a custom value can be specified via `-[<value>]`
 ```
 
 ```css
-.h-SIZE { height: ... }
+.h-SUFFIX { height: ... }
 ```
 
 ### min-height
 
 ```css
-.min-h-SIZE { min-height: ... }
+.min-h-SUFFIX { min-height: ... }
 ```
 
 ### max-height
 
 ```css
-.max-h-SIZE { max-height: ... }
+.max-h-SUFFIX { max-height: ... }
 ```
 
 ## Typography
@@ -2735,7 +2695,7 @@ Currently unsupported.
 ### text-indent
 
 ```css
-.indent-SIZE { text-indent: ... }
+.indent-SUFFIX { text-indent: ... }
 ```
 
 ### vertical-align
@@ -2910,7 +2870,13 @@ Currently unsupported.
 
 ### background-image
 
-Currently unsupported.
+```css
+.bg-SUFFIX { background-image: ... }
+```
+
+```css
+.bg-none { background-image: none }
+```
 
 ### background-origin
 
@@ -3205,10 +3171,6 @@ Currently unsupported.
 ```
 
 ```css
-.border { border-width: 1px }
-```
-
-```css
 .border-0 { border-width: 0px }
 ```
 
@@ -3226,10 +3188,6 @@ Currently unsupported.
 
 ```css
 .border-8 { border-width: 8px }
-```
-
-```css
-.border-t { border-top-width: 1px }
 ```
 
 ```css
@@ -3253,10 +3211,6 @@ Currently unsupported.
 ```
 
 ```css
-.border-b { border-bottom-width: 1px }
-```
-
-```css
 .border-b-0 { border-bottom-width: 0px }
 ```
 
@@ -3274,10 +3228,6 @@ Currently unsupported.
 
 ```css
 .border-b-8 { border-bottom-width: 8px }
-```
-
-```css
-.border-l { border-left-width: 1px }
 ```
 
 ```css
@@ -3301,10 +3251,6 @@ Currently unsupported.
 ```
 
 ```css
-.border-r { border-right-width: 1px }
-```
-
-```css
 .border-r-0 { border-right-width: 0px }
 ```
 
@@ -3322,10 +3268,6 @@ Currently unsupported.
 
 ```css
 .border-r-8 { border-right-width: 8px }
-```
-
-```css
-.border-s { border-inline-start-width: 1px }
 ```
 
 ```css
@@ -3349,10 +3291,6 @@ Currently unsupported.
 ```
 
 ```css
-.border-e { border-inline-end-width: 1px }
-```
-
-```css
 .border-e-0 { border-inline-end-width: 0px }
 ```
 
@@ -3370,6 +3308,34 @@ Currently unsupported.
 
 ```css
 .border-e-8 { border-inline-end-width: 8px }
+```
+
+```css
+.border { border-width: 1px }
+```
+
+```css
+.border-t { border-top-width: 1px }
+```
+
+```css
+.border-b { border-bottom-width: 1px }
+```
+
+```css
+.border-l { border-left-width: 1px }
+```
+
+```css
+.border-r { border-right-width: 1px }
+```
+
+```css
+.border-s { border-inline-start-width: 1px }
+```
+
+```css
+.border-e { border-inline-end-width: 1px }
 ```
 
 ### border-color
@@ -3513,7 +3479,7 @@ Currently unsupported.
 ```
 
 ```css
-.shadow-none { box-shadow: 0 0 #0000 }
+.shadow-none { box-shadow: 0 0 rgb(0 0 0 / 0) }
 ```
 
 ### opacity
@@ -3719,7 +3685,7 @@ Currently unsupported.
 ```
 
 ```css
-.drop-shadow-none { filter: drop-shadow(0 0 #0000) }
+.drop-shadow-none { filter: drop-shadow(0 0 rgba(0, 0, 0, 0)) }
 ```
 
 ```css
@@ -3921,34 +3887,6 @@ Currently unsupported.
 ```
 
 ```css
-.backdrop-drop-shadow-xs { backdrop-filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05)) }
-```
-
-```css
-.backdrop-drop-shadow-sm { backdrop-filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.15)) }
-```
-
-```css
-.backdrop-drop-shadow-md { backdrop-filter: drop-shadow(0 3px 3px rgb(0 0 0 / 0.12)) }
-```
-
-```css
-.backdrop-drop-shadow-lg { backdrop-filter: drop-shadow(0 4px 4px rgb(0 0 0 / 0.15)) }
-```
-
-```css
-.backdrop-drop-shadow-xl { backdrop-filter: drop-shadow(0 9px 7px rgb(0 0 0 / 0.1)) }
-```
-
-```css
-.backdrop-drop-shadow-2xl { backdrop-filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15)) }
-```
-
-```css
-.backdrop-drop-shadow-none { backdrop-filter: drop-shadow(0 0 #0000) }
-```
-
-```css
 .backdrop-grayscale { backdrop-filter: grayscale(100%) }
 ```
 
@@ -4013,6 +3951,66 @@ Currently unsupported.
 ```
 
 ```css
+.backdrop-opacity-0 { backdrop-filter: opacity(0) }
+```
+
+```css
+.backdrop-opacity-5 { backdrop-filter: opacity(0.05) }
+```
+
+```css
+.backdrop-opacity-10 { backdrop-filter: opacity(0.1) }
+```
+
+```css
+.backdrop-opacity-20 { backdrop-filter: opacity(0.2) }
+```
+
+```css
+.backdrop-opacity-25 { backdrop-filter: opacity(0.25) }
+```
+
+```css
+.backdrop-opacity-30 { backdrop-filter: opacity(0.3) }
+```
+
+```css
+.backdrop-opacity-40 { backdrop-filter: opacity(0.4) }
+```
+
+```css
+.backdrop-opacity-50 { backdrop-filter: opacity(0.5) }
+```
+
+```css
+.backdrop-opacity-60 { backdrop-filter: opacity(0.6) }
+```
+
+```css
+.backdrop-opacity-70 { backdrop-filter: opacity(0.7) }
+```
+
+```css
+.backdrop-opacity-75 { backdrop-filter: opacity(0.75) }
+```
+
+```css
+.backdrop-opacity-80 { backdrop-filter: opacity(0.8) }
+```
+
+```css
+.backdrop-opacity-90 { backdrop-filter: opacity(0.9) }
+```
+
+```css
+.backdrop-opacity-95 { backdrop-filter: opacity(0.95) }
+```
+
+```css
+.backdrop-opacity-100 { backdrop-filter: opacity(1) }
+```
+
+```css
 .backdrop-filter-none { backdrop-filter: none }
 ```
 
@@ -4024,10 +4022,14 @@ Currently unsupported.
 .border-collapse { border-collapse: collapse }
 ```
 
+```css
+.border-separate { border-collapse: separate }
+```
+
 ### border-spacing
 
 ```css
-.border-spacing-SIZE { border-spacing: ... }
+.border-spacing-SUFFIX { border-spacing: ... }
 ```
 
 ### table-layout
@@ -4214,7 +4216,17 @@ Currently unsupported.
 
 ### animation
 
-Currently unsupported.
+```css
+.animate-expand { animation: expand 150ms ease-out }
+```
+
+```css
+.animate-toast { animation: toast 150ms ease-out }
+```
+
+```css
+.animate-fade { animation: fade 150ms ease-out }
+```
 
 ## Transforms
 
@@ -4502,6 +4514,14 @@ Currently unsupported.
 .skew-y-12 { transform: skewY(12deg) }
 ```
 
+```css
+.translate-x-SUFFIX { transform: translateX(...) }
+```
+
+```css
+.translate-y-SUFFIX { transform: translateY(...) }
+```
+
 ### transform-origin
 
 ```css
@@ -4513,7 +4533,7 @@ Currently unsupported.
 ```
 
 ```css
-.origin-top-right { transform-origin: top-right }
+.origin-top-right { transform-origin: top right }
 ```
 
 ```css
@@ -4521,7 +4541,7 @@ Currently unsupported.
 ```
 
 ```css
-.origin-bottom-right { transform-origin: bottom-right }
+.origin-bottom-right { transform-origin: bottom right }
 ```
 
 ```css
@@ -4529,7 +4549,7 @@ Currently unsupported.
 ```
 
 ```css
-.origin-bottom-left { transform-origin: bottom-left }
+.origin-bottom-left { transform-origin: bottom left }
 ```
 
 ```css
@@ -4537,7 +4557,7 @@ Currently unsupported.
 ```
 
 ```css
-.origin-top-left { transform-origin: top-left }
+.origin-top-left { transform-origin: top left }
 ```
 
 ### transform-style
@@ -4641,7 +4661,7 @@ Currently unsupported.
 ```
 
 ```css
-.field-sizing-auto { field-sizing: auto }
+.field-sizing-content { field-sizing: content }
 ```
 
 ### pointer-events
@@ -4684,15 +4704,11 @@ Currently unsupported.
 
 ### scroll-margin
 
-```css
-.scroll-m-SIZE { scroll-margin: ... }
-```
+Currently unsupported.
 
 ### scroll-padding
 
-```css
-.scroll-p-SIZE { scroll-padding: ... }
-```
+Currently unsupported.
 
 ### scroll-snap-align
 

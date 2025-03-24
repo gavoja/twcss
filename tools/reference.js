@@ -2,18 +2,16 @@
  * @file Dirty reference generator.
  * @author Michal Kochel
  */
+import chroma from 'chroma-js'
 import fs from 'node:fs'
 import { COLORS, COLOR_PROPS } from '../src/colors.js'
-import { SIZES, SIZES_FRAC } from '../src/constants.js'
-import { FREE_PROPS } from '../src/free-props.js'
 import { KEYFRAMES } from '../src/keyframes.js'
 import { QUERIES } from '../src/queries.js'
 import { RESET } from '../src/reset.js'
 import { UTILS } from '../src/utils.js'
+import { STRING_SIZES } from '../src/constants.js'
 
-import chroma from 'chroma-js'
-
-const hierarchy = {
+const HIERARCHY = {
   'Layout': {
     'aspect-ratio': ['aspect-ratio'],
     'columns': ['columns'],
@@ -189,11 +187,16 @@ function getRules (props) {
   const rules = new Map()
 
   for (const [cls, css] of UTILS.entries().filter(([_cls, css]) => props.some(p => css.includes(` ${p}:`)))) {
+    // Split composite rules into multiple lines.
     const isComposite = css.split(/ {/).pop().match(/:/g).length > 1
-
-
     if (isComposite) {
       rules.set(cls, css.replace(/{ /, '{\n  ').replace(/; */g, ';\n  ').replace(/}/, '\n}'))
+      continue
+    }
+
+    // Detect dynamic properties.
+    if (css.includes('$')) {
+      rules.set(`${cls}-SUFFIX`, css.replace('$', '...'))
       continue
     }
 
@@ -201,15 +204,6 @@ function getRules (props) {
     if (COLOR_PROPS.values().some(p => css.includes(`${p}:`))) {
       if (cls.endsWith('-black')) {
         rules.set(cls.replace('-black', '-COLOR'), css.replace('oklch(0 0 0)', 'oklch(...)'))
-      }
-
-      continue
-    }
-
-    // Detect sizes (and content).
-    if (FREE_PROPS.values().some(p => css.includes(` ${p}:`))) {
-      if (cls.endsWith('-auto')) {
-        rules.set(cls.replace('-auto', '-SIZE'), css.replace('auto', '...'))
       }
 
       continue
@@ -226,24 +220,42 @@ function generateReference () {
   mdContents.push('# Reference', '')
   mdContents.push('## Defaults', '')
 
+  //
+  // CSS reset.
+  //
+
   mdContents.push('### CSS reset', '')
   mdContents.push(`\`\`\`css\n${RESET.join('\n')}\n\`\`\``, '')
+
+  //
+  // State prefixes.
+  //
 
   mdContents.push('### States', '')
   mdContents.push('Supported prefix states are `hover`, `focus`, `focus-visible` and `active`.', '')
 
+  //
+  // Media queries.
+  //
+
   mdContents.push('### Media and container queries', '')
   mdContents.push('All container queries are relative to the ancestor with `@container` class.', '')
-
   for (const [prefix, query] of QUERIES) {
     mdContents.push(`\`\`\`css\n/* ${prefix} */\n${query}\n\`\`\``, '')
   }
 
-  mdContents.push('### Keyframes', '')
+  //
+  // Keyframes.
+  //
 
+  mdContents.push('### Keyframes', '')
   for (const [name, keyframes] of KEYFRAMES) {
     mdContents.push(`\`\`\`css\n@keyframes ${name} {\n  ${keyframes}\n}\n\`\`\``, '')
   }
+
+  //
+  // Color table.
+  //
 
   mdContents.push('### Colors', '')
   mdContents.push('In addition to the colors below, `black`, `white`, `transparent`, `current` and `inherit` are also supported.', '')
@@ -251,7 +263,6 @@ function generateReference () {
   mdContents.push('|---|---|---|---|---|---|---|---|---|---|---|---|')
 
   const colorRow = new Set()
-
   for (const [cls, color] of COLORS) {
     if (cls.endsWith('-50')) {
       colorRow.clear()
@@ -267,17 +278,31 @@ function generateReference () {
     }
   }
 
-  for (const size of SIZES) {
-    mdContents.push(`|**${size}**|${size * 4}px|`)
+  //
+  // Size table.
+  //
+
+  mdContents.push('### Dynamic properties', '')
+  mdContents.push('Dynamic properties can be set by adding a suffix according to the table below. With a few exceptions, this mainly applies to sizing. Note that for simplicity the engine treats all of them equally, which means not all combinations will result in a valid CSS. A good example is background image: `bg-[url(...)]` makes sense, whereas `bg-1/3` does not.', '')
+
+  mdContents.push('|Value|Output|')
+  mdContents.push('|-----|------|')
+  mdContents.push('|`class-<number>`|`property: calc(<number> * 4px)`|')
+  mdContents.push('|`-class-<number>`|`property: calc(-<number> * 4px)`|')
+  mdContents.push('|`class-<fraction>`|`property: calc(<fraction> * 100%)`|')
+  mdContents.push('|`-class-<fraction>`|`property: calc(-<fraction> * 100%)`|')
+  mdContents.push('|`class-[<value>]`|`property: <value>`|')
+  mdContents.push('|`class-(--custom-property)`|`property: var(--custom-property)`|')
+
+  for (const [name, value] of Object.entries(STRING_SIZES)) {
+    mdContents.push(`|\`class-${name}\`|\`property: ${value}\`|`)
   }
 
-  for (const [s, frac] of SIZES_FRAC) {
-    mdContents.push(`|**${s}**|${(frac * 100).toFixed(2).replace(/[.,]00$/, "")}%|`)
-  }
+  //
+  // All static utility classes by hierarchy.
+  //
 
-  mdContents.push('')
-
-  for (const [category, subcategories] of Object.entries(hierarchy)) {
+  for (const [category, subcategories] of Object.entries(HIERARCHY)) {
     mdContents.push(`## ${category}`, '')
 
     for (const [subcategory, props] of Object.entries(subcategories)) {
@@ -291,7 +316,6 @@ function generateReference () {
       }
 
       for (const [cls, css] of rules) {
-        // TODO: Handle dynamic properties.
         mdContents.push(`\`\`\`css\n.${cls} ${css}\n\`\`\``, '')
       }
     }
