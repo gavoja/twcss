@@ -28,6 +28,9 @@ function addDivWithAllClasses() {
   classes.push('bg-[url(https://picsum.photos/id/11/1280/720)]')
 	classes.push('aspect-[16/9]')
 
+	classes.push('translate-x-2')
+	classes.push('-translate-y-1/3')
+
 	for (const cls of UTILS.keys()) {
 		if (!UTILS.get(cls).includes('$')) {
 			classes.push(cls)
