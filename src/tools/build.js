@@ -2,7 +2,7 @@ import { context } from 'esbuild'
 
 async function main () {
   const ctxLib = await context({
-    entryPoints: ['src/twcss.js',],
+    entryPoints: ['src/main/twcss.js',],
     format: 'iife',
     bundle: true,
     minify: true,
@@ -11,7 +11,7 @@ async function main () {
   })
 
   const ctxTest = await context({
-    entryPoints: ['test/page/main.js', 'test/page/index.html'],
+    entryPoints: ['src/test/page/main.js', 'src/test/page/index.html'],
     loader: {'.html': 'copy'},
     format: 'iife',
     bundle: true,

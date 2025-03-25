@@ -1,5 +1,5 @@
 import { COLOR_PROPS } from './colors.js'
-import { HIGH_PRIORITY_RULES, OPACITIES, STATES, STRING_SIZES } from './constants.js'
+import { HIGH_PRIORITY_RULES, OPACITIES, STATES, PSEUDO, STRING_SIZES } from './constants.js'
 import { KEYFRAMES } from './keyframes.js'
 import { QUERIES } from './queries.js'
 import { RESET } from './reset.js'
@@ -13,6 +13,7 @@ function getParser() {
     '(?<negative>-?)?', // Minus sign.
     `((?<mq>${[...QUERIES.keys()].map(mq => mq.replace(/(\.|\\|\+|\*|\?|\^|\$|\(|\)|\[|\]|\{|\})/g, '\\$1')).join('|')}):)?`, // Media or container query.
     `((?<state>${STATES.join('|')}):)?`, // State.
+    `((?<pseudo>${PSEUDO.join('|')}):)?`, // Pseudo element.
     '(?<util>',
       // Values
       '((?<base>[a-z-]+)-(',
@@ -49,7 +50,7 @@ function addRule(instance, cls) {
     return
   }
 
-  const { negative, mq, state, util, base, number, fraction, string, raw, custom } = cls.match(tw.parser).groups
+  const { negative, mq, state, pseudo, util, base, number, fraction, string, raw, custom } = cls.match(tw.parser).groups
 
   let css = UTILS.get(util) // Basic class.
   if (!css) {
@@ -72,7 +73,6 @@ function addRule(instance, cls) {
     } else {
       throw new Error(`Unknown utility class: [${cls}]`)
     }
-
   }
 
   // Rules are added in the following order.
@@ -83,15 +83,18 @@ function addRule(instance, cls) {
 
   const isHighPriority = Boolean(HIGH_PRIORITY_RULES.find(r => util.includes(r)))
   const escapedUtil = CSS.escape(util)
-  const utilWithState = state ? `${state}\\:${escapedUtil}:${state}` : escapedUtil
+  const [statePrefix, stateSuffix] = state ? [`${state}\\:`, `:${state}`] : ['', '']
+  const [pseudoPrefix, pseudoSuffix] = pseudo ? [`${pseudo}\\:`, `::${pseudo}`] : ['', '']
+  const fullUtil = `${statePrefix}${pseudoPrefix}${escapedUtil}${pseudoSuffix}${stateSuffix}`
 
   let rule
   let index
   if (mq) {
+    // Wrap in media query.
     index = isHighPriority ? instance.sheet.cssRules.length : instance.mqRulesStartIndex
-    rule = `${QUERIES.get(mq)} { .${CSS.escape(mq)}\\:${utilWithState} ${css} }`
+    rule = `${QUERIES.get(mq)} { .${CSS.escape(mq)}\\:${fullUtil} ${css} }`
   } else {
-    rule = `.${utilWithState} ${css}`
+    rule = `.${fullUtil} ${css}`
     index = isHighPriority ? instance.mqRulesStartIndex : 0
     instance.mqRulesStartIndex += 1
   }
@@ -221,9 +224,4 @@ export function init(root) {
 
   // Performance metrics.
   instance.initTime = Date.now() - timestamp
-}
-
-// Initialize for the document.
-if (typeof self !== 'undefined') {
-  init(document)
 }

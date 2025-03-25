@@ -20,10 +20,6 @@ svg { display: block }
 [tw]:not([class]) { display: none }
 ```
 
-### States
-
-Supported prefix states are `hover`, `focus`, `focus-visible` and `active`.
-
 ### Media and container queries
 
 All container queries are relative to the ancestor with `@container` class.
@@ -117,6 +113,13 @@ All container queries are relative to the ancestor with `@container` class.
 /* @7xl */
 @container (width >= 1280px)
 ```
+
+### Prefixes
+
+Classes can be prefixed. The order is always `query:state:pseudo:class`.
+
+- Supported states: `hover`, `focus`, `focus-visible`, `active`.
+- Supported pseudo elements: `before`, `after`, `placeholder`, `file`, `marker`, `selection`, `backdrop`, `first-letter`, `first-line`.
 
 ### Keyframes
 
@@ -1952,11 +1955,11 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.space-x-SUFFIX > :not(:last-child) { margin-inline-end: ... }
+.space-x-SUFFIX  > :not(:last-child) { margin-inline-end: ... }
 ```
 
 ```css
-.space-y-SUFFIX > :not(:last-child) { margin-bottom: ... }
+.space-y-SUFFIX  > :not(:last-child) { margin-bottom: ... }
 ```
 
 ## Sizing
@@ -2572,7 +2575,21 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 
 ### text-decoration-line
 
-Currently unsupported.
+```css
+.underline { text-decoration-line: underline }
+```
+
+```css
+.overline { text-decoration-line: overline }
+```
+
+```css
+.line-through { text-decoration-line: line-through }
+```
+
+```css
+.no-underline { text-decoration-line: none }
+```
 
 ### text-decoration-color
 
@@ -2828,7 +2845,9 @@ Currently unsupported.
 
 ### content
 
-Currently unsupported.
+```css
+.content-SUFFIX { content: ... }
+```
 
 ## Backgrounds
 
@@ -3548,11 +3567,143 @@ Currently unsupported.
 
 ### mix-blend-mode
 
-Currently unsupported.
+```css
+.mix-blend-normal { mix-blend-mode: normal }
+```
+
+```css
+.mix-blend-multiply { mix-blend-mode: multiply }
+```
+
+```css
+.mix-blend-screen { mix-blend-mode: screen }
+```
+
+```css
+.mix-blend-overlay { mix-blend-mode: overlay }
+```
+
+```css
+.mix-blend-darken { mix-blend-mode: darken }
+```
+
+```css
+.mix-blend-lighten { mix-blend-mode: lighten }
+```
+
+```css
+.mix-blend-color-dodge { mix-blend-mode: color-dodge }
+```
+
+```css
+.mix-blend-color-burn { mix-blend-mode: color-burn }
+```
+
+```css
+.mix-blend-hard-light { mix-blend-mode: hard-light }
+```
+
+```css
+.mix-blend-soft-light { mix-blend-mode: soft-light }
+```
+
+```css
+.mix-blend-difference { mix-blend-mode: difference }
+```
+
+```css
+.mix-blend-exclusion { mix-blend-mode: exclusion }
+```
+
+```css
+.mix-blend-hue { mix-blend-mode: hue }
+```
+
+```css
+.mix-blend-saturation { mix-blend-mode: saturation }
+```
+
+```css
+.mix-blend-color { mix-blend-mode: color }
+```
+
+```css
+.mix-blend-luminosity { mix-blend-mode: luminosity }
+```
+
+```css
+.mix-blend-plus-darker { mix-blend-mode: plus-darker }
+```
+
+```css
+.mix-blend-plus-lighter { mix-blend-mode: plus-lighter }
+```
 
 ### background-blend-mode
 
-Currently unsupported.
+```css
+.bg-blend-normal { background-blend-mode: normal }
+```
+
+```css
+.bg-blend-multiply { background-blend-mode: multiply }
+```
+
+```css
+.bg-blend-screen { background-blend-mode: screen }
+```
+
+```css
+.bg-blend-overlay { background-blend-mode: overlay }
+```
+
+```css
+.bg-blend-darken { background-blend-mode: darken }
+```
+
+```css
+.bg-blend-lighten { background-blend-mode: lighten }
+```
+
+```css
+.bg-blend-color-dodge { background-blend-mode: color-dodge }
+```
+
+```css
+.bg-blend-color-burn { background-blend-mode: color-burn }
+```
+
+```css
+.bg-blend-hard-light { background-blend-mode: hard-light }
+```
+
+```css
+.bg-blend-soft-light { background-blend-mode: soft-light }
+```
+
+```css
+.bg-blend-difference { background-blend-mode: difference }
+```
+
+```css
+.bg-blend-exclusion { background-blend-mode: exclusion }
+```
+
+```css
+.bg-blend-hue { background-blend-mode: hue }
+```
+
+```css
+.bg-blend-saturation { background-blend-mode: saturation }
+```
+
+```css
+.bg-blend-color { background-blend-mode: color }
+```
+
+```css
+.bg-blend-luminosity { background-blend-mode: luminosity }
+```
 
 ## Filters
 
@@ -4268,6 +4419,44 @@ Currently unsupported.
 .perspective-none { perspective: none }
 ```
 
+### perspective-origin
+
+```css
+.perspective-origin-center { perspective-origin: center }
+```
+
+```css
+.perspective-origin-top { perspective-origin: top }
+```
+
+```css
+.perspective-origin-top-right { perspective-origin: top right }
+```
+
+```css
+.perspective-origin-right { perspective-origin: right }
+```
+
+```css
+.perspective-origin-bottom-right { perspective-origin: bottom right }
+```
+
+```css
+.perspective-origin-bottom { perspective-origin: bottom }
+```
+
+```css
+.perspective-origin-bottom-left { perspective-origin: bottom left }
+```
+
+```css
+.perspective-origin-left { perspective-origin: left }
+```
+
+```css
+.perspective-origin-top-left { perspective-origin: top left }
+```
+
 ### rotate
 
 ```css
@@ -4341,10 +4530,6 @@ Currently unsupported.
 ```css
 .-rotate-180 { rotate: -180deg }
 ```
-
-### scale
-
-Currently unsupported.
 
 ### transform
 
@@ -4572,10 +4757,6 @@ Currently unsupported.
 .transform-flat { transform-style: flat }
 ```
 
-### translate
-
-Currently unsupported.
-
 ## Interactivity
 
 ### accent-color
@@ -4706,11 +4887,15 @@ Currently unsupported.
 
 ### scroll-margin
 
-Currently unsupported.
+```css
+.scroll-m-SUFFIX { scroll-margin: ... }
+```
 
 ### scroll-padding
 
-Currently unsupported.
+```css
+.scroll-p-SUFFIX { scroll-padding: ... }
+```
 
 ### scroll-snap-align
 

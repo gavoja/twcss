@@ -1,4 +1,4 @@
-import { ANIM_TIME, BRIGHTNESS_LEVELS, COLUMNS, CONTRAST_LEVELS, DURATIONS, HUE_ROTATE_DEGREES, LINE_CLAMPS, OPACITIES, ORIGINS, RADII, ROTATE_DEGREES, SATURATE_LEVELS, SCALES, SKEWS, STROKE_WIDTHS, WIDTHS, Z_INDEXES } from './constants.js'
+import { ANIM_TIME, BRIGHTNESS_LEVELS, COLUMNS, CONTRAST_LEVELS, DURATIONS, HUE_ROTATE_DEGREES, LINE_CLAMPS, OPACITIES, ORIGINS, RADII, ROTATE_DEGREES, SATURATE_LEVELS, SCALES, SKEWS, STROKE_WIDTHS, WIDTHS, Z_INDEXES, BLEND_MODES } from './constants.js'
 import { backdrop, gen, genc } from './generators.js'
 
 // Tries to follow Tailwind's order.
@@ -200,8 +200,8 @@ export const UTILS = new Map([
   ['ml', '{ margin-left: $ }'],
   ['ms', '{ margin-inline-start: $ }'],
   ['me', '{ margin-inline-end: $ }'],
-  ['space-x', '> :not(:last-child) { margin-inline-end: $ }'],
-  ['space-y', '> :not(:last-child) { margin-bottom: $ }'],
+  ['space-x', ' > :not(:last-child) { margin-inline-end: $ }'],
+  ['space-y', ' > :not(:last-child) { margin-bottom: $ }'],
   // Sizing - width
   ['w', '{ width: $ }'],
   // Sizing - min-width
@@ -281,9 +281,9 @@ export const UTILS = new Map([
   ...gen(ii => [`text-${ii}`, `text-align: ${ii}`], ['left', 'center', 'right', 'justify', 'start', 'end']),
   // Typography - text-color
   ...genc('text', 'color'),
-  // Typography - text-decoration
-  ...gen(ii => [ii, `text-decoration: ${ii}`], ['underline', 'overline', 'line-through']),
-  ['no-underline', '{ text-decoration: none }'],
+  // Typography - text-decoration-line
+  ...gen(ii => [ii, `text-decoration-line: ${ii}`], ['underline', 'overline', 'line-through']),
+  ['no-underline', '{ text-decoration-line: none }'],
   // Typography - text-decoration-color
   ...genc('decoration', 'text-decoration-color'),
   // Typography = text-decoration-style
@@ -317,7 +317,9 @@ export const UTILS = new Map([
   ['break-keep', '{ word-break: keep-all }'],
   // Typography - hyphens
   ...gen(ii => [`hyphens-${ii}`, `hyphens: ${ii}`], ['none', 'manual', 'auto']),
-  // Typography - content - currently unsupported
+  // Typography - content
+  ['content', '{ content: $ }'],
+  ['content', '{ content: $ }'],
   // ---------------------------------------------------------------------------
   // Backgrounds - background-attachment
   ...gen(ii => [`bg-${ii}`, `background-attachment: ${ii}`], ['fixed', 'local', 'scroll']),
@@ -385,8 +387,10 @@ export const UTILS = new Map([
   ['shadow-none', '{ box-shadow: 0 0 rgb(0 0 0 / 0) }'],
   // Effects - opacity
   ...gen(ii => [`opacity-${ii}`, `opacity: ${ii / 100}`], OPACITIES),
-  // Effects - mix-blend-mode - currently unsupported
-  // Effects - background-blend-mode - currently unsupported
+  // Effects - mix-blend-mode
+  ...gen(ii => [`mix-blend-${ii}`, `mix-blend-mode: ${ii}`], [...BLEND_MODES, 'plus-darker', 'plus-lighter']),
+  // Effects - background-blend-mode
+  ...gen(ii => [`bg-blend-${ii}`, `background-blend-mode: ${ii}`], BLEND_MODES),
   // ---------------------------------------------------------------------------
   // Filters - blur
   ...backdrop(['blur-xs', '{ filter: blur(4px) }']),
@@ -523,8 +527,26 @@ export const UTILS = new Map([
   // Interactivity - scroll-behavior
   ['scroll-auto', '{ scroll-behavior: auto }'],
   ['scroll-smooth', '{ scroll-behavior: smooth }'],
-  // Interactivity - scroll-margin - dynamic
-  // Interactivity - scroll-padding - dynamic
+  // Interactivity - scroll-margin
+  ['scroll-m', '{ scroll-margin: $ }'],
+  ['scroll-mx', '{ scroll-margin-inline: $ }'],
+  ['scroll-my', '{ scroll-margin-block: $ }'],
+  ['scroll-ms', '{ scroll-margin-inline-start: $ }'],
+  ['scroll-me', '{ scroll-margin-inline-end: $ }'],
+  ['scroll-mt', '{ scroll-margin-top: $ }'],
+  ['scroll-mr', '{ scroll-margin-right: $ }'],
+  ['scroll-mb', '{ scroll-margin-bottom: $ }'],
+  ['scroll-ml', '{ scroll-margin-left: $ }'],
+  // Interactivity - scroll-padding
+  ['scroll-p', '{ scroll-padding: $ }'],
+  ['scroll-px', '{ scroll-padding-inline: $ }'],
+  ['scroll-py', '{ scroll-padding-block: $ }'],
+  ['scroll-ps', '{ scroll-padding-inline-start: $ }'],
+  ['scroll-pe', '{ scroll-padding-inline-end: $ }'],
+  ['scroll-pt', '{ scroll-padding-top: $ }'],
+  ['scroll-pr', '{ scroll-padding-right: $ }'],
+  ['scroll-pb', '{ scroll-padding-bottom: $ }'],
+  ['scroll-pl', '{ scroll-padding-left: $ }'],
   // Interactivity - scroll-snap-align
   ...gen(ii => [`snap-${ii}`, `scroll-snap-align: ${ii}`], ['start', 'end', 'center']),
   ['snap-align-none', '{ scroll-snap-align: none }'],

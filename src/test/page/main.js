@@ -1,7 +1,7 @@
-import { extend } from '../../src/twcss.js'
-import { UTILS } from '../../src/utils.js'
-import { QUERIES } from '../../src/queries.js'
-import { STATES, STRING_SIZES } from '../../src/constants.js'
+import { extend } from '#main/twcss.js'
+import { UTILS } from '#main/utils.js'
+import { QUERIES } from '#main/queries.js'
+import { STATES, STRING_SIZES } from '#main/constants.js'
 
 function addTestDiv() {
 	const div = document.createElement('div')

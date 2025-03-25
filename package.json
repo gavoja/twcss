@@ -2,17 +2,20 @@
   "name": "twcss",
   "version": "0.2.3",
   "main": "src/twcss.js",
-  "type": "module",
-  "scripts": {
-    "start": "node ./tools/build.js",
-    "test": "npx playwright test",
-    "lint": "npx @biomejs/biome lint",
-    "reference": "node ./tools/reference.js",
-    "release": "dotenv release-it --"
-  },
   "author": "Michal Kochel",
   "license": "MIT",
+  "type": "module",
   "description": "Fast minimalist utility-first CSS runtime inspired by Tailwind and Twind",
+  "imports": {
+    "#main/*.js": "./src/main/*.js"
+  },
+  "scripts": {
+    "start": "node ./src/tools/build.js",
+    "test": "npx playwright test",
+    "lint": "npx @biomejs/biome lint",
+    "reference": "node ./src/tools/reference.js",
+    "release": "dotenv release-it --"
+  },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@playwright/test": "1.51.1",

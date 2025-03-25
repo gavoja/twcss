@@ -4,12 +4,12 @@
  */
 import chroma from 'chroma-js'
 import fs from 'node:fs'
-import { COLORS, COLOR_PROPS } from '../src/colors.js'
-import { KEYFRAMES } from '../src/keyframes.js'
-import { QUERIES } from '../src/queries.js'
-import { RESET } from '../src/reset.js'
-import { UTILS } from '../src/utils.js'
-import { STRING_SIZES } from '../src/constants.js'
+import { COLORS, COLOR_PROPS } from '#main/colors.js'
+import { KEYFRAMES } from '#main/keyframes.js'
+import { QUERIES } from '#main/queries.js'
+import { RESET } from '#main/reset.js'
+import { UTILS } from '#main/utils.js'
+import { STRING_SIZES, STATES, PSEUDO } from '#main/constants.js'
 
 const HIERARCHY = {
   'Layout': {
@@ -147,12 +147,11 @@ const HIERARCHY = {
   'Transforms': {
     'backface-visibility': ['backface-visibility'],
     'perspective': ['perspective'],
+    'perspective-origin': ['perspective-origin'],
     'rotate': ['rotate'],
-    'scale': ['scale'],
     'transform': ['transform'],
     'transform-origin': ['transform-origin'],
-    'transform-style': ['transform-style'],
-    'translate': ['translate']
+    'transform-style': ['transform-style']
   },
   'Interactivity': {
     'accent-color': ['accent-color'],
@@ -228,13 +227,6 @@ function generateReference () {
   mdContents.push(`\`\`\`css\n${RESET.join('\n')}\n\`\`\``, '')
 
   //
-  // State prefixes.
-  //
-
-  mdContents.push('### States', '')
-  mdContents.push('Supported prefix states are `hover`, `focus`, `focus-visible` and `active`.', '')
-
-  //
   // Media queries.
   //
 
@@ -243,6 +235,17 @@ function generateReference () {
   for (const [prefix, query] of QUERIES) {
     mdContents.push(`\`\`\`css\n/* ${prefix} */\n${query}\n\`\`\``, '')
   }
+
+  //
+  // State prefixes.
+  //
+
+  mdContents.push('### Prefixes', '')
+
+  mdContents.push('Classes can be prefixed. The order is always `query:state:pseudo:class`.', '')
+  mdContents.push(`- Supported states: ${STATES.map(s => `\`${s}\``).join(', ')}.`)
+  mdContents.push(`- Supported pseudo elements: ${PSEUDO.map(s => `\`${s}\``).join(', ')}.`)
+  mdContents.push('')
 
   //
   // Keyframes.
