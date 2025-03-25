@@ -388,7 +388,7 @@ export const UTILS = new Map([
   // Effects - opacity
   ...gen(ii => [`opacity-${ii}`, `opacity: ${ii / 100}`], OPACITIES),
   // Effects - mix-blend-mode
-  ...gen(ii => [`mix-blend-${ii}`, `mix-blend-mode: ${ii}`], [...BLEND_MODES, 'plus-darker', 'plus-lighter']),
+  ...gen(ii => [`mix-blend-${ii}`, `mix-blend-mode: ${ii}`], BLEND_MODES),
   // Effects - background-blend-mode
   ...gen(ii => [`bg-blend-${ii}`, `background-blend-mode: ${ii}`], BLEND_MODES),
   // ---------------------------------------------------------------------------
@@ -467,9 +467,9 @@ export const UTILS = new Map([
   // Transitions & Animations - transition-delay
   ...gen(ii => [`delay-${ii}`, `transition-delay: ${ii}ms`], DURATIONS),
   // Transitions & Animations - animation
-  ['animate-expand', `{ animation: expand ${ANIM_TIME} ease-out }`],
-  ['animate-toast', `{ animation: toast ${ANIM_TIME} ease-out }`],
-  ['animate-fade', `{ animation: fade ${ANIM_TIME} ease-out }`],
+  ['animate-expand', `{ animation: expand ${ANIM_TIME} ease-in-out }`],
+  ['animate-toast', `{ animation: toast ${ANIM_TIME} ease-in-out }`],
+  ['animate-fade', `{ animation: fade ${ANIM_TIME} ease-in-out }`],
   // ---------------------------------------------------------------------------
   // Transforms - blackface-visibility
   ['blackface-visible', '{ backface-visibility: visible }'],

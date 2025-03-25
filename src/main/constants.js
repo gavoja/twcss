@@ -26,7 +26,7 @@ export const HUE_ROTATE_DEGREES = [0, 15, 30, 60, 90, 180]
 export const ROTATE_DEGREES = [0, 1, 2, 3, 6, 12, 45, 90, 180]
 export const STROKE_WIDTHS = [0, 1, 2]
 export const BLEND_MODES = ['normal', 'multiply', 'screen', 'overlay', 'darken', 'lighten', 'color-dodge', 'color-burn', 'hard-light', 'soft-light', 'difference', 'exclusion', 'hue', 'saturation', 'color', 'luminosity']
-export const ANIM_TIME = '150ms'
+export const ANIM_TIME = '250ms'
 
 // Compiler helpers.
 export const PSEUDO = ['before', 'after', 'placeholder', 'file', 'marker', 'selection', 'backdrop', 'first-letter', 'first-line']

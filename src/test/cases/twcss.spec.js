@@ -34,15 +34,15 @@ test('default', async ({ page }) => {
   await expect(emptyRules).toEqual([])
 
   // Create expected files if they don't exist.
-  if (!fs.existsSync('test/cases/expected-document.css') || !fs.existsSync('test/cases/expected-shadow.css')) {
-    fs.writeFileSync('test/cases/expected-document.css', actualCss.document)
-    fs.writeFileSync('test/cases/expected-shadow.css', actualCss.shadow)
+  if (!fs.existsSync('src/test/cases/expected-document.css') || !fs.existsSync('src/test/cases/expected-shadow.css')) {
+    fs.writeFileSync('src/test/cases/expected-document.css', actualCss.document)
+    fs.writeFileSync('src/test/cases/expected-shadow.css', actualCss.shadow)
   }
 
   // Get expected rules from files.
   const expectedCss = {
-    document: fs.readFileSync('test/cases/expected-document.css', 'utf8'),
-    shadow: fs.readFileSync('test/cases/expected-shadow.css', 'utf8')
+    document: fs.readFileSync('src/test/cases/expected-document.css', 'utf8'),
+    shadow: fs.readFileSync('src/test/cases/expected-shadow.css', 'utf8')
   }
 
   // Compare CSS.

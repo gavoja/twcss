@@ -77,13 +77,13 @@ function addCustomElement(name) {
 
 	customElements.define(name, CustomElement)
 	const el = document.createElement(name)
-	el.setAttribute('tw', 'block')
+	el.setAttribute('tw', 'block animate-fade')
 	document.body.appendChild(el)
 
 	return el
 }
 
-function addDivWithCustmClasses() {
+function addDivWithCustomClasses() {
 	extend({
 		classes: {
 			foo: '{ width: 50px; height: 50px }',
@@ -119,6 +119,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 	el.remove()
 
 	addDivWithPrefixedClasses()
-	addDivWithCustmClasses()
+	addDivWithCustomClasses()
 	addDivWithAllClasses()
 })
