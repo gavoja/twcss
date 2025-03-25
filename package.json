@@ -1,11 +1,19 @@
 {
   "name": "twcss",
   "version": "0.3.0",
-  "main": "src/twcss.js",
+  "main": "src/main/twcss.js",
   "author": "Michal Kochel",
   "license": "MIT",
   "type": "module",
   "description": "Fast minimalist utility-first CSS runtime inspired by Tailwind and Twind",
+  "keywords": [
+    "css",
+    "utility-first",
+    "tailwind",
+    "twind",
+    "tw-in-js",
+    "tailwind-in-js"
+  ],
   "imports": {
     "#main/*.js": "./src/main/*.js"
   },
