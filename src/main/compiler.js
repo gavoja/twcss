@@ -9,6 +9,7 @@ import { UTILS } from './utils.js'
 export const tw = { instances: new Map(), extend, parser: getParser() }
 
 function getParser() {
+  // biome-ignore format: It is easier to understand with extra indentation.
   return new RegExp([
     '(?<negative>-?)?', // Minus sign.
     `((?<mq>${[...QUERIES.keys()].map(mq => mq.replace(/(\.|\\|\+|\*|\?|\^|\$|\(|\)|\[|\]|\{|\})/g, '\\$1')).join('|')}):)?`, // Media or container query.
@@ -42,7 +43,6 @@ function createSheet() {
 
   return sheet
 }
-
 
 function addRule(instance, cls) {
   // Skip if empty or already present.
@@ -137,7 +137,6 @@ export function extend({ classes = {}, colors = {}, keyframes = {}, queries = {}
       })
     })
   })
-
 
   Object.entries(queries).forEach(([name, query]) => QUERIES.set(name, query))
   Object.entries(classes).forEach(([name, css]) => UTILS.set(name, css))

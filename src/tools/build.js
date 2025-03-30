@@ -1,22 +1,22 @@
 import { context } from 'esbuild'
 
-async function main () {
+async function main() {
   const ctxLib = await context({
-    entryPoints: ['src/main/twcss.js',],
+    entryPoints: ['src/main/twcss.js'],
     format: 'iife',
     bundle: true,
     minify: true,
     outdir: 'target',
-    sourcemap: false
+    sourcemap: false,
   })
 
   const ctxTest = await context({
     entryPoints: ['src/test/page/main.js', 'src/test/page/index.html'],
-    loader: {'.html': 'copy'},
+    loader: { '.html': 'copy' },
     format: 'iife',
     bundle: true,
     outdir: 'target',
-    sourcemap: 'inline'
+    sourcemap: 'inline',
   })
 
   await ctxLib.rebuild()

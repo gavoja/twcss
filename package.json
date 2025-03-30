@@ -20,7 +20,8 @@
   "scripts": {
     "start": "node ./src/tools/build.js",
     "test": "npx playwright test",
-    "lint": "npx @biomejs/biome lint",
+    "lint": "npx @biomejs/biome format",
+    "format": "npx @biomejs/biome format --write",
     "reference": "node ./src/tools/reference.js",
     "release": "dotenv release-it --"
   },

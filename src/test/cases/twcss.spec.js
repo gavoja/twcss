@@ -1,8 +1,7 @@
 import { expect, test } from '@playwright/test'
 import fs from 'node:fs'
 
-
-function getRules (index) {
+function getRules(index) {
   const sheet = [...window.tw.instances.values()][index].sheet
   const rules = [...sheet.rules].toReversed().map(r => r.cssText.replace(/{ +$/m, '{'))
   return rules
@@ -16,12 +15,12 @@ test('default', async ({ page }) => {
   // Get actual rules from the page.
   const actualRules = {
     document: await page.evaluate(getRules, 0),
-    shadow: await page.evaluate(getRules, 1)
+    shadow: await page.evaluate(getRules, 1),
   }
 
   const actualCss = {
     document: actualRules.document.join('\n'),
-    shadow: actualRules.shadow.join('\n')
+    shadow: actualRules.shadow.join('\n'),
   }
 
   // Make sure there are no empty rules.
@@ -42,7 +41,7 @@ test('default', async ({ page }) => {
   // Get expected rules from files.
   const expectedCss = {
     document: fs.readFileSync('src/test/cases/expected-document.css', 'utf8'),
-    shadow: fs.readFileSync('src/test/cases/expected-shadow.css', 'utf8')
+    shadow: fs.readFileSync('src/test/cases/expected-shadow.css', 'utf8'),
   }
 
   // Compare CSS.

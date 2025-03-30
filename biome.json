@@ -12,7 +12,15 @@
       "semicolons": "asNeeded",
       "quoteStyle": "single",
       "arrowParentheses": "asNeeded",
-      "lineWidth": 240
+      "lineWidth": 240,
+      "indentStyle": "space",
+      "lineEnding": "lf"
+    }
+  },
+  "json": {
+    "formatter": {
+      "indentStyle": "space",
+      "lineEnding": "lf"
     }
   },
   "files": {
