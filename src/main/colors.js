@@ -1,7 +1,7 @@
 export const COLOR_PROPS = new Map([
+  ['bg', 'background-color'],
   ['text', 'color'],
   ['decoration', 'text-decoration-color'],
-  ['bg', 'background-color'],
   ['border', 'border-color'],
   ['outline', 'outline-color'],
   ['accent', 'accent-color'],
