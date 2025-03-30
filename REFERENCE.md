@@ -3631,14 +3631,6 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 .mix-blend-luminosity { mix-blend-mode: luminosity }
 ```
 
-```css
-.mix-blend-plus-darker { mix-blend-mode: plus-darker }
-```
-
-```css
-.mix-blend-plus-lighter { mix-blend-mode: plus-lighter }
-```
-
 ### background-blend-mode
 
 ```css
@@ -4212,42 +4204,42 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```css
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-duration: 150ms 
+  transition-duration: 250ms 
 }
 ```
 
 ```css
 .transition-all {
   transition-property: all;
-  transition-duration: 150ms 
+  transition-duration: 250ms 
 }
 ```
 
 ```css
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-duration: 150ms 
+  transition-duration: 250ms 
 }
 ```
 
 ```css
 .transition-opacity {
   transition-property: opacity;
-  transition-duration: 150ms 
+  transition-duration: 250ms 
 }
 ```
 
 ```css
 .transition-shadow {
   transition-property: box-shadow;
-  transition-duration: 150ms 
+  transition-duration: 250ms 
 }
 ```
 
 ```css
 .transition-transform {
   transition-property: transform;
-  transition-duration: 150ms 
+  transition-duration: 250ms 
 }
 ```
 
@@ -4270,42 +4262,42 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```css
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-duration: 150ms 
+  transition-duration: 250ms 
 }
 ```
 
 ```css
 .transition-all {
   transition-property: all;
-  transition-duration: 150ms 
+  transition-duration: 250ms 
 }
 ```
 
 ```css
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-duration: 150ms 
+  transition-duration: 250ms 
 }
 ```
 
 ```css
 .transition-opacity {
   transition-property: opacity;
-  transition-duration: 150ms 
+  transition-duration: 250ms 
 }
 ```
 
 ```css
 .transition-shadow {
   transition-property: box-shadow;
-  transition-duration: 150ms 
+  transition-duration: 250ms 
 }
 ```
 
 ```css
 .transition-transform {
   transition-property: transform;
-  transition-duration: 150ms 
+  transition-duration: 250ms 
 }
 ```
 
@@ -4370,15 +4362,15 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### animation
 
 ```css
-.animate-expand { animation: expand 150ms ease-out }
+.animate-expand { animation: expand 250ms ease-in-out }
 ```
 
 ```css
-.animate-toast { animation: toast 150ms ease-out }
+.animate-toast { animation: toast 250ms ease-in-out }
 ```
 
 ```css
-.animate-fade { animation: fade 150ms ease-out }
+.animate-fade { animation: fade 250ms ease-in-out }
 ```
 
 ## Transforms

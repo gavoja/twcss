@@ -71,10 +71,12 @@ TWCSS aims at compatibility with Tailwind 4. This is not always possible without
 
 ### Changes
 
-- Default media queries are `sm`, `md` and `lg` only. Feel free to extend them.
+- Default media queries are `sm`, `md` and `lg`. Feel free to extend them.
 - Default animations serve the following use cases:
   - `expand` for showing menus and opening accordions,
   - `toast` for popping a notification up from the bottom,
   - `fade` for adding elements to the page in a visually pleasing manner.
 - Most transforms use predefined values just like in Tailwind 3.
-- Background gradient rules (`bg-linear-*`, `bg-conic-*`, `from-`, `via-` and `to-`) are not supported. Use `bg-[]` instead.
+- Custom shadow rules are currently not supported, i.e. `inset-shadow-*`, `ring-*` and `inset-ring-*`.
+- Shadow color is currently not supported; shadows are always black.
+- Background gradient rules (`bg-linear-*`, `bg-conic-*`, `from-`, `via-` and `to-`) are currently not supported. Use `bg-[]` instead.
