@@ -24,12 +24,6 @@
     }
   },
   "files": {
-    "include": [
-      "src/**/*.js",
-      "tools/**/*.js",
-      "test/**/*.js",
-      "test/**/*.html",
-      "*.md"
-    ]
+    "include": ["src/**/*.js", "src/**/*.html", "*.md"]
   }
 }
