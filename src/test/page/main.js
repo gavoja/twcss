@@ -4,9 +4,14 @@ import { QUERIES } from '#main/queries.js'
 import { STATES, STRING_SIZES } from '#main/constants.js'
 
 function addTestDiv() {
+  const innerDiv = document.createElement('div')
+  innerDiv.setAttribute('tw', 'bg-violet-200 p-4 rounded-md w-[100px] h-[100px] border-2')
+  innerDiv.textContent = 'Inner DIV'
+
   const div = document.createElement('div')
-  div.setAttribute('tw', 'bg-violet-300 p-4 rounded-md w-[100px] h-[100px]')
-  div.textContent = 'Test DIV'
+  div.setAttribute('tw', 'bg-violet-300 p-4 rounded-md w-[200px] h-[200px]')
+  div.appendChild(innerDiv)
+
   document.body.appendChild(div)
   div.setAttribute('tw', `${div.getAttribute('tw')} border-2`)
 }

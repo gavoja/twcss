@@ -171,8 +171,15 @@ export function init(root) {
         }
 
         for (const node of m.addedNodes) {
+          console.log(node)
           if (node.nodeType === 1) {
+            // Process current node.
             processElement(instance, node)
+
+            // Process all children.
+            node.querySelectorAll('[tw]').forEach(el => {
+              processElement(instance, el)
+            })
 
             // Initialize new shadow root.
             if (node.shadowRoot) {
