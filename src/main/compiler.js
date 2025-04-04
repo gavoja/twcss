@@ -171,7 +171,6 @@ export function init(root) {
         }
 
         for (const node of m.addedNodes) {
-          console.log(node)
           if (node.nodeType === 1) {
             // Process current node.
             node.hasAttribute('tw') && processElement(instance, node)
