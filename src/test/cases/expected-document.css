@@ -387,9 +387,12 @@ ul, ol { list-style: none; }
 .block { display: block; }
 .bg-violet-300 { background-color: oklch(0.811 0.111 293.571); }
 .rounded-md { border-radius: 6px; }
+.w-\[200px\] { width: 200px; }
+.h-\[200px\] { height: 200px; }
+.border-2 { border-width: 2px; }
+.bg-violet-200 { background-color: oklch(0.894 0.057 293.283); }
 .w-\[100px\] { width: 100px; }
 .h-\[100px\] { height: 100px; }
-.border-2 { border-width: 2px; }
 .animate-fade { animation: 250ms ease-in-out 0s 1 normal none running fade; }
 .m-\[30px\] { margin: 30px; }
 .foo { width: 50px; height: 50px; }
@@ -10773,7 +10776,6 @@ ul, ol { list-style: none; }
 .bg-violet-100\/90 { background-color: oklch(0.943 0.029 294.588 / 0.9); }
 .bg-violet-100\/95 { background-color: oklch(0.943 0.029 294.588 / 0.95); }
 .bg-violet-100\/100 { background-color: oklch(0.943 0.029 294.588); }
-.bg-violet-200 { background-color: oklch(0.894 0.057 293.283); }
 .bg-violet-200\/0 { background-color: oklch(0.894 0.057 293.283 / 0); }
 .bg-violet-200\/5 { background-color: oklch(0.894 0.057 293.283 / 0.05); }
 .bg-violet-200\/10 { background-color: oklch(0.894 0.057 293.283 / 0.1); }
