@@ -284,6 +284,7 @@
 .appearance-none { appearance: none; }
 .perspective-none { perspective: none; }
 .blackface-hidden { backface-visibility: hidden; }
+.animate-none { animation: auto ease 0s 1 normal none running none; }
 .transition-none { transition-property: none; }
 .backdrop-filter-none { backdrop-filter: none; }
 .filter-none { filter: none; }

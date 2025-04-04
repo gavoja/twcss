@@ -489,6 +489,7 @@ export const UTILS = new Map([
   ['animate-expand', `{ animation: expand ${ANIM_TIME} ease-in-out }`],
   ['animate-toast', `{ animation: toast ${ANIM_TIME} ease-in-out }`],
   ['animate-fade', `{ animation: fade ${ANIM_TIME} ease-in-out }`],
+  ['animate-none', '{ animation: none }'],
   // ---------------------------------------------------------------------------
   // Transforms - blackface-visibility
   ['blackface-visible', '{ backface-visibility: visible }'],
