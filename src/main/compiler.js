@@ -174,7 +174,7 @@ export function init(root) {
           console.log(node)
           if (node.nodeType === 1) {
             // Process current node.
-            processElement(instance, node)
+            node.hasAttribute('tw') && processElement(instance, node)
 
             // Process all children.
             node.querySelectorAll('[tw]').forEach(el => {
@@ -215,9 +215,7 @@ export function init(root) {
       init(el.shadowRoot)
     }
 
-    if (el.hasAttribute('tw')) {
-      processElement(instance, el)
-    }
+    el.hasAttribute('tw') && processElement(instance, el)
   }
 
   // Start observing the root.
