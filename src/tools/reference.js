@@ -12,35 +12,45 @@ import { UTILS } from '#main/utils.js'
 import { STRING_SIZES, STATES, PSEUDO } from '#main/constants.js'
 
 const HIERARCHY = {
-  Layout: {
+  'Layout': {
     'aspect-ratio': ['aspect-ratio'],
-    columns: ['columns'],
+    'columns': ['columns'],
     'break-after': ['break-after'],
     'break-before': ['break-after'],
     'break-inside': ['break-after'],
     'box-decoration-break': ['box-decoration-break'],
     'box-sizing': ['box-sizing'],
-    display: ['display'],
-    float: ['float'],
-    clear: ['clear'],
-    isolation: ['isolation'],
+    'display': ['display'],
+    'float': ['float'],
+    'clear': ['clear'],
+    'isolation': ['isolation'],
     'object-fit': ['object-fit'],
     'object-position': ['object-position'],
-    overflow: ['overflow', 'overflow-x', 'overflow-y'],
+    'overflow': ['overflow', 'overflow-x', 'overflow-y'],
     'overscroll-behavior': ['overscroll-behavior', 'overscroll-behavior-x', 'overscroll-behavior-y'],
-    position: ['position'],
-    'top / right / bottom / left': ['inset', 'inset-inline', 'inset-block', 'inset-inline-start', 'inset-inline-end', 'top', 'right', 'bottom', 'left'],
-    visibility: ['visibility'],
+    'position': ['position'],
+    'top / right / bottom / left': [
+      'inset',
+      'inset-inline',
+      'inset-block',
+      'inset-inline-start',
+      'inset-inline-end',
+      'top',
+      'right',
+      'bottom',
+      'left',
+    ],
+    'visibility': ['visibility'],
     'z-index': ['z-index'],
   },
   'Flexbox & Grid': {
     'flex-basis': ['flex-basis'],
     'flex-direction': ['flex-direction'],
     'flex-wrap': ['flex-wrap'],
-    flex: ['flex'],
+    'flex': ['flex'],
     'flex-grow': ['flex-grow'],
     'flex-shrink': ['flex-shrink'],
-    order: ['order'],
+    'order': ['order'],
     'grid-template-columns': ['grid-template-columns'],
     'grid-column': ['grid-column', 'grid-column-start', 'grid-column-end'],
     'grid-template-rows': ['grid-template-rows'],
@@ -48,7 +58,7 @@ const HIERARCHY = {
     'grid-auto-flow': ['grid-auto-flow'],
     'grid-auto-columns': ['grid-auto-columns'],
     'grid-auto-rows': ['grid-auto-rows'],
-    gap: ['gap', 'row-gap', 'column-gap'],
+    'gap': ['gap', 'row-gap', 'column-gap'],
     'justify-content': ['justify-content'],
     'justify-items': ['justify-items'],
     'justify-self': ['justify-self'],
@@ -59,19 +69,39 @@ const HIERARCHY = {
     'place-items': ['place-items'],
     'place-self': ['place-self'],
   },
-  Spacing: {
-    padding: ['padding', 'padding-inline', 'padding-block', 'padding-inline-start', 'padding-inline-end', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left'],
-    margin: ['margin', 'margin-inline', 'margin-block', 'margin-inline-start', 'margin-inline-end', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left'],
+  'Spacing': {
+    'padding': [
+      'padding',
+      'padding-inline',
+      'padding-block',
+      'padding-inline-start',
+      'padding-inline-end',
+      'padding-top',
+      'padding-right',
+      'padding-bottom',
+      'padding-left',
+    ],
+    'margin': [
+      'margin',
+      'margin-inline',
+      'margin-block',
+      'margin-inline-start',
+      'margin-inline-end',
+      'margin-top',
+      'margin-right',
+      'margin-bottom',
+      'margin-left',
+    ],
   },
-  Sizing: {
-    width: ['width'],
+  'Sizing': {
+    'width': ['width'],
     'min-width': ['min-width'],
     'max-width': ['max-width'],
-    height: ['height'],
+    'height': ['height'],
     'min-height': ['min-height'],
     'max-height': ['max-height'],
   },
-  Typography: {
+  'Typography': {
     'font-family': ['font-family'],
     'font-size': ['font-size'],
     'font-smoothing': ['-webkit-font-smoothing'],
@@ -86,7 +116,7 @@ const HIERARCHY = {
     'list-style-position': ['list-style-position'],
     'list-style-type': ['list-style-type'],
     'text-align': ['text-align'],
-    color: ['color'],
+    'color': ['color'],
     'text-decoration-line': ['text-decoration-line'],
     'text-decoration-color': ['text-decoration-color'],
     'text-decoration-style': ['text-decoration-style'],
@@ -98,10 +128,11 @@ const HIERARCHY = {
     'vertical-align': ['vertical-align'],
     'white-space': ['white-space'],
     'word-break': ['word-break'],
-    hyphens: ['hyphens'],
-    content: ['content'],
+    'overflow-wrap': ['overflow-wrap'],
+    'hyphens': ['hyphens'],
+    'content': ['content'],
   },
-  Backgrounds: {
+  'Backgrounds': {
     'background-attachment': ['background-attachment'],
     'background-clip': ['background-clip'],
     'background-color': ['background-color'],
@@ -111,9 +142,23 @@ const HIERARCHY = {
     'background-repeat': ['background-repeat'],
     'background-size': ['background-size'],
   },
-  Borders: {
-    'border-radius': ['border-radius', 'border-top-left-radius', 'border-top-right-radius', 'border-bottom-left-radius', 'border-bottom-right-radius'],
-    'border-width': ['border-width', 'border-top-width', 'border-right-width', 'border-bottom-width', 'border-left-width', 'border-inline-start-width', 'border-inline-end-width'],
+  'Borders': {
+    'border-radius': [
+      'border-radius',
+      'border-top-left-radius',
+      'border-top-right-radius',
+      'border-bottom-left-radius',
+      'border-bottom-right-radius',
+    ],
+    'border-width': [
+      'border-width',
+      'border-top-width',
+      'border-right-width',
+      'border-bottom-width',
+      'border-left-width',
+      'border-inline-start-width',
+      'border-inline-end-width',
+    ],
     'border-color': ['border-color'],
     'border-style': ['border-style'],
     'outline-width': ['outline-width'],
@@ -121,17 +166,18 @@ const HIERARCHY = {
     'outline-style': ['outline-style'],
     'outline-offset': ['outline-offset'],
   },
-  Effects: {
+  'Effects': {
     'box-shadow': ['box-shadow'],
-    opacity: ['opacity'],
+    'text-shadow': ['text-shadow'],
+    'opacity': ['opacity'],
     'mix-blend-mode': ['mix-blend-mode'],
     'background-blend-mode': ['background-blend-mode'],
   },
-  Filters: {
-    filter: ['filter'],
+  'Filters': {
+    'filter': ['filter'],
     'backdrop-filter': ['backdrop-filter'],
   },
-  Tables: {
+  'Tables': {
     'border-collapse': ['border-collapse'],
     'border-spacing': ['border-spacing'],
     'table-layout': ['table-layout'],
@@ -142,26 +188,26 @@ const HIERARCHY = {
     'transition-behavior': ['transition-behavior'],
     'transition-duration': ['transition-duration'],
     'transition-timing-function': ['transition-timing-function'],
-    animation: ['animation'],
+    'animation': ['animation'],
   },
-  Transforms: {
+  'Transforms': {
     'backface-visibility': ['backface-visibility'],
-    perspective: ['perspective'],
+    'perspective': ['perspective'],
     'perspective-origin': ['perspective-origin'],
-    rotate: ['rotate'],
-    transform: ['transform'],
+    'rotate': ['rotate'],
+    'transform': ['transform'],
     'transform-origin': ['transform-origin'],
     'transform-style': ['transform-style'],
   },
-  Interactivity: {
+  'Interactivity': {
     'accent-color': ['accent-color'],
-    appearance: ['appearance'],
+    'appearance': ['appearance'],
     'caret-color': ['caret-color'],
     'color-scheme': ['color-scheme'],
-    cursor: ['cursor'],
+    'cursor': ['cursor'],
     'field-sizing': ['field-sizing'],
     'pointer-events': ['pointer-events'],
-    resize: ['resize'],
+    'resize': ['resize'],
     'scroll-behavior': ['scroll-behavior'],
     'scroll-margin': ['scroll-margin'],
     'scroll-padding': ['scroll-padding'],
@@ -172,12 +218,12 @@ const HIERARCHY = {
     'user-select': ['user-select'],
     'will-change': ['will-change'],
   },
-  SVG: {
-    fill: ['fill'],
-    stroke: ['stroke'],
+  'SVG': {
+    'fill': ['fill'],
+    'stroke': ['stroke'],
     'stroke-width': ['stroke-width'],
   },
-  Accessibility: {
+  'Accessibility': {
     'forced-color-adjust': ['forced-color-adjust'],
   },
 }
@@ -261,7 +307,10 @@ function generateReference() {
   //
 
   mdContents.push('### Colors', '')
-  mdContents.push('In addition to the colors below, `black`, `white`, `transparent`, `current` and `inherit` are also supported.', '')
+  mdContents.push(
+    'In addition to the colors below, `black`, `white`, `transparent`, `current` and `inherit` are also supported.',
+    '',
+  )
   mdContents.push('|   | 50|100|200|300|400|500|600|700|800|900|950|')
   mdContents.push('|---|---|---|---|---|---|---|---|---|---|---|---|')
 

@@ -5,7 +5,17 @@ export const OPACITIES = [0, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95, 
 export const DURATIONS = [75, 100, 150, 200, 300, 500, 700, 1000]
 export const SCALES = [0, 50, 75, 90, 95, 100, 105, 110, 125, 150]
 export const SKEWS = [0, 1, 2, 3, 6, 12]
-export const ORIGINS = ['center', 'top', 'top-right', 'right', 'bottom-right', 'bottom', 'bottom-left', 'left', 'top-left']
+export const ORIGINS = [
+  'center',
+  'top',
+  'top-right',
+  'right',
+  'bottom-right',
+  'bottom',
+  'bottom-left',
+  'left',
+  'top-left',
+]
 export const RADII = [
   ['-xs', '2px'],
   ['-sm', '4px'],
@@ -25,12 +35,88 @@ export const SATURATE_LEVELS = [0, 50, 75, 100, 150, 200]
 export const HUE_ROTATE_DEGREES = [0, 15, 30, 60, 90, 180]
 export const ROTATE_DEGREES = [0, 1, 2, 3, 6, 12, 45, 90, 180]
 export const STROKE_WIDTHS = [0, 1, 2]
-export const BLEND_MODES = ['normal', 'multiply', 'screen', 'overlay', 'darken', 'lighten', 'color-dodge', 'color-burn', 'hard-light', 'soft-light', 'difference', 'exclusion', 'hue', 'saturation', 'color', 'luminosity']
+export const BLEND_MODES = [
+  'normal',
+  'multiply',
+  'screen',
+  'overlay',
+  'darken',
+  'lighten',
+  'color-dodge',
+  'color-burn',
+  'hard-light',
+  'soft-light',
+  'difference',
+  'exclusion',
+  'hue',
+  'saturation',
+  'color',
+  'luminosity',
+]
 export const ANIM_TIME = '250ms'
 
 // Compiler helpers.
-export const PSEUDO = ['before', 'after', 'placeholder', 'file', 'marker', 'selection', 'backdrop', 'first-letter', 'first-line']
-export const STATES = ['hover', 'focus', 'focus-visible', 'active']
+export const PSEUDO = [
+  'after',
+  'backdrop',
+  'before',
+  'cue',
+  'details-content',
+  'file-selector-button',
+  'first-letter',
+  'first-line',
+  'grammar-error',
+  'marker',
+  'placeholder',
+  'selection',
+  'spelling-error',
+  'target-text',
+]
+export const STATES = [
+  'active',
+  'any-link',
+  'checked',
+  'default',
+  'defined',
+  'disabled',
+  'empty',
+  'enabled',
+  'first-child',
+  'first-of-type',
+  'focus',
+  'focus-visible',
+  'focus-within',
+  'fullscreen',
+  'future',
+  'host',
+  'hover',
+  'in-range',
+  'indeterminate',
+  'invalid',
+  'last-child',
+  'last-of-type',
+  'link',
+  'modal',
+  'only-child',
+  'only-of-type',
+  'open',
+  'optional',
+  'out-of-range',
+  'past',
+  'picture-in-picture',
+  'placeholder-shown',
+  'popover-open',
+  'read-only',
+  'read-write',
+  'required',
+  'root',
+  'scope',
+  'target',
+  'user-invalid',
+  'user-valid',
+  'valid',
+  'visited',
+]
 export const HIGH_PRIORITY_RULES = ['col-start', 'row-start', 'hidden', '-none']
 export const STRING_SIZES = {
   auto: 'auto',

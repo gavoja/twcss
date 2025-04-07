@@ -102,12 +102,15 @@ function addDivWithCustomClasses() {
       spin: 'to { transform: rotate(360deg) }',
     },
     queries: {
-      print: '@media print',
+      xl: '@media screen and (min-width: 1280px)',
     },
   })
 
   const div = document.createElement('div')
-  div.setAttribute('tw', 'm-[30px] foo hide-last-child animate-spin bg-octarine/20 text-octarine print:bg-red-300 flex items-center justify-center')
+  div.setAttribute(
+    'tw',
+    'm-[30px] foo hide-last-child animate-spin bg-octarine/20 text-octarine xl:bg-red-300 flex items-center justify-center',
+  )
   div.textContent = 'Spin'
   document.body.appendChild(div)
 }

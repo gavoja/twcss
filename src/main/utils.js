@@ -28,13 +28,19 @@ export const UTILS = new Map([
   ['aspect-auto', '{ aspect-ratio: auto }'],
   ['aspect-square', '{ aspect-ratio: 1 / 1 }'],
   ['aspect-video', '{ aspect-ratio: 16 / 9 }'],
-  ['aspect', '{ aspect-ratio: $ }'],
+  ['aspect-', '{ aspect-ratio: $ }'],
   // Layout - columns
   ...gen(ii => [`columns-${ii}`, `columns: ${ii}`], [...COLUMNS, 'auto']),
   // Layout - break-after
-  ...gen(ii => [`break-after-${ii}`, `break-after: ${ii}`], ['auto', 'avoid', 'avoid-page', 'page', 'left', 'right', 'column']),
+  ...gen(
+    ii => [`break-after-${ii}`, `break-after: ${ii}`],
+    ['auto', 'avoid', 'avoid-page', 'page', 'left', 'right', 'column'],
+  ),
   // Layout - break-before
-  ...gen(ii => [`break-before-${ii}`, `break-after: ${ii}`], ['auto', 'avoid', 'avoid-page', 'page', 'left', 'right', 'column']),
+  ...gen(
+    ii => [`break-before-${ii}`, `break-after: ${ii}`],
+    ['auto', 'avoid', 'avoid-page', 'page', 'left', 'right', 'column'],
+  ),
   // Layout - break-inside
   ...gen(ii => [`break-inside-${ii}`, `break-inside: ${ii}`], ['auto', 'avoid', 'avoid-page', 'avoid-column']),
   // Layout - box-decoration-break
@@ -42,10 +48,32 @@ export const UTILS = new Map([
   // Layout - box-sizing
   ...gen(ii => [`box-${ii}`, `box-sizing: ${ii}-box`], ['border', 'content']),
   // Layout - display
-  ...gen(ii => [`${ii}`, `display: ${ii}`], ['inline', 'block', 'inline-block', 'flow-root', 'flex', 'inline-flex', 'grid', 'inline-grid', 'contents', 'table', 'inline-table', 'list-item']),
+  ...gen(
+    ii => [`${ii}`, `display: ${ii}`],
+    [
+      'inline',
+      'block',
+      'inline-block',
+      'flow-root',
+      'flex',
+      'inline-flex',
+      'grid',
+      'inline-grid',
+      'contents',
+      'table',
+      'inline-table',
+      'list-item',
+    ],
+  ),
   ['hidden', '{ display: none }'],
-  ['sr-only', '{ position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0 }'],
-  ['not-sr-only', '{ position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; clip: auto; white-space: normal }'],
+  [
+    'sr-only',
+    '{ position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0 }',
+  ],
+  [
+    'not-sr-only',
+    '{ position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; clip: auto; white-space: normal }',
+  ],
   // Layout - float
   ...gen(ii => [`float-${ii}`, `float: inline-${ii}`], ['start', 'end']),
   ...gen(ii => [`float-${ii}`, `float: ${ii}`], ['left', 'right', 'none']),
@@ -58,7 +86,10 @@ export const UTILS = new Map([
   // Layout - object-fit
   ...gen(ii => [`object-${ii}`, `object-fit: ${ii}`], ['contain', 'cover', 'fill', 'none', 'scale-down']),
   // Layout - object-position
-  ...gen(ii => [`object-${ii.replace(/ /g, '-')}`, `object-position: ${ii}`], ['bottom', 'center', 'left', 'left bottom', 'left top', 'right', 'right bottom', 'right top', 'top']),
+  ...gen(
+    ii => [`object-${ii.replace(/ /g, '-')}`, `object-position: ${ii}`],
+    ['bottom', 'center', 'left', 'left bottom', 'left top', 'right', 'right bottom', 'right top', 'top'],
+  ),
   // Layout - overflow
   ...gen(ii => [`overflow-${ii}`, `overflow: ${ii}`], ['auto', 'hidden', 'clip', 'visible', 'scroll', 'visible']),
   ...gen(ii => [`overflow-x-${ii}`, `overflow-x: ${ii}`], ['auto', 'hidden', 'clip', 'visible', 'scroll', 'visible']),
@@ -70,15 +101,15 @@ export const UTILS = new Map([
   // Layout - position
   ...gen(ii => [`${ii}`, `position: ${ii}`], ['static', 'fixed', 'absolute', 'relative', 'sticky']),
   // Layout - top / right / bottom / left
-  ['inset', '{ inset: $ }'],
-  ['inset-x', '{ inset-inline: $ }'],
-  ['inset-y', '{ inset-block: $ }'],
-  ['start', '{ inset-inline-start: $ }'],
-  ['end', '{ inset-inline-end: $ }'],
-  ['top', '{ top: $ }'],
-  ['right', '{ right: $ }'],
-  ['bottom', '{ bottom: $ }'],
-  ['left', '{ left: $ }'],
+  ['inset-', '{ inset: $ }'],
+  ['inset-x-', '{ inset-inline: $ }'],
+  ['inset-y-', '{ inset-block: $ }'],
+  ['start-', '{ inset-inline-start: $ }'],
+  ['end-', '{ inset-inline-end: $ }'],
+  ['top-', '{ top: $ }'],
+  ['right-', '{ right: $ }'],
+  ['bottom-', '{ bottom: $ }'],
+  ['left-', '{ left: $ }'],
   // Layout - visibility
   ['visible', '{ visibility: visible }'],
   ['invisible', '{ visibility: hidden }'],
@@ -87,7 +118,7 @@ export const UTILS = new Map([
   ...gen(ii => [`z-${ii}`, `z-index: ${ii}`], Z_INDEXES),
   // ---------------------------------------------------------------------------
   // Flexbox & Grid - flex-basis
-  ['basis', '{ flex-basis: $ }'],
+  ['basis-', '{ flex-basis: $ }'],
   // Flexbox & Grid - flex-direction
   ['flex-row', '{ flex-direction: row }'],
   ['flex-row-reverse', '{ flex-direction: row-reverse }'],
@@ -96,7 +127,7 @@ export const UTILS = new Map([
   // Flexbox & Grid - flex-wrap
   ...gen(ii => [`flex-${ii}`, `flex-wrap: ${ii}`], ['nowrap', 'wrap', 'wrap-reverse']),
   // Flexbox & Grid - flex
-  ['flex-1', '{ flex: 1 1 0% }'],
+  ['flex-', '{ flex: $ }'],
   ['flex-auto', '{ flex: 1 1 auto }'],
   ['flex-initial', '{ flex: 0 1 auto }'],
   ['flex-none', '{ flex: none }'],
@@ -146,9 +177,9 @@ export const UTILS = new Map([
   ['auto-rows-max', '{ grid-auto-rows: max-content }'],
   ['auto-rows-fr', '{ grid-auto-rows: minmax(0, 1fr) }'],
   // Flexbox & Grid - gap
-  ['gap', '{ gap: $ }'],
-  ['gap-x', '{ column-gap: $ }'],
-  ['gap-y', '{ row-gap: $ }'],
+  ['gap-', '{ gap: $ }'],
+  ['gap-x-', '{ column-gap: $ }'],
+  ['gap-y-', '{ row-gap: $ }'],
   // Flexbox & Grid - justify-content
   ['justify-start', '{ justify-content: flex-start }'],
   ['justify-end', '{ justify-content: flex-end }'],
@@ -175,8 +206,11 @@ export const UTILS = new Map([
   // Flexbox & Grid - align-items
   ['items-start', '{ align-items: flex-start }'],
   ['items-end', '{ align-items: flex-end }'],
+  ['items-end-safe', '{ align-items: safe flex-end }'],
   ['items-center', '{ align-items: center }'],
+  ['items-center-safe', '{ align-items: safe center }'],
   ['items-baseline', '{ align-items: baseline }'],
+  ['items-baseline-last', '{ align-items: last baseline }'],
   ['items-stretch', '{ align-items: stretch }'],
   // Flexbox & Grid - align-self
   ['self-auto', '{ align-self: auto }'],
@@ -200,44 +234,50 @@ export const UTILS = new Map([
   ...gen(ii => [`place-self-${ii}`, `place-self: ${ii}`], ['auto', 'start', 'end', 'center', 'stretch']),
   // ---------------------------------------------------------------------------
   // Spacing - padding
-  ['p', '{ padding: $ }'],
-  ['px', '{ padding-inline: $ }'],
-  ['py', '{ padding-block: $ }'],
-  ['pt', '{ padding-top: $ }'],
-  ['pr', '{ padding-right: $ }'],
-  ['pb', '{ padding-bottom: $ }'],
-  ['pl', '{ padding-left: $ }'],
-  ['ps', '{ padding-inline-start: $ }'],
-  ['pe', '{ padding-inline-end: $ }'],
+  ['p-', '{ padding: $ }'],
+  ['px-', '{ padding-inline: $ }'],
+  ['py-', '{ padding-block: $ }'],
+  ['pt-', '{ padding-top: $ }'],
+  ['pr-', '{ padding-right: $ }'],
+  ['pb-', '{ padding-bottom: $ }'],
+  ['pl-', '{ padding-left: $ }'],
+  ['ps-', '{ padding-inline-start: $ }'],
+  ['pe-', '{ padding-inline-end: $ }'],
   // Spacing - margin
-  ['m', '{ margin: $ }'],
-  ['mx', '{ margin-inline: $ }'],
-  ['my', '{ margin-block: $ }'],
-  ['mt', '{ margin-top: $ }'],
-  ['mr', '{ margin-right: $ }'],
-  ['mb', '{ margin-bottom: $ }'],
-  ['ml', '{ margin-left: $ }'],
-  ['ms', '{ margin-inline-start: $ }'],
-  ['me', '{ margin-inline-end: $ }'],
-  ['space-x', ' > :not(:last-child) { margin-inline-end: $ }'],
-  ['space-y', ' > :not(:last-child) { margin-bottom: $ }'],
+  ['m-', '{ margin: $ }'],
+  ['mx-', '{ margin-inline: $ }'],
+  ['my-', '{ margin-block: $ }'],
+  ['mt-', '{ margin-top: $ }'],
+  ['mr-', '{ margin-right: $ }'],
+  ['mb-', '{ margin-bottom: $ }'],
+  ['ml-', '{ margin-left: $ }'],
+  ['ms-', '{ margin-inline-start: $ }'],
+  ['me-', '{ margin-inline-end: $ }'],
+  ['space-x-', ' > :not(:last-child) { margin-inline-end: $ }'],
+  ['space-y-', ' > :not(:last-child) { margin-bottom: $ }'],
   // Sizing - width
-  ['w', '{ width: $ }'],
+  ['w-', '{ width: $ }'],
   // Sizing - min-width
-  ['min-w', '{ min-width: $ }'],
+  ['min-w-', '{ min-width: $ }'],
   // Sizing - max-width
-  ['max-w', '{ max-width: $ }'],
+  ['max-w-', '{ max-width: $ }'],
   // Sizing - height
-  ['h', '{ height: $ }'],
+  ['h-', '{ height: $ }'],
   // Sizing - min-height
-  ['min-h', '{ min-height: $ }'],
+  ['min-h-', '{ min-height: $ }'],
   // Sizing - max-height
-  ['max-h', '{ max-height: $ }'],
+  ['max-h-', '{ max-height: $ }'],
   // ---------------------------------------------------------------------------
   // Typography - font-family
-  ['font-sans', '{ font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" }'],
+  [
+    'font-sans',
+    '{ font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" }',
+  ],
   ['font-serif', '{ font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif }'],
-  ['font-mono', '{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace }'],
+  [
+    'font-mono',
+    '{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace }',
+  ],
   // Typography - font-size
   ['text-xs', '{ font-size: 12px; line-height: 1.333 }'],
   ['text-sm', '{ font-size: 14px; line-height: 1.429 }'],
@@ -269,10 +309,35 @@ export const UTILS = new Map([
   ['font-extrabold', '{ font-weight: 800 }'],
   ['font-black', '{ font-weight: 900 }'],
   // Tpyography - font-stretch
-  ...gen(ii => [`font-stretch-${ii}`, `font-stretch: ${ii}`], ['ultra-condensed', 'extra-condensed', 'condensed', 'semi-condensed', 'normal', 'semi-expanded', 'expanded', 'extra-expanded', 'ultra-expanded']),
+  ...gen(
+    ii => [`font-stretch-${ii}`, `font-stretch: ${ii}`],
+    [
+      'ultra-condensed',
+      'extra-condensed',
+      'condensed',
+      'semi-condensed',
+      'normal',
+      'semi-expanded',
+      'expanded',
+      'extra-expanded',
+      'ultra-expanded',
+    ],
+  ),
   // Typography - font-variant-numeric
   ['normal-nums', '{ font-variant-numeric: normal }'],
-  ...gen(ii => [ii, `font-variant-numeric: ${ii}`], ['ordinal', 'slashed-zero', 'lining-nums', 'oldstyle-nums', 'proportional-nums', 'tabular-nums', 'diagonal-fractions', 'stacked-fractions']),
+  ...gen(
+    ii => [ii, `font-variant-numeric: ${ii}`],
+    [
+      'ordinal',
+      'slashed-zero',
+      'lining-nums',
+      'oldstyle-nums',
+      'proportional-nums',
+      'tabular-nums',
+      'diagonal-fractions',
+      'stacked-fractions',
+    ],
+  ),
   // Typography - letter-spacing
   ['tracking-tighter', '{ letter-spacing: -0.05em }'],
   ['tracking-tight', '{ letter-spacing: -0.025em }'],
@@ -281,7 +346,13 @@ export const UTILS = new Map([
   ['tracking-wider', '{ letter-spacing: 0.05em }'],
   ['tracking-widest', '{ letter-spacing: 0.1em }'],
   // Typography - line-clamp
-  ...gen(ii => [`line-clamp-${ii}`, `overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: ${ii}`], LINE_CLAMPS),
+  ...gen(
+    ii => [
+      `line-clamp-${ii}`,
+      `overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: ${ii}`,
+    ],
+    LINE_CLAMPS,
+  ),
   // Typography - line-height
   ['leading-none', '{ line-height: 1 }'],
   ['leading-tight', '{ line-height: 1.25 }'],
@@ -326,19 +397,25 @@ export const UTILS = new Map([
   // Typography - text-indent
   ['indent', '{ text-indent: $ }'],
   // Typography - vertical-align
-  ...gen(ii => [`align-${ii}`, `vertical-align: ${ii}`], ['baseline', 'top', 'middle', 'bottom', 'text-top', 'text-bottom', 'sub', 'super']),
+  ...gen(
+    ii => [`align-${ii}`, `vertical-align: ${ii}`],
+    ['baseline', 'top', 'middle', 'bottom', 'text-top', 'text-bottom', 'sub', 'super'],
+  ),
   // Typography - white-space
-  ...gen(ii => [`whitespace-${ii}`, `white-space: ${ii}`], ['normal', 'nowrap', 'pre', 'pre-line', 'pre-wrap', 'break-spaces']),
+  ...gen(
+    ii => [`whitespace-${ii}`, `white-space: ${ii}`],
+    ['normal', 'nowrap', 'pre', 'pre-line', 'pre-wrap', 'break-spaces'],
+  ),
   // Typography - word-break
-  ['break-normal', '{ overflow-wrap: normal; word-break: normal }'],
-  ['break-words', '{ overflow-wrap: break-word }'],
+  ['break-normal', '{ word-break: normal }'],
   ['break-all', '{ word-break: break-all }'],
   ['break-keep', '{ word-break: keep-all }'],
+  // Typography - overflow-wrap
+  ...gen(ii => [`wrap-${ii}`, `overflow-wrap: ${ii}`], ['break-word', 'anywhere', 'normal']),
   // Typography - hyphens
   ...gen(ii => [`hyphens-${ii}`, `hyphens: ${ii}`], ['none', 'manual', 'auto']),
   // Typography - content
-  ['content', '{ content: $ }'],
-  ['content', '{ content: $ }'],
+  ['content-', '{ content: $ }'],
   // ---------------------------------------------------------------------------
   // Backgrounds - background-attachment
   ...gen(ii => [`bg-${ii}`, `background-attachment: ${ii}`], ['fixed', 'local', 'scroll']),
@@ -348,14 +425,20 @@ export const UTILS = new Map([
   // Backgrounds - background-color'
   ...genc('bg', 'background-color'),
   // Backgrounds - background-image
-  ['bg', '{ background-image: $ }'],
+  ['bg-', '{ background-image: $ }'],
   ['bg-none', '{ background-image: none }'],
   // Backgrounds - background-origin
   ...gen(ii => [`bg-${ii}`, `background-origin: ${ii}`], ['border-box', 'padding-box', 'content-box']),
   // Backgrounds - background-position
-  ...gen(ii => [`bg-${ii.replace(' ', '-')}`, `background-position: ${ii}`], ['bottom', 'center', 'left', 'left bottom', 'left top', 'right', 'right bottom', 'right top', 'top']),
+  ...gen(
+    ii => [`bg-${ii.replace(' ', '-')}`, `background-position: ${ii}`],
+    ['bottom', 'center', 'left', 'left bottom', 'left top', 'right', 'right bottom', 'right top', 'top'],
+  ),
   // Backgrounds - background-repeat
-  ...gen(ii => [`bg-${ii}`, `background-repeat: ${ii}`], ['repeat', 'repeat-x', 'repeat-y', 'space', 'round', 'no-repeat']),
+  ...gen(
+    ii => [`bg-${ii}`, `background-repeat: ${ii}`],
+    ['repeat', 'repeat-x', 'repeat-y', 'space', 'round', 'no-repeat'],
+  ),
   // Backgrounds - background-size
   ...gen(ii => [`bg-${ii}`, `background-size: ${ii}`], ['auto', 'cover', 'contain']),
   // // ---------------------------------------------------------------------------
@@ -404,6 +487,22 @@ export const UTILS = new Map([
   ['shadow-xl', '{ box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) }'],
   ['shadow-2xl', '{ box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25) }'],
   ['shadow-none', '{ box-shadow: 0 0 rgb(0 0 0 / 0) }'],
+  // Effects - text-shadow
+  ['text-shadow-2xs', '{ text-shadow: 0px 1px 0px rgb(0 0 0 / 0.15) }'],
+  ['text-shadow-xs', '{ text-shadow: 0px 1px 1px rgb(0 0 0 / 0.2) }'],
+  [
+    'text-shadow-sm',
+    '{ text-shadow: 0px 1px 0px rgb(0 0 0 / 0.075), 0px 1px 1px rgb(0 0 0 / 0.075), 0px 2px 2px rgb(0 0 0 / 0.075) }',
+  ],
+  [
+    'text-shadow-md',
+    '{ text-shadow: 0px 1px 1px rgb(0 0 0 / 0.1), 0px 1px 2px rgb(0 0 0 / 0.1), 0px 2px 4px rgb(0 0 0 / 0.1) }',
+  ],
+  [
+    'text-shadow-lg',
+    '{ text-shadow: 0px 1px 2px rgb(0 0 0 / 0.1), 0px 3px 2px rgb(0 0 0 / 0.1), 0px 4px 8px rgb(0 0 0 / 0.1) }',
+  ],
+  ['text-shadow-none', '{ text-shadow: none }'],
   // Effects - opacity
   ...gen(ii => [`opacity-${ii}`, `opacity: ${ii / 100}`], OPACITIES),
   // Effects - mix-blend-mode
@@ -455,7 +554,7 @@ export const UTILS = new Map([
   ['border-collapse', '{ border-collapse: collapse }'],
   ['border-separate', '{ border-collapse: separate }'],
   // Tables - border-spacing
-  ['border-spacing', '{ border-spacing: $ }'],
+  ['border-spacing-', '{ border-spacing: $ }'],
   // Tables - table-layout
   ['table-auto', '{ table-layout: auto }'],
   ['table-fixed', '{ table-layout: fixed }'],
@@ -464,9 +563,15 @@ export const UTILS = new Map([
   ['caption-bottom', '{ caption-side: bottom }'],
   // ---------------------------------------------------------------------------
   // Transitions & Animations - transition-property
-  ['transition', `{ transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-duration: ${ANIM_TIME} }`],
+  [
+    'transition',
+    `{ transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-duration: ${ANIM_TIME} }`,
+  ],
   ['transition-all', `{ transition-property: all; transition-duration: ${ANIM_TIME} }`],
-  ['transition-colors', `{ transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-duration: ${ANIM_TIME} }`],
+  [
+    'transition-colors',
+    `{ transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-duration: ${ANIM_TIME} }`,
+  ],
   ['transition-opacity', `{ transition-property: opacity; transition-duration: ${ANIM_TIME} }`],
   ['transition-shadow', `{ transition-property: box-shadow; transition-duration: ${ANIM_TIME} }`],
   ['transition-transform', `{ transition-property: transform; transition-duration: ${ANIM_TIME} }`],
@@ -519,8 +624,8 @@ export const UTILS = new Map([
   ['transform-3d', '{ transform-style: preserve-3d }'],
   ['transform-flat', '{ transform-style: flat }'],
   // Transforms - translate
-  ['translate-x', '{ transform: translateX($) }'],
-  ['translate-y', '{ transform: translateY($) }'],
+  ['translate-x-', '{ transform: translateX($) }'],
+  ['translate-y-', '{ transform: translateY($) }'],
   // ---------------------------------------------------------------------------
   // Interactivity - accent-color
   ...genc('accent', 'accent-color'),
@@ -530,9 +635,15 @@ export const UTILS = new Map([
   // Interactivity - caret-color
   ...genc('caret', 'caret-color'),
   // Interactivity - color-scheme
-  ...gen(ii => [`scheme-${ii.replace(' ', '-')}`, `color-scheme: ${ii}`], ['normal', 'dark', 'light', 'light dark', 'only dark', 'only light']),
+  ...gen(
+    ii => [`scheme-${ii.replace(' ', '-')}`, `color-scheme: ${ii}`],
+    ['normal', 'dark', 'light', 'light dark', 'only dark', 'only light'],
+  ),
   // Interactivity - cursor
-  ...gen(ii => [`cursor-${ii}`, `cursor: ${ii}`], ['auto', 'default', 'pointer', 'wait', 'text', 'move', 'not-allowed']),
+  ...gen(
+    ii => [`cursor-${ii}`, `cursor: ${ii}`],
+    ['auto', 'default', 'pointer', 'wait', 'text', 'move', 'not-allowed'],
+  ),
   // Interactivity - field-sizing
   ['field-sizing-fixed', '{ field-sizing: fixed }'],
   ['field-sizing-content', '{ field-sizing: content }'],
@@ -548,25 +659,25 @@ export const UTILS = new Map([
   ['scroll-auto', '{ scroll-behavior: auto }'],
   ['scroll-smooth', '{ scroll-behavior: smooth }'],
   // Interactivity - scroll-margin
-  ['scroll-m', '{ scroll-margin: $ }'],
-  ['scroll-mx', '{ scroll-margin-inline: $ }'],
-  ['scroll-my', '{ scroll-margin-block: $ }'],
-  ['scroll-ms', '{ scroll-margin-inline-start: $ }'],
-  ['scroll-me', '{ scroll-margin-inline-end: $ }'],
-  ['scroll-mt', '{ scroll-margin-top: $ }'],
-  ['scroll-mr', '{ scroll-margin-right: $ }'],
-  ['scroll-mb', '{ scroll-margin-bottom: $ }'],
-  ['scroll-ml', '{ scroll-margin-left: $ }'],
+  ['scroll-m-', '{ scroll-margin: $ }'],
+  ['scroll-mx-', '{ scroll-margin-inline: $ }'],
+  ['scroll-my-', '{ scroll-margin-block: $ }'],
+  ['scroll-ms-', '{ scroll-margin-inline-start: $ }'],
+  ['scroll-me-', '{ scroll-margin-inline-end: $ }'],
+  ['scroll-mt-', '{ scroll-margin-top: $ }'],
+  ['scroll-mr-', '{ scroll-margin-right: $ }'],
+  ['scroll-mb-', '{ scroll-margin-bottom: $ }'],
+  ['scroll-ml-', '{ scroll-margin-left: $ }'],
   // Interactivity - scroll-padding
-  ['scroll-p', '{ scroll-padding: $ }'],
-  ['scroll-px', '{ scroll-padding-inline: $ }'],
-  ['scroll-py', '{ scroll-padding-block: $ }'],
-  ['scroll-ps', '{ scroll-padding-inline-start: $ }'],
-  ['scroll-pe', '{ scroll-padding-inline-end: $ }'],
-  ['scroll-pt', '{ scroll-padding-top: $ }'],
-  ['scroll-pr', '{ scroll-padding-right: $ }'],
-  ['scroll-pb', '{ scroll-padding-bottom: $ }'],
-  ['scroll-pl', '{ scroll-padding-left: $ }'],
+  ['scroll-p-', '{ scroll-padding: $ }'],
+  ['scroll-px-', '{ scroll-padding-inline: $ }'],
+  ['scroll-py-', '{ scroll-padding-block: $ }'],
+  ['scroll-ps-', '{ scroll-padding-inline-start: $ }'],
+  ['scroll-pe-', '{ scroll-padding-inline-end: $ }'],
+  ['scroll-pt-', '{ scroll-padding-top: $ }'],
+  ['scroll-pr-', '{ scroll-padding-right: $ }'],
+  ['scroll-pb-', '{ scroll-padding-bottom: $ }'],
+  ['scroll-pl-', '{ scroll-padding-left: $ }'],
   // Interactivity - scroll-snap-align
   ...gen(ii => [`snap-${ii}`, `scroll-snap-align: ${ii}`], ['start', 'end', 'center']),
   ['snap-align-none', '{ scroll-snap-align: none }'],
@@ -579,7 +690,10 @@ export const UTILS = new Map([
   ['snap-y', '{ scroll-snap-type: y proximity }'],
   ['snap-both', '{ scroll-snap-type: both proximity }'],
   // Interactivity - touch-action
-  ...gen(ii => [`touch-${ii}`, `touch-action: ${ii}`], ['auto', 'none', 'pan-x', 'pan-left', 'pan-right', 'pan-y', 'pan-up', 'pan-down', 'pinch-zoom', 'manipulation']),
+  ...gen(
+    ii => [`touch-${ii}`, `touch-action: ${ii}`],
+    ['auto', 'none', 'pan-x', 'pan-left', 'pan-right', 'pan-y', 'pan-up', 'pan-down', 'pinch-zoom', 'manipulation'],
+  ),
   // Interactivity - user-select
   ['select-none', '{ user-select: none }'],
   ['select-text', '{ user-select: text }'],

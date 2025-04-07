@@ -17,7 +17,7 @@ function getParser() {
     `((?<pseudo>${PSEUDO.join('|')}):)?`, // Pseudo element.
     '(?<util>',
       // Values
-      '((?<base>[a-z-]+)-(',
+      '((?<base>[a-z-]+-)(',
         '(?<number>[0-9.]+)|',
         '(?<fraction>[0-9]+/[0-9]+)|',
         '(?<string>[a-z]+)|',

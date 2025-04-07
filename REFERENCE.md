@@ -50,6 +50,31 @@ All container queries are relative to the ancestor with `@container` class.
 ```
 
 ```css
+/* inverted-colors */
+@media (inverted-colors: inverted)
+```
+
+```css
+/* pointer-coarse */
+@media (pointer: coarse)
+```
+
+```css
+/* pointer-fine */
+@media (pointer: fine)
+```
+
+```css
+/* pointer-none */
+@media (pointer: none)
+```
+
+```css
+/* print */
+@media print
+```
+
+```css
 /* @3xs */
 @container (width >= 256px)
 ```
@@ -118,8 +143,8 @@ All container queries are relative to the ancestor with `@container` class.
 
 Classes can be prefixed. The order is always `query:state:pseudo:class`.
 
-- Supported states: `hover`, `focus`, `focus-visible`, `active`.
-- Supported pseudo elements: `before`, `after`, `placeholder`, `file`, `marker`, `selection`, `backdrop`, `first-letter`, `first-line`.
+- Supported states: `active`, `any-link`, `checked`, `default`, `defined`, `disabled`, `empty`, `enabled`, `first-child`, `first-of-type`, `focus`, `focus-visible`, `focus-within`, `fullscreen`, `future`, `host`, `hover`, `in-range`, `indeterminate`, `invalid`, `last-child`, `last-of-type`, `link`, `modal`, `only-child`, `only-of-type`, `open`, `optional`, `out-of-range`, `past`, `picture-in-picture`, `placeholder-shown`, `popover-open`, `read-only`, `read-write`, `required`, `root`, `scope`, `target`, `user-invalid`, `user-valid`, `valid`, `visited`.
+- Supported pseudo elements: `after`, `backdrop`, `before`, `cue`, `details-content`, `file-selector-button`, `first-letter`, `first-line`, `grammar-error`, `marker`, `placeholder`, `selection`, `spelling-error`, `target-text`.
 
 ### Keyframes
 
@@ -213,7 +238,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.aspect-SUFFIX { aspect-ratio: ... }
+.aspect--SUFFIX { aspect-ratio: ... }
 ```
 
 ### columns
@@ -993,39 +1018,39 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### top / right / bottom / left
 
 ```css
-.inset-SUFFIX { inset: ... }
+.inset--SUFFIX { inset: ... }
 ```
 
 ```css
-.inset-x-SUFFIX { inset-inline: ... }
+.inset-x--SUFFIX { inset-inline: ... }
 ```
 
 ```css
-.inset-y-SUFFIX { inset-block: ... }
+.inset-y--SUFFIX { inset-block: ... }
 ```
 
 ```css
-.start-SUFFIX { inset-inline-start: ... }
+.start--SUFFIX { inset-inline-start: ... }
 ```
 
 ```css
-.end-SUFFIX { inset-inline-end: ... }
+.end--SUFFIX { inset-inline-end: ... }
 ```
 
 ```css
-.top-SUFFIX { top: ... }
+.top--SUFFIX { top: ... }
 ```
 
 ```css
-.right-SUFFIX { right: ... }
+.right--SUFFIX { right: ... }
 ```
 
 ```css
-.bottom-SUFFIX { bottom: ... }
+.bottom--SUFFIX { bottom: ... }
 ```
 
 ```css
-.left-SUFFIX { left: ... }
+.left--SUFFIX { left: ... }
 ```
 
 ### visibility
@@ -1077,7 +1102,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### flex-basis
 
 ```css
-.basis-SUFFIX { flex-basis: ... }
+.basis--SUFFIX { flex-basis: ... }
 ```
 
 ### flex-direction
@@ -1115,7 +1140,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### flex
 
 ```css
-.flex-1 { flex: 1 1 0% }
+.flex--SUFFIX { flex: ... }
 ```
 
 ```css
@@ -1569,15 +1594,15 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### gap
 
 ```css
-.gap-SUFFIX { gap: ... }
+.gap--SUFFIX { gap: ... }
 ```
 
 ```css
-.gap-x-SUFFIX { column-gap: ... }
+.gap-x--SUFFIX { column-gap: ... }
 ```
 
 ```css
-.gap-y-SUFFIX { row-gap: ... }
+.gap-y--SUFFIX { row-gap: ... }
 ```
 
 ### justify-content
@@ -1707,11 +1732,23 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
+.items-end-safe { align-items: safe flex-end }
+```
+
+```css
 .items-center { align-items: center }
 ```
 
 ```css
+.items-center-safe { align-items: safe center }
+```
+
+```css
 .items-baseline { align-items: baseline }
+```
+
+```css
+.items-baseline-last { align-items: last baseline }
 ```
 
 ```css
@@ -1854,39 +1891,39 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.p-SUFFIX { padding: ... }
+.p--SUFFIX { padding: ... }
 ```
 
 ```css
-.px-SUFFIX { padding-inline: ... }
+.px--SUFFIX { padding-inline: ... }
 ```
 
 ```css
-.py-SUFFIX { padding-block: ... }
+.py--SUFFIX { padding-block: ... }
 ```
 
 ```css
-.pt-SUFFIX { padding-top: ... }
+.pt--SUFFIX { padding-top: ... }
 ```
 
 ```css
-.pr-SUFFIX { padding-right: ... }
+.pr--SUFFIX { padding-right: ... }
 ```
 
 ```css
-.pb-SUFFIX { padding-bottom: ... }
+.pb--SUFFIX { padding-bottom: ... }
 ```
 
 ```css
-.pl-SUFFIX { padding-left: ... }
+.pl--SUFFIX { padding-left: ... }
 ```
 
 ```css
-.ps-SUFFIX { padding-inline-start: ... }
+.ps--SUFFIX { padding-inline-start: ... }
 ```
 
 ```css
-.pe-SUFFIX { padding-inline-end: ... }
+.pe--SUFFIX { padding-inline-end: ... }
 ```
 
 ### margin
@@ -1919,47 +1956,47 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.m-SUFFIX { margin: ... }
+.m--SUFFIX { margin: ... }
 ```
 
 ```css
-.mx-SUFFIX { margin-inline: ... }
+.mx--SUFFIX { margin-inline: ... }
 ```
 
 ```css
-.my-SUFFIX { margin-block: ... }
+.my--SUFFIX { margin-block: ... }
 ```
 
 ```css
-.mt-SUFFIX { margin-top: ... }
+.mt--SUFFIX { margin-top: ... }
 ```
 
 ```css
-.mr-SUFFIX { margin-right: ... }
+.mr--SUFFIX { margin-right: ... }
 ```
 
 ```css
-.mb-SUFFIX { margin-bottom: ... }
+.mb--SUFFIX { margin-bottom: ... }
 ```
 
 ```css
-.ml-SUFFIX { margin-left: ... }
+.ml--SUFFIX { margin-left: ... }
 ```
 
 ```css
-.ms-SUFFIX { margin-inline-start: ... }
+.ms--SUFFIX { margin-inline-start: ... }
 ```
 
 ```css
-.me-SUFFIX { margin-inline-end: ... }
+.me--SUFFIX { margin-inline-end: ... }
 ```
 
 ```css
-.space-x-SUFFIX  > :not(:last-child) { margin-inline-end: ... }
+.space-x--SUFFIX  > :not(:last-child) { margin-inline-end: ... }
 ```
 
 ```css
-.space-y-SUFFIX  > :not(:last-child) { margin-bottom: ... }
+.space-y--SUFFIX  > :not(:last-child) { margin-bottom: ... }
 ```
 
 ## Sizing
@@ -1994,19 +2031,19 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.w-SUFFIX { width: ... }
+.w--SUFFIX { width: ... }
 ```
 
 ### min-width
 
 ```css
-.min-w-SUFFIX { min-width: ... }
+.min-w--SUFFIX { min-width: ... }
 ```
 
 ### max-width
 
 ```css
-.max-w-SUFFIX { max-width: ... }
+.max-w--SUFFIX { max-width: ... }
 ```
 
 ### height
@@ -2039,19 +2076,19 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.h-SUFFIX { height: ... }
+.h--SUFFIX { height: ... }
 ```
 
 ### min-height
 
 ```css
-.min-h-SUFFIX { min-height: ... }
+.min-h--SUFFIX { min-height: ... }
 ```
 
 ### max-height
 
 ```css
-.max-h-SUFFIX { max-height: ... }
+.max-h--SUFFIX { max-height: ... }
 ```
 
 ## Typography
@@ -2815,10 +2852,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### word-break
 
 ```css
-.break-normal {
-  overflow-wrap: normal;
-  word-break: normal 
-}
+.break-normal { word-break: normal }
 ```
 
 ```css
@@ -2827,6 +2861,20 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 
 ```css
 .break-keep { word-break: keep-all }
+```
+
+### overflow-wrap
+
+```css
+.wrap-break-word { overflow-wrap: break-word }
+```
+
+```css
+.wrap-anywhere { overflow-wrap: anywhere }
+```
+
+```css
+.wrap-normal { overflow-wrap: normal }
 ```
 
 ### hyphens
@@ -2846,7 +2894,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### content
 
 ```css
-.content-SUFFIX { content: ... }
+.content--SUFFIX { content: ... }
 ```
 
 ## Backgrounds
@@ -2892,7 +2940,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### background-image
 
 ```css
-.bg-SUFFIX { background-image: ... }
+.bg--SUFFIX { background-image: ... }
 ```
 
 ```css
@@ -3501,6 +3549,32 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 
 ```css
 .shadow-none { box-shadow: 0 0 rgb(0 0 0 / 0) }
+```
+
+### text-shadow
+
+```css
+.text-shadow-2xs { text-shadow: 0px 1px 0px rgb(0 0 0 / 0.15) }
+```
+
+```css
+.text-shadow-xs { text-shadow: 0px 1px 1px rgb(0 0 0 / 0.2) }
+```
+
+```css
+.text-shadow-sm { text-shadow: 0px 1px 0px rgb(0 0 0 / 0.075), 0px 1px 1px rgb(0 0 0 / 0.075), 0px 2px 2px rgb(0 0 0 / 0.075) }
+```
+
+```css
+.text-shadow-md { text-shadow: 0px 1px 1px rgb(0 0 0 / 0.1), 0px 1px 2px rgb(0 0 0 / 0.1), 0px 2px 4px rgb(0 0 0 / 0.1) }
+```
+
+```css
+.text-shadow-lg { text-shadow: 0px 1px 2px rgb(0 0 0 / 0.1), 0px 3px 2px rgb(0 0 0 / 0.1), 0px 4px 8px rgb(0 0 0 / 0.1) }
+```
+
+```css
+.text-shadow-none { text-shadow: none }
 ```
 
 ### opacity
@@ -4174,7 +4248,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### border-spacing
 
 ```css
-.border-spacing-SUFFIX { border-spacing: ... }
+.border-spacing--SUFFIX { border-spacing: ... }
 ```
 
 ### table-layout
@@ -4371,6 +4445,10 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 
 ```css
 .animate-fade { animation: fade 250ms ease-in-out }
+```
+
+```css
+.animate-none { animation: none }
 ```
 
 ## Transforms
@@ -4694,11 +4772,11 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.translate-x-SUFFIX { transform: translateX(...) }
+.translate-x--SUFFIX { transform: translateX(...) }
 ```
 
 ```css
-.translate-y-SUFFIX { transform: translateY(...) }
+.translate-y--SUFFIX { transform: translateY(...) }
 ```
 
 ### transform-origin
@@ -4880,13 +4958,13 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### scroll-margin
 
 ```css
-.scroll-m-SUFFIX { scroll-margin: ... }
+.scroll-m--SUFFIX { scroll-margin: ... }
 ```
 
 ### scroll-padding
 
 ```css
-.scroll-p-SUFFIX { scroll-padding: ... }
+.scroll-p--SUFFIX { scroll-padding: ... }
 ```
 
 ### scroll-snap-align
