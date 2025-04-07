@@ -238,7 +238,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.aspect--SUFFIX { aspect-ratio: ... }
+.aspect-SUFFIX { aspect-ratio: ... }
 ```
 
 ### columns
@@ -1018,39 +1018,39 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### top / right / bottom / left
 
 ```css
-.inset--SUFFIX { inset: ... }
+.inset-SUFFIX { inset: ... }
 ```
 
 ```css
-.inset-x--SUFFIX { inset-inline: ... }
+.inset-x-SUFFIX { inset-inline: ... }
 ```
 
 ```css
-.inset-y--SUFFIX { inset-block: ... }
+.inset-y-SUFFIX { inset-block: ... }
 ```
 
 ```css
-.start--SUFFIX { inset-inline-start: ... }
+.start-SUFFIX { inset-inline-start: ... }
 ```
 
 ```css
-.end--SUFFIX { inset-inline-end: ... }
+.end-SUFFIX { inset-inline-end: ... }
 ```
 
 ```css
-.top--SUFFIX { top: ... }
+.top-SUFFIX { top: ... }
 ```
 
 ```css
-.right--SUFFIX { right: ... }
+.right-SUFFIX { right: ... }
 ```
 
 ```css
-.bottom--SUFFIX { bottom: ... }
+.bottom-SUFFIX { bottom: ... }
 ```
 
 ```css
-.left--SUFFIX { left: ... }
+.left-SUFFIX { left: ... }
 ```
 
 ### visibility
@@ -1102,7 +1102,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### flex-basis
 
 ```css
-.basis--SUFFIX { flex-basis: ... }
+.basis-SUFFIX { flex-basis: ... }
 ```
 
 ### flex-direction
@@ -1140,7 +1140,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### flex
 
 ```css
-.flex--SUFFIX { flex: ... }
+.flex-SUFFIX { flex: ... }
 ```
 
 ```css
@@ -1594,15 +1594,15 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### gap
 
 ```css
-.gap--SUFFIX { gap: ... }
+.gap-SUFFIX { gap: ... }
 ```
 
 ```css
-.gap-x--SUFFIX { column-gap: ... }
+.gap-x-SUFFIX { column-gap: ... }
 ```
 
 ```css
-.gap-y--SUFFIX { row-gap: ... }
+.gap-y-SUFFIX { row-gap: ... }
 ```
 
 ### justify-content
@@ -1891,39 +1891,39 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.p--SUFFIX { padding: ... }
+.p-SUFFIX { padding: ... }
 ```
 
 ```css
-.px--SUFFIX { padding-inline: ... }
+.px-SUFFIX { padding-inline: ... }
 ```
 
 ```css
-.py--SUFFIX { padding-block: ... }
+.py-SUFFIX { padding-block: ... }
 ```
 
 ```css
-.pt--SUFFIX { padding-top: ... }
+.pt-SUFFIX { padding-top: ... }
 ```
 
 ```css
-.pr--SUFFIX { padding-right: ... }
+.pr-SUFFIX { padding-right: ... }
 ```
 
 ```css
-.pb--SUFFIX { padding-bottom: ... }
+.pb-SUFFIX { padding-bottom: ... }
 ```
 
 ```css
-.pl--SUFFIX { padding-left: ... }
+.pl-SUFFIX { padding-left: ... }
 ```
 
 ```css
-.ps--SUFFIX { padding-inline-start: ... }
+.ps-SUFFIX { padding-inline-start: ... }
 ```
 
 ```css
-.pe--SUFFIX { padding-inline-end: ... }
+.pe-SUFFIX { padding-inline-end: ... }
 ```
 
 ### margin
@@ -1956,47 +1956,47 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.m--SUFFIX { margin: ... }
+.m-SUFFIX { margin: ... }
 ```
 
 ```css
-.mx--SUFFIX { margin-inline: ... }
+.mx-SUFFIX { margin-inline: ... }
 ```
 
 ```css
-.my--SUFFIX { margin-block: ... }
+.my-SUFFIX { margin-block: ... }
 ```
 
 ```css
-.mt--SUFFIX { margin-top: ... }
+.mt-SUFFIX { margin-top: ... }
 ```
 
 ```css
-.mr--SUFFIX { margin-right: ... }
+.mr-SUFFIX { margin-right: ... }
 ```
 
 ```css
-.mb--SUFFIX { margin-bottom: ... }
+.mb-SUFFIX { margin-bottom: ... }
 ```
 
 ```css
-.ml--SUFFIX { margin-left: ... }
+.ml-SUFFIX { margin-left: ... }
 ```
 
 ```css
-.ms--SUFFIX { margin-inline-start: ... }
+.ms-SUFFIX { margin-inline-start: ... }
 ```
 
 ```css
-.me--SUFFIX { margin-inline-end: ... }
+.me-SUFFIX { margin-inline-end: ... }
 ```
 
 ```css
-.space-x--SUFFIX  > :not(:last-child) { margin-inline-end: ... }
+.space-x-SUFFIX  > :not(:last-child) { margin-inline-end: ... }
 ```
 
 ```css
-.space-y--SUFFIX  > :not(:last-child) { margin-bottom: ... }
+.space-y-SUFFIX  > :not(:last-child) { margin-bottom: ... }
 ```
 
 ## Sizing
@@ -2031,19 +2031,19 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.w--SUFFIX { width: ... }
+.w-SUFFIX { width: ... }
 ```
 
 ### min-width
 
 ```css
-.min-w--SUFFIX { min-width: ... }
+.min-w-SUFFIX { min-width: ... }
 ```
 
 ### max-width
 
 ```css
-.max-w--SUFFIX { max-width: ... }
+.max-w-SUFFIX { max-width: ... }
 ```
 
 ### height
@@ -2076,19 +2076,19 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.h--SUFFIX { height: ... }
+.h-SUFFIX { height: ... }
 ```
 
 ### min-height
 
 ```css
-.min-h--SUFFIX { min-height: ... }
+.min-h-SUFFIX { min-height: ... }
 ```
 
 ### max-height
 
 ```css
-.max-h--SUFFIX { max-height: ... }
+.max-h-SUFFIX { max-height: ... }
 ```
 
 ## Typography
@@ -2751,7 +2751,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### text-indent
 
 ```css
-.indent-SUFFIX { text-indent: ... }
+.indentSUFFIX { text-indent: ... }
 ```
 
 ### vertical-align
@@ -2894,7 +2894,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### content
 
 ```css
-.content--SUFFIX { content: ... }
+.content-SUFFIX { content: ... }
 ```
 
 ## Backgrounds
@@ -2940,7 +2940,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### background-image
 
 ```css
-.bg--SUFFIX { background-image: ... }
+.bg-SUFFIX { background-image: ... }
 ```
 
 ```css
@@ -4248,7 +4248,7 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### border-spacing
 
 ```css
-.border-spacing--SUFFIX { border-spacing: ... }
+.border-spacing-SUFFIX { border-spacing: ... }
 ```
 
 ### table-layout
@@ -4772,11 +4772,11 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.translate-x--SUFFIX { transform: translateX(...) }
+.translate-x-SUFFIX { transform: translateX(...) }
 ```
 
 ```css
-.translate-y--SUFFIX { transform: translateY(...) }
+.translate-y-SUFFIX { transform: translateY(...) }
 ```
 
 ### transform-origin
@@ -4958,13 +4958,13 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### scroll-margin
 
 ```css
-.scroll-m--SUFFIX { scroll-margin: ... }
+.scroll-m-SUFFIX { scroll-margin: ... }
 ```
 
 ### scroll-padding
 
 ```css
-.scroll-p--SUFFIX { scroll-padding: ... }
+.scroll-p-SUFFIX { scroll-padding: ... }
 ```
 
 ### scroll-snap-align

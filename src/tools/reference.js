@@ -241,7 +241,7 @@ function getRules(props) {
 
     // Detect dynamic properties.
     if (css.includes('$')) {
-      rules.set(`${cls}-SUFFIX`, css.replace('$', '...'))
+      rules.set(`${cls}SUFFIX`, css.replace('$', '...'))
       continue
     }
 
