@@ -26,13 +26,13 @@
     "release": "dotenv release-it --"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@playwright/test": "1.51.1",
-    "chroma-js": "3.1.2",
-    "dotenv": "16.4.7",
-    "dotenv-cli": "8.0.0",
-    "esbuild": "0.25.1",
-    "playwright": "1.51.1",
-    "release-it": "18.1.2"
+    "@biomejs/biome": "^1.9.4",
+    "@playwright/test": "^ 1.52.0",
+    "chroma-js": "^3.1.2",
+    "dotenv": "^16.5.0",
+    "dotenv-cli": "^8.0.0",
+    "esbuild": "^0.25.3",
+    "playwright": "^1.52.0",
+    "release-it": "^18.1.2"
   }
 }
