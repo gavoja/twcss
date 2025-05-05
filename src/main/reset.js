@@ -8,7 +8,6 @@ export const RESET = [
   'cite { font-style: normal }',
   'a { text-decoration: none; color: inherit }',
   'button { text-align: unset; background: transparent; color: inherit }',
-  'body { overflow-y: scroll }',
   'svg { display: block }',
   '::placeholder { color: currentColor; opacity: 0.8 }',
   '[tw]:not([class]) { display: none }', // Prevent repaint.

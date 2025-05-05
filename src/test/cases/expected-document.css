@@ -3173,7 +3173,6 @@
 [tw]:not([class]) { display: none; }
 ::placeholder { color: currentcolor; opacity: 0.8; }
 svg { display: block; }
-body { overflow-y: scroll; }
 button { text-align: unset; background: transparent; color: inherit; }
 a { text-decoration: none; color: inherit; }
 cite { font-style: normal; }
