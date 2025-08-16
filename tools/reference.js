@@ -4,12 +4,12 @@
  */
 import chroma from 'chroma-js'
 import fs from 'node:fs'
-import { COLORS, COLOR_PROPS } from '#main/colors.js'
-import { KEYFRAMES } from '#main/keyframes.js'
-import { QUERIES } from '#main/queries.js'
-import { RESET } from '#main/reset.js'
-import { UTILS } from '#main/utils.js'
-import { STRING_SIZES, STATES, PSEUDO } from '#main/constants.js'
+import { COLORS, COLOR_PROPS } from '#src/colors.js'
+import { KEYFRAMES } from '#src/keyframes.js'
+import { QUERIES } from '#src/queries.js'
+import { RESET } from '#src/reset.js'
+import { UTILS } from '#src/utils.js'
+import { STRING_SIZES, STATES, PSEUDO } from '#src/constants.js'
 
 const HIERARCHY = {
   'Layout': {

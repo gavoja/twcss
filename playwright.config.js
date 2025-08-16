@@ -3,7 +3,7 @@ import { defineConfig, devices } from '@playwright/test'
 const URL = 'http://localhost:3000'
 
 export default defineConfig({
-  testDir: 'src/test/cases',
+  testDir: 'tests/cases',
   fullyParallel: true,
   reporter: [
     ['list', { printSteps: true }]

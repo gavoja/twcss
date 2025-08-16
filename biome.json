@@ -25,6 +25,6 @@
     }
   },
   "files": {
-    "include": ["src/**/*.js", "src/**/*.html", "*.md"]
+    "include": ["!target/**/*"]
   }
 }

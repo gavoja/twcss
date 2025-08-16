@@ -1,7 +1,41 @@
-import { extend } from '#main/twcss.js'
-import { UTILS } from '#main/utils.js'
-import { QUERIES } from '#main/queries.js'
-import { STATES, STRING_SIZES } from '#main/constants.js'
+import { extend } from '#src/twcss.js'
+import { UTILS } from '#src/utils.js'
+import { QUERIES } from '#src/queries.js'
+import { STATES, STRING_SIZES } from '#src/constants.js'
+
+function register(name, callback) {
+  class CustomElement extends HTMLElement {
+    constructor() {
+      super()
+      this.attachShadow({ mode: 'open' })
+      this.shadowRoot.innerHTML = callback(this.shadowRoot)
+    }
+  }
+
+  customElements.define(name, CustomElement)
+}
+
+function registerOuterInner () {
+  register('inner-element-1', () => `
+    <div tw="p-4 bg-fuchsia-300 border-2 rounded-md w-[300px]">
+      Shadow DOM: custom-element-1
+    </div>
+  `)
+
+  register('inner-element-2', shadowRoot => `
+    <div class="${tw.add('p-4 bg-fuchsia-300 border-2 rounded-md w-[300px]', shadowRoot)}">
+      Shadow DOM: inner-element-2
+    </div>
+  `)
+
+  register('outer-element', () => `
+    <div tw="bg-blue-300 p-4 rounded-md border-2 space-y-4">
+      <div>Shadow DOM: outer-element</div>
+      <inner-element-1 tw="block"></inner-element-1>
+      <inner-element-2 tw="block"></inner-element-2>
+    </div>
+  `)
+}
 
 function addTestDiv() {
   const innerDiv = document.createElement('div')
@@ -72,15 +106,7 @@ function addDivWithPrefixedClasses() {
 }
 
 function addCustomElement(name) {
-  class CustomElement extends HTMLElement {
-    constructor() {
-      super()
-      this.attachShadow({ mode: 'open' })
-      this.shadowRoot.innerHTML = `<div tw="bg-amber-300 p-4 rounded-md border-2">Shadow DOM: ${name}</div>`
-    }
-  }
-
-  customElements.define(name, CustomElement)
+  register(name, () => `<div tw="bg-amber-300 p-4 rounded-md border-2">Shadow DOM: ${name}</div>`)
   const el = document.createElement(name)
   el.setAttribute('tw', 'block animate-fade')
   document.body.appendChild(el)
@@ -119,14 +145,20 @@ function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-  addTestDiv()
-  addCustomElement('custom-element-1')
-  el = addCustomElement('custom-element-2')
-  await delay(10)
-  el.remove()
+function main () {
+  registerOuterInner()
 
-  addDivWithPrefixedClasses()
-  addDivWithCustomClasses()
-  addDivWithAllClasses()
-})
+  document.addEventListener('DOMContentLoaded', async () => {
+    addTestDiv()
+    addCustomElement('custom-element-1')
+    el = addCustomElement('custom-element-2')
+    await delay(10)
+    el.remove()
+
+    addDivWithPrefixedClasses()
+    addDivWithCustomClasses()
+    addDivWithAllClasses()
+  })
+}
+
+main()

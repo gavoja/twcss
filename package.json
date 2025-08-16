@@ -1,7 +1,7 @@
 {
   "name": "twcss",
   "version": "0.4.3",
-  "main": "src/main/twcss.js",
+  "main": "src/twcss.js",
   "author": "Michal Kochel",
   "license": "MIT",
   "type": "module",
@@ -15,20 +15,21 @@
     "tailwind-in-js"
   ],
   "imports": {
-    "#main/*.js": "./src/main/*.js"
+    "#src/*.js": "./src/*.js"
   },
   "scripts": {
-    "start": "node ./src/tools/build.js",
+    "start": "node ./tools/build.js",
     "test": "npx playwright test",
     "lint": "npx @biomejs/biome format",
     "format": "npx @biomejs/biome format --write",
-    "reference": "node ./src/tools/reference.js",
+    "reference": "node ./tools/reference.js",
     "release": "dotenv release-it --"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@playwright/test": "^ 1.52.0",
     "chroma-js": "^3.1.2",
+    "diff": "^8.0.2",
     "dotenv": "^16.5.0",
     "dotenv-cli": "^8.0.0",
     "esbuild": "^0.25.3",

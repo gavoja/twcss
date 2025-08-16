@@ -1,6 +1,6 @@
 # TWCSS
 
-Fast minimalist utility-first CSS runtime inspired by Tailwind and Twind.
+A fast minimalist utility-first CSS runtime inspired by Tailwind and Twind.
 
 ## Motivation
 
@@ -9,17 +9,19 @@ Tailwind is awesome, but it requires a build setup. Twind exists, but the projec
 ## Features
 
 - **Zero setup, zero dependencies.** One import does it all. It just works.
-- **Library agnostic.** Works with vanilla, works with any modern framework. Works with Shadow DOM too.
-- **Lightweight and fast.** Minified and gzipped is only ~11 kB.
+- **Library agnostic.** Works with vanilla JavaScript and any modern framework. Works with Shadow DOM too.
+- **Lightweight and fast.** Minified and gzipped, it's only ~11 kB.
 
 ## Usage
 
-In Node, Deno or Bun do:
+In Node, Deno, or Bun:
+
 ```js
 import 'twcss'
 ```
 
 Then, somewhere in the markup:
+
 ```html
 <div tw="p-4 bg-indigo-800 text-slate-50 rounded-xl">Hello, world!</div>
 ```
@@ -27,12 +29,12 @@ Then, somewhere in the markup:
 Once imported, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructable stylesheets. CSS reset is included.
 
 > [!NOTE]
-> TWCSS uses `tw` attribute to detect changes. All elements with `tw` attribute and without `class` attribute are hidden by default in order to prevent any unwanted layout shift / repaint. Once `tw` attribute change is detected, all new styles are generated and the `class` attribute is set accordingly.
+> TWCSS uses the `tw` attribute to detect changes. All elements with a `tw` attribute and without a `class` attribute are hidden by default to prevent any unwanted layout shift or repaint. Once a `tw` attribute change is detected, all new styles are generated and the `class` attribute is set accordingly.
 > For this feature to work properly, TWCSS needs to be loaded before the page content is added.
 
 ## Extensibility
 
-You can define your own utility classes, colors, animations and media queries with `extend()` function. Overriding existing defaults is also possible.
+You can define your own utility classes, colors, animations, and media queries with the `extend()` function. Overriding existing defaults is also possible.
 
 ```js
 import { extend } from 'twcss'
@@ -54,7 +56,7 @@ extend({
     // All color properties will be able to use this custom color, e.g. outline-octarine/50
     'octarine': '0.9 0.4 20'
   },
-  // Keyframes defined here can be used in classes object.
+  // Keyframes defined here can be used in the classes object.
   keyframes: {
     'spin': 'to { transform: rotate(360deg) }'
   },
@@ -65,11 +67,31 @@ extend({
 })
 ```
 
+## The `add` function
+
+The `add` function works similarly to Twind's `tw` function by generating styles directly when called and adding them to the selected root (`document` by default). It could be useful when migrating from Twind to TWCSS. Note that the `add` function and `tw` attribute should never be used on the same element, since the latter always replaces the value of `class` attribute.
+
+Signature:
+
+```ts
+function add(className: String, root: Document | ShadowRoot = document)
+```
+
+Usage:
+
+```jsx
+import { add as tw } from 'twcss'
+
+function Button ({ children }) {
+  return <button class="{tw('p-4 rounded-xl')}">{children}</button>
+}
+```
+
 ## Compatibility
 
 TWCSS aims at compatibility with Tailwind 4. This is not always possible without compromising on performance. For this reason, certain features are not supported. Please see the [REFERENCE.md](REFERENCE.md) for the complete list.
 
-### Changes
+### Differences
 
 - Default media queries are `sm`, `md` and `lg`. Feel free to extend them.
 - Default animations serve the following use cases:

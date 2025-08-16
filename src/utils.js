@@ -1,5 +1,6 @@
 import {
   ANIM_TIME,
+  BLEND_MODES,
   BRIGHTNESS_LEVELS,
   COLUMNS,
   CONTRAST_LEVELS,
@@ -16,9 +17,9 @@ import {
   STROKE_WIDTHS,
   WIDTHS,
   Z_INDEXES,
-  BLEND_MODES,
 } from './constants.js'
 import { backdrop, gen, genc } from './generators.js'
+
 
 // Tries to follow Tailwind's order.
 export const UTILS = new Map([

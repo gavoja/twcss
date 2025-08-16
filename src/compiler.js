@@ -6,7 +6,7 @@ import { RESET } from './reset.js'
 import { UTILS } from './utils.js'
 
 // Global object.
-export const tw = { instances: new Map(), extend, parser: getParser() }
+export const tw = { instances: new Map(), add, extend, parser: getParser() }
 
 function getParser() {
   // biome-ignore format: It is easier to understand with extra indentation.
@@ -103,9 +103,8 @@ function addRule(instance, cls) {
   instance.sheet.insertRule(rule, index)
 }
 
-function processElement(instance, el) {
+function addRules(instance, className) {
   const timestamp = Date.now()
-  const className = el.getAttribute('tw')
   const classes = (className || '').split(/ +/)
 
   for (const cls of classes) {
@@ -116,8 +115,19 @@ function processElement(instance, el) {
     }
   }
 
-  el.className = className
   instance.lastGenerationTime = Date.now() - timestamp
+}
+
+function processElement(instance, el) {
+  const className = el.getAttribute('tw')
+  addRules(instance, className)
+  el.className = className
+}
+
+export function add(className, root = document) {
+  init(root)
+  addRules(tw.instances.get(root), className)
+  return className
 }
 
 export function extend({ classes = {}, colors = {}, keyframes = {}, queries = {} }) {
@@ -146,10 +156,6 @@ export function extend({ classes = {}, colors = {}, keyframes = {}, queries = {}
 }
 
 export function init(root) {
-  if (!self.tw) {
-    self.tw = tw
-  }
-
   if (tw.instances.has(root)) {
     return
   }

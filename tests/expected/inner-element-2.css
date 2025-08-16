@@ -1,0 +1,32 @@
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes toast {
+  0% { opacity: 0; transform: translateY(48px); }
+  100% { opacity: 1; }
+}
+@keyframes expand {
+  0% { opacity: 0; transform: translateY(-8px); }
+  100% { opacity: 1; }
+}
+[tw]:not([class]) { display: none; }
+::placeholder { color: currentcolor; opacity: 0.8; }
+svg { display: block; }
+button { text-align: unset; background: transparent; color: inherit; }
+a { text-decoration: none; color: inherit; }
+cite { font-style: normal; }
+img, video { max-width: 100%; height: auto; }
+body, html { height: 100%; }
+input, button, textarea, select { font: inherit; }
+h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+ul, ol { list-style: none; }
+*, ::before, ::after { box-sizing: border-box; border-width: 0px; border-style: solid; border-color: currentcolor; margin: 0px; padding: 0px; }
+.p-4 { padding: calc(16px); }
+.bg-fuchsia-300 { background-color: oklch(0.833 0.145 321.434); }
+.border-2 { border-width: 2px; }
+.rounded-md { border-radius: 6px; }
+.w-\[300px\] { width: 300px; }
