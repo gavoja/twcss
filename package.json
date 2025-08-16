@@ -24,7 +24,7 @@
     "format": "npx @biomejs/biome format --write",
     "reference": "node ./tools/reference.js",
     "release": "dotenv release-it",
-    "release:dry": "dotenv release-it --dry-run",
+    "release:dry": "dotenv release-it --dry-run --no-increment",
     "check": "npm run lint && npm run reference && npm test"
   },
   "devDependencies": {
