@@ -25,6 +25,6 @@
     }
   },
   "files": {
-    "include": ["!target/**/*"]
+    "includes": ["!target/**/*"]
   }
 }
