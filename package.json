@@ -23,7 +23,8 @@
     "lint": "npx @biomejs/biome format",
     "format": "npx @biomejs/biome format --write",
     "reference": "node ./tools/reference.js",
-    "release": "dotenv release-it --"
+    "release": "dotenv release-it --",
+    "check": "npm run lint && npm run reference && npm test"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.0",
