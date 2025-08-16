@@ -14,10 +14,16 @@ Tailwind is awesome, but it requires a build setup. Twind exists, but the projec
 
 ## Usage
 
-In Node, Deno, or Bun:
+Node, Deno, Bun:
 
 ```js
 import 'twcss'
+```
+
+Directly in browser:
+
+```html
+<script type="module">import 'https://cdn.jsdelivr.net/npm/twcss/+esm'</script>
 ```
 
 Then, somewhere in the markup:
