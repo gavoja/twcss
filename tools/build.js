@@ -1,17 +1,8 @@
 import { context } from 'esbuild'
 
 async function main() {
-  const ctxLib = await context({
-    entryPoints: ['src/twcss.js'],
-    format: 'iife',
-    bundle: true,
-    minify: true,
-    outdir: 'target',
-    sourcemap: false,
-  })
-
-  const ctxTest = await context({
-    entryPoints: ['tests/page/main.js', 'tests/page/index.html'],
+  const ctx = await context({
+    entryPoints: ['tests/site/main.js', 'tests/site/index.html'],
     loader: { '.html': 'copy' },
     format: 'iife',
     bundle: true,
@@ -19,9 +10,8 @@ async function main() {
     sourcemap: 'inline',
   })
 
-  await ctxLib.rebuild()
-  await ctxTest.rebuild()
-  await ctxTest.serve({ servedir: 'target', port: 3000 })
+  await ctx.rebuild()
+  await ctx.serve({ servedir: 'target', port: 3000 })
   console.log('Server started at http://localhost:3000')
 }
 
