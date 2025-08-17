@@ -20,7 +20,7 @@ const HIERARCHY = {
     'break-inside': ['break-after'],
     'box-decoration-break': ['box-decoration-break'],
     'box-sizing': ['box-sizing'],
-    'display': ['display'],
+    'display': ['display', 'clip'],
     'float': ['float'],
     'clear': ['clear'],
     'isolation': ['isolation'],
@@ -231,7 +231,7 @@ const HIERARCHY = {
 function getRules(props) {
   const rules = new Map()
 
-  for (const [cls, css] of UTILS.entries().filter(([_cls, css]) => props.some(p => css.includes(` ${p}:`)))) {
+  for (const [cls, css] of UTILS.entries().filter(([_cls, css]) => props.some(p => css.includes(`{ ${p}:`)))) {
     // Split composite rules into multiple lines.
     const isComposite = css.split(/ {/).pop().match(/:/g).length > 1
     if (isComposite) {

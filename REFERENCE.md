@@ -591,65 +591,29 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.line-clamp-1 {
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1 
+  white-space: nowrap;
+  border-width: 0 
 }
 ```
 
 ```css
-.line-clamp-2 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2 
-}
-```
-
-```css
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3 
-}
-```
-
-```css
-.line-clamp-4 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4 
-}
-```
-
-```css
-.line-clamp-5 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5 
-}
-```
-
-```css
-.line-clamp-6 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6 
-}
-```
-
-```css
-.line-clamp-none {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: none 
+.not-sr-only {
+  clip: auto;
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  white-space: normal 
 }
 ```
 
@@ -774,33 +738,6 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### overflow
 
 ```css
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0 
-}
-```
-
-```css
-.not-sr-only {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-  white-space: normal 
-}
-```
-
-```css
 .overflow-auto { overflow: auto }
 ```
 
@@ -856,77 +793,6 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 .overflow-y-scroll { overflow-y: scroll }
 ```
 
-```css
-.line-clamp-1 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1 
-}
-```
-
-```css
-.line-clamp-2 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2 
-}
-```
-
-```css
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3 
-}
-```
-
-```css
-.line-clamp-4 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4 
-}
-```
-
-```css
-.line-clamp-5 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5 
-}
-```
-
-```css
-.line-clamp-6 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6 
-}
-```
-
-```css
-.line-clamp-none {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: none 
-}
-```
-
-```css
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap 
-}
-```
-
 ### overscroll-behavior
 
 ```css
@@ -966,33 +832,6 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ### position
-
-```css
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0 
-}
-```
-
-```css
-.not-sr-only {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-  white-space: normal 
-}
-```
 
 ```css
 .static { position: static }
@@ -1863,33 +1702,6 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### padding
 
 ```css
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0 
-}
-```
-
-```css
-.not-sr-only {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-  white-space: normal 
-}
-```
-
-```css
 .p-SUFFIX { padding: ... }
 ```
 
@@ -1926,33 +1738,6 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ### margin
-
-```css
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0 
-}
-```
-
-```css
-.not-sr-only {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-  white-space: normal 
-}
-```
 
 ```css
 .m-SUFFIX { margin: ... }
@@ -2003,33 +1788,6 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ### width
 
 ```css
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0 
-}
-```
-
-```css
-.not-sr-only {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-  white-space: normal 
-}
-```
-
-```css
 .w-SUFFIX { width: ... }
 ```
 
@@ -2046,33 +1804,6 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ### height
-
-```css
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0 
-}
-```
-
-```css
-.not-sr-only {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-  white-space: normal 
-}
-```
 
 ```css
 .h-SUFFIX { height: ... }
@@ -2369,159 +2100,68 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 
 ```css
 .line-clamp-1 {
+  -webkit-line-clamp: 1;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1 
+  -webkit-box-orient: vertical 
 }
 ```
 
 ```css
 .line-clamp-2 {
+  -webkit-line-clamp: 2;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2 
+  -webkit-box-orient: vertical 
 }
 ```
 
 ```css
 .line-clamp-3 {
+  -webkit-line-clamp: 3;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3 
+  -webkit-box-orient: vertical 
 }
 ```
 
 ```css
 .line-clamp-4 {
+  -webkit-line-clamp: 4;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4 
+  -webkit-box-orient: vertical 
 }
 ```
 
 ```css
 .line-clamp-5 {
+  -webkit-line-clamp: 5;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5 
+  -webkit-box-orient: vertical 
 }
 ```
 
 ```css
 .line-clamp-6 {
+  -webkit-line-clamp: 6;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6 
+  -webkit-box-orient: vertical 
 }
 ```
 
 ```css
 .line-clamp-none {
+  -webkit-line-clamp: none;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: none 
+  -webkit-box-orient: vertical 
 }
 ```
 
 ### line-height
-
-```css
-.text-xs {
-  font-size: 12px;
-  line-height: 1.333 
-}
-```
-
-```css
-.text-sm {
-  font-size: 14px;
-  line-height: 1.429 
-}
-```
-
-```css
-.text-base {
-  font-size: 16px;
-  line-height: 1.5 
-}
-```
-
-```css
-.text-lg {
-  font-size: 18px;
-  line-height: 1.555 
-}
-```
-
-```css
-.text-xl {
-  font-size: 20px;
-  line-height: 1.4 
-}
-```
-
-```css
-.text-2xl {
-  font-size: 24px;
-  line-height: 1.333 
-}
-```
-
-```css
-.text-3xl {
-  font-size: 30px;
-  line-height: 1.2 
-}
-```
-
-```css
-.text-4xl {
-  font-size: 36px;
-  line-height: 1.111 
-}
-```
-
-```css
-.text-5xl {
-  font-size: 48px;
-  line-height: 1 
-}
-```
-
-```css
-.text-6xl {
-  font-size: 60px;
-  line-height: 1 
-}
-```
-
-```css
-.text-7xl {
-  font-size: 72px;
-  line-height: 1 
-}
-```
-
-```css
-.text-8xl {
-  font-size: 96px;
-  line-height: 1 
-}
-```
-
-```css
-.text-9xl {
-  font-size: 128px;
-  line-height: 1 
-}
-```
 
 ```css
 .leading-none { line-height: 1 }
@@ -2718,15 +2358,15 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap 
-}
+.overflow-ellipsis { text-overflow: ellipsis }
 ```
 
 ```css
-.overflow-ellipsis { text-overflow: ellipsis }
+.truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap 
+}
 ```
 
 ### text-wrap
@@ -2788,41 +2428,6 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ### white-space
-
-```css
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0 
-}
-```
-
-```css
-.not-sr-only {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-  white-space: normal 
-}
-```
-
-```css
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap 
-}
-```
 
 ```css
 .whitespace-normal { white-space: normal }
@@ -3223,20 +2828,6 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ### border-width
-
-```css
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0 
-}
-```
 
 ```css
 .border-0 { border-width: 0px }
@@ -4331,48 +3922,6 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ### transition-duration
-
-```css
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-duration: 250ms 
-}
-```
-
-```css
-.transition-all {
-  transition-property: all;
-  transition-duration: 250ms 
-}
-```
-
-```css
-.transition-colors {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-duration: 250ms 
-}
-```
-
-```css
-.transition-opacity {
-  transition-property: opacity;
-  transition-duration: 250ms 
-}
-```
-
-```css
-.transition-shadow {
-  transition-property: box-shadow;
-  transition-duration: 250ms 
-}
-```
-
-```css
-.transition-transform {
-  transition-property: transform;
-  transition-duration: 250ms 
-}
-```
 
 ```css
 .duration-initial { transition-duration: initial }

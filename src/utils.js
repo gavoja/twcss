@@ -69,11 +69,11 @@ export const UTILS = new Map([
   ['hidden', '{ display: none }'],
   [
     'sr-only',
-    '{ position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0 }',
+    '{ clip: rect(0, 0, 0, 0); position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; white-space: nowrap; border-width: 0 }',
   ],
   [
     'not-sr-only',
-    '{ position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; clip: auto; white-space: normal }',
+    '{ clip: auto; position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; white-space: normal }',
   ],
   // Layout - float
   ...gen(ii => [`float-${ii}`, `float: inline-${ii}`], ['start', 'end']),
@@ -350,7 +350,7 @@ export const UTILS = new Map([
   ...gen(
     ii => [
       `line-clamp-${ii}`,
-      `overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: ${ii}`,
+      `-webkit-line-clamp: ${ii}; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical`,
     ],
     LINE_CLAMPS,
   ),
@@ -390,9 +390,9 @@ export const UTILS = new Map([
   ...gen(ii => [`${ii}`, `text-transform: ${ii}`], ['uppercase', 'lowercase', 'capitalize']),
   ['normal-case', '{ text-transform: none }'],
   // Typography - text-overflow
-  ['truncate', '{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap }'],
   ['overflow-ellipsis', '{ text-overflow: ellipsis }'],
   ['overflow-clip', '{ text-overflow: clip }'],
+  ['truncate', '{ text-overflow: ellipsis; overflow: hidden; white-space: nowrap }'],
   // Typography - text-wrap
   ...gen(ii => [`text-${ii}`, `text-wrap: ${ii}`], ['wrap', 'nowrap', 'balance', 'pretty']),
   // Typography - text-indent

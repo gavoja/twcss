@@ -3072,7 +3072,7 @@
 .list-none { list-style-type: none; }
 .list-image-none { list-style-image: none; }
 .leading-none { line-height: 1; }
-.line-clamp-none { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: none; }
+.line-clamp-none { -webkit-line-clamp: none; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; }
 .row-start-auto { grid-row-start: auto; }
 .row-start-13 { grid-row-start: 13; }
 .row-start-12 { grid-row-start: 12; }
@@ -3284,8 +3284,8 @@ ul, ol { list-style: none; }
 .table { display: table; }
 .inline-table { display: inline-table; }
 .list-item { display: list-item; }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px; }
-.not-sr-only { position: static; width: auto; height: auto; padding: 0px; margin: 0px; overflow: visible; clip: auto; white-space: normal; }
+.sr-only { clip: rect(0px, 0px, 0px, 0px); position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; white-space: nowrap; border-width: 0px; }
+.not-sr-only { clip: auto; position: static; width: auto; height: auto; padding: 0px; margin: 0px; overflow: visible; white-space: normal; }
 .float-start { float: inline-start; }
 .float-end { float: inline-end; }
 .float-left { float: left; }
@@ -3544,12 +3544,12 @@ ul, ol { list-style: none; }
 .tracking-wide { letter-spacing: 0.025em; }
 .tracking-wider { letter-spacing: 0.05em; }
 .tracking-widest { letter-spacing: 0.1em; }
-.line-clamp-1 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
-.line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-.line-clamp-3 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
-.line-clamp-4 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
-.line-clamp-5 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; }
-.line-clamp-6 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; }
+.line-clamp-1 { -webkit-line-clamp: 1; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; }
+.line-clamp-2 { -webkit-line-clamp: 2; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; }
+.line-clamp-3 { -webkit-line-clamp: 3; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; }
+.line-clamp-4 { -webkit-line-clamp: 4; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; }
+.line-clamp-5 { -webkit-line-clamp: 5; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; }
+.line-clamp-6 { -webkit-line-clamp: 6; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; }
 .leading-tight { line-height: 1.25; }
 .leading-snug { line-height: 1.375; }
 .leading-normal { line-height: 1.5; }
@@ -11405,8 +11405,8 @@ ul, ol { list-style: none; }
 .lowercase { text-transform: lowercase; }
 .capitalize { text-transform: capitalize; }
 .normal-case { text-transform: none; }
-.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .overflow-ellipsis { text-overflow: ellipsis; }
+.truncate { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
 .text-wrap { text-wrap: wrap; }
 .text-nowrap { text-wrap: nowrap; }
 .text-balance { text-wrap: balance; }
