@@ -312,7 +312,7 @@ function generateReference() {
     '',
   )
   mdContents.push('|   | 50|100|200|300|400|500|600|700|800|900|950|')
-  mdContents.push('|---|---|---|---|---|---|---|---|---|---|---|---|')
+  mdContents.push('|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|')
 
   const colorRow = new Set()
   for (const [cls, color] of COLORS) {
@@ -323,7 +323,8 @@ function generateReference() {
 
     const [l, c, h] = color.split(' ').map(Number)
     const hex = chroma.oklch(l, c, h).hex()
-    colorRow.add(`$\\color{${hex}}{\\textsf{█}}$`)
+    colorRow.add(`$\\color{${hex}}{\\Huge\\textsf{█}}$`)
+
 
     if (cls.endsWith('-950')) {
       mdContents.push([...colorRow].join('|'))
