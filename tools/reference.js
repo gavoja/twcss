@@ -343,17 +343,17 @@ function generateReference() {
     '',
   )
 
-  mdContents.push('|Value|Output|')
-  mdContents.push('|-----|------|')
-  mdContents.push('|`class-<number>`|`property: calc(<number> * 4px)`|')
-  mdContents.push('|`-class-<number>`|`property: calc(-<number> * 4px)`|')
-  mdContents.push('|`class-<fraction>`|`property: calc(<fraction> * 100%)`|')
-  mdContents.push('|`-class-<fraction>`|`property: calc(-<fraction> * 100%)`|')
-  mdContents.push('|`class-[<value>]`|`property: <value>`|')
-  mdContents.push('|`class-(--custom-property)`|`property: var(--custom-property)`|')
+  mdContents.push('|Value                      |Output                              |Example (width)        |')
+  mdContents.push('|---------------------------|------------------------------------|-----------------------|')
+  mdContents.push('|`class-<number>`           |`property: calc(<number> * 4px)`    |`w-4`                  |')
+  mdContents.push('|`-class-<number>`          |`property: calc(-<number> * 4px)`   |`-w-4`                 |')
+  mdContents.push('|`class-<fraction>`         |`property: calc(<fraction> * 100%)` |`w-1/4`                |')
+  mdContents.push('|`-class-<fraction>`        |`property: calc(-<fraction> * 100%)`|`-w-1/4`               |')
+  mdContents.push('|`class-[<value>]`          |`property: <value>`                 |`w-[calc(50%_-_10px)]` |')
+  mdContents.push('|`class-(--custom-property)`|`property: var(--custom-property)`  |`w-(--button-height)`  |')
 
   for (const [name, value] of Object.entries(STRING_SIZES)) {
-    mdContents.push(`|\`class-${name}\`|\`property: ${value}\`|`)
+    mdContents.push(`|\`class-${name}\`|\`property: ${value}\`|\`w-${name}\`|`)
   }
 
   mdContents.push('')

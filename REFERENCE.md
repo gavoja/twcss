@@ -198,27 +198,27 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 
 Dynamic properties can be set by adding a suffix according to the table below. With a few exceptions, this mainly applies to sizing. Note that for simplicity the engine treats all of them equally, which means not all combinations will result in a valid CSS. A good example is background image: `bg-[url(...)]` makes sense, whereas `bg-1/3` does not.
 
-|Value|Output|
-|-----|------|
-|`class-<number>`|`property: calc(<number> * 4px)`|
-|`-class-<number>`|`property: calc(-<number> * 4px)`|
-|`class-<fraction>`|`property: calc(<fraction> * 100%)`|
-|`-class-<fraction>`|`property: calc(-<fraction> * 100%)`|
-|`class-[<value>]`|`property: <value>`|
-|`class-(--custom-property)`|`property: var(--custom-property)`|
-|`class-auto`|`property: auto`|
-|`class-px`|`property: 1px`|
-|`class-full`|`property: 100%`|
-|`class-screen`|`property: 100vw`|
-|`class-dvw`|`property: 100vw`|
-|`class-dvh`|`property: 100vh`|
-|`class-lvw`|`property: 100lvw`|
-|`class-lvh`|`property: 100lvh`|
-|`class-svw`|`property: 100svw`|
-|`class-svh`|`property: 100svh`|
-|`class-min`|`property: min-content`|
-|`class-max`|`property: max-content`|
-|`class-fit`|`property: fit-content`|
+|Value                      |Output                              |Example (width)        |
+|---------------------------|------------------------------------|-----------------------|
+|`class-<number>`           |`property: calc(<number> * 4px)`    |`w-4`                  |
+|`-class-<number>`          |`property: calc(-<number> * 4px)`   |`-w-4`                 |
+|`class-<fraction>`         |`property: calc(<fraction> * 100%)` |`w-1/4`                |
+|`-class-<fraction>`        |`property: calc(-<fraction> * 100%)`|`-w-1/4`               |
+|`class-[<value>]`          |`property: <value>`                 |`w-[calc(50%_-_10px)]` |
+|`class-(--custom-property)`|`property: var(--custom-property)`  |`w-(--button-height)`  |
+|`class-auto`|`property: auto`|`w-auto`|
+|`class-px`|`property: 1px`|`w-px`|
+|`class-full`|`property: 100%`|`w-full`|
+|`class-screen`|`property: 100vw`|`w-screen`|
+|`class-dvw`|`property: 100vw`|`w-dvw`|
+|`class-dvh`|`property: 100vh`|`w-dvh`|
+|`class-lvw`|`property: 100lvw`|`w-lvw`|
+|`class-lvh`|`property: 100lvh`|`w-lvh`|
+|`class-svw`|`property: 100svw`|`w-svw`|
+|`class-svh`|`property: 100svh`|`w-svh`|
+|`class-min`|`property: min-content`|`w-min`|
+|`class-max`|`property: max-content`|`w-max`|
+|`class-fit`|`property: fit-content`|`w-fit`|
 
 ## Layout
 

@@ -3196,7 +3196,7 @@ ul, ol { list-style: none; }
 .block { display: block; }
 .bg-violet-300 { background-color: oklch(0.811 0.111 293.571); }
 .rounded-md { border-radius: 6px; }
-.w-\[200px\] { width: 200px; }
+.w-\[calc\(50\%_-_50px\)\] { width: calc(50% - 50px); }
 .h-\[200px\] { height: 200px; }
 .border-2 { border-width: 2px; }
 .bg-violet-200 { background-color: oklch(0.894 0.057 293.283); }
