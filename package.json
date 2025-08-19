@@ -14,6 +14,14 @@
     "tw-in-js",
     "tailwind-in-js"
   ],
+  "homepage": "https://github.com/gavoja/twcss",
+  "bugs": {
+    "url": "https://github.com/gavoja/twcss/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavoja/twcss.git"
+  },
   "imports": {
     "#src/*.js": "./src/*.js"
   },
