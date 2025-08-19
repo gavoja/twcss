@@ -1,6 +1,6 @@
 {
   "name": "twcss",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "main": "src/twcss.js",
   "author": "Michal Kochel",
   "license": "MIT",
