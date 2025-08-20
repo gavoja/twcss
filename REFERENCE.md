@@ -2351,6 +2351,24 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 .underline-offset-8 { text-underline-offset: 8px }
 ```
 
+### text-transform
+
+```css
+.uppercase { text-transform: uppercase }
+```
+
+```css
+.lowercase { text-transform: lowercase }
+```
+
+```css
+.capitalize { text-transform: capitalize }
+```
+
+```css
+.normal-case { text-transform: none }
+```
+
 ### text-overflow
 
 ```css

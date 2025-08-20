@@ -122,6 +122,7 @@ const HIERARCHY = {
     'text-decoration-style': ['text-decoration-style'],
     'text-decoration-thickness': ['text-decoration-thickness'],
     'text-underline-offset': ['text-underline-offset'],
+    'text-transform': ['text-transform'],
     'text-overflow': ['text-overflow'],
     'text-wrap': ['text-wrap'],
     'text-indent': ['text-indent'],
