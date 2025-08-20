@@ -3057,6 +3057,7 @@
 .drop-shadow-none { filter: drop-shadow(rgba(0, 0, 0, 0) 0px 0px); }
 .backdrop-blur-none { backdrop-filter: none; }
 .blur-none { filter: none; }
+.mask-none { mask-image: none; }
 .text-shadow-none { text-shadow: none; }
 .shadow-none { box-shadow: rgba(0, 0, 0, 0) 0px 0px; }
 .outline-none { outline-style: none; }
@@ -23338,6 +23339,46 @@ ul, ol { list-style: none; }
 .bg-blend-saturation { background-blend-mode: saturation; }
 .bg-blend-color { background-blend-mode: color; }
 .bg-blend-luminosity { background-blend-mode: luminosity; }
+.mask-clip-border { mask-clip: border-box; }
+.mask-clip-padding { mask-clip: padding-box; }
+.mask-clip-content { mask-clip: content-box; }
+.mask-clip-fill { mask-clip: fill-box; }
+.mask-clip-stroke { mask-clip: stroke-box; }
+.mask-clip-view { mask-clip: view-box; }
+.mask-no-clip { mask-clip: no-clip; }
+.mask-add { mask-composite: add; }
+.mask-subtract { mask-composite: subtract; }
+.mask-intersect { mask-composite: intersect; }
+.mask-exclude { mask-composite: exclude; }
+.mask-alpha { mask-mode: alpha; }
+.mask-luminance { mask-mode: luminance; }
+.mask-match { mask-mode: match-source; }
+.mask-origin-border { mask-origin: border-box; }
+.mask-origin-padding { mask-origin: padding-box; }
+.mask-origin-content { mask-origin: content-box; }
+.mask-origin-fill { mask-origin: fill-box; }
+.mask-origin-stroke { mask-origin: stroke-box; }
+.mask-origin-view { mask-origin: view-box; }
+.mask-top-left { mask-position: left top; }
+.mask-top { mask-position: center top; }
+.mask-top-right { mask-position: right top; }
+.mask-left { mask-position: left center; }
+.mask-center { mask-position: center center; }
+.mask-right { mask-position: right center; }
+.mask-bottom-left { mask-position: left bottom; }
+.mask-bottom { mask-position: center bottom; }
+.mask-bottom-right { mask-position: right bottom; }
+.mask-repeat { mask-repeat: repeat; }
+.mask-no-repeat { mask-repeat: no-repeat; }
+.mask-repeat-x { mask-repeat: repeat-x; }
+.mask-repeat-y { mask-repeat: repeat-y; }
+.mask-repeat-space { mask-repeat: space; }
+.mask-repeat-round { mask-repeat: round; }
+.mask-auto { mask-size: auto; }
+.mask-cover { mask-size: cover; }
+.mask-contain { mask-size: contain; }
+.mask-type-alpha { mask-type: alpha; }
+.mask-type-luminance { mask-type: luminance; }
 .blur-xs { filter: blur(4px); }
 .backdrop-blur-xs { backdrop-filter: blur(4px); }
 .blur-sm { filter: blur(8px); }

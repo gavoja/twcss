@@ -3379,6 +3379,200 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 .bg-blend-luminosity { background-blend-mode: luminosity }
 ```
 
+### mask-clip
+
+```css
+.mask-clip-border { mask-clip: border-box }
+```
+
+```css
+.mask-clip-padding { mask-clip: padding-box }
+```
+
+```css
+.mask-clip-content { mask-clip: content-box }
+```
+
+```css
+.mask-clip-fill { mask-clip: fill-box }
+```
+
+```css
+.mask-clip-stroke { mask-clip: stroke-box }
+```
+
+```css
+.mask-clip-view { mask-clip: view-box }
+```
+
+```css
+.mask-no-clip { mask-clip: no-clip }
+```
+
+### mask-composite
+
+```css
+.mask-add { mask-composite: add }
+```
+
+```css
+.mask-subtract { mask-composite: subtract }
+```
+
+```css
+.mask-intersect { mask-composite: intersect }
+```
+
+```css
+.mask-exclude { mask-composite: exclude }
+```
+
+### mask-image
+
+```css
+.mask-image-SUFFIX { mask-image: ... }
+```
+
+```css
+.mask-none { mask-image: none }
+```
+
+### mask-mode
+
+```css
+.mask-alpha { mask-mode: alpha }
+```
+
+```css
+.mask-luminance { mask-mode: luminance }
+```
+
+```css
+.mask-match { mask-mode: match-source }
+```
+
+### mask-origin
+
+```css
+.mask-origin-border { mask-origin: border-box }
+```
+
+```css
+.mask-origin-padding { mask-origin: padding-box }
+```
+
+```css
+.mask-origin-content { mask-origin: content-box }
+```
+
+```css
+.mask-origin-fill { mask-origin: fill-box }
+```
+
+```css
+.mask-origin-stroke { mask-origin: stroke-box }
+```
+
+```css
+.mask-origin-view { mask-origin: view-box }
+```
+
+### mask-position
+
+```css
+.mask-top-left { mask-position: top left }
+```
+
+```css
+.mask-top { mask-position: top }
+```
+
+```css
+.mask-top-right { mask-position: top right }
+```
+
+```css
+.mask-left { mask-position: left }
+```
+
+```css
+.mask-center { mask-position: center }
+```
+
+```css
+.mask-right { mask-position: right }
+```
+
+```css
+.mask-bottom-left { mask-position: bottom left }
+```
+
+```css
+.mask-bottom { mask-position: bottom }
+```
+
+```css
+.mask-bottom-right { mask-position: bottom right }
+```
+
+```css
+.mask-position-SUFFIX { mask-position: ... }
+```
+
+### mask-repeat
+
+```css
+.mask-repeat { mask-repeat: repeat }
+```
+
+```css
+.mask-no-repeat { mask-repeat: no-repeat }
+```
+
+```css
+.mask-repeat-x { mask-repeat: repeat-x }
+```
+
+```css
+.mask-repeat-y { mask-repeat: repeat-y }
+```
+
+```css
+.mask-repeat-space { mask-repeat: space }
+```
+
+```css
+.mask-repeat-round { mask-repeat: round }
+```
+
+### mask-size
+
+```css
+.mask-auto { mask-size: auto }
+```
+
+```css
+.mask-cover { mask-size: cover }
+```
+
+```css
+.mask-contain { mask-size: contain }
+```
+
+```css
+.mask-size-SUFFIX { mask-size: ... }
+```
+
+### mask-type
+
+```css
+.mask-type-alpha { mask-type: alpha }
+```
+
+```css
+.mask-type-luminance { mask-type: luminance }
+```
+
 ## Filters
 
 ### filter

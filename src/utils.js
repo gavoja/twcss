@@ -510,6 +510,32 @@ export const UTILS = new Map([
   ...gen(ii => [`mix-blend-${ii}`, `mix-blend-mode: ${ii}`], BLEND_MODES),
   // Effects - background-blend-mode
   ...gen(ii => [`bg-blend-${ii}`, `background-blend-mode: ${ii}`], BLEND_MODES),
+  // Effects - mask-clip
+  ...gen(ii => [`mask-clip-${ii}`, `mask-clip: ${ii}-box`], ['border', 'padding', 'content', 'fill', 'stroke', 'view']),
+  ['mask-no-clip', '{ mask-clip: no-clip }'],
+  // Effects - mask-composite
+  ...gen(ii => [`mask-${ii}`, `mask-composite: ${ii}`], ['add', 'subtract', 'intersect', 'exclude']),
+  // Effects - mask-image
+  ['mask-image-', '{ mask-image: $ }'],
+  ['mask-none', '{ mask-image: none }'],
+  // Effects - mask-mode
+  ...gen(ii => [`mask-${ii}`, `mask-mode: ${ii}`], ['alpha', 'luminance']),
+  ['mask-match', '{ mask-mode: match-source }'],
+  // Effects - mask-origin
+  ...gen(ii => [`mask-origin-${ii}`, `mask-origin: ${ii}-box`], ['border', 'padding', 'content', 'fill', 'stroke', 'view']),
+  // Effects - mask-position
+  ...gen(ii => [`mask-${ii.replace(' ', '-')}`, `mask-position: ${ii}`], ['top left', 'top', 'top right', 'left', 'center', 'right', 'bottom left', 'bottom', 'bottom right']),
+  ['mask-position-', '{ mask-position: $ }'],
+  // Effects - mask-repeat
+  ...gen(ii => [`mask-${ii}`, `mask-repeat: ${ii}`], ['repeat', 'no-repeat', 'repeat-x', 'repeat-y']),
+  ['mask-repeat-space', '{ mask-repeat: space }'],
+  ['mask-repeat-round', '{ mask-repeat: round }'],
+  // Effects - mask-size
+  ...gen(ii => [`mask-${ii}`, `mask-size: ${ii}`], ['auto', 'cover', 'contain']),
+  ['mask-size-', '{ mask-size: $ }'],
+  // Effects - mask-type
+  ['mask-type-alpha', '{ mask-type: alpha }'],
+  ['mask-type-luminance', '{ mask-type: luminance }'],
   // ---------------------------------------------------------------------------
   // Filters - blur
   ...backdrop(['blur-xs', '{ filter: blur(4px) }']),
