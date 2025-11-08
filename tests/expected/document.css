@@ -2638,6 +2638,270 @@
 @media (prefers-color-scheme: light) {
   .light\:hidden { display: none; }
 }
+@media (orientation: portrait) {
+  .portrait\:visited\:hidden:visited { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:valid\:hidden:valid { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:user-valid\:hidden:user-valid { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:user-invalid\:hidden:user-invalid { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:target\:hidden:target { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:scope\:hidden:scope { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:root\:hidden:root { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:required\:hidden:required { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:read-write\:hidden:read-write { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:read-only\:hidden:read-only { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:popover-open\:hidden:popover-open { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:placeholder-shown\:hidden:placeholder-shown { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:picture-in-picture\:hidden:picture-in-picture { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:past\:hidden:past { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:out-of-range\:hidden:out-of-range { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:optional\:hidden:optional { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:open\:hidden:open { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:only-of-type\:hidden:only-of-type { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:only-child\:hidden:only-child { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:modal\:hidden:modal { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:link\:hidden:link { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:last-of-type\:hidden:last-of-type { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:last-child\:hidden:last-child { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:invalid\:hidden:invalid { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:indeterminate\:hidden:indeterminate { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:in-range\:hidden:in-range { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:hover\:hidden:hover { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:host\:hidden:host { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:future\:hidden:future { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:fullscreen\:hidden:fullscreen { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:focus-within\:hidden:focus-within { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:focus-visible\:hidden:focus-visible { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:focus\:hidden:focus { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:first-of-type\:hidden:first-of-type { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:first-child\:hidden:first-child { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:enabled\:hidden:enabled { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:empty\:hidden:empty { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:disabled\:hidden:disabled { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:defined\:hidden:defined { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:default\:hidden:default { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:checked\:hidden:checked { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:any-link\:hidden:any-link { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:active\:hidden:active { display: none; }
+}
+@media (orientation: portrait) {
+  .portrait\:hidden { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:visited\:hidden:visited { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:valid\:hidden:valid { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:user-valid\:hidden:user-valid { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:user-invalid\:hidden:user-invalid { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:target\:hidden:target { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:scope\:hidden:scope { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:root\:hidden:root { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:required\:hidden:required { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:read-write\:hidden:read-write { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:read-only\:hidden:read-only { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:popover-open\:hidden:popover-open { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:placeholder-shown\:hidden:placeholder-shown { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:picture-in-picture\:hidden:picture-in-picture { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:past\:hidden:past { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:out-of-range\:hidden:out-of-range { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:optional\:hidden:optional { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:open\:hidden:open { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:only-of-type\:hidden:only-of-type { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:only-child\:hidden:only-child { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:modal\:hidden:modal { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:link\:hidden:link { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:last-of-type\:hidden:last-of-type { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:last-child\:hidden:last-child { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:invalid\:hidden:invalid { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:indeterminate\:hidden:indeterminate { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:in-range\:hidden:in-range { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:hover\:hidden:hover { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:host\:hidden:host { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:future\:hidden:future { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:fullscreen\:hidden:fullscreen { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:focus-within\:hidden:focus-within { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:focus-visible\:hidden:focus-visible { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:focus\:hidden:focus { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:first-of-type\:hidden:first-of-type { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:first-child\:hidden:first-child { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:enabled\:hidden:enabled { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:empty\:hidden:empty { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:disabled\:hidden:disabled { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:defined\:hidden:defined { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:default\:hidden:default { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:checked\:hidden:checked { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:any-link\:hidden:any-link { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:active\:hidden:active { display: none; }
+}
+@media (orientation: landscape) {
+  .landscape\:hidden { display: none; }
+}
 @media screen and (min-width: 960px) {
   .lg\:visited\:hidden:visited { display: none; }
 }
@@ -3329,6 +3593,9 @@ ul, ol { list-style: none; }
 .overscroll-x-contain { overscroll-behavior-x: contain; }
 .overscroll-y-auto { overscroll-behavior-y: auto; }
 .overscroll-y-contain { overscroll-behavior-y: contain; }
+.scrollbar-auto { scrollbar-gutter: auto; }
+.scrollbar-stable { scrollbar-gutter: stable; }
+.scrollbar-both { scrollbar-gutter: stable both-edges; }
 .static { position: static; }
 .fixed { position: fixed; }
 .absolute { position: absolute; }

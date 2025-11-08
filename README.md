@@ -99,7 +99,7 @@ TWCSS aims at compatibility with Tailwind 4. This is not always possible without
 
 ### Differences
 
-- Default media queries are `sm`, `md` and `lg`. Feel free to extend them.
+- Default media queries for viewports are `sm`, `md` and `lg`. Feel free to extend them.
 - Default animations serve the following use cases:
   - `expand` for showing menus and opening accordions,
   - `toast` for popping a notification up from the bottom,
@@ -108,3 +108,4 @@ TWCSS aims at compatibility with Tailwind 4. This is not always possible without
 - Custom shadow classes are currently not supported, i.e. `inset-shadow-*`, `ring-*` and `inset-ring-*`.
 - Shadow color is currently not supported; shadows are always black.
 - Background gradient classes (`bg-linear-*`, `bg-conic-*`, `from-`, `via-` and `to-`) are currently not supported. Use `bg-[]` instead.
+- `scrollbar-gutter` support via `scrollbar-stable`, `scrollbar-auto`, `scrollbar-both` classes (currently not supported in Tailwind CSS).

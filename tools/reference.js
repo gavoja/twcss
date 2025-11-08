@@ -28,6 +28,7 @@ const HIERARCHY = {
     'object-position': ['object-position'],
     'overflow': ['overflow', 'overflow-x', 'overflow-y'],
     'overscroll-behavior': ['overscroll-behavior', 'overscroll-behavior-x', 'overscroll-behavior-y'],
+    'scrollbar-gutter': ['scrollbar-gutter'],
     'position': ['position'],
     'top / right / bottom / left': [
       'inset',

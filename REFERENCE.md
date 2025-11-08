@@ -39,6 +39,16 @@ All container queries are relative to the ancestor with `@container` class.
 ```
 
 ```css
+/* landscape */
+@media (orientation: landscape)
+```
+
+```css
+/* portrait */
+@media (orientation: portrait)
+```
+
+```css
 /* light */
 @media (prefers-color-scheme: light)
 ```
@@ -829,6 +839,20 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 
 ```css
 .overscroll-y-none { overscroll-behavior-y: none }
+```
+
+### scrollbar-gutter
+
+```css
+.scrollbar-auto { scrollbar-gutter: auto }
+```
+
+```css
+.scrollbar-stable { scrollbar-gutter: stable }
+```
+
+```css
+.scrollbar-both { scrollbar-gutter: stable both-edges }
 ```
 
 ### position

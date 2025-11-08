@@ -99,6 +99,10 @@ export const UTILS = new Map([
   ...gen(ii => [`overscroll-${ii}`, `overscroll-behavior: ${ii}`], ['auto', 'contain', 'none']),
   ...gen(ii => [`overscroll-x-${ii}`, `overscroll-behavior-x: ${ii}`], ['auto', 'contain', 'none']),
   ...gen(ii => [`overscroll-y-${ii}`, `overscroll-behavior-y: ${ii}`], ['auto', 'contain', 'none']),
+  // Layout - scrollbar-gutter
+  ['scrollbar-auto', '{ scrollbar-gutter: auto }'],
+  ['scrollbar-stable', '{ scrollbar-gutter: stable }'],
+  ['scrollbar-both', '{ scrollbar-gutter: stable both-edges }'],
   // Layout - position
   ...gen(ii => [`${ii}`, `position: ${ii}`], ['static', 'fixed', 'absolute', 'relative', 'sticky']),
   // Layout - top / right / bottom / left

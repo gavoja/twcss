@@ -2,6 +2,8 @@ export const QUERIES = new Map([
   ['sm', '@media screen and (max-width: 599px)'],
   ['md', '@media screen and (min-width: 600px) and (max-width: 959px)'],
   ['lg', '@media screen and (min-width: 960px)'],
+  ['landscape', '@media (orientation: landscape)'],
+  ['portrait', '@media (orientation: portrait)'],
   ['light', '@media (prefers-color-scheme: light)'],
   ['dark', '@media (prefers-color-scheme: dark)'],
   ['inverted-colors', '@media (inverted-colors: inverted)'],

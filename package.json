@@ -34,14 +34,14 @@
     "release": "dotenv release-it"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.0",
+    "@biomejs/biome": "^2.3.4",
     "@playwright/test": "^1.55.0",
     "chroma-js": "^3.1.2",
     "diff": "^8.0.2",
-    "dotenv": "^17.2.1",
-    "dotenv-cli": "^10.0.0",
-    "esbuild": "^0.25.9",
+    "dotenv": "^17.2.3",
+    "dotenv-cli": "^11.0.0",
+    "esbuild": "^0.25.12",
     "playwright": "^1.55.0",
-    "release-it": "^19.0.4"
+    "release-it": "^19.0.6"
   }
 }
