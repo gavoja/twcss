@@ -43,7 +43,8 @@ function addTestDiv() {
   innerDiv.textContent = 'Inner DIV'
 
   const div = document.createElement('div')
-  div.setAttribute('tw', 'bg-violet-300 p-4 rounded-md w-[calc(50%_-_50px)] h-[200px]')
+  const array = ['bg-violet-300 p-4 rounded-md', 'w-[calc(50%_-_50px)]', true && 'h-[200px]', false && 'color-red-500']
+  div.setAttribute('tw', array)
   div.appendChild(innerDiv)
 
   document.body.appendChild(div)

@@ -32,6 +32,17 @@ Then, somewhere in the markup:
 <div tw="p-4 bg-indigo-800 text-slate-50 rounded-xl">Hello, world!</div>
 ```
 
+React example:
+
+```js
+function Wrapper({ children, isRounded }) {
+  // Supports array syntax for convenient conditional styling.
+  return <div tw={['p-4 bg-indigo-800 text-slate-50', isRounded && 'rounded-xl']}>
+    {children}
+  </div>
+}
+```
+
 Once imported, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructable stylesheets. CSS reset is included.
 
 > [!NOTE]
@@ -88,7 +99,7 @@ Usage:
 ```jsx
 import { add as tw } from 'twcss'
 
-function Button ({ children }) {
+function Button({ children }) {
   return <button class="{tw('p-4 rounded-xl')}">{children}</button>
 }
 ```

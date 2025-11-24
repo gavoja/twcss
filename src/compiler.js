@@ -105,9 +105,14 @@ function addRule(instance, cls) {
 
 function addRules(instance, className) {
   const timestamp = Date.now()
-  const classes = (className || '').split(/ +/)
+  const classes = (className || '').split(/[ ,]+/)
 
   for (const cls of classes) {
+    // Ignore false conditional results.
+    if (cls === false) {
+      continue
+    }
+
     try {
       addRule(instance, cls)
     } catch (err) {
