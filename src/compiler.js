@@ -106,33 +106,34 @@ function addRule(instance, cls) {
 function addRules(instance, className) {
   const timestamp = Date.now()
   const classes = (className || '').split(/[ ,]+/)
+  const outClasses = new Set()
 
   for (const cls of classes) {
     // Ignore false conditional results.
-    if (cls === false) {
+    if (cls === 'false') {
       continue
     }
 
     try {
       addRule(instance, cls)
+      outClasses.add(cls)
     } catch (err) {
       console.warn(err.message)
     }
   }
 
   instance.lastGenerationTime = Date.now() - timestamp
+  return Array.from(outClasses).join(' ')
 }
 
 function processElement(instance, el) {
-  const className = el.getAttribute('tw')
-  addRules(instance, className)
+  const className = addRules(instance, el.getAttribute('tw'))
   el.className = className
 }
 
 export function add(className, root = document) {
   init(root)
-  addRules(tw.instances.get(root), className)
-  return className
+  return addRules(tw.instances.get(root), className)
 }
 
 export function extend({ classes = {}, colors = {}, keyframes = {}, queries = {} }) {
