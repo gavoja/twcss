@@ -283,6 +283,7 @@ export const UTILS = new Map([
     'font-mono',
     '{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace }',
   ],
+  [ 'font-', '{ font-family: $ }' ],
   // Typography - font-size
   ['text-xs', '{ font-size: 12px; line-height: 1.333 }'],
   ['text-sm', '{ font-size: 14px; line-height: 1.429 }'],

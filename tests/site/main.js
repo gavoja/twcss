@@ -54,6 +54,7 @@ function addTestDiv() {
 function addDivWithAllClasses() {
   const classes = []
 
+  classes.push('font-[JetBrains_Mono]')
   classes.push('w-0.5')
   classes.push('w-1')
   classes.push('-w-17')

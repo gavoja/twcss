@@ -3476,6 +3476,7 @@ ul, ol { list-style: none; }
 .text-octarine { color: oklch(0.9 0.4 20); }
 .items-center { align-items: center; }
 .justify-center { justify-content: center; }
+.font-\[JetBrains_Mono\] { font-family: "JetBrains Mono"; }
 .w-0\.5 { width: calc(2px); }
 .w-1 { width: calc(4px); }
 .w-17 { width: calc(-68px); }

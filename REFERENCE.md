@@ -1861,6 +1861,10 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace }
 ```
 
+```css
+.font-SUFFIX { font-family: ... }
+```
+
 ### font-size
 
 ```css
