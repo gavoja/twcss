@@ -20,7 +20,6 @@ import {
 } from './constants.js'
 import { backdrop, gen, genc } from './generators.js'
 
-
 // Tries to follow Tailwind's order.
 export const UTILS = new Map([
   // ---------------------------------------------------------------------------
@@ -35,12 +34,12 @@ export const UTILS = new Map([
   // Layout - break-after
   ...gen(
     ii => [`break-after-${ii}`, `break-after: ${ii}`],
-    ['auto', 'avoid', 'avoid-page', 'page', 'left', 'right', 'column'],
+    ['auto', 'avoid', 'avoid-page', 'page', 'left', 'right', 'column']
   ),
   // Layout - break-before
   ...gen(
     ii => [`break-before-${ii}`, `break-after: ${ii}`],
-    ['auto', 'avoid', 'avoid-page', 'page', 'left', 'right', 'column'],
+    ['auto', 'avoid', 'avoid-page', 'page', 'left', 'right', 'column']
   ),
   // Layout - break-inside
   ...gen(ii => [`break-inside-${ii}`, `break-inside: ${ii}`], ['auto', 'avoid', 'avoid-page', 'avoid-column']),
@@ -64,7 +63,7 @@ export const UTILS = new Map([
       'table',
       'inline-table',
       'list-item',
-    ],
+    ]
   ),
   ['hidden', '{ display: none }'],
   [
@@ -89,7 +88,7 @@ export const UTILS = new Map([
   // Layout - object-position
   ...gen(
     ii => [`object-${ii.replace(/ /g, '-')}`, `object-position: ${ii}`],
-    ['bottom', 'center', 'left', 'left bottom', 'left top', 'right', 'right bottom', 'right top', 'top'],
+    ['bottom', 'center', 'left', 'left bottom', 'left top', 'right', 'right bottom', 'right top', 'top']
   ),
   // Layout - overflow
   ...gen(ii => [`overflow-${ii}`, `overflow: ${ii}`], ['auto', 'hidden', 'clip', 'visible', 'scroll', 'visible']),
@@ -283,7 +282,7 @@ export const UTILS = new Map([
     'font-mono',
     '{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace }',
   ],
-  [ 'font-', '{ font-family: $ }' ],
+  ['font-', '{ font-family: $ }'],
   // Typography - font-size
   ['text-xs', '{ font-size: 12px; line-height: 1.333 }'],
   ['text-sm', '{ font-size: 14px; line-height: 1.429 }'],
@@ -327,7 +326,7 @@ export const UTILS = new Map([
       'expanded',
       'extra-expanded',
       'ultra-expanded',
-    ],
+    ]
   ),
   // Typography - font-variant-numeric
   ['normal-nums', '{ font-variant-numeric: normal }'],
@@ -342,7 +341,7 @@ export const UTILS = new Map([
       'tabular-nums',
       'diagonal-fractions',
       'stacked-fractions',
-    ],
+    ]
   ),
   // Typography - letter-spacing
   ['tracking-tighter', '{ letter-spacing: -0.05em }'],
@@ -357,7 +356,7 @@ export const UTILS = new Map([
       `line-clamp-${ii}`,
       `-webkit-line-clamp: ${ii}; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical`,
     ],
-    LINE_CLAMPS,
+    LINE_CLAMPS
   ),
   // Typography - line-height
   ['leading-none', '{ line-height: 1 }'],
@@ -405,12 +404,12 @@ export const UTILS = new Map([
   // Typography - vertical-align
   ...gen(
     ii => [`align-${ii}`, `vertical-align: ${ii}`],
-    ['baseline', 'top', 'middle', 'bottom', 'text-top', 'text-bottom', 'sub', 'super'],
+    ['baseline', 'top', 'middle', 'bottom', 'text-top', 'text-bottom', 'sub', 'super']
   ),
   // Typography - white-space
   ...gen(
     ii => [`whitespace-${ii}`, `white-space: ${ii}`],
-    ['normal', 'nowrap', 'pre', 'pre-line', 'pre-wrap', 'break-spaces'],
+    ['normal', 'nowrap', 'pre', 'pre-line', 'pre-wrap', 'break-spaces']
   ),
   // Typography - word-break
   ['break-normal', '{ word-break: normal }'],
@@ -438,12 +437,12 @@ export const UTILS = new Map([
   // Backgrounds - background-position
   ...gen(
     ii => [`bg-${ii.replace(' ', '-')}`, `background-position: ${ii}`],
-    ['bottom', 'center', 'left', 'left bottom', 'left top', 'right', 'right bottom', 'right top', 'top'],
+    ['bottom', 'center', 'left', 'left bottom', 'left top', 'right', 'right bottom', 'right top', 'top']
   ),
   // Backgrounds - background-repeat
   ...gen(
     ii => [`bg-${ii}`, `background-repeat: ${ii}`],
-    ['repeat', 'repeat-x', 'repeat-y', 'space', 'round', 'no-repeat'],
+    ['repeat', 'repeat-x', 'repeat-y', 'space', 'round', 'no-repeat']
   ),
   // Backgrounds - background-size
   ...gen(ii => [`bg-${ii}`, `background-size: ${ii}`], ['auto', 'cover', 'contain']),
@@ -669,12 +668,12 @@ export const UTILS = new Map([
   // Interactivity - color-scheme
   ...gen(
     ii => [`scheme-${ii.replace(' ', '-')}`, `color-scheme: ${ii}`],
-    ['normal', 'dark', 'light', 'light dark', 'only dark', 'only light'],
+    ['normal', 'dark', 'light', 'light dark', 'only dark', 'only light']
   ),
   // Interactivity - cursor
   ...gen(
     ii => [`cursor-${ii}`, `cursor: ${ii}`],
-    ['auto', 'default', 'pointer', 'wait', 'text', 'move', 'not-allowed'],
+    ['auto', 'default', 'pointer', 'wait', 'text', 'move', 'not-allowed']
   ),
   // Interactivity - field-sizing
   ['field-sizing-fixed', '{ field-sizing: fixed }'],
@@ -724,7 +723,7 @@ export const UTILS = new Map([
   // Interactivity - touch-action
   ...gen(
     ii => [`touch-${ii}`, `touch-action: ${ii}`],
-    ['auto', 'none', 'pan-x', 'pan-left', 'pan-right', 'pan-y', 'pan-up', 'pan-down', 'pinch-zoom', 'manipulation'],
+    ['auto', 'none', 'pan-x', 'pan-left', 'pan-right', 'pan-y', 'pan-up', 'pan-down', 'pinch-zoom', 'manipulation']
   ),
   // Interactivity - user-select
   ['select-none', '{ user-select: none }'],

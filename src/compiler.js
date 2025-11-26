@@ -1,3 +1,4 @@
+/* global CSS, CSSStyleSheet, MutationObserver */
 import { COLOR_PROPS } from './colors.js'
 import { HIGH_PRIORITY_RULES, OPACITIES, STATES, PSEUDO, STRING_SIZES } from './constants.js'
 import { KEYFRAMES } from './keyframes.js'
@@ -8,8 +9,9 @@ import { UTILS } from './utils.js'
 // Global object.
 export const tw = { instances: new Map(), add, extend, parser: getParser() }
 
-function getParser() {
-  // biome-ignore format: It is easier to understand with extra indentation.
+function getParser () {
+  /* eslint-disable @stylistic/indent */
+  // It is easier to understand the regex with extra indentation.
   return new RegExp([
     '(?<negative>-?)?', // Minus sign.
     `((?<mq>${[...QUERIES.keys()].map(mq => mq.replace(/(\.|\\|\+|\*|\?|\^|\$|\(|\)|\[|\]|\{|\})/g, '\\$1')).join('|')}):)?`, // Media or container query.
@@ -30,7 +32,7 @@ function getParser() {
   ].join(''))
 }
 
-function createSheet() {
+function createSheet () {
   const sheet = new CSSStyleSheet()
 
   for (const css of RESET) {
@@ -44,7 +46,7 @@ function createSheet() {
   return sheet
 }
 
-function addRule(instance, cls) {
+function addRule (instance, cls) {
   // Skip if empty or already present.
   if (!cls || instance.usedRules.has(cls)) {
     return
@@ -103,7 +105,7 @@ function addRule(instance, cls) {
   instance.sheet.insertRule(rule, index)
 }
 
-function addRules(instance, className) {
+function addRules (instance, className) {
   const timestamp = Date.now()
   const classes = (className || '').split(/[ ,]+/)
   const outClasses = new Set()
@@ -126,17 +128,17 @@ function addRules(instance, className) {
   return Array.from(outClasses).join(' ')
 }
 
-function processElement(instance, el) {
+function processElement (instance, el) {
   const className = addRules(instance, el.getAttribute('tw'))
   el.className = className
 }
 
-export function add(className, root = document) {
+export function add (className, root = document) {
   init(root)
   return addRules(tw.instances.get(root), className)
 }
 
-export function extend({ classes = {}, colors = {}, keyframes = {}, queries = {} }) {
+export function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {} }) {
   // Inject keyframes.
   Object.entries(keyframes).forEach(([name, keyframes]) => {
     tw.instances.values().forEach(instance => {
@@ -161,7 +163,7 @@ export function extend({ classes = {}, colors = {}, keyframes = {}, queries = {}
   tw.parser = getParser()
 }
 
-export function init(root) {
+export function init (root) {
   if (tw.instances.has(root)) {
     return
   }

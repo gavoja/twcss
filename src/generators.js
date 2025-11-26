@@ -2,7 +2,7 @@ import { COLORS } from './colors.js'
 import { OPACITIES } from './constants.js'
 
 // Generate with a list.
-export function* gen(func, list) {
+export function * gen (func, list) {
   for (const item of list) {
     const [name, value] = func(item)
     yield [name, `{ ${value} }`]
@@ -10,7 +10,7 @@ export function* gen(func, list) {
 }
 
 // Generate colors.
-export function* genc(cls, prop, colors = COLORS.entries()) {
+export function * genc (cls, prop, colors = COLORS.entries()) {
   yield [`${cls}-inherit`, `{ ${prop}: inherit }`]
   yield [`${cls}-transparent`, `{ ${prop}: transparent }`]
   yield [`${cls}-current`, `{ ${prop}: currentColor }`]
@@ -25,7 +25,7 @@ export function* genc(cls, prop, colors = COLORS.entries()) {
 }
 
 // Generate backdrop filters from filters.
-export function* backdrop(filterRules) {
+export function * backdrop (filterRules) {
   // Handle gen() output. Naughty assumption that gen() will not be used for less than 3 rules.
   const filterRulesArr = filterRules.length === 2 ? [filterRules] : filterRules
 

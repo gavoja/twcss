@@ -3,6 +3,6 @@ export { add, extend } from './compiler.js'
 
 // Initialize for the document.
 if (typeof document !== 'undefined') {
-  self.tw ||= tw
+  globalThis.tw ||= tw
   init(document)
 }

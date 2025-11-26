@@ -239,7 +239,7 @@ const HIERARCHY = {
   },
 }
 
-function getRules(props) {
+function getRules (props) {
   const rules = new Map()
 
   for (const [cls, css] of UTILS.entries().filter(([_cls, css]) => props.some(p => css.includes(`{ ${p}:`)))) {
@@ -271,7 +271,7 @@ function getRules(props) {
   return rules
 }
 
-function generateReference() {
+function generateReference () {
   const mdContents = []
   mdContents.push('# Reference', '')
   mdContents.push('## Defaults', '')
@@ -320,7 +320,7 @@ function generateReference() {
   mdContents.push('### Colors', '')
   mdContents.push(
     'In addition to the colors below, `black`, `white`, `transparent`, `current` and `inherit` are also supported.',
-    '',
+    ''
   )
   mdContents.push('|   | 50|100|200|300|400|500|600|700|800|900|950|')
   mdContents.push('|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|')
@@ -336,7 +336,6 @@ function generateReference() {
     const hex = chroma.oklch(l, c, h).hex()
     colorRow.add(`$\\color{${hex}}{\\Huge\\textsf{█}}$`)
 
-
     if (cls.endsWith('-950')) {
       mdContents.push([...colorRow].join('|'))
     }
@@ -351,7 +350,7 @@ function generateReference() {
   mdContents.push('### Dynamic properties', '')
   mdContents.push(
     'Dynamic properties can be set by adding a suffix according to the table below. With a few exceptions, this mainly applies to sizing. Note that for simplicity the engine treats all of them equally, which means not all combinations will result in a valid CSS. A good example is background image: `bg-[url(...)]` makes sense, whereas `bg-1/3` does not.',
-    '',
+    ''
   )
 
   mdContents.push('|Value                      |Output                              |Example (width)        |')

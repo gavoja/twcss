@@ -1,8 +1,14 @@
 import { context } from 'esbuild'
 
-async function main() {
+async function main () {
   const ctx = await context({
-    entryPoints: ['tests/site/main.js', 'tests/site/index.html'],
+    entryPoints: [
+      'tests/site/main.js',
+      'tests/site/index.html',
+      'tests/site/benchmarks/test-inline.html',
+      'tests/site/benchmarks/test-twcss.html',
+      'tests/site/benchmarks/lcp.js',
+    ],
     loader: { '.html': 'copy' },
     format: 'iife',
     bundle: true,

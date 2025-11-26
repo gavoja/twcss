@@ -1,11 +1,12 @@
+/* global HTMLElement, customElements, tw */
 import { extend } from '#src/twcss.js'
 import { UTILS } from '#src/utils.js'
 import { QUERIES } from '#src/queries.js'
 import { STATES, STRING_SIZES } from '#src/constants.js'
 
-function register(name, callback) {
+function register (name, callback) {
   class CustomElement extends HTMLElement {
-    constructor() {
+    constructor () {
       super()
       this.attachShadow({ mode: 'open' })
       this.shadowRoot.innerHTML = callback(this.shadowRoot)
@@ -37,7 +38,7 @@ function registerOuterInner () {
   `)
 }
 
-function addTestDiv() {
+function addTestDiv () {
   const innerDiv = document.createElement('div')
   innerDiv.setAttribute('tw', 'bg-violet-200 p-4 rounded-md w-[100px] h-[100px] border-2')
   innerDiv.textContent = 'Inner DIV'
@@ -51,7 +52,7 @@ function addTestDiv() {
   div.setAttribute('tw', `${div.getAttribute('tw')} border-2`)
 }
 
-function addDivWithAllClasses() {
+function addDivWithAllClasses () {
   const classes = []
 
   classes.push('font-[JetBrains_Mono]')
@@ -86,7 +87,7 @@ function addDivWithAllClasses() {
   document.body.appendChild(div)
 }
 
-function addDivWithPrefixedClasses() {
+function addDivWithPrefixedClasses () {
   const cls = 'hidden'
   const classes = [cls]
 
@@ -107,7 +108,7 @@ function addDivWithPrefixedClasses() {
   document.body.appendChild(div)
 }
 
-function addCustomElement(name) {
+function addCustomElement (name) {
   register(name, () => `<div tw="bg-amber-300 p-4 rounded-md border-2">Shadow DOM: ${name}</div>`)
   const el = document.createElement(name)
   el.setAttribute('tw', 'block animate-fade')
@@ -116,7 +117,7 @@ function addCustomElement(name) {
   return el
 }
 
-function addDivWithCustomClasses() {
+function addDivWithCustomClasses () {
   extend({
     classes: {
       foo: '{ width: 50px; height: 50px }',
@@ -137,13 +138,13 @@ function addDivWithCustomClasses() {
   const div = document.createElement('div')
   div.setAttribute(
     'tw',
-    'm-[30px] foo hide-last-child animate-spin bg-octarine/20 text-octarine xl:bg-red-300 flex items-center justify-center',
+    'm-[30px] foo hide-last-child animate-spin bg-octarine/20 text-octarine xl:bg-red-300 flex items-center justify-center'
   )
   div.textContent = 'Spin'
   document.body.appendChild(div)
 }
 
-function delay(ms) {
+function delay (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
@@ -153,7 +154,7 @@ function main () {
   document.addEventListener('DOMContentLoaded', async () => {
     addTestDiv()
     addCustomElement('custom-element-1')
-    el = addCustomElement('custom-element-2')
+    const el = addCustomElement('custom-element-2')
     await delay(10)
     el.remove()
 
