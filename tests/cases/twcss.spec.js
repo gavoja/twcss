@@ -2,6 +2,13 @@ import { expect, test } from '@playwright/test'
 import fs from 'node:fs'
 import { createPatch } from 'diff'
 
+const errors = []
+
+test.beforeEach(async ({ page }) => {
+  errors.length = 0
+  page.on('console', msg => msg.type() === 'error' && errors.push(msg.text()))
+})
+
 test('default', async ({ page }) => {
   await page.goto('/')
   await expect.poll(async () => page.evaluate(() => document.body.children.length)).toEqual(7)
@@ -37,4 +44,14 @@ test('default', async ({ page }) => {
       }
     }
   }
+
+  // Verify reserved names.
+  await expect(errors).toEqual([
+    '[TWCSS] Name "after" cannot be used as a query.',
+    '[TWCSS] Name "active" cannot be used as a query.',
+    '[TWCSS] Name "after" cannot be used as a class.',
+    '[TWCSS] Name "active" cannot be used as a class.',
+    '[TWCSS] Name "sm" cannot be used as a class.',
+    '[TWCSS] Name "xl" cannot be used as a class.'
+  ])
 })

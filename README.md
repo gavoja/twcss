@@ -34,7 +34,7 @@ Then, somewhere in the markup:
 
 React example:
 
-```js
+```jsx
 function Wrapper({ children, isRounded }) {
   // Supports array syntax for convenient conditional styling.
   return <div tw={['p-4 bg-indigo-800 text-slate-50', isRounded && 'rounded-xl']}>
@@ -84,6 +84,11 @@ extend({
 })
 ```
 
+Caveats:
+
+- Custom classes must not clash with queries, states or pseudo elements.
+- Custom queries must not clash with states or pseudo element.
+
 ## The `add` function
 
 The `add` function works similarly to Twind's `tw` function by generating styles directly when called and adding them to the selected root (`document` by default). It could be useful when migrating from Twind to TWCSS. Note that the `add` function and `tw` attribute should never be used on the same element, since the latter always replaces the value of `class` attribute.
@@ -119,4 +124,4 @@ TWCSS aims at compatibility with Tailwind 4. This is not always possible without
 - Custom shadow classes are currently not supported, i.e. `inset-shadow-*`, `ring-*` and `inset-ring-*`.
 - Shadow color is currently not supported; shadows are always black.
 - Background gradient classes (`bg-linear-*`, `bg-conic-*`, `from-`, `via-` and `to-`) are currently not supported. Use `bg-[]` instead.
-- `scrollbar-gutter` support via `scrollbar-stable`, `scrollbar-auto`, `scrollbar-both` classes (currently not supported in Tailwind CSS).
+- New `scrollbar-gutter` support via `scrollbar-stable`, `scrollbar-auto`, `scrollbar-both` classes (currently not supported in Tailwind CSS).

@@ -123,6 +123,10 @@ function addDivWithCustomClasses () {
       foo: '{ width: 50px; height: 50px }',
       'hide-last-child': '> :last-child { display: none }',
       'animate-spin': '{ animation: spin 3s linear infinite }',
+      'after': '[RESERVED]',
+      'active': '[RESERVED]',
+      'sm': '[RESERVED]',
+      'xl': '[RESERVED]', // Custom
     },
     colors: {
       octarine: '0.9 0.4 20',
@@ -132,6 +136,8 @@ function addDivWithCustomClasses () {
     },
     queries: {
       xl: '@media screen and (min-width: 1280px)',
+      'after': '[RESERVED]',
+      'active': '[RESERVED]',
     },
   })
 

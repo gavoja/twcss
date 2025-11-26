@@ -3,17 +3,20 @@ import { context } from 'esbuild'
 async function main () {
   const ctx = await context({
     entryPoints: [
-      'tests/site/main.js',
-      'tests/site/index.html',
-      'tests/site/benchmarks/test-inline.html',
-      'tests/site/benchmarks/test-twcss.html',
-      'tests/site/benchmarks/lcp.js',
+      'site/index.html',
+      'site/index.js',
+      'site/benchmark-twcss.html',
+      'site/benchmark-twcss.js',
+      'site/benchmark-inline.html',
+      'site/benchmark-inline.js',
+      'site/performance.js'
     ],
     loader: { '.html': 'copy' },
     format: 'iife',
     bundle: true,
+    minify: true,
     outdir: 'target',
-    sourcemap: 'inline',
+    sourcemap: 'external',
   })
 
   await ctx.rebuild()

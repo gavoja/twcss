@@ -13,10 +13,10 @@ function getParser () {
   /* eslint-disable @stylistic/indent */
   // It is easier to understand the regex with extra indentation.
   return new RegExp([
-    '(?<negative>-?)?', // Minus sign.
+    '(?<negative>-?)?', // Minus sign
     `((?<mq>${[...QUERIES.keys()].map(mq => mq.replace(/(\.|\\|\+|\*|\?|\^|\$|\(|\)|\[|\]|\{|\})/g, '\\$1')).join('|')}):)?`, // Media or container query.
-    `((?<state>${STATES.join('|')}):)?`, // State.
-    `((?<pseudo>${PSEUDO.join('|')}):)?`, // Pseudo element.
+    `((?<state>${[...STATES].join('|')}):)?`, // State
+    `((?<pseudo>${[...PSEUDO].join('|')}):)?`, // Pseudo element
     '(?<util>',
       // Values
       '((?<base>[a-z-]+-)(',
@@ -120,7 +120,7 @@ function addRules (instance, className) {
       addRule(instance, cls)
       outClasses.add(cls)
     } catch (err) {
-      console.warn(err.message)
+      console.error(err.message)
     }
   }
 
@@ -156,8 +156,15 @@ export function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {
     })
   })
 
-  Object.entries(queries).forEach(([name, query]) => QUERIES.set(name, query))
-  Object.entries(classes).forEach(([name, css]) => UTILS.set(name, css))
+  // Add custom queries.
+  Object.entries(queries).forEach(([name, query]) => STATES.has(name) || PSEUDO.has(name)
+   ? console.error(`[TWCSS] Name "${name}" cannot be used as a query.`)
+   : QUERIES.set(name, query))
+
+  // Add custom classes.
+  Object.entries(classes).forEach(([name, css]) => QUERIES.has(name) || STATES.has(name) || PSEUDO.has(name)
+    ? console.error(`[TWCSS] Name "${name}" cannot be used as a class.`)
+    : UTILS.set(name, css))
 
   // Update parser to account for new media queries.
   tw.parser = getParser()

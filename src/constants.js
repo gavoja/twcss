@@ -56,7 +56,7 @@ export const BLEND_MODES = [
 export const ANIM_TIME = '250ms'
 
 // Compiler helpers.
-export const PSEUDO = [
+export const PSEUDO = new Set([
   'after',
   'backdrop',
   'before',
@@ -71,8 +71,8 @@ export const PSEUDO = [
   'selection',
   'spelling-error',
   'target-text',
-]
-export const STATES = [
+])
+export const STATES = new Set([
   'active',
   'any-link',
   'checked',
@@ -116,7 +116,7 @@ export const STATES = [
   'user-valid',
   'valid',
   'visited',
-]
+])
 export const HIGH_PRIORITY_RULES = ['col-start', 'row-start', 'hidden', '-none']
 export const STRING_SIZES = {
   auto: 'auto',
