@@ -299,7 +299,7 @@ function generateReference () {
 
   mdContents.push('### Prefixes', '')
 
-  mdContents.push('Classes can be prefixed. The order is always `query:state:pseudo:class`.', '')
+  mdContents.push('Classes can be prefixed. The order is always `query:state:pseudo:class`. Multiple states are supported.', '')
   mdContents.push(`- Supported states: ${[...STATES].map(s => `\`${s}\``).join(', ')}.`)
   mdContents.push(`- Supported pseudo elements: ${[...PSEUDO].map(s => `\`${s}\``).join(', ')}.`)
   mdContents.push('')

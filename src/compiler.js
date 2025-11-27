@@ -6,30 +6,87 @@ import { QUERIES } from './queries.js'
 import { RESET } from './reset.js'
 import { UTILS } from './utils.js'
 
-// Global object.
-export const tw = { instances: new Map(), add, extend, parser: getParser() }
+/* eslint-disable @stylistic/indent */
+const PARSER = new RegExp([
+  // Values
+  '(?<negative>-?)?', // Minus sign
+  '((?<prefix>[a-z0-9-@:]+):)?',
+  '(?<util>',
+    // Values
+    '((?<base>[a-z-]+-)(',
+      '(?<number>[0-9.]+)|',
+      '(?<fraction>[0-9]+/[0-9]+)|',
+      '(?<string>[a-z]+)|',
+      '(\\[(?<raw>[^\\[]+)\\])|',
+      '(\\((?<custom>--[a-z-]+)\\))',
+    ')$)|',
+    // Default
+    '(.+)',
+  ')'
+].join(''))
 
-function getParser () {
-  /* eslint-disable @stylistic/indent */
-  // It is easier to understand the regex with extra indentation.
-  return new RegExp([
-    '(?<negative>-?)?', // Minus sign
-    `((?<mq>${[...QUERIES.keys()].map(mq => mq.replace(/(\.|\\|\+|\*|\?|\^|\$|\(|\)|\[|\]|\{|\})/g, '\\$1')).join('|')}):)?`, // Media or container query.
-    `((?<state>${[...STATES].join('|')}):)?`, // State
-    `((?<pseudo>${[...PSEUDO].join('|')}):)?`, // Pseudo element
-    '(?<util>',
-      // Values
-      '((?<base>[a-z-]+-)(',
-        '(?<number>[0-9.]+)|',
-        '(?<fraction>[0-9]+/[0-9]+)|',
-        '(?<string>[a-z]+)|',
-        '(\\[(?<raw>[^\\[]+)\\])|',
-        '(\\((?<custom>--[a-z-]+)\\))',
-      ')$)|',
-      // Default
-      '(.+)',
-    ')'
-  ].join(''))
+// Global object.
+export const tw = { instances: new Map(), add, extend }
+
+function parse (cls) {
+  const groups = cls.match(PARSER).groups
+  const { negative, prefix, util, base, number, fraction, string, raw, custom } = groups
+  const minus = negative ? '-' : ''
+
+  let mq = ''
+  let pseudo = ''
+  let state = ''
+
+  // Prefix processing.
+  for (const chunk of (prefix ?? '').split(':')) {
+    if (QUERIES.has(chunk)) {
+      if (mq) {
+        throw new Error(`Query "${chunk}" is duplicated.`)
+      }
+
+      mq = chunk
+    } else if (PSEUDO.has(chunk)) {
+      if (pseudo) {
+        throw new Error(`Pseudo element "${chunk}" is duplicated.`)
+      }
+
+      pseudo = `::${chunk}`
+    } else if (STATES.has(chunk)) {
+      state += `:${chunk}`
+    } else if (chunk) {
+      throw new Error(`Prefix "${chunk}" is invalid.`)
+    }
+  }
+
+  // Resolve actual CSS.
+  let css = UTILS.get(`${minus}${util}`) // Basic class.
+  if (!css) {
+    css = UTILS.get(base) // Dynamic class.
+    if (!css || !css.includes('$')) {
+      throw new Error('Utility class does not exist.')
+    }
+
+    if (number) {
+      css = css.replace('$', `calc(${minus}${number} * 4px)`)
+    } else if (fraction) {
+      css = css.replace('$', `calc(${minus}${fraction} * 100%)`)
+    } else if (raw) {
+      css = css.replace('$', raw.replace(/_/g, ' '))
+    } else if (custom) {
+      css = css.replace('$', `var(${custom})`)
+    } else if (string && STRING_SIZES[string]) {
+      css = css.replace('$', STRING_SIZES[string])
+    } else {
+      throw new Error('Utility class does not exist.')
+    }
+  }
+
+  const baseRule = `.${CSS.escape(cls)}${pseudo}${state} ${css}`
+  const rule = mq ? `${QUERIES.get(mq)} { ${baseRule} }` : baseRule
+  const isHighPriority = Boolean(HIGH_PRIORITY_RULES.find(r => util.includes(r)))
+  const hasQuery = Boolean(mq)
+
+  return { rule, isHighPriority, hasQuery }
 }
 
 function createSheet () {
@@ -52,51 +109,17 @@ function addRule (instance, cls) {
     return
   }
 
-  const { negative, mq, state, pseudo, util, base, number, fraction, string, raw, custom } = cls.match(tw.parser).groups
-
-  let css = UTILS.get(util) // Basic class.
-  if (!css) {
-    css = UTILS.get(base) // Dynamic class.
-    if (!css || !css.includes('$')) {
-      throw new Error(`[TWCSS] Unknown utility class: ${cls}`)
-    }
-
-    const minus = negative ? '-' : ''
-    if (number) {
-      css = css.replace('$', `calc(${minus}${number} * 4px)`)
-    } else if (fraction) {
-      css = css.replace('$', `calc(${minus}${fraction} * 100%)`)
-    } else if (raw) {
-      css = css.replace('$', raw.replace(/_/g, ' '))
-    } else if (custom) {
-      css = css.replace('$', `var(${custom})`)
-    } else if (string && STRING_SIZES[string]) {
-      css = css.replace('$', STRING_SIZES[string])
-    } else {
-      throw new Error(`Unknown utility class: [${cls}]`)
-    }
-  }
+  const { rule, isHighPriority, hasQuery } = parse(cls)
 
   // Rules are added in the following order.
   // 1. Standard rules.
   // 2. High priority standard rules.
   // 3. Media query rules.
   // 4. High priority media query rules.
-
-  const isHighPriority = Boolean(HIGH_PRIORITY_RULES.find(r => util.includes(r)))
-  const escapedUtil = CSS.escape(util)
-  const [statePrefix, stateSuffix] = state ? [`${state}\\:`, `:${state}`] : ['', '']
-  const [pseudoPrefix, pseudoSuffix] = pseudo ? [`${pseudo}\\:`, `::${pseudo}`] : ['', '']
-  const fullUtil = `${statePrefix}${pseudoPrefix}${escapedUtil}${pseudoSuffix}${stateSuffix}`
-
-  let rule
   let index
-  if (mq) {
-    // Wrap in media query.
+  if (hasQuery) {
     index = isHighPriority ? instance.sheet.cssRules.length : instance.mqRulesStartIndex
-    rule = `${QUERIES.get(mq)} { .${CSS.escape(mq)}\\:${fullUtil} ${css} }`
   } else {
-    rule = `.${fullUtil} ${css}`
     index = isHighPriority ? instance.mqRulesStartIndex : 0
     instance.mqRulesStartIndex += 1
   }
@@ -120,7 +143,7 @@ function addRules (instance, className) {
       addRule(instance, cls)
       outClasses.add(cls)
     } catch (err) {
-      console.error(err.message)
+      console.error(`[TWCSS] Unable to process "${cls}". ${err.message}`)
     }
   }
 
@@ -139,14 +162,14 @@ export function add (className, root = document) {
 }
 
 export function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {} }) {
-  // Inject keyframes.
+  // Add custom keyframes.
   Object.entries(keyframes).forEach(([name, keyframes]) => {
     tw.instances.values().forEach(instance => {
       instance.sheet.insertRule(`@keyframes ${name} { ${keyframes} }`, instance.sheet.cssRules.length)
     })
   })
 
-  // Generate classes for new colors.
+  // Generate classes for custom colors.
   COLOR_PROPS.entries().forEach(([colorClass, colorProp]) => {
     Object.entries(colors).forEach(([colorSuffix, lch]) => {
       classes[`${colorClass}-${colorSuffix}`] = `{ ${colorProp}: oklch(${lch}) }`
@@ -158,16 +181,64 @@ export function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {
 
   // Add custom queries.
   Object.entries(queries).forEach(([name, query]) => STATES.has(name) || PSEUDO.has(name)
-   ? console.error(`[TWCSS] Name "${name}" cannot be used as a query.`)
+   ? console.error(`[TWCSS] Custom query "${name}" is reserved.`)
    : QUERIES.set(name, query))
 
   // Add custom classes.
-  Object.entries(classes).forEach(([name, css]) => QUERIES.has(name) || STATES.has(name) || PSEUDO.has(name)
-    ? console.error(`[TWCSS] Name "${name}" cannot be used as a class.`)
-    : UTILS.set(name, css))
+  Object.entries(classes).forEach(([name, css]) => UTILS.set(name, css))
+}
 
-  // Update parser to account for new media queries.
-  tw.parser = getParser()
+function initHandler (instance) {
+  // Start detecting mutations.
+  instance.observer.observe(instance.root, {
+    attributes: true,
+    childList: true,
+    subtree: true,
+    attributeFilter: ['tw'],
+  })
+
+  // Update existing classes and initialise existing shadow roots.
+  for (const el of instance.root.querySelectorAll('*')) {
+    el.shadowRoot && init(el.shadowRoot)
+    el.hasAttribute('tw') && processElement(instance, el)
+  }
+}
+
+async function mutationHandler (instance, mutations) {
+  let clean = false
+  for (const m of mutations) {
+    // Attribute change.
+    if (m.type === 'attributes' && m.attributeName === 'tw') {
+      processElement(instance, m.target)
+      continue
+    }
+
+    // New node added.
+    for (const node of m.addedNodes) {
+      if (node.nodeType === 1) {
+        // Process node.
+        node.hasAttribute('tw') && processElement(instance, node)
+
+        // Process children.
+        node.querySelectorAll('[tw]').forEach(el => processElement(instance, el))
+
+        // Initialize new shadow root.
+        node.shadowRoot && init(node.shadowRoot)
+      }
+    }
+
+    clean ||= m.removedNodes.length
+  }
+
+  // If any nodes were removed, check if any shadow roots were disconnected.
+  if (clean) {
+    for (const inst of tw.instances.values()) {
+      if (!inst.root.isConnected) {
+        inst.observer.disconnect()
+        tw.instances.delete(inst.root)
+      }
+    }
+  }
 }
 
 export function init (root) {
@@ -182,45 +253,7 @@ export function init (root) {
     usedRules: new Set(),
     sheet,
     mqRulesStartIndex: sheet.cssRules.length,
-    observer: new MutationObserver(async mutations => {
-      let clean = false
-      for (const m of mutations) {
-        // Attribute change.
-        if (m.type === 'attributes' && m.attributeName === 'tw') {
-          processElement(instance, m.target)
-          continue
-        }
-
-        for (const node of m.addedNodes) {
-          if (node.nodeType === 1) {
-            // Process current node.
-            node.hasAttribute('tw') && processElement(instance, node)
-
-            // Process all children.
-            node.querySelectorAll('[tw]').forEach(el => {
-              processElement(instance, el)
-            })
-
-            // Initialize new shadow root.
-            if (node.shadowRoot) {
-              init(node.shadowRoot)
-            }
-          }
-        }
-
-        clean ||= m.removedNodes.length
-      }
-
-      // If any nodes were removed, check if any shadow roots were disconnected.
-      if (clean) {
-        for (const inst of tw.instances.values()) {
-          if (!inst.root.isConnected) {
-            inst.observer.disconnect()
-            tw.instances.delete(inst.root)
-          }
-        }
-      }
-    }),
+    observer: new MutationObserver(mutations => mutationHandler(instance, mutations))
   }
 
   // Add instance to the map.
@@ -229,22 +262,10 @@ export function init (root) {
   // Inject style sheet to the root.
   root.adoptedStyleSheets = [instance.sheet]
 
-  // Update existing classes.
-  for (const el of root.querySelectorAll('*')) {
-    if (el.shadowRoot) {
-      init(el.shadowRoot)
-    }
-
-    el.hasAttribute('tw') && processElement(instance, el)
-  }
-
-  // Start observing the root.
-  instance.observer.observe(root, {
-    attributes: true,
-    childList: true,
-    subtree: true,
-    attributeFilter: ['tw'],
-  })
+  // Initialise instance.
+  root.readyState === 'loading'
+    ? root.addEventListener('DOMContentLoaded', () => initHandler(instance))
+    : initHandler(instance)
 
   // Performance metrics.
   instance.initTime = Date.now() - timestamp

@@ -84,10 +84,8 @@ extend({
 })
 ```
 
-Caveats:
-
-- Custom classes must not clash with queries, states or pseudo elements.
-- Custom queries must not clash with states or pseudo element.
+> [!WARNING]
+> Custom queries must not clash with states or pseudo element.
 
 ## The `add` function
 
@@ -124,4 +122,6 @@ TWCSS aims at compatibility with Tailwind 4. This is not always possible without
 - Custom shadow classes are currently not supported, i.e. `inset-shadow-*`, `ring-*` and `inset-ring-*`.
 - Shadow color is currently not supported; shadows are always black.
 - Background gradient classes (`bg-linear-*`, `bg-conic-*`, `from-`, `via-` and `to-`) are currently not supported. Use `bg-[]` instead.
+- Functional `has-` and `not-` states are currently not supported.
+- Styling based on parent state (via `group`) or sibling state (via `peer`) is currently unsupported.
 - New `scrollbar-gutter` support via `scrollbar-stable`, `scrollbar-auto`, `scrollbar-both` classes (currently not supported in Tailwind CSS).

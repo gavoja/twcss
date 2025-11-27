@@ -95,6 +95,10 @@ function addDivWithPrefixedClasses () {
     classes.push(`${state}:${cls}`)
   }
 
+  // Test multiple states.
+  classes.push(`focus:hover:${cls}`)
+  classes.push(`focus:hover:focus:${cls}`)
+
   for (const mq of QUERIES.keys()) {
     classes.push(`${mq}:${cls}`)
     for (const state of STATES) {
@@ -123,10 +127,10 @@ function addDivWithCustomClasses () {
       foo: '{ width: 50px; height: 50px }',
       'hide-last-child': '> :last-child { display: none }',
       'animate-spin': '{ animation: spin 3s linear infinite }',
-      'after': '[RESERVED]',
-      'active': '[RESERVED]',
-      'sm': '[RESERVED]',
-      'xl': '[RESERVED]', // Custom
+      'after': '{ content: "after" }',
+      'active': '{ content: "active" }',
+      'sm': '{ content: "sm" }',
+      'xl': '{ content: "xl" }', // Custom
     },
     colors: {
       octarine: '0.9 0.4 20',

@@ -9,14 +9,15 @@ async function main () {
       'site/benchmark-twcss.js',
       'site/benchmark-inline.html',
       'site/benchmark-inline.js',
+      'site/empty.html',
+      'site/empty.js',
       'site/performance.js'
     ],
     loader: { '.html': 'copy' },
     format: 'iife',
     bundle: true,
-    minify: true,
     outdir: 'target',
-    sourcemap: 'external',
+    sourcemap: 'inline',
   })
 
   await ctx.rebuild()
