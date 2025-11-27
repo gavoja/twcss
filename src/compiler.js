@@ -169,8 +169,7 @@ function createSheet () {
 }
 
 function processElement (instance, el) {
-  const className = addRules(instance, el.getAttribute('tw'))
-  el.className = className
+  el.className = addRules(instance, el.getAttribute('tw'))
 }
 
 function addRules (instance, className) {
