@@ -181,7 +181,7 @@ export function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {
 
   // Add custom queries.
   Object.entries(queries).forEach(([name, query]) => STATES.has(name) || PSEUDO.has(name)
-   ? console.error(`[TWCSS] Custom query "${name}" is reserved.`)
+   ? console.error(`[TWCSS] Name "${name}" is reserved and cannot be used for custom queries.`)
    : QUERIES.set(name, query))
 
   // Add custom classes.

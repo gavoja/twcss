@@ -51,7 +51,7 @@ test('default', async ({ page }) => {
     '[TWCSS] Unable to process "bad-prefix:hidden". Prefix "bad-prefix" is invalid.',
     '[TWCSS] Unable to process "sm:sm:hidden". Query "sm" is duplicated.',
     '[TWCSS] Unable to process "before:before:hidden". Pseudo element "before" is duplicated.',
-    '[TWCSS] Custom query "after" is reserved.',
-    '[TWCSS] Custom query "active" is reserved.',
+    '[TWCSS] Name "after" is reserved and cannot be used for custom queries.',
+    '[TWCSS] Name "active" is reserved and cannot be used for custom queries.',
   ])
 })
