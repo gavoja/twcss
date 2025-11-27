@@ -109,7 +109,7 @@ function initHandler (instance) {
   // Update existing classes and initialise existing shadow roots.
   for (const el of instance.root.querySelectorAll('*')) {
     el.shadowRoot && init(el.shadowRoot)
-    el.hasAttribute('tw') && processElement(instance, el)
+    el.hasAttribute('tw') && updateClass(instance, el)
   }
 }
 
@@ -118,7 +118,7 @@ async function mutationHandler (instance, mutations) {
   for (const m of mutations) {
     // Attribute change.
     if (m.type === 'attributes' && m.attributeName === 'tw') {
-      processElement(instance, m.target)
+      updateClass(instance, m.target)
       continue
     }
 
@@ -126,10 +126,10 @@ async function mutationHandler (instance, mutations) {
     for (const node of m.addedNodes) {
       if (node.nodeType === 1) {
         // Process node.
-        node.hasAttribute('tw') && processElement(instance, node)
+        node.hasAttribute('tw') && updateClass(instance, node)
 
         // Process children.
-        node.querySelectorAll('[tw]').forEach(el => processElement(instance, el))
+        node.querySelectorAll('[tw]').forEach(el => updateClass(instance, el))
 
         // Initialize new shadow root.
         node.shadowRoot && init(node.shadowRoot)
@@ -168,7 +168,7 @@ function createSheet () {
   return sheet
 }
 
-function processElement (instance, el) {
+function updateClass (instance, el) {
   el.className = addRules(instance, el.getAttribute('tw'))
 }
 
@@ -185,6 +185,7 @@ function addRules (instance, className) {
 
     try {
       addRule(instance, cls)
+      // Add to output only if no errors.
       outClasses.add(cls)
     } catch (err) {
       console.error(`[TWCSS] Unable to process "${cls}". ${err.message}`)
