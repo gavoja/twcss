@@ -23,8 +23,8 @@ import { backdrop, gen, genc } from './generators.js'
 // Tries to follow Tailwind's order.
 export const UTILS = new Map([
   // ---------------------------------------------------------------------------
-  // Layout - aspect-ratio
   ['@container', '{ container-type: inline-size }'],
+  // Layout - aspect-ratio
   ['aspect-auto', '{ aspect-ratio: auto }'],
   ['aspect-square', '{ aspect-ratio: 1 / 1 }'],
   ['aspect-video', '{ aspect-ratio: 16 / 9 }'],
