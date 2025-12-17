@@ -210,15 +210,21 @@ function addRule (instance, cls) {
   // 3. Media query rules.
   // 4. High priority media query rules.
   let index
+  let increaseMqRulesStartIndex = false
   if (hasQuery) {
     index = isHighPriority ? instance.sheet.cssRules.length : instance.mqRulesStartIndex
   } else {
     index = isHighPriority ? instance.mqRulesStartIndex : 0
-    instance.mqRulesStartIndex += 1
+    increaseMqRulesStartIndex = true
   }
 
-  instance.usedRules.add(cls)
   instance.sheet.insertRule(rule, index)
+  instance.usedRules.add(cls)
+
+  // Increase only when the above does not throw any errors.
+  if (increaseMqRulesStartIndex) {
+    instance.mqRulesStartIndex += 1
+  }
 }
 
 function parse (cls) {
@@ -245,7 +251,7 @@ function parse (cls) {
 
       pseudo = `::${chunk}`
     } else if (STATES.has(chunk)) {
-      state += `:${chunk}`
+      state += STATES.get(chunk)
     } else if (chunk) {
       throw new Error(`Prefix "${chunk}" is invalid.`)
     }

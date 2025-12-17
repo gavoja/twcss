@@ -1,15 +1,16 @@
+/* global Iterator */
 /**
  * @file Dirty reference generator.
  * @author Michal Kochel
  */
 import chroma from 'chroma-js'
 import fs from 'node:fs'
-import { COLORS, COLOR_PROPS } from '#src/colors.js'
-import { KEYFRAMES } from '#src/keyframes.js'
-import { QUERIES } from '#src/queries.js'
-import { RESET } from '#src/reset.js'
-import { UTILS } from '#src/utils.js'
-import { STRING_SIZES, STATES, PSEUDO } from '#src/constants.js'
+import { COLORS, COLOR_PROPS } from '#engine/colors.js'
+import { KEYFRAMES } from '#engine/keyframes.js'
+import { QUERIES } from '#engine/queries.js'
+import { RESET } from '#engine/reset.js'
+import { UTILS } from '#engine/utils.js'
+import { STRING_SIZES, STATES, PSEUDO } from '#engine/constants.js'
 
 const HIERARCHY = {
   'Layout': {
@@ -300,8 +301,16 @@ function generateReference () {
   mdContents.push('### Prefixes', '')
 
   mdContents.push('Classes can be prefixed. The order is always `query:state:pseudo:class`. Multiple states are supported.', '')
-  mdContents.push(`- Supported states: ${[...STATES].map(s => `\`${s}\``).join(', ')}.`)
-  mdContents.push(`- Supported pseudo elements: ${[...PSEUDO].map(s => `\`${s}\``).join(', ')}.`)
+  mdContents.push('States:', '')
+  mdContents.push('- Multiple states can be combined, e.g., `hover:focus:bg-blue-500`.')
+  mdContents.push('- Each state also supports negation with `not-` prefix, e.g., `not-hover:bg-blue-500`.')
+  const states = Iterator.from(STATES.keys()).filter(s => !s.startsWith('not-') && !s.startsWith('has-')).map(s => `\`${s}\``).toArray().join(', ')
+  mdContents.push(`- Supported states: ${states}.`)
+  mdContents.push('')
+
+  mdContents.push('Pseudo elements:', '')
+  const pseudo = Iterator.from(PSEUDO).map(s => `\`${s}\``).toArray().join(', ')
+  mdContents.push(`- Supported pseudo elements: ${pseudo}.`)
   mdContents.push('')
 
   //

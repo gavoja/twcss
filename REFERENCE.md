@@ -152,7 +152,14 @@ All container queries are relative to the ancestor with `@container` class.
 
 Classes can be prefixed. The order is always `query:state:pseudo:class`. Multiple states are supported.
 
+States:
+
+- Multiple states can be combined, e.g., `hover:focus:bg-blue-500`.
+- Each state also supports negation with `not-` prefix, e.g., `not-hover:bg-blue-500`.
 - Supported states: `active`, `any-link`, `checked`, `default`, `defined`, `disabled`, `empty`, `enabled`, `first-child`, `first-of-type`, `focus`, `focus-visible`, `focus-within`, `fullscreen`, `future`, `host`, `hover`, `in-range`, `indeterminate`, `invalid`, `last-child`, `last-of-type`, `link`, `modal`, `only-child`, `only-of-type`, `open`, `optional`, `out-of-range`, `past`, `picture-in-picture`, `placeholder-shown`, `popover-open`, `read-only`, `read-write`, `required`, `root`, `scope`, `target`, `user-invalid`, `user-valid`, `valid`, `visited`.
+
+Pseudo elements:
+
 - Supported pseudo elements: `after`, `backdrop`, `before`, `cue`, `details-content`, `file-selector-button`, `first-letter`, `first-line`, `grammar-error`, `marker`, `placeholder`, `selection`, `spelling-error`, `target-text`.
 
 ### Keyframes
@@ -4315,6 +4322,10 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 .perspective-origin-top-left { perspective-origin: top left }
 ```
 
+```css
+.perspective-origin-SUFFIX { perspective-origin: ... }
+```
+
 ### rotate
 
 ```css
@@ -4432,6 +4443,46 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
+.-scale-0 { transform: scale(-0) }
+```
+
+```css
+.-scale-50 { transform: scale(-0.5) }
+```
+
+```css
+.-scale-75 { transform: scale(-0.75) }
+```
+
+```css
+.-scale-90 { transform: scale(-0.9) }
+```
+
+```css
+.-scale-95 { transform: scale(-0.95) }
+```
+
+```css
+.-scale-100 { transform: scale(-1) }
+```
+
+```css
+.-scale-105 { transform: scale(-1.05) }
+```
+
+```css
+.-scale-110 { transform: scale(-1.1) }
+```
+
+```css
+.-scale-125 { transform: scale(-1.25) }
+```
+
+```css
+.-scale-150 { transform: scale(-1.5) }
+```
+
+```css
 .scale-x-0 { transform: scaleX(0) }
 ```
 
@@ -4469,6 +4520,46 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 
 ```css
 .scale-x-150 { transform: scaleX(1.5) }
+```
+
+```css
+.-scale-x-0 { transform: scaleX(-0) }
+```
+
+```css
+.-scale-x-50 { transform: scaleX(-0.5) }
+```
+
+```css
+.-scale-x-75 { transform: scaleX(-0.75) }
+```
+
+```css
+.-scale-x-90 { transform: scaleX(-0.9) }
+```
+
+```css
+.-scale-x-95 { transform: scaleX(-0.95) }
+```
+
+```css
+.-scale-x-100 { transform: scaleX(-1) }
+```
+
+```css
+.-scale-x-105 { transform: scaleX(-1.05) }
+```
+
+```css
+.-scale-x-110 { transform: scaleX(-1.1) }
+```
+
+```css
+.-scale-x-125 { transform: scaleX(-1.25) }
+```
+
+```css
+.-scale-x-150 { transform: scaleX(-1.5) }
 ```
 
 ```css
@@ -4512,6 +4603,94 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
+.-scale-y-0 { transform: scaleY(-0) }
+```
+
+```css
+.-scale-y-50 { transform: scaleY(-0.5) }
+```
+
+```css
+.-scale-y-75 { transform: scaleY(-0.75) }
+```
+
+```css
+.-scale-y-90 { transform: scaleY(-0.9) }
+```
+
+```css
+.-scale-y-95 { transform: scaleY(-0.95) }
+```
+
+```css
+.-scale-y-100 { transform: scaleY(-1) }
+```
+
+```css
+.-scale-y-105 { transform: scaleY(-1.05) }
+```
+
+```css
+.-scale-y-110 { transform: scaleY(-1.1) }
+```
+
+```css
+.-scale-y-125 { transform: scaleY(-1.25) }
+```
+
+```css
+.-scale-y-150 { transform: scaleY(-1.5) }
+```
+
+```css
+.skew-0 { transform: skewX(0deg) skewY(0deg) }
+```
+
+```css
+.skew-1 { transform: skewX(1deg) skewY(1deg) }
+```
+
+```css
+.skew-2 { transform: skewX(2deg) skewY(2deg) }
+```
+
+```css
+.skew-3 { transform: skewX(3deg) skewY(3deg) }
+```
+
+```css
+.skew-6 { transform: skewX(6deg) skewY(6deg) }
+```
+
+```css
+.skew-12 { transform: skewX(12deg) skewY(12deg) }
+```
+
+```css
+.-skew-0 { transform: skewX(-0deg) skewY(-0deg) }
+```
+
+```css
+.-skew-1 { transform: skewX(-1deg) skewY(-1deg) }
+```
+
+```css
+.-skew-2 { transform: skewX(-2deg) skewY(-2deg) }
+```
+
+```css
+.-skew-3 { transform: skewX(-3deg) skewY(-3deg) }
+```
+
+```css
+.-skew-6 { transform: skewX(-6deg) skewY(-6deg) }
+```
+
+```css
+.-skew-12 { transform: skewX(-12deg) skewY(-12deg) }
+```
+
+```css
 .skew-x-0 { transform: skewX(0deg) }
 ```
 
@@ -4536,6 +4715,30 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 ```
 
 ```css
+.-skew-x-0 { transform: skewX(-0deg) }
+```
+
+```css
+.-skew-x-1 { transform: skewX(-1deg) }
+```
+
+```css
+.-skew-x-2 { transform: skewX(-2deg) }
+```
+
+```css
+.-skew-x-3 { transform: skewX(-3deg) }
+```
+
+```css
+.-skew-x-6 { transform: skewX(-6deg) }
+```
+
+```css
+.-skew-x-12 { transform: skewX(-12deg) }
+```
+
+```css
 .skew-y-0 { transform: skewY(0deg) }
 ```
 
@@ -4557,6 +4760,30 @@ Dynamic properties can be set by adding a suffix according to the table below. W
 
 ```css
 .skew-y-12 { transform: skewY(12deg) }
+```
+
+```css
+.-skew-y-0 { transform: skewY(-0deg) }
+```
+
+```css
+.-skew-y-1 { transform: skewY(-1deg) }
+```
+
+```css
+.-skew-y-2 { transform: skewY(-2deg) }
+```
+
+```css
+.-skew-y-3 { transform: skewY(-3deg) }
+```
+
+```css
+.-skew-y-6 { transform: skewY(-6deg) }
+```
+
+```css
+.-skew-y-12 { transform: skewY(-12deg) }
 ```
 
 ```css

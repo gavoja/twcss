@@ -1,8 +1,8 @@
 /* global HTMLElement, customElements, tw */
-import { extend } from '#src/twcss.js'
-import { UTILS } from '#src/utils.js'
-import { QUERIES } from '#src/queries.js'
-import { STATES, STRING_SIZES } from '#src/constants.js'
+import { extend } from '#engine/twcss.js'
+import { UTILS } from '#engine/utils.js'
+import { QUERIES } from '#engine/queries.js'
+import { STATES, STRING_SIZES } from '#engine/constants.js'
 
 function register (name, callback) {
   class CustomElement extends HTMLElement {
@@ -91,7 +91,7 @@ function addDivWithPrefixedClasses () {
   const cls = 'hidden'
   const classes = [cls]
 
-  for (const state of STATES) {
+  for (const state of STATES.keys()) {
     classes.push(`${state}:${cls}`)
   }
 
@@ -101,7 +101,7 @@ function addDivWithPrefixedClasses () {
 
   for (const mq of QUERIES.keys()) {
     classes.push(`${mq}:${cls}`)
-    for (const state of STATES) {
+    for (const state of STATES.keys()) {
       classes.push(`${mq}:${state}:${cls}`)
     }
   }

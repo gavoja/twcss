@@ -72,7 +72,7 @@ export const PSEUDO = new Set([
   'spelling-error',
   'target-text',
 ])
-export const STATES = new Set([
+export const STATES = new Map([
   'active',
   'any-link',
   'checked',
@@ -116,7 +116,12 @@ export const STATES = new Set([
   'user-valid',
   'valid',
   'visited',
-])
+].reduce((arr, state) => {
+  arr.push([state, `:${state}`])
+  arr.push([`not-${state}`, `:not(:${state})`])
+  arr.push([`has-${state}`, `:has(:${state})`])
+  return arr
+}, []))
 export const HIGH_PRIORITY_RULES = ['col-start', 'row-start', 'hidden', '-none']
 export const STRING_SIZES = {
   auto: 'auto',

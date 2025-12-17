@@ -639,16 +639,24 @@ export const UTILS = new Map([
   ['perspective-none', '{ perspective: none }'],
   // Transforms - perspective-origin
   ...gen(ii => [`perspective-origin-${ii}`, `perspective-origin: ${ii.replace('-', ' ')}`], ORIGINS),
+  ['perspective-origin-', '{ perspective-origin: $ }'],
   // Transforms - rotate
   ...gen(ii => [`rotate-${ii}`, `rotate: ${ii}deg`], ROTATE_DEGREES),
   ...gen(ii => [`-rotate-${ii}`, `rotate: -${ii}deg`], ROTATE_DEGREES),
   // Transforms - scale
   ...gen(ii => [`scale-${ii}`, `transform: scale(${ii / 100})`], SCALES),
+  ...gen(ii => [`-scale-${ii}`, `transform: scale(-${ii / 100})`], SCALES),
   ...gen(ii => [`scale-x-${ii}`, `transform: scaleX(${ii / 100})`], SCALES),
+  ...gen(ii => [`-scale-x-${ii}`, `transform: scaleX(-${ii / 100})`], SCALES),
   ...gen(ii => [`scale-y-${ii}`, `transform: scaleY(${ii / 100})`], SCALES),
+  ...gen(ii => [`-scale-y-${ii}`, `transform: scaleY(-${ii / 100})`], SCALES),
   // Transforms - skew
+  ...gen(ii => [`skew-${ii}`, `transform: skewX(${ii}deg) skewY(${ii}deg)`], SKEWS),
+  ...gen(ii => [`-skew-${ii}`, `transform: skewX(-${ii}deg) skewY(-${ii}deg)`], SKEWS),
   ...gen(ii => [`skew-x-${ii}`, `transform: skewX(${ii}deg)`], SKEWS),
+  ...gen(ii => [`-skew-x-${ii}`, `transform: skewX(-${ii}deg)`], SKEWS),
   ...gen(ii => [`skew-y-${ii}`, `transform: skewY(${ii}deg)`], SKEWS),
+  ...gen(ii => [`-skew-y-${ii}`, `transform: skewY(-${ii}deg)`], SKEWS),
   // Transforms - transform-origin
   ...gen(ii => [`origin-${ii}`, `transform-origin: ${ii.replace('-', ' ')}`], ORIGINS),
   // Transforms - transform-style

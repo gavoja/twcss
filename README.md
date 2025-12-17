@@ -111,17 +111,22 @@ function Button({ children }) {
 
 TWCSS aims at compatibility with Tailwind 4. This is not always possible without compromising on performance. For this reason, certain features are not supported. Please see the [REFERENCE.md](REFERENCE.md) for the complete list.
 
-### Differences
+Currently unsupported Tailwind 4 features:
+
+- [Inset shadows](https://tailwindcss.com/docs/box-shadow#adding-an-inset-shadow) - use `bg-[]` instead.
+- [Shadow colors](https://tailwindcss.com/docs/box-shadow#setting-the-shadow-color) - shadows are always black.
+- [Styling based on parent state](https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-the-descendants-of-a-group) via `group-` prefix.
+- [Styling based on sibling state](https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-sibling-state) via `peer-` prefix.
+- [Background gradients](https://tailwindcss.com/docs/background-image#adding-a-linear-gradient) via `bg-linear-`, `bg-radial-` and `bg-conic` prefixes - use `bg-[]` instead.
+
+Changes:
 
 - Default media queries for viewports are `sm`, `md` and `lg`. Feel free to extend them.
 - Default animations serve the following use cases:
   - `expand` for showing menus and opening accordions,
   - `toast` for popping a notification up from the bottom,
   - `fade` for adding elements to the page in a visually pleasing manner.
-- Most transforms use predefined values just like in Tailwind 3.
-- Custom shadow classes are currently not supported, i.e. `inset-shadow-*`, `ring-*` and `inset-ring-*`.
-- Shadow color is currently not supported; shadows are always black.
-- Background gradient classes (`bg-linear-*`, `bg-conic-*`, `from-`, `via-` and `to-`) are currently not supported. Use `bg-[]` instead.
-- Functional `has-` and `not-` states are currently not supported.
-- Styling based on parent state (via `group`) or sibling state (via `peer`) is currently unsupported.
-- New `scrollbar-gutter` support via `scrollbar-stable`, `scrollbar-auto`, `scrollbar-both` classes (currently not supported in Tailwind CSS).
+- [:has()](https://tailwindcss.com/docs/hover-focus-and-other-states#has) works only with states via `has-` prefix (e.g. `has-checked`).
+- [:not()](https://tailwindcss.com/docs/hover-focus-and-other-states#not) works only with states via `not-` prefix (e.g. `not-focus`).
+- The following transforms use predefined values (just like in Taildind 3): `rotate`, `scale`, `scale-x`, `scale-y`, `skew`, `skew-x`, `skew-y`
+- **New:** `scrollbar-gutter` support via `scrollbar-stable`, `scrollbar-auto`, `scrollbar-both` classes (currently not supported in Tailwind CSS).
