@@ -16,9 +16,9 @@
   "hooks": {
     "before:init": [
       "npm run lint",
-      "npm run build",
       "npm run generate-reference",
-      "npm test"
+      "npm test",
+      "npm run build"
     ]
   }
 }
