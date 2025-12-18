@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>TWCSS test page</title>
-    <script src="index.js"></script>
+    <title>TWCSS</title>
+    <meta name="description" content="Fast minimalist utility-first CSS runtime inspired by Tailwind and Twind.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto+Slab:wght@100..900" rel="stylesheet">
+    <script src="twcss.min.js"></script>
+    <script>
+      tw.extend({
+        classes: { 'font-default': '{ font-family: "Roboto Slab" }' }
+      })
+    </script>
   </head>
-  <body tw="font-sans p-4 space-y-4 bad-util bad-prefix:hidden sm:sm:hidden before:before:hidden">
-    <h1 tw="text-2xl after:content-[':after'] after:block before:content-[':before'] before:block flex flex-col flex-2">
-      Welcome to TWCSS!
-    </h1>
-    <outer-element tw="block"></outer-element>
+  <body tw="font-default animate-fade text-xl max-w-256 mx-auto">
+    <main tw="space-y-16 text-gray-700 p-5 grow">
+      <section tw="text-center space-y-5 mt-10">
+        <h1 tw="text-7xl font-bold">TWCSS</h1>
+        <p tw="text-2xl">
+          Fast, minimalist Tailwind-compatible CSS runtime.
+        </p>
+      </section>
+      <hr tw="border-t-1 border-slate-200" />
+      <section tw="flex justify-center gap-5 break-all">
+        <a tw="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-800 transition" target="_blank" href="https://github.com/gavoja/twcss">View on GitHub</a>
+        <a tw="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-800 transition" target="_blank" href="https://github.com/gavoja/twcss/blob/main/REFERENCE.md">Documentation</a>
+      </section>
+      <section tw="grid grid-cols-3 gap-5 md:grid-cols-1 sm:grid-cols-1">
+        <div tw="space-y-5 bg-slate-100 p-5 rounded-md border-4 border-slate-300/5">
+          <h2 tw="font-black">Zero setup</h2>
+          <p>It just works. Import in your project or add directly to the page.</p>
+        </div>
+        <div tw="space-y-5 bg-slate-100 p-5 rounded-md border-4 border-slate-300/5">
+          <h2 tw="font-black">Library agnostic</h2>
+          <p>Works with vanilla JavaScript and any modern framework. Works with Shadow DOM too.</p>
+        </div>
+        <div tw="space-y-5 bg-slate-100 p-5 rounded-md border-4 border-slate-300/5">
+          <p tw="font-black">Lightweight and fast</p>
+          <p>Minified and gzipped, it's only ~12 kB.</p>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
