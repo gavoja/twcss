@@ -239,16 +239,10 @@ function parse (cls) {
   // Prefix processing.
   for (const chunk of (prefix ?? '').split(':')) {
     if (QUERIES.has(chunk)) {
-      if (mq) {
-        throw new Error(`Query "${chunk}" is duplicated.`)
-      }
-
+      if (mq) throw new Error(`Query "${chunk}" is duplicated.`)
       mq = chunk
     } else if (PSEUDO.has(chunk)) {
-      if (pseudo) {
-        throw new Error(`Pseudo element "${chunk}" is duplicated.`)
-      }
-
+      if (pseudo) throw new Error(`Pseudo element "${chunk}" is duplicated.`)
       pseudo = `::${chunk}`
     } else if (STATES.has(chunk)) {
       state += STATES.get(chunk)

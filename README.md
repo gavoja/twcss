@@ -23,7 +23,7 @@ import 'twcss'
 Directly in browser:
 
 ```html
-<script type="module">import 'https://cdn.jsdelivr.net/npm/twcss/+esm'</script>
+<script src="https://cdn.jsdelivr.net/npm/twcss/target/twcss.min.js"></script>
 ```
 
 Then, somewhere in the markup:

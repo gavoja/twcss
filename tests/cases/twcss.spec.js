@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
 })
 
 test('default', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/test.html')
   await expect.poll(async () => page.evaluate(() => document.body.children.length)).toEqual(7)
   await expect.poll(async () => page.evaluate(() => window.tw.instances.size)).toEqual(5)
 
