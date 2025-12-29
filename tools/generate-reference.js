@@ -5,8 +5,8 @@ import fs from 'node:fs'
 import { COLORS, COLOR_PROPS } from '#engine/colors.js'
 import { PSEUDO, STATES, STRING_SIZES } from '#engine/constants.js'
 import { KEYFRAMES } from '#engine/keyframes.js'
+import { PREFLIGHT } from '#engine/preflight.js'
 import { QUERIES } from '#engine/queries.js'
-import { RESET } from '#engine/reset.js'
 import { UTILS } from '#engine/utils.js'
 
 const HIERARCHY = {
@@ -308,8 +308,8 @@ function generateReference () {
   // CSS reset.
   //
 
-  mdContents.push('### CSS reset', '')
-  mdContents.push(`\`\`\`css\n${RESET.join('\n')}\n\`\`\``, '')
+  mdContents.push('### CSS preflight', '')
+  mdContents.push(`\`\`\`css\n${PREFLIGHT.join('\n')}\n\`\`\``, '')
 
   //
   // Media queries.

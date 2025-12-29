@@ -2,7 +2,7 @@
 
 ## Defaults
 
-### CSS reset
+### CSS preflight
 
 ```css
 *,*::before,*::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: currentColor; margin: 0; padding: 0 }
@@ -6259,6 +6259,15 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ### line-clamp
+
+```
+.line-clamp-none {
+  -webkit-line-clamp: none;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical 
+}
+```
 
 ```
 .line-clamp-[<value>] { -webkit-line-clamp: <value>; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical }
