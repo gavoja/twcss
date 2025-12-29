@@ -124,7 +124,7 @@ export const UTILS = new Map([
   ['flex-', { css: '{ flex: $ }', number: '$', ...UNIT_FRACTION }],
   // Flexbox & Grid - flex-grow
   ['grow', '{ flex-grow: 1 }'],
-  ['grow-', '{ flex-grow: $ }'],
+  ['grow-', { css: '{ flex-grow: $ }', number: '$' }],
   // Flexbox & Grid - flex-shrink
   ['shrink', '{ flex-shrink: 1 }'],
   ['shrink-', { css: '{ flex-shrink: $ }', number: '$' }],
@@ -385,10 +385,10 @@ export const UTILS = new Map([
   // Typography - text-decoration-thickness
   ['decoration-auto', '{ text-decoration-thickness: auto }'],
   ['decoration-from-font', '{ text-decoration-thickness: from-font }'],
-  ['decoration-', '{ text-decoration-thickness: $ }'],
+  ['decoration-', { css: '{ text-decoration-thickness: $ }', number: '$px' }],
   // Typography - text-underline-offset
   ['underline-offset-auto', '{ text-underline-offset: auto }'],
-  ['underline-offset-', '{ text-underline-offset: $ }'],
+  ['underline-offset-', { css: '{ text-underline-offset: $ }', number: '$px' }],
   // Typography - text-transform
   ...gen(ii => [`${ii}`, `text-transform: ${ii}`], ['uppercase', 'lowercase', 'capitalize']),
   ['normal-case', '{ text-transform: none }'],
@@ -399,7 +399,9 @@ export const UTILS = new Map([
   // Typography - text-wrap
   ...gen(ii => [`text-${ii}`, `text-wrap: ${ii}`], ['wrap', 'nowrap', 'balance', 'pretty']),
   // Typography - text-indent
-  ['indent', '{ text-indent: $ }'],
+  ['indent-px', '{ text-indent: 1px }'],
+  ['-indent-px', '{ text-indent: -1px }'],
+  ['indent-', { css: '{ text-indent: $ }', ...UNIT_NUMBER }],
   // Typography - vertical-align
   ...gen(
     ii => [`align-${ii}`, `vertical-align: ${ii}`],
@@ -452,14 +454,23 @@ export const UTILS = new Map([
   // // ---------------------------------------------------------------------------
   // Borders - border-radius
   ...gen(([name, value]) => [`rounded${name}`, `border-radius: ${value}`], RADII),
+  ['rounded-', { css: '{ border-radius: $ }' }],
   ...gen(([name, value]) => [`rounded-ss${name}`, `border-start-start-radius: ${value}`], RADII),
+  ['rounded-ss-', { css: '{ border-start-start-radius: $ }' }],
   ...gen(([name, value]) => [`rounded-se${name}`, `border-start-end-radius: ${value}`], RADII),
+  ['rounded-se-', { css: '{ border-start-end-radius: $ }' }],
   ...gen(([name, value]) => [`rounded-ee${name}`, `border-end-end-radius: ${value}`], RADII),
+  ['rounded-ee-', { css: '{ border-end-end-radius: $ }' }],
   ...gen(([name, value]) => [`rounded-es${name}`, `border-end-start-radius: ${value}`], RADII),
+  ['rounded-es-', { css: '{ border-end-start-radius: $ }' }],
   ...gen(([name, value]) => [`rounded-tl${name}`, `border-top-left-radius: ${value}`], RADII),
+  ['rounded-tl-', { css: '{ border-top-left-radius: $ }' }],
   ...gen(([name, value]) => [`rounded-tr${name}`, `border-top-right-radius: ${value}`], RADII),
+  ['rounded-tr-', { css: '{ border-top-right-radius: $ }' }],
   ...gen(([name, value]) => [`rounded-br${name}`, `border-bottom-right-radius: ${value}`], RADII),
+  ['rounded-br-', { css: '{ border-bottom-right-radius: $ }' }],
   ...gen(([name, value]) => [`rounded-bl${name}`, `border-bottom-left-radius: ${value}`], RADII),
+  ['rounded-bl-', { css: '{ border-bottom-left-radius: $ }' }],
   // Borders - border-width
   ['border', '{ border-width: 1px }'],
   ['border-', { css: '{ border-width: $ }', number: '$px' }],
@@ -579,7 +590,7 @@ export const UTILS = new Map([
   ['drop-shadow-', { css: '{ filter: drop-shadow($) }' }],
   // Filters - grayscale
   ...backdrop(['grayscale', '{ filter: grayscale(100%) }']),
-  ...backdrop(['grayscale-', '{ filter: grayscale($) }']),
+  ...backdrop(['grayscale-', { css: '{ filter: grayscale($) }', number: '$%' }]),
   // Filters - hue-rotate
   ...backdrop(['hue-rotate-', { css: '{ filter: hue-rotate($) }' }]),
   // Filters - invert
@@ -659,7 +670,7 @@ export const UTILS = new Map([
   ['perspective-', { css: '{ perspective: $ }' }],
   // Transforms - perspective-origin
   ...gen(ii => [`perspective-origin-${ii}`, `perspective-origin: ${ii.replace('-', ' ')}`], ORIGINS),
-  ['perspective-origin-', '{ perspective-origin: $ }'],
+  ['perspective-origin-', { css: '{ perspective-origin: $ }' }],
   // Transforms - rotate
   ['rotate-none', '{ rotate: none }'],
   ['rotate-', { css: '{ rotate: $ }', number: '$deg' }],

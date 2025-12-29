@@ -46,8 +46,7 @@ export const RADII = [
   ['-2xl', '16px'],
   ['-3xl', '24px'],
   ['-full', '50%'],
-  ['-none', 0],
-  ['-', '$']
+  ['-none', 0]
 ]
 
 //

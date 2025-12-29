@@ -254,6 +254,11 @@ function getRules (props) {
       continue
     }
 
+    if (typeof val === 'string' && val.includes('$')) {
+      console.error(`Utility "${cls}" is dynamic but not defined as an object.`)
+      continue
+    }
+
     // Dynamic rules.
     if (typeof val === 'object') {
       if (val.string) {
