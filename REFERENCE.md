@@ -2154,7 +2154,19 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.grow- { flex-grow: $ }
+.grow-<number> { flex-grow: <number> }
+```
+
+```
+.-grow-<number> { flex-grow: -<number> }
+```
+
+```
+.grow-[<value>] { flex-grow: <value> }
+```
+
+```
+.grow-(<custom-property>) { flex-grow: var(<custom-property>) }
 ```
 
 ### flex-shrink
@@ -6422,7 +6434,19 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.decoration- { text-decoration-thickness: $ }
+.decoration-<number> { text-decoration-thickness: <number>px }
+```
+
+```
+.-decoration-<number> { text-decoration-thickness: -<number>px }
+```
+
+```
+.decoration-[<value>] { text-decoration-thickness: <value> }
+```
+
+```
+.decoration-(<custom-property>) { text-decoration-thickness: var(<custom-property>) }
 ```
 
 ### text-underline-offset
@@ -6432,7 +6456,19 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.underline-offset- { text-underline-offset: $ }
+.underline-offset-<number> { text-underline-offset: <number>px }
+```
+
+```
+.-underline-offset-<number> { text-underline-offset: -<number>px }
+```
+
+```
+.underline-offset-[<value>] { text-underline-offset: <value> }
+```
+
+```
+.underline-offset-(<custom-property>) { text-underline-offset: var(<custom-property>) }
 ```
 
 ### text-transform
@@ -6492,7 +6528,27 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ### text-indent
 
 ```
-.indent { text-indent: $ }
+.indent-px { text-indent: 1px }
+```
+
+```
+.-indent-px { text-indent: -1px }
+```
+
+```
+.indent-<number> { text-indent: calc(<number> * 4px) }
+```
+
+```
+.-indent-<number> { text-indent: calc(-<number> * 4px) }
+```
+
+```
+.indent-[<value>] { text-indent: <value> }
+```
+
+```
+.indent-(<custom-property>) { text-indent: var(<custom-property>) }
 ```
 
 ### vertical-align
@@ -6822,7 +6878,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.rounded- { border-radius: $ }
+.rounded-[<value>] { border-radius: <value> }
+```
+
+```
+.rounded-(<custom-property>) { border-radius: var(<custom-property>) }
 ```
 
 ```
@@ -6862,7 +6922,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.rounded-tl- { border-top-left-radius: $ }
+.rounded-tl-[<value>] { border-top-left-radius: <value> }
+```
+
+```
+.rounded-tl-(<custom-property>) { border-top-left-radius: var(<custom-property>) }
 ```
 
 ```
@@ -6902,7 +6966,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.rounded-tr- { border-top-right-radius: $ }
+.rounded-tr-[<value>] { border-top-right-radius: <value> }
+```
+
+```
+.rounded-tr-(<custom-property>) { border-top-right-radius: var(<custom-property>) }
 ```
 
 ```
@@ -6942,7 +7010,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.rounded-br- { border-bottom-right-radius: $ }
+.rounded-br-[<value>] { border-bottom-right-radius: <value> }
+```
+
+```
+.rounded-br-(<custom-property>) { border-bottom-right-radius: var(<custom-property>) }
 ```
 
 ```
@@ -6982,7 +7054,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.rounded-bl- { border-bottom-left-radius: $ }
+.rounded-bl-[<value>] { border-bottom-left-radius: <value> }
+```
+
+```
+.rounded-bl-(<custom-property>) { border-bottom-left-radius: var(<custom-property>) }
 ```
 
 ### border-width
@@ -7766,7 +7842,19 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.grayscale- { filter: grayscale($) }
+.grayscale-<number> { filter: grayscale(<number>%) }
+```
+
+```
+.-grayscale-<number> { filter: grayscale(-<number>%) }
+```
+
+```
+.grayscale-[<value>] { filter: grayscale(<value>) }
+```
+
+```
+.grayscale-(<custom-property>) { filter: grayscale(var(<custom-property>)) }
 ```
 
 ```
@@ -7880,7 +7968,19 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.backdrop-grayscale- { backdrop-filter: grayscale($) }
+.backdrop-grayscale-<number> { backdrop-filter: grayscale(<number>%) }
+```
+
+```
+.-backdrop-grayscale-<number> { backdrop-filter: grayscale(-<number>%) }
+```
+
+```
+.backdrop-grayscale-[<value>] { backdrop-filter: grayscale(<value>) }
+```
+
+```
+.backdrop-grayscale-(<custom-property>) { backdrop-filter: grayscale(var(<custom-property>)) }
 ```
 
 ```
@@ -8240,7 +8340,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.perspective-origin- { perspective-origin: $ }
+.perspective-origin-[<value>] { perspective-origin: <value> }
+```
+
+```
+.perspective-origin-(<custom-property>) { perspective-origin: var(<custom-property>) }
 ```
 
 ### rotate

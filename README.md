@@ -10,7 +10,7 @@ Tailwind is awesome, but it requires a build setup. Twind exists, but the projec
 
 - **Zero setup, zero dependencies.** One import does it all. It just works.
 - **Library agnostic.** Works with vanilla JavaScript and any modern framework. Works with Shadow DOM too.
-- **Lightweight and fast.** Minified and gzipped, it's only ~12 kB.
+- **Lightweight and fast.** Minified and gzipped, it's only ~13 kB.
 
 ## Usage
 
