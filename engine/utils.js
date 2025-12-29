@@ -1,36 +1,21 @@
-import {
-  ANIM_TIME,
-  BLEND_MODES,
-  BRIGHTNESS_LEVELS,
-  COLUMNS,
-  CONTRAST_LEVELS,
-  DURATIONS,
-  HUE_ROTATE_DEGREES,
-  LINE_CLAMPS,
-  OPACITIES,
-  ORIGINS,
-  RADII,
-  ROTATE_DEGREES,
-  SATURATE_LEVELS,
-  SCALES,
-  SKEWS,
-  STROKE_WIDTHS,
-  WIDTHS,
-  Z_INDEXES,
-} from './constants.js'
+import { ANIM_TIME, BLEND_MODES, ORIGINS, RADII } from './constants.js'
 import { backdrop, gen, genc } from './generators.js'
+
+const UNIT_NUMBER = { number: 'calc($ * 4px)' }
+const UNIT_FRACTION = { fraction: 'calc($ * 100%)' }
+const UNIT_ALL = { ...UNIT_NUMBER, ...UNIT_FRACTION, string: '$' }
 
 // Tries to follow Tailwind's order.
 export const UTILS = new Map([
   // ---------------------------------------------------------------------------
   ['@container', '{ container-type: inline-size }'],
   // Layout - aspect-ratio
-  ['aspect-auto', '{ aspect-ratio: auto }'],
   ['aspect-square', '{ aspect-ratio: 1 / 1 }'],
   ['aspect-video', '{ aspect-ratio: 16 / 9 }'],
-  ['aspect-', '{ aspect-ratio: $ }'],
+  ['aspect-auto', '{ aspect-ratio: auto }'],
+  ['aspect-', { css: '{ aspect-ratio: $ }', fraction: '$' }],
   // Layout - columns
-  ...gen(ii => [`columns-${ii}`, `columns: ${ii}`], [...COLUMNS, 'auto']),
+  ['columns-', { css: '{ columns: $ }', number: '$', string: '$' }],
   // Layout - break-after
   ...gen(
     ii => [`break-after-${ii}`, `break-after: ${ii}`],
@@ -38,7 +23,7 @@ export const UTILS = new Map([
   ),
   // Layout - break-before
   ...gen(
-    ii => [`break-before-${ii}`, `break-after: ${ii}`],
+    ii => [`break-before-${ii}`, `break-before: ${ii}`],
     ['auto', 'avoid', 'avoid-page', 'page', 'left', 'right', 'column']
   ),
   // Layout - break-inside
@@ -90,6 +75,7 @@ export const UTILS = new Map([
     ii => [`object-${ii.replace(/ /g, '-')}`, `object-position: ${ii}`],
     ['bottom', 'center', 'left', 'left bottom', 'left top', 'right', 'right bottom', 'right top', 'top']
   ),
+  ['object-', { css: '{ object-position: $ }' }],
   // Layout - overflow
   ...gen(ii => [`overflow-${ii}`, `overflow: ${ii}`], ['auto', 'hidden', 'clip', 'visible', 'scroll', 'visible']),
   ...gen(ii => [`overflow-x-${ii}`, `overflow-x: ${ii}`], ['auto', 'hidden', 'clip', 'visible', 'scroll', 'visible']),
@@ -105,24 +91,25 @@ export const UTILS = new Map([
   // Layout - position
   ...gen(ii => [`${ii}`, `position: ${ii}`], ['static', 'fixed', 'absolute', 'relative', 'sticky']),
   // Layout - top / right / bottom / left
-  ['inset-', '{ inset: $ }'],
-  ['inset-x-', '{ inset-inline: $ }'],
-  ['inset-y-', '{ inset-block: $ }'],
-  ['start-', '{ inset-inline-start: $ }'],
-  ['end-', '{ inset-inline-end: $ }'],
-  ['top-', '{ top: $ }'],
-  ['right-', '{ right: $ }'],
-  ['bottom-', '{ bottom: $ }'],
-  ['left-', '{ left: $ }'],
+  ['inset-', { css: '{ inset: $ }', ...UNIT_ALL }],
+  ['inset-x-', { css: '{ inset-inline: $ }', ...UNIT_ALL }],
+  ['inset-y-', { css: '{ inset-block: $ }', ...UNIT_ALL }],
+  ['start-', { css: '{ inset-inline-start: $ }', ...UNIT_ALL }],
+  ['end-', { css: '{ inset-inline-end: $ }', ...UNIT_ALL }],
+  ['top-', { css: '{ top: $ }', ...UNIT_ALL }],
+  ['right-', { css: '{ right: $ }', ...UNIT_ALL }],
+  ['bottom-', { css: '{ bottom: $ }', ...UNIT_ALL }],
+  ['left-', { css: '{ left: $ }', ...UNIT_ALL }],
   // Layout - visibility
   ['visible', '{ visibility: visible }'],
   ['invisible', '{ visibility: hidden }'],
   ['collapse', '{ visibility: collapse }'],
   // Layout - z-index
-  ...gen(ii => [`z-${ii}`, `z-index: ${ii}`], Z_INDEXES),
+  ['z-auto', '{ z-index: auto }'],
+  ['z-', { css: '{ z-index: $ }', number: '$' }],
   // ---------------------------------------------------------------------------
   // Flexbox & Grid - flex-basis
-  ['basis-', '{ flex-basis: $ }'],
+  ['basis-', { css: '{ flex-basis: $ }', ...UNIT_ALL }],
   // Flexbox & Grid - flex-direction
   ['flex-row', '{ flex-direction: row }'],
   ['flex-row-reverse', '{ flex-direction: row-reverse }'],
@@ -131,39 +118,47 @@ export const UTILS = new Map([
   // Flexbox & Grid - flex-wrap
   ...gen(ii => [`flex-${ii}`, `flex-wrap: ${ii}`], ['nowrap', 'wrap', 'wrap-reverse']),
   // Flexbox & Grid - flex
-  ['flex-', '{ flex: $ }'],
   ['flex-auto', '{ flex: 1 1 auto }'],
   ['flex-initial', '{ flex: 0 1 auto }'],
   ['flex-none', '{ flex: none }'],
+  ['flex-', { css: '{ flex: $ }', number: '$', ...UNIT_FRACTION }],
   // Flexbox & Grid - flex-grow
   ['grow', '{ flex-grow: 1 }'],
-  ['grow-0', '{ flex-grow: 0 }'],
+  ['grow-', '{ flex-grow: $ }'],
   // Flexbox & Grid - flex-shrink
   ['shrink', '{ flex-shrink: 1 }'],
-  ['shrink-0', '{ flex-shrink: 0 }'],
+  ['shrink-', { css: '{ flex-shrink: $ }', number: '$' }],
   // Flexbox & Grid - order
-  ...gen(ii => [`order-${ii}`, `columns: ${ii}`], COLUMNS),
   ['order-first', '{ order: -9999 }'],
   ['order-last', '{ order: 9999 }'],
   ['order-none', '{ order: 0 }'],
+  ['order-', { css: '{ order: $ }', number: '$' }],
   // Flexbox & Grid - grid-template-columns
-  ...gen(ii => [`grid-cols-${ii}`, `grid-template-columns: repeat(${ii}, minmax(0, 1fr))`], COLUMNS),
   ['grid-cols-none', '{ grid-template-columns: none }'],
   ['grid-cols-subgrid', '{ grid-template-columns: subgrid }'],
+  ['grid-cols-', { css: '{ grid-template-columns: $ }', number: 'repeat($, minmax(0, 1fr))' }],
   // Flexbox & Grid - grid-column
-  ['col-auto', '{ grid-column: auto }'],
-  ...gen(ii => [`col-span-${ii}`, `grid-column: span ${ii} / span ${ii}`], COLUMNS),
   ['col-span-full', '{ grid-column: 1 / -1 }'],
-  ...gen(ii => [`col-start-${ii}`, `grid-column-start: ${ii}`], [...COLUMNS, 13, 'auto']),
+  ['col-span-', { css: '{ grid-column: span $ / span $ }', number: '$' }],
+  ['col-start-auto', '{ grid-column-start: auto }'],
+  ['col-start-', { css: '{ grid-column-start: $ }', number: '$' }],
+  ['col-end-auto', '{ grid-column-end: auto }'],
+  ['col-end-', { css: '{ grid-column-end: $ }', number: '$' }],
+  ['col-auto', '{ grid-column: auto }'],
+  ['col-', { css: '{ grid-column: $ }', number: '$' }],
   // Flexbox & Grid - grid-template-rows
-  ...gen(ii => [`grid-rows-${ii}`, `grid-template-rows: repeat(${ii}, auto)`], COLUMNS),
   ['grid-rows-none', '{ grid-template-rows: none }'],
   ['grid-rows-subgrid', '{ grid-template-rows: subgrid }'],
+  ['grid-rows-', { css: '{ grid-template-rows: $ }', number: 'repeat($, minmax(0, 1fr))' }],
   // Flexbox & Grid - grid-row
-  ['row-auto', '{ grid-row: auto }'],
-  ...gen(ii => [`row-span-${ii}`, `grid-row: span ${ii} / span ${ii}`], COLUMNS),
   ['row-span-full', '{ grid-row: 1 / -1 }'],
-  ...gen(ii => [`row-start-${ii}`, `grid-row-start: ${ii}`], [...COLUMNS, 13, 'auto']),
+  ['row-span-', { css: '{ grid-row: span $ / span $ }', number: '$' }],
+  ['row-start-auto', '{ grid-row-start: auto }'],
+  ['row-start-', { css: '{ grid-row-start: $ }', number: '$' }],
+  ['row-end-auto', '{ grid-row-end: auto }'],
+  ['row-end-', { css: '{ grid-row-end: $ }', number: '$' }],
+  ['row-auto', '{ grid-row: auto }'],
+  ['row-', { css: '{ grid-row: $ }', number: '$' }],
   // Flexbox & Grid - grid-auto-flow
   ['grid-flow-row', '{ grid-auto-flow: row }'],
   ['grid-flow-col', '{ grid-auto-flow: column }'],
@@ -175,15 +170,17 @@ export const UTILS = new Map([
   ['auto-cols-min', '{ grid-auto-columns: min-content }'],
   ['auto-cols-max', '{ grid-auto-columns: max-content }'],
   ['auto-cols-fr', '{ grid-auto-columns: minmax(0, 1fr) }'],
+  ['auto-cols-', { css: '{ grid-auto-columns: $ }' }],
   // Flexbox & Grid - grid-auto-rows
   ['auto-rows-auto', '{ grid-auto-rows: auto }'],
   ['auto-rows-min', '{ grid-auto-rows: min-content }'],
   ['auto-rows-max', '{ grid-auto-rows: max-content }'],
   ['auto-rows-fr', '{ grid-auto-rows: minmax(0, 1fr) }'],
+  ['auto-rows-', { css: '{ grid-auto-rows: $ }' }],
   // Flexbox & Grid - gap
-  ['gap-', '{ gap: $ }'],
-  ['gap-x-', '{ column-gap: $ }'],
-  ['gap-y-', '{ row-gap: $ }'],
+  ['gap-', { css: '{ gap: $ }', ...UNIT_NUMBER }],
+  ['gap-x-', { css: '{ column-gap: $ }', ...UNIT_NUMBER }],
+  ['gap-y-', { css: '{ row-gap: $ }', ...UNIT_NUMBER }],
   // Flexbox & Grid - justify-content
   ['justify-start', '{ justify-content: flex-start }'],
   ['justify-end', '{ justify-content: flex-end }'],
@@ -238,39 +235,39 @@ export const UTILS = new Map([
   ...gen(ii => [`place-self-${ii}`, `place-self: ${ii}`], ['auto', 'start', 'end', 'center', 'stretch']),
   // ---------------------------------------------------------------------------
   // Spacing - padding
-  ['p-', '{ padding: $ }'],
-  ['px-', '{ padding-inline: $ }'],
-  ['py-', '{ padding-block: $ }'],
-  ['pt-', '{ padding-top: $ }'],
-  ['pr-', '{ padding-right: $ }'],
-  ['pb-', '{ padding-bottom: $ }'],
-  ['pl-', '{ padding-left: $ }'],
-  ['ps-', '{ padding-inline-start: $ }'],
-  ['pe-', '{ padding-inline-end: $ }'],
+  ['p-', { css: '{ padding: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['px-', { css: '{ padding-inline: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['py-', { css: '{ padding-block: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['ps-', { css: '{ padding-inline-start: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['pe-', { css: '{ padding-inline-end: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['pt-', { css: '{ padding-top: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['pr-', { css: '{ padding-right: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['pb-', { css: '{ padding-bottom: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['pl-', { css: '{ padding-left: $ }', ...UNIT_NUMBER, string: '$' }],
   // Spacing - margin
-  ['m-', '{ margin: $ }'],
-  ['mx-', '{ margin-inline: $ }'],
-  ['my-', '{ margin-block: $ }'],
-  ['mt-', '{ margin-top: $ }'],
-  ['mr-', '{ margin-right: $ }'],
-  ['mb-', '{ margin-bottom: $ }'],
-  ['ml-', '{ margin-left: $ }'],
-  ['ms-', '{ margin-inline-start: $ }'],
-  ['me-', '{ margin-inline-end: $ }'],
-  ['space-x-', ' > :not(:last-child) { margin-inline-end: $ }'],
-  ['space-y-', ' > :not(:last-child) { margin-bottom: $ }'],
+  ['m-', { css: '{ margin: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['mx-', { css: '{ margin-inline: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['my-', { css: '{ margin-block: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['ms-', { css: '{ margin-inline-start: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['me-', { css: '{ margin-inline-end: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['mt-', { css: '{ margin-top: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['mr-', { css: '{ margin-right: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['mb-', { css: '{ margin-bottom: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['ml-', { css: '{ margin-left: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['space-x-', { css: ' > :not(:last-child) { margin-inline-end: $ }', ...UNIT_NUMBER, string: '$' }],
+  ['space-y-', { css: ' > :not(:last-child) { margin-bottom: $ }', ...UNIT_NUMBER, string: '$' }],
   // Sizing - width
-  ['w-', '{ width: $ }'],
+  ['w-', { css: '{ width: $ }', ...UNIT_ALL }],
   // Sizing - min-width
-  ['min-w-', '{ min-width: $ }'],
+  ['min-w-', { css: '{ min-width: $ }', ...UNIT_ALL }],
   // Sizing - max-width
-  ['max-w-', '{ max-width: $ }'],
+  ['max-w-', { css: '{ max-width: $ }', ...UNIT_ALL }],
   // Sizing - height
-  ['h-', '{ height: $ }'],
+  ['h-', { css: '{ height: $ }', ...UNIT_ALL }],
   // Sizing - min-height
-  ['min-h-', '{ min-height: $ }'],
+  ['min-h-', { css: '{ min-height: $ }', ...UNIT_ALL }],
   // Sizing - max-height
-  ['max-h-', '{ max-height: $ }'],
+  ['max-h-', { css: '{ max-height: $ }', ...UNIT_ALL }],
   // ---------------------------------------------------------------------------
   // Typography - font-family
   [
@@ -282,7 +279,7 @@ export const UTILS = new Map([
     'font-mono',
     '{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace }',
   ],
-  ['font-', '{ font-family: $ }'],
+  ['font-', { css: '{ font-family: $ }' }],
   // Typography - font-size
   ['text-xs', '{ font-size: 12px; line-height: 1.333 }'],
   ['text-sm', '{ font-size: 14px; line-height: 1.429 }'],
@@ -350,14 +347,16 @@ export const UTILS = new Map([
   ['tracking-wide', '{ letter-spacing: 0.025em }'],
   ['tracking-wider', '{ letter-spacing: 0.05em }'],
   ['tracking-widest', '{ letter-spacing: 0.1em }'],
+  ['tracking-', { css: '{ letter-spacing: $ }' }],
   // Typography - line-clamp
-  ...gen(
-    ii => [
-      `line-clamp-${ii}`,
-      `-webkit-line-clamp: ${ii}; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical`,
-    ],
-    LINE_CLAMPS
-  ),
+  [
+    'line-clamp-none',
+    '{ -webkit-line-clamp: none; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical }'
+  ],
+  [
+    'line-clamp-',
+    { css: '{ -webkit-line-clamp: $; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical }' }
+  ],
   // Typography - line-height
   ['leading-none', '{ line-height: 1 }'],
   ['leading-tight', '{ line-height: 1.25 }'],
@@ -386,17 +385,17 @@ export const UTILS = new Map([
   // Typography - text-decoration-thickness
   ['decoration-auto', '{ text-decoration-thickness: auto }'],
   ['decoration-from-font', '{ text-decoration-thickness: from-font }'],
-  ...gen(ii => [`decoration-${ii}`, `text-decoration-thickness: ${ii}px`], WIDTHS),
+  ['decoration-', '{ text-decoration-thickness: $ }'],
   // Typography - text-underline-offset
   ['underline-offset-auto', '{ text-underline-offset: auto }'],
-  ...gen(ii => [`underline-offset-${ii}`, `text-underline-offset: ${ii}px`], WIDTHS),
+  ['underline-offset-', '{ text-underline-offset: $ }'],
   // Typography - text-transform
   ...gen(ii => [`${ii}`, `text-transform: ${ii}`], ['uppercase', 'lowercase', 'capitalize']),
   ['normal-case', '{ text-transform: none }'],
   // Typography - text-overflow
+  ['truncate', '{ text-overflow: ellipsis; overflow: hidden; white-space: nowrap }'],
   ['overflow-ellipsis', '{ text-overflow: ellipsis }'],
   ['overflow-clip', '{ text-overflow: clip }'],
-  ['truncate', '{ text-overflow: ellipsis; overflow: hidden; white-space: nowrap }'],
   // Typography - text-wrap
   ...gen(ii => [`text-${ii}`, `text-wrap: ${ii}`], ['wrap', 'nowrap', 'balance', 'pretty']),
   // Typography - text-indent
@@ -406,6 +405,7 @@ export const UTILS = new Map([
     ii => [`align-${ii}`, `vertical-align: ${ii}`],
     ['baseline', 'top', 'middle', 'bottom', 'text-top', 'text-bottom', 'sub', 'super']
   ),
+  ['align-', { css: '{ vertical-align: $ }' }],
   // Typography - white-space
   ...gen(
     ii => [`whitespace-${ii}`, `white-space: ${ii}`],
@@ -420,7 +420,8 @@ export const UTILS = new Map([
   // Typography - hyphens
   ...gen(ii => [`hyphens-${ii}`, `hyphens: ${ii}`], ['none', 'manual', 'auto']),
   // Typography - content
-  ['content-', '{ content: $ }'],
+  ['content-none', '{ content: none }'],
+  ['content-', { css: '{ content: $ }' }],
   // ---------------------------------------------------------------------------
   // Backgrounds - background-attachment
   ...gen(ii => [`bg-${ii}`, `background-attachment: ${ii}`], ['fixed', 'local', 'scroll']),
@@ -430,8 +431,8 @@ export const UTILS = new Map([
   // Backgrounds - background-color'
   ...genc('bg', 'background-color'),
   // Backgrounds - background-image
-  ['bg-', '{ background-image: $ }'],
   ['bg-none', '{ background-image: none }'],
+  ['bg-', { css: '{ background-image: $ }' }],
   // Backgrounds - background-origin
   ...gen(ii => [`bg-${ii}`, `background-origin: ${ii}`], ['border-box', 'padding-box', 'content-box']),
   // Backgrounds - background-position
@@ -439,6 +440,7 @@ export const UTILS = new Map([
     ii => [`bg-${ii.replace(' ', '-')}`, `background-position: ${ii}`],
     ['bottom', 'center', 'left', 'left bottom', 'left top', 'right', 'right bottom', 'right top', 'top']
   ),
+  ['bg-position-', { css: '{ background-position: $ }' }],
   // Backgrounds - background-repeat
   ...gen(
     ii => [`bg-${ii}`, `background-repeat: ${ii}`],
@@ -446,41 +448,50 @@ export const UTILS = new Map([
   ),
   // Backgrounds - background-size
   ...gen(ii => [`bg-${ii}`, `background-size: ${ii}`], ['auto', 'cover', 'contain']),
+  ['bg-size-', { css: '{ background-size: $ }' }],
   // // ---------------------------------------------------------------------------
   // Borders - border-radius
   ...gen(([name, value]) => [`rounded${name}`, `border-radius: ${value}`], RADII),
+  ...gen(([name, value]) => [`rounded-ss${name}`, `border-start-start-radius: ${value}`], RADII),
+  ...gen(([name, value]) => [`rounded-se${name}`, `border-start-end-radius: ${value}`], RADII),
+  ...gen(([name, value]) => [`rounded-ee${name}`, `border-end-end-radius: ${value}`], RADII),
+  ...gen(([name, value]) => [`rounded-es${name}`, `border-end-start-radius: ${value}`], RADII),
   ...gen(([name, value]) => [`rounded-tl${name}`, `border-top-left-radius: ${value}`], RADII),
   ...gen(([name, value]) => [`rounded-tr${name}`, `border-top-right-radius: ${value}`], RADII),
-  ...gen(([name, value]) => [`rounded-bl${name}`, `border-bottom-left-radius: ${value}`], RADII),
   ...gen(([name, value]) => [`rounded-br${name}`, `border-bottom-right-radius: ${value}`], RADII),
+  ...gen(([name, value]) => [`rounded-bl${name}`, `border-bottom-left-radius: ${value}`], RADII),
   // Borders - border-width
-  ...gen(ii => [`border-${ii}`, `border-width: ${ii}px`], WIDTHS),
-  ...gen(ii => [`border-t-${ii}`, `border-top-width: ${ii}px`], WIDTHS),
-  ...gen(ii => [`border-b-${ii}`, `border-bottom-width: ${ii}px`], WIDTHS),
-  ...gen(ii => [`border-l-${ii}`, `border-left-width: ${ii}px`], WIDTHS),
-  ...gen(ii => [`border-r-${ii}`, `border-right-width: ${ii}px`], WIDTHS),
-  ...gen(ii => [`border-s-${ii}`, `border-inline-start-width: ${ii}px`], WIDTHS),
-  ...gen(ii => [`border-e-${ii}`, `border-inline-end-width: ${ii}px`], WIDTHS),
   ['border', '{ border-width: 1px }'],
-  ['border-t', '{ border-top-width: 1px }'],
-  ['border-b', '{ border-bottom-width: 1px }'],
-  ['border-l', '{ border-left-width: 1px }'],
-  ['border-r', '{ border-right-width: 1px }'],
+  ['border-', { css: '{ border-width: $ }', number: '$px' }],
+  ['border-x', '{ border-inline-width: 1px }'],
+  ['border-x-', { css: '{ border-inline-width: $ }', number: '$px' }],
+  ['border-y', '{ border-block-width: 1px }'],
+  ['border-y-', { css: '{ border-block-width: $ }', number: '$px' }],
   ['border-s', '{ border-inline-start-width: 1px }'],
+  ['border-s-', { css: '{ border-inline-start-width: $ }', number: '$px' }],
   ['border-e', '{ border-inline-end-width: 1px }'],
+  ['border-e-', { css: '{ border-inline-end-width: $ }', number: '$px' }],
+  ['border-t', '{ border-top-width: 1px }'],
+  ['border-t-', { css: '{ border-top-width: $ }', number: '$px' }],
+  ['border-r', '{ border-right-width: 1px }'],
+  ['border-r-', { css: '{ border-right-width: $ }', number: '$px' }],
+  ['border-b', '{ border-bottom-width: 1px }'],
+  ['border-b-', { css: '{ border-bottom-width: $ }', number: '$px' }],
+  ['border-l', '{ border-left-width: 1px }'],
+  ['border-l-', { css: '{ border-left-width: $ }', number: '$px' }],
   // Borders - border-color
   ...genc('border', 'border-color'),
   // Borders - Border-style
   ...gen(ii => [`border-${ii}`, `border-style: ${ii}`], ['solid', 'dashed', 'dotted', 'double', 'hidden', 'none']),
   // Borders - outline-width
-  ...gen(ii => [`outline-${ii}`, `outline-width: ${ii}px`], WIDTHS),
+  ['outline', '{ outline-width: 1px }'],
+  ['outline-', { css: '{ outline-width: $ }', number: '$px' }],
   // Borders - outline-color
   ...genc('outline', 'outline-color'),
   // Borders - outline-style
-  ['outline', '{ outline-style: solid }'],
-  ...gen(ii => [`outline-${ii}`, `outline-style: ${ii}`], ['none', 'dashed', 'dotted', 'double']),
+  ...gen(ii => [`outline-${ii}`, `outline-style: ${ii}`], ['solid', 'dashed', 'dotted', 'double', 'none']),
   // Borders - outline-offset
-  ...gen(ii => [`outline-offset-${ii}`, `outline-offset: ${ii}px`], WIDTHS),
+  ['outline-offset-', { css: '{ outline-offset: $ }', number: '$px' }],
   // ---------------------------------------------------------------------------
   // Effects - box-shadow
   ['shadow', '{ box-shadow: 0 1px rgb(0 0 0 / 0.05) }'], // Customised.
@@ -492,6 +503,7 @@ export const UTILS = new Map([
   ['shadow-xl', '{ box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) }'],
   ['shadow-2xl', '{ box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25) }'],
   ['shadow-none', '{ box-shadow: 0 0 rgb(0 0 0 / 0) }'],
+  ['shadow-', { css: '{ box-shadow: $ }' }],
   // Effects - text-shadow
   ['text-shadow-2xs', '{ text-shadow: 0px 1px 0px rgb(0 0 0 / 0.15) }'],
   ['text-shadow-xs', '{ text-shadow: 0px 1px 1px rgb(0 0 0 / 0.2) }'],
@@ -508,8 +520,9 @@ export const UTILS = new Map([
     '{ text-shadow: 0px 1px 2px rgb(0 0 0 / 0.1), 0px 3px 2px rgb(0 0 0 / 0.1), 0px 4px 8px rgb(0 0 0 / 0.1) }',
   ],
   ['text-shadow-none', '{ text-shadow: none }'],
+  ['text-shadow-', { css: '{ text-shadow: $ }' }],
   // Effects - opacity
-  ...gen(ii => [`opacity-${ii}`, `opacity: ${ii / 100}`], OPACITIES),
+  ['opacity-', { css: '{ opacity: $ }', number: '$%' }],
   // Effects - mix-blend-mode
   ...gen(ii => [`mix-blend-${ii}`, `mix-blend-mode: ${ii}`], BLEND_MODES),
   // Effects - background-blend-mode
@@ -520,8 +533,8 @@ export const UTILS = new Map([
   // Effects - mask-composite
   ...gen(ii => [`mask-${ii}`, `mask-composite: ${ii}`], ['add', 'subtract', 'intersect', 'exclude']),
   // Effects - mask-image
-  ['mask-image-', '{ mask-image: $ }'],
   ['mask-none', '{ mask-image: none }'],
+  ['mask-image-', { css: '{ mask-image: $ }' }],
   // Effects - mask-mode
   ...gen(ii => [`mask-${ii}`, `mask-mode: ${ii}`], ['alpha', 'luminance']),
   ['mask-match', '{ mask-mode: match-source }'],
@@ -529,14 +542,14 @@ export const UTILS = new Map([
   ...gen(ii => [`mask-origin-${ii}`, `mask-origin: ${ii}-box`], ['border', 'padding', 'content', 'fill', 'stroke', 'view']),
   // Effects - mask-position
   ...gen(ii => [`mask-${ii.replace(' ', '-')}`, `mask-position: ${ii}`], ['top left', 'top', 'top right', 'left', 'center', 'right', 'bottom left', 'bottom', 'bottom right']),
-  ['mask-position-', '{ mask-position: $ }'],
+  ['mask-position-', { css: '{ mask-position: $ }' }],
   // Effects - mask-repeat
   ...gen(ii => [`mask-${ii}`, `mask-repeat: ${ii}`], ['repeat', 'no-repeat', 'repeat-x', 'repeat-y']),
   ['mask-repeat-space', '{ mask-repeat: space }'],
   ['mask-repeat-round', '{ mask-repeat: round }'],
   // Effects - mask-size
   ...gen(ii => [`mask-${ii}`, `mask-size: ${ii}`], ['auto', 'cover', 'contain']),
-  ['mask-size-', '{ mask-size: $ }'],
+  ['mask-size-', { css: '{ mask-size: $ }' }],
   // Effects - mask-type
   ['mask-type-alpha', '{ mask-type: alpha }'],
   ['mask-type-luminance', '{ mask-type: luminance }'],
@@ -550,10 +563,11 @@ export const UTILS = new Map([
   ...backdrop(['blur-2xl', '{ filter: blur(40px) }']),
   ...backdrop(['blur-3xl', '{ filter: blur(64px) }']),
   ...backdrop(['blur-none', '{ filter: none }']),
+  ...backdrop(['blur-', { css: '{ filter: blur($) }' }]),
   // Filters - brightness
-  ...backdrop(gen(ii => [`brightness-${ii}`, `filter: brightness(${ii}%)`], BRIGHTNESS_LEVELS)),
+  ...backdrop(['brightness-', { css: '{ filter: brightness($) }' }]),
   // Filters - contrast
-  ...backdrop(gen(ii => [`contrast-${ii}`, `filter: contrast(${ii}%)`], CONTRAST_LEVELS)),
+  ...backdrop(['contrast-', { css: '{ filter: contrast($) }' }]),
   // Filters - drop-shadow
   ['drop-shadow-xs', '{ filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05)) }'],
   ['drop-shadow-sm', '{ filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.15)) }'],
@@ -562,30 +576,32 @@ export const UTILS = new Map([
   ['drop-shadow-xl', '{ filter: drop-shadow(0 9px 7px rgb(0 0 0 / 0.1)) }'],
   ['drop-shadow-2xl', '{ filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15)) }'],
   ['drop-shadow-none', '{ filter: drop-shadow(0 0 rgba(0, 0, 0, 0)) }'],
+  ['drop-shadow-', { css: '{ filter: drop-shadow($) }' }],
   // Filters - grayscale
   ...backdrop(['grayscale', '{ filter: grayscale(100%) }']),
-  ...backdrop(['grayscale-0', '{ filter: grayscale(0) }']),
+  ...backdrop(['grayscale-', '{ filter: grayscale($) }']),
   // Filters - hue-rotate
-  ...backdrop(gen(ii => [`hue-rotate-${ii}`, `filter: hue-rotate(${ii}deg)`], HUE_ROTATE_DEGREES)),
-  ...backdrop(gen(ii => [`-hue-rotate-${ii}`, `filter: hue-rotate(-${ii}deg)`], HUE_ROTATE_DEGREES)),
+  ...backdrop(['hue-rotate-', { css: '{ filter: hue-rotate($) }' }]),
   // Filters - invert
-  ...backdrop(['invert', '{ filter: invert(100%) }']),
-  ...backdrop(['invert-0', '{ filter: invert(0) }']),
+  ...backdrop(['invert-', { css: '{ filter: invert($) }' }]),
   // Filters - opacity
-  ...gen(ii => [`backdrop-opacity-${ii}`, `backdrop-filter: opacity(${ii / 100})`], OPACITIES),
+  ['backdrop-opacity-', { css: '{ backdrop-filter: opacity($) }' }],
   // Filters - saturate
-  ...gen(ii => [`saturate-${ii}`, `filter: saturate(${ii}%)`], SATURATE_LEVELS),
+  ...backdrop(['saturate-', { css: '{ filter: saturate($) }' }]),
   // Filters - sepia
-  ...backdrop(['invert', '{ filter: sepia(100%) }']),
-  ...backdrop(['invert-0', '{ filter: sepia(0) }']),
-  // Filters
+  ...backdrop(['sepia', '{ filter: sepia(100%) }']),
+  ...backdrop(['sepia-', { css: '{ filter: sepia($) }' }]),
+  // Disable filter.
   ...backdrop(['filter-none', '{ filter: none }']),
+  ...backdrop(['filter-', { css: '{ filter: $ }' }]),
   // ---------------------------------------------------------------------------
   // Tables - border-collapse
   ['border-collapse', '{ border-collapse: collapse }'],
   ['border-separate', '{ border-collapse: separate }'],
   // Tables - border-spacing
-  ['border-spacing-', '{ border-spacing: $ }'],
+  ['border-spacing-', { css: '{ border-spacing: $ }', ...UNIT_NUMBER }],
+  ['border-spacing-x-', { css: '{ border-spacing: $ 0 }', ...UNIT_NUMBER }],
+  ['border-spacing-y-', { css: '{ border-spacing: 0 $ }', ...UNIT_NUMBER }],
   // Tables - table-layout
   ['table-auto', '{ table-layout: auto }'],
   ['table-fixed', '{ table-layout: fixed }'],
@@ -598,34 +614,37 @@ export const UTILS = new Map([
     'transition',
     `{ transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-duration: ${ANIM_TIME} }`,
   ],
-  ['transition-all', `{ transition-property: all; transition-duration: ${ANIM_TIME} }`],
+  ['transition-all', '{ transition-property: all }'],
   [
     'transition-colors',
     `{ transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-duration: ${ANIM_TIME} }`,
   ],
-  ['transition-opacity', `{ transition-property: opacity; transition-duration: ${ANIM_TIME} }`],
-  ['transition-shadow', `{ transition-property: box-shadow; transition-duration: ${ANIM_TIME} }`],
-  ['transition-transform', `{ transition-property: transform; transition-duration: ${ANIM_TIME} }`],
+  ['transition-opacity', '{ transition-property: opacity}'],
+  ['transition-shadow', '{ transition-property: box-shadow }'],
+  ['transition-transform', '{ transition-property: transform }'],
   ['transition-none', '{ transition-property: none }'],
+  ['transition-', { css: '{ transition-property: $ }' }],
   // Transitions & Animations - transition-behavior
   ['transition-normal', '{ transition-behavior: normal }'],
   ['transition-discrete', '{ transition-behavior: allow-discrete }'],
   // Transitions & Animations - transition-duration
   ['duration-initial', '{ transition-duration: initial }'],
-  ...gen(ii => [`duration-${ii}`, `transition-duration: ${ii}ms`], DURATIONS),
+  ['duration-', { css: '{ transition-duration: $ }', number: '$ms' }],
   // Transitions & Animations - transition-timing-function
   ['ease-linear', '{ transition-timing-function: linear }'],
   ['ease-in', '{ transition-timing-function: ease-in }'],
   ['ease-out', '{ transition-timing-function: ease-out }'],
   ['ease-in-out', '{ transition-timing-function: ease-in-out }'],
   ['ease-initial', '{ transition-timing-function: initial }'],
+  ['ease-', { css: '{ transition-timing-function: $ }' }],
   // Transitions & Animations - transition-delay
-  ...gen(ii => [`delay-${ii}`, `transition-delay: ${ii}ms`], DURATIONS),
+  ['delay-', { css: '{ transition-delay: $ }', number: '$ms' }],
   // Transitions & Animations - animation
   ['animate-expand', `{ animation: expand ${ANIM_TIME} ease-in-out }`],
   ['animate-toast', `{ animation: toast ${ANIM_TIME} ease-in-out }`],
   ['animate-fade', `{ animation: fade ${ANIM_TIME} ease-in-out }`],
   ['animate-none', '{ animation: none }'],
+  ['animate-', { css: '{ animation: $ }' }],
   // ---------------------------------------------------------------------------
   // Transforms - blackface-visibility
   ['blackface-visible', '{ backface-visibility: visible }'],
@@ -637,34 +656,39 @@ export const UTILS = new Map([
   ['perspective-midrange', '{ perspective: 800px }'],
   ['perspective-distant', '{ perspective: 1200px }'],
   ['perspective-none', '{ perspective: none }'],
+  ['perspective-', { css: '{ perspective: $ }' }],
   // Transforms - perspective-origin
   ...gen(ii => [`perspective-origin-${ii}`, `perspective-origin: ${ii.replace('-', ' ')}`], ORIGINS),
   ['perspective-origin-', '{ perspective-origin: $ }'],
   // Transforms - rotate
-  ...gen(ii => [`rotate-${ii}`, `rotate: ${ii}deg`], ROTATE_DEGREES),
-  ...gen(ii => [`-rotate-${ii}`, `rotate: -${ii}deg`], ROTATE_DEGREES),
+  ['rotate-none', '{ rotate: none }'],
+  ['rotate-', { css: '{ rotate: $ }', number: '$deg' }],
   // Transforms - scale
-  ...gen(ii => [`scale-${ii}`, `transform: scale(${ii / 100})`], SCALES),
-  ...gen(ii => [`-scale-${ii}`, `transform: scale(-${ii / 100})`], SCALES),
-  ...gen(ii => [`scale-x-${ii}`, `transform: scaleX(${ii / 100})`], SCALES),
-  ...gen(ii => [`-scale-x-${ii}`, `transform: scaleX(-${ii / 100})`], SCALES),
-  ...gen(ii => [`scale-y-${ii}`, `transform: scaleY(${ii / 100})`], SCALES),
-  ...gen(ii => [`-scale-y-${ii}`, `transform: scaleY(-${ii / 100})`], SCALES),
+  ['scale-', { css: '{ scale: $ }', number: '$% $%' }],
+  ['scale-x-', { css: '{ scale: $ }', number: '$% 100%' }],
+  ['scale-y-', { css: '{ scale: $ }', number: '100% $%' }],
   // Transforms - skew
-  ...gen(ii => [`skew-${ii}`, `transform: skewX(${ii}deg) skewY(${ii}deg)`], SKEWS),
-  ...gen(ii => [`-skew-${ii}`, `transform: skewX(-${ii}deg) skewY(-${ii}deg)`], SKEWS),
-  ...gen(ii => [`skew-x-${ii}`, `transform: skewX(${ii}deg)`], SKEWS),
-  ...gen(ii => [`-skew-x-${ii}`, `transform: skewX(-${ii}deg)`], SKEWS),
-  ...gen(ii => [`skew-y-${ii}`, `transform: skewY(${ii}deg)`], SKEWS),
-  ...gen(ii => [`-skew-y-${ii}`, `transform: skewY(-${ii}deg)`], SKEWS),
+  ['skew-', { css: '{ transform: skewX($) skewY($) }' }],
+  ['skew-x-', { css: '{ transform: skewX($) }' }],
+  ['skew-y-', { css: '{ transform: skewY($) }' }],
+  // Transforms - transform
+  ['transform-none', '{ transform: none }'],
+  ['transform-', { css: '{ transform: $ }' }],
   // Transforms - transform-origin
   ...gen(ii => [`origin-${ii}`, `transform-origin: ${ii.replace('-', ' ')}`], ORIGINS),
+  ['origin-', { css: '{ transform-origin: $ }' }],
   // Transforms - transform-style
   ['transform-3d', '{ transform-style: preserve-3d }'],
   ['transform-flat', '{ transform-style: flat }'],
   // Transforms - translate
-  ['translate-x-', '{ transform: translateX($) }'],
-  ['translate-y-', '{ transform: translateY($) }'],
+  ['translate-', {
+    css: '{ translate: $ }',
+    number: `${UNIT_NUMBER.number} ${UNIT_NUMBER.number}`,
+    fraction: `${UNIT_FRACTION.fraction} ${UNIT_FRACTION.fraction}`,
+    string: '$ $'
+  }],
+  ['translate-x-', { css: '{ translate: $ 0 }', ...UNIT_NUMBER, string: '$' }],
+  ['translate-y-', { css: '{ translate: 0 $ }', ...UNIT_NUMBER, string: '$' }],
   // ---------------------------------------------------------------------------
   // Interactivity - accent-color
   ...genc('accent', 'accent-color'),
@@ -698,25 +722,25 @@ export const UTILS = new Map([
   ['scroll-auto', '{ scroll-behavior: auto }'],
   ['scroll-smooth', '{ scroll-behavior: smooth }'],
   // Interactivity - scroll-margin
-  ['scroll-m-', '{ scroll-margin: $ }'],
-  ['scroll-mx-', '{ scroll-margin-inline: $ }'],
-  ['scroll-my-', '{ scroll-margin-block: $ }'],
-  ['scroll-ms-', '{ scroll-margin-inline-start: $ }'],
-  ['scroll-me-', '{ scroll-margin-inline-end: $ }'],
-  ['scroll-mt-', '{ scroll-margin-top: $ }'],
-  ['scroll-mr-', '{ scroll-margin-right: $ }'],
-  ['scroll-mb-', '{ scroll-margin-bottom: $ }'],
-  ['scroll-ml-', '{ scroll-margin-left: $ }'],
+  ['scroll-m-', { css: '{ scroll-margin: $ }', ...UNIT_NUMBER }],
+  ['scroll-mx-', { css: '{ scroll-margin-inline: $ }', ...UNIT_NUMBER }],
+  ['scroll-my-', { css: '{ scroll-margin-block: $ }', ...UNIT_NUMBER }],
+  ['scroll-ms-', { css: '{ scroll-margin-inline-start: $ }', ...UNIT_NUMBER }],
+  ['scroll-me-', { css: '{ scroll-margin-inline-end: $ }', ...UNIT_NUMBER }],
+  ['scroll-mt-', { css: '{ scroll-margin-top: $ }', ...UNIT_NUMBER }],
+  ['scroll-mr-', { css: '{ scroll-margin-right: $ }', ...UNIT_NUMBER }],
+  ['scroll-mb-', { css: '{ scroll-margin-bottom: $ }', ...UNIT_NUMBER }],
+  ['scroll-ml-', { css: '{ scroll-margin-left: $ }', ...UNIT_NUMBER }],
   // Interactivity - scroll-padding
-  ['scroll-p-', '{ scroll-padding: $ }'],
-  ['scroll-px-', '{ scroll-padding-inline: $ }'],
-  ['scroll-py-', '{ scroll-padding-block: $ }'],
-  ['scroll-ps-', '{ scroll-padding-inline-start: $ }'],
-  ['scroll-pe-', '{ scroll-padding-inline-end: $ }'],
-  ['scroll-pt-', '{ scroll-padding-top: $ }'],
-  ['scroll-pr-', '{ scroll-padding-right: $ }'],
-  ['scroll-pb-', '{ scroll-padding-bottom: $ }'],
-  ['scroll-pl-', '{ scroll-padding-left: $ }'],
+  ['scroll-p-', { css: '{ scroll-padding: $ }', ...UNIT_NUMBER }],
+  ['scroll-px-', { css: '{ scroll-padding-inline: $ }', ...UNIT_NUMBER }],
+  ['scroll-py-', { css: '{ scroll-padding-block: $ }', ...UNIT_NUMBER }],
+  ['scroll-ps-', { css: '{ scroll-padding-inline-start: $ }', ...UNIT_NUMBER }],
+  ['scroll-pe-', { css: '{ scroll-padding-inline-end: $ }', ...UNIT_NUMBER }],
+  ['scroll-pt-', { css: '{ scroll-padding-top: $ }', ...UNIT_NUMBER }],
+  ['scroll-pr-', { css: '{ scroll-padding-right: $ }', ...UNIT_NUMBER }],
+  ['scroll-pb-', { css: '{ scroll-padding-bottom: $ }', ...UNIT_NUMBER }],
+  ['scroll-pl-', { css: '{ scroll-padding-left: $ }', ...UNIT_NUMBER }],
   // Interactivity - scroll-snap-align
   ...gen(ii => [`snap-${ii}`, `scroll-snap-align: ${ii}`], ['start', 'end', 'center']),
   ['snap-align-none', '{ scroll-snap-align: none }'],
@@ -743,13 +767,14 @@ export const UTILS = new Map([
   ['will-change-scroll', '{ will-change: scroll-position }'],
   ['will-change-contents', '{ will-change: contents }'],
   ['will-change-transform', '{ will-change: transform }'],
+  ['will-change-', { css: '{ will-change: $ }' }],
   // ---------------------------------------------------------------------------
   // SVG - fill
   ...genc('fill', 'fill'),
   // SVG - stroke
   ...genc('stroke', 'stroke'),
   // SVG - stroke-width
-  ...gen(ii => [`stroke-${ii}`, `stroke-width: ${ii}`], STROKE_WIDTHS),
+  ['stroke-', { css: '{ stroke-width: $ }', number: '$px' }],
   // ---------------------------------------------------------------------------
   // Accessibility - forced-color-adjust
   ['forced-color-adjust-auto', '{ forced-color-adjust: auto }'],

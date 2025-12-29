@@ -55,31 +55,36 @@ function addTestDiv () {
 function addDivWithAllClasses () {
   const classes = []
 
-  classes.push('font-[JetBrains_Mono]')
-  classes.push('w-0.5')
-  classes.push('w-1')
-  classes.push('-w-17')
-  classes.push('w-1/2')
-  classes.push('w-[7px]')
-  classes.push('w-(--my-var)')
-
-  for (const s of Object.keys(STRING_SIZES)) {
-    classes.push(`w-${s}`)
-  }
-
-  classes.push('bg-[url(https://picsum.photos/id/11/1280/720)]')
-  classes.push('aspect-[16/9]')
-
-  classes.push('translate-x-2')
-  classes.push('-translate-y-1/3')
-
-  classes.push('p-[1px_2px_3px_4px]')
-
-  for (const cls of UTILS.keys()) {
-    if (!UTILS.get(cls).includes('$')) {
+  // Iterate all utils.
+  for (const [cls, value] of UTILS.entries()) {
+    if (typeof value === 'string') {
       classes.push(cls)
+      continue
     }
+
+    if (value.string) {
+      for (const str of Object.keys(STRING_SIZES)) {
+        classes.push(`${cls}${str}`)
+      }
+    }
+
+    if (value.number) {
+      classes.push(`${cls}23`)
+      classes.push(`-${cls}23`)
+    }
+
+    if (value.fraction) {
+      classes.push(`${cls}1/4`)
+    }
+
+    classes.push(`${cls}(--my-var)`)
+    classes.push(`${cls}[inherit]`)
   }
+
+  // Some random custom classes.
+  classes.push('font-[JetBrains_Mono]')
+  classes.push('p-[1px_2px_3px_4px]')
+  classes.push('bg-[url(https://picsum.photos/id/11/1280/720)]')
 
   const div = document.createElement('div')
   div.setAttribute('tw', classes.join(' '))

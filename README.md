@@ -35,15 +35,17 @@ Then, somewhere in the markup:
 React example:
 
 ```jsx
-function Wrapper({ children, isRounded }) {
+function Wrapper ({ children, isRounded }) {
   // Supports array syntax for convenient conditional styling.
-  return <div tw={['p-4 bg-indigo-800 text-slate-50', isRounded && 'rounded-xl']}>
-    {children}
-  </div>
+  return (
+    <div tw={['p-4 bg-indigo-800 text-slate-50', isRounded && 'rounded-xl']}>
+      {children}
+    </div>
+  )
 }
 ```
 
-Once imported, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructable stylesheets. CSS reset is included.
+Once imported, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructable stylesheets. Simple CSS preflight is included.
 
 > [!NOTE]
 > TWCSS uses the `tw` attribute to detect changes. All elements with a `tw` attribute and without a `class` attribute are hidden by default to prevent any unwanted layout shift or repaint. Once a `tw` attribute change is detected, all new styles are generated and the `class` attribute is set accordingly.
@@ -94,7 +96,7 @@ The `add` function works similarly to Twind's `tw` function by generating styles
 Signature:
 
 ```ts
-function add(className: String, root: Document | ShadowRoot = document)
+function add (className: String, root: Document | ShadowRoot = document)
 ```
 
 Usage:
@@ -102,8 +104,8 @@ Usage:
 ```jsx
 import { add as tw } from 'twcss'
 
-function Button({ children }) {
-  return <button class="{tw('p-4 rounded-xl')}">{children}</button>
+function Button ({ children }) {
+  return <button className="{tw('p-4 rounded-xl')}">{children}</button>
 }
 ```
 
@@ -113,11 +115,16 @@ TWCSS aims at compatibility with Tailwind 4. This is not always possible without
 
 Currently unsupported Tailwind 4 features:
 
-- [Inset shadows](https://tailwindcss.com/docs/box-shadow#adding-an-inset-shadow) - use `bg-[]` instead.
-- [Shadow colors](https://tailwindcss.com/docs/box-shadow#setting-the-shadow-color) - shadows are always black.
 - [Styling based on parent state](https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-the-descendants-of-a-group) via `group-` prefix.
 - [Styling based on sibling state](https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-sibling-state) via `peer-` prefix.
-- [Background gradients](https://tailwindcss.com/docs/background-image#adding-a-linear-gradient) via `bg-linear-`, `bg-radial-` and `bg-conic` prefixes - use `bg-[]` instead.
+- [Composite text size](https://tailwindcss.com/docs/line-height) - `text-<size>/<number>`. Font size and line height must be set separately.
+- [Background gradients](https://tailwindcss.com/docs/background-image#adding-a-linear-gradient) - `bg-linear-`, `bg-radial-`, `bg-conic`. Use `bg-[]` instead.
+- [Composite border radius](https://tailwindcss.com/docs/border-radius) - `rounded-s-`, `rounded-e-`, `rounded-t-`, `rounded-r-`, `rounded-b-`, `rounded-l-`.
+- [Border divisions](https://tailwindcss.com/docs/border-style) - `divide-`.
+- [Hidden outline](https://tailwindcss.com/docs/outline-style) - `outline-hidden`. Use `outline-transparent` to hide the outline instead.
+- [Shadow colors](https://tailwindcss.com/docs/box-shadow#setting-the-shadow-color); shadows are always black.
+- [Custom shadows](https://tailwindcss.com/docs/box-shadow#adding-an-inset-shadow) - `inset-`, `ring-`, `inset-ring-`. Use `bg-[]` instead.
+- [Mask image gradients](https://tailwindcss.com/docs/mask-image); use `mask-[]` instead.
 
 Changes:
 
@@ -128,5 +135,4 @@ Changes:
   - `fade` for adding elements to the page in a visually pleasing manner.
 - [:has()](https://tailwindcss.com/docs/hover-focus-and-other-states#has) works only with states via `has-` prefix (e.g. `has-checked`).
 - [:not()](https://tailwindcss.com/docs/hover-focus-and-other-states#not) works only with states via `not-` prefix (e.g. `not-focus`).
-- The following transforms use predefined values (just like in Taildind 3): `rotate`, `scale`, `scale-x`, `scale-y`, `skew`, `skew-x`, `skew-y`
-- **New:** `scrollbar-gutter` support via `scrollbar-stable`, `scrollbar-auto`, `scrollbar-both` classes (currently not supported in Tailwind CSS).
+- **New:** `scrollbar-gutter` support via `scrollbar-stable`, `scrollbar-auto`, `scrollbar-both` classes (currently not supported in Tailwind).

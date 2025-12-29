@@ -1,24 +1,21 @@
 /* global Iterator */
-/**
- * @file Dirty reference generator.
- * @author Michal Kochel
- */
 import chroma from 'chroma-js'
 import fs from 'node:fs'
+
 import { COLORS, COLOR_PROPS } from '#engine/colors.js'
+import { PSEUDO, STATES, STRING_SIZES } from '#engine/constants.js'
 import { KEYFRAMES } from '#engine/keyframes.js'
 import { QUERIES } from '#engine/queries.js'
 import { RESET } from '#engine/reset.js'
 import { UTILS } from '#engine/utils.js'
-import { STRING_SIZES, STATES, PSEUDO } from '#engine/constants.js'
 
 const HIERARCHY = {
   'Layout': {
     'aspect-ratio': ['aspect-ratio'],
     'columns': ['columns'],
     'break-after': ['break-after'],
-    'break-before': ['break-after'],
-    'break-inside': ['break-after'],
+    'break-before': ['break-before'],
+    'break-inside': ['break-inside'],
     'box-decoration-break': ['box-decoration-break'],
     'box-sizing': ['box-sizing'],
     'display': ['display', 'clip'],
@@ -207,9 +204,11 @@ const HIERARCHY = {
     'perspective': ['perspective'],
     'perspective-origin': ['perspective-origin'],
     'rotate': ['rotate'],
+    'scale': ['scale'],
     'transform': ['transform'],
     'transform-origin': ['transform-origin'],
     'transform-style': ['transform-style'],
+    'translate': ['translate'],
   },
   'Interactivity': {
     'accent-color': ['accent-color'],
@@ -240,32 +239,60 @@ const HIERARCHY = {
   },
 }
 
+function dolar (str, replacement) {
+  return str.replaceAll(/\$/g, replacement)
+}
+
 function getRules (props) {
   const rules = new Map()
 
-  for (const [cls, css] of UTILS.entries().filter(([_cls, css]) => props.some(p => css.includes(`{ ${p}:`)))) {
-    // Split composite rules into multiple lines.
+  for (const [cls, val] of UTILS.entries()) {
+    const css = val.css || val
+
+    // Skip non matching utils.
+    if (!props.some(p => css.includes(`{ ${p}:`))) {
+      continue
+    }
+
+    // Dynamic rules.
+    if (typeof val === 'object') {
+      if (val.string) {
+        for (const [name, size] of Object.entries(STRING_SIZES)) {
+          rules.set(`${cls}${name}`, dolar(css, dolar(val.string, size)))
+        }
+      }
+
+      if (val.number) {
+        rules.set(`${cls}<number>`, dolar(css, dolar(val.number, '<number>')))
+        rules.set(`-${cls}<number>`, dolar(css, dolar(val.number, '-<number>')))
+      }
+
+      if (val.fraction) {
+        rules.set(`${cls}<fraction>`, dolar(css, dolar(val.fraction, '<fraction>')))
+      }
+
+      rules.set(`${cls}[<value>]`, dolar(css, '<value>'))
+      rules.set(`${cls}(<custom-property>)`, dolar(css, 'var(<custom-property>)'))
+      continue
+    }
+
+    // Composite rules.
     const isComposite = css.split(/ {/).pop().match(/:/g).length > 1
     if (isComposite) {
       rules.set(cls, css.replace(/{ /, '{\n  ').replace(/; */g, ';\n  ').replace(/}/, '\n}'))
       continue
     }
 
-    // Detect dynamic properties.
-    if (css.includes('$')) {
-      rules.set(`${cls}SUFFIX`, css.replace('$', '...'))
-      continue
-    }
-
-    // Detect colors.
+    // Color rules.
     if (COLOR_PROPS.values().some(p => css.includes(`${p}:`))) {
       if (cls.endsWith('-black')) {
-        rules.set(cls.replace('-black', '-COLOR'), css.replace('oklch(0 0 0)', 'oklch(...)'))
+        rules.set(cls.replace('-black', '-<color>'), css.replace('oklch(0 0 0)', 'oklch(...)'))
       }
 
       continue
     }
 
+    // Simple rule.
     rules.set(cls, css)
   }
 
@@ -295,7 +322,7 @@ function generateReference () {
   }
 
   //
-  // State prefixes.
+  // Prefixes.
   //
 
   mdContents.push('### Prefixes', '')
@@ -353,31 +380,6 @@ function generateReference () {
   mdContents.push('')
 
   //
-  // Size table.
-  //
-
-  mdContents.push('### Dynamic properties', '')
-  mdContents.push(
-    'Dynamic properties can be set by adding a suffix according to the table below. With a few exceptions, this mainly applies to sizing. Note that for simplicity the engine treats all of them equally, which means not all combinations will result in a valid CSS. A good example is background image: `bg-[url(...)]` makes sense, whereas `bg-1/3` does not.',
-    ''
-  )
-
-  mdContents.push('|Value                      |Output                              |Example (width)        |')
-  mdContents.push('|---------------------------|------------------------------------|-----------------------|')
-  mdContents.push('|`class-<number>`           |`property: calc(<number> * 4px)`    |`w-4`                  |')
-  mdContents.push('|`-class-<number>`          |`property: calc(-<number> * 4px)`   |`-w-4`                 |')
-  mdContents.push('|`class-<fraction>`         |`property: calc(<fraction> * 100%)` |`w-1/4`                |')
-  mdContents.push('|`-class-<fraction>`        |`property: calc(-<fraction> * 100%)`|`-w-1/4`               |')
-  mdContents.push('|`class-[<value>]`          |`property: <value>`                 |`w-[calc(50%_-_10px)]` |')
-  mdContents.push('|`class-(--custom-property)`|`property: var(--custom-property)`  |`w-(--button-height)`  |')
-
-  for (const [name, value] of Object.entries(STRING_SIZES)) {
-    mdContents.push(`|\`class-${name}\`|\`property: ${value}\`|\`w-${name}\`|`)
-  }
-
-  mdContents.push('')
-
-  //
   // All static utility classes by hierarchy.
   //
 
@@ -395,7 +397,7 @@ function generateReference () {
       }
 
       for (const [cls, css] of rules) {
-        mdContents.push(`\`\`\`css\n.${cls} ${css}\n\`\`\``, '')
+        mdContents.push(`\`\`\`\n.${cls} ${css}\n\`\`\``, '')
       }
     }
   }

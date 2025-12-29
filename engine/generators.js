@@ -26,12 +26,19 @@ export function * genc (cls, prop, colors = COLORS.entries()) {
 
 // Generate backdrop filters from filters.
 export function * backdrop (filterRules) {
-  // Handle gen() output. Naughty assumption that gen() will not be used for less than 3 rules.
-  const filterRulesArr = filterRules.length === 2 ? [filterRules] : filterRules
+  // filterRules can either be a single array or a gen() call.
+  const nestedFilterRules = Array.isArray(filterRules) ? [filterRules] : filterRules
 
-  for (const filterRule of filterRulesArr) {
-    yield filterRule
-    const [cls, rule] = filterRule
-    yield [`backdrop-${cls}`, rule.replace('filter:', 'backdrop-filter:')]
+  for (const filterRule of nestedFilterRules) {
+    yield filterRule // Default rule.
+
+    const [cls, value] = filterRule
+    if (typeof value === 'object') {
+      // Backdrop dynamic rule.
+      yield [`backdrop-${cls}`, { ...value, css: value.css.replace('filter:', 'backdrop-filter:') }]
+    } else {
+      // Backdrop static rule.
+      yield [`backdrop-${cls}`, value.replace('filter:', 'backdrop-filter:')]
+    }
   }
 }

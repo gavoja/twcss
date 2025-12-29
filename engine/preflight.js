@@ -1,4 +1,4 @@
-export const RESET = [
+export const PREFLIGHT = [
   '*,*::before,*::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: currentColor; margin: 0; padding: 0 }',
   'ul,ol { list-style: none }',
   'h1,h2,h3,h4,h5,h6 { font-size: inherit; font-weight: inherit }',
@@ -11,4 +11,5 @@ export const RESET = [
   'svg { display: block }',
   '::placeholder { color: currentColor; opacity: 0.8 }',
   '[tw]:not([class]) { display: none }', // Prevent repaint.
+  'html { transition-duration: 250ms }'
 ]

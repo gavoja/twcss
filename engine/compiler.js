@@ -3,7 +3,7 @@ import { COLOR_PROPS } from './colors.js'
 import { HIGH_PRIORITY_RULES, OPACITIES, STATES, PSEUDO, STRING_SIZES } from './constants.js'
 import { KEYFRAMES } from './keyframes.js'
 import { QUERIES } from './queries.js'
-import { RESET } from './reset.js'
+import { PREFLIGHT } from './preflight.js'
 import { UTILS } from './utils.js'
 
 /* eslint-disable @stylistic/indent */
@@ -15,7 +15,7 @@ const PARSER = new RegExp([
     '((?<base>[a-z-]+-)(',
       '(?<number>[0-9.]+)|',
       '(?<fraction>[0-9]+/[0-9]+)|',
-      '(?<string>[a-z]+)|',
+      '(?<string>[0-9a-z]+)|',
       '(\\[(?<raw>[^\\[]+)\\])|',
       '(\\((?<custom>--[a-z-]+)\\))',
     ')$)|',
@@ -157,7 +157,7 @@ async function mutationHandler (instance, mutations) {
 function createSheet () {
   const sheet = new CSSStyleSheet()
 
-  for (const css of RESET) {
+  for (const css of PREFLIGHT) {
     sheet.insertRule(css, sheet.cssRules.length)
   }
 
@@ -227,6 +227,10 @@ function addRule (instance, cls) {
   }
 }
 
+function dolar (str, replacement) {
+  return str.replaceAll(/\$/g, replacement)
+}
+
 function parse (cls) {
   const groups = cls.match(PARSER).groups
   const { negative, prefix, util, base, number, fraction, string, raw, custom } = groups
@@ -254,21 +258,23 @@ function parse (cls) {
   // Resolve actual CSS.
   let css = UTILS.get(`${minus}${util}`) // Basic class.
   if (!css) {
-    css = UTILS.get(base) // Dynamic class.
-    if (!css || !css.includes('$')) {
+    const obj = UTILS.get(base) // Dynamic class.
+    if (typeof obj !== 'object') {
       throw new Error('Utility class does not exist.')
     }
 
-    if (number) {
-      css = css.replace('$', `calc(${minus}${number} * 4px)`)
-    } else if (fraction) {
-      css = css.replace('$', `calc(${minus}${fraction} * 100%)`)
+    css = obj.css
+
+    if (number && obj.number) {
+      css = dolar(css, dolar(obj.number, `${minus}${number}`))
+    } else if (fraction && obj.fraction) {
+      css = dolar(css, dolar(obj.fraction, `${minus}${fraction}`))
     } else if (raw) {
-      css = css.replace('$', raw.replace(/_/g, ' '))
+      css = dolar(css, raw.replace(/_/g, ' '))
     } else if (custom) {
-      css = css.replace('$', `var(${custom})`)
-    } else if (string && STRING_SIZES[string]) {
-      css = css.replace('$', STRING_SIZES[string])
+      css = dolar(css, `var(${custom})`)
+    } else if (string && STRING_SIZES[string] && obj.string) {
+      css = dolar(css, dolar(obj.string, STRING_SIZES[string]))
     } else {
       throw new Error('Utility class does not exist.')
     }
