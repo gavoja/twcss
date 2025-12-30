@@ -155,8 +155,8 @@ Classes can be prefixed. The order is always `query:state:pseudo:class`. Multipl
 
 States:
 
-- Multiple states can be combined, e.g., `hover:focus:bg-blue-500`.
-- Each state also supports negation with `not-` prefix, e.g., `not-hover:bg-blue-500`.
+- Multiple states can be combined, e.g. `hover:focus:bg-blue-500`.
+- Each state also supports negation with `not-` prefix, e.g. `not-hover:bg-blue-500`.
 - Supported states: `active`, `any-link`, `checked`, `default`, `defined`, `disabled`, `empty`, `enabled`, `first-child`, `first-of-type`, `focus`, `focus-visible`, `focus-within`, `fullscreen`, `future`, `host`, `hover`, `in-range`, `indeterminate`, `invalid`, `last-child`, `last-of-type`, `link`, `modal`, `only-child`, `only-of-type`, `open`, `optional`, `out-of-range`, `past`, `picture-in-picture`, `placeholder-shown`, `popover-open`, `read-only`, `read-write`, `required`, `root`, `scope`, `target`, `user-invalid`, `user-valid`, `valid`, `visited`.
 
 Pseudo elements:
@@ -6247,7 +6247,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.tracking-normal { letter-spacing: 0 }
+.tracking-normal { letter-spacing: 0px }
 ```
 
 ```
@@ -6321,6 +6321,14 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 .list-image-none { list-style-image: none }
 ```
 
+```
+.list-image-[<value>] { list-style-image: <value> }
+```
+
+```
+.list-image-(<custom-property>) { list-style-image: var(<custom-property>) }
+```
+
 ### list-style-position
 
 ```
@@ -6343,6 +6351,14 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 
 ```
 .list-none { list-style-type: none }
+```
+
+```
+.list-[<value>] { list-style-type: <value> }
+```
+
+```
+.list-(<custom-property>) { list-style-type: var(<custom-property>) }
 ```
 
 ### text-align
@@ -8144,7 +8160,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.transition-opacity { transition-property: opacity}
+.transition-opacity { transition-property: opacity }
 ```
 
 ```
@@ -8260,11 +8276,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ### backface-visibility
 
 ```
-.blackface-visible { backface-visibility: visible }
+.backface-visible { backface-visibility: visible }
 ```
 
 ```
-.blackface-hidden { backface-visibility: hidden }
+.backface-hidden { backface-visibility: hidden }
 ```
 
 ### perspective
@@ -9134,10 +9150,6 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ### user-select
 
 ```
-.select-none { user-select: none }
-```
-
-```
 .select-text { user-select: text }
 ```
 
@@ -9147,6 +9159,10 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 
 ```
 .select-auto { user-select: auto }
+```
+
+```
+.select-none { user-select: none }
 ```
 
 ### will-change

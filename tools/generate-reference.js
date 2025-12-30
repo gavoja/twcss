@@ -334,8 +334,8 @@ function generateReference () {
 
   mdContents.push('Classes can be prefixed. The order is always `query:state:pseudo:class`. Multiple states are supported.', '')
   mdContents.push('States:', '')
-  mdContents.push('- Multiple states can be combined, e.g., `hover:focus:bg-blue-500`.')
-  mdContents.push('- Each state also supports negation with `not-` prefix, e.g., `not-hover:bg-blue-500`.')
+  mdContents.push('- Multiple states can be combined, e.g. `hover:focus:bg-blue-500`.')
+  mdContents.push('- Each state also supports negation with `not-` prefix, e.g. `not-hover:bg-blue-500`.')
   const states = Iterator.from(STATES.keys()).filter(s => !s.startsWith('not-') && !s.startsWith('has-')).map(s => `\`${s}\``).toArray().join(', ')
   mdContents.push(`- Supported states: ${states}.`)
   mdContents.push('')
