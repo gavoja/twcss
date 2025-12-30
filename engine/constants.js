@@ -37,6 +37,10 @@ export const ORIGINS = [
   'top-left',
 ]
 
+export const OVERFLOWS = ['auto', 'hidden', 'clip', 'visible', 'scroll', 'visible']
+
+export const OVERSCROLLS = ['auto', 'contain', 'none']
+
 export const RADII = [
   ['-xs', '2px'],
   ['-sm', '4px'],

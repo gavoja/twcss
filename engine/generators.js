@@ -4,7 +4,8 @@ import { OPACITIES } from './constants.js'
 // Generate with a list.
 export function * gen (func, list) {
   for (const item of list) {
-    const [name, value] = func(item)
+    const [a, b] = Array.isArray(item) ? item : [item, item]
+    const [name, value] = func(a, b)
     yield [name, `{ ${value} }`]
   }
 }

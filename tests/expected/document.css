@@ -9765,7 +9765,7 @@
 .transform-none { transform: none; }
 .rotate-none { rotate: none; }
 .perspective-none { perspective: none; }
-.blackface-hidden { backface-visibility: hidden; }
+.backface-hidden { backface-visibility: hidden; }
 .animate-none { animation: auto ease 0s 1 normal none running none; }
 .transition-none { transition-property: none; }
 .backdrop-filter-none { backdrop-filter: none; }
@@ -11448,10 +11448,14 @@ ul, ol { list-style: none; }
 .leading-normal { line-height: 1.5; }
 .leading-relaxed { line-height: 1.625; }
 .leading-loose { line-height: 2; }
+.list-image-\(--my-var\) { list-style-image: var(--my-var); }
+.list-image-\[inherit\] { list-style-image: inherit; }
 .list-inside { list-style-position: inside; }
 .list-outside { list-style-position: outside; }
 .list-disc { list-style-type: disc; }
 .list-decimal { list-style-type: decimal; }
+.list-\(--my-var\) { list-style-type: var(--my-var); }
+.list-\[inherit\] { list-style-type: inherit; }
 .text-left { text-align: left; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
@@ -31453,7 +31457,7 @@ ul, ol { list-style: none; }
 .animate-toast { animation: 250ms ease-in-out 0s 1 normal none running toast; }
 .animate-\(--my-var\) { animation: var(--my-var); }
 .animate-\[inherit\] { animation: inherit; }
-.blackface-visible { backface-visibility: visible; }
+.backface-visible { backface-visibility: visible; }
 .perspective-dramatic { perspective: 100px; }
 .perspective-near { perspective: 300px; }
 .perspective-normal { perspective: 500px; }
