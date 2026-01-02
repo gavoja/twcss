@@ -1,8 +1,6 @@
 /* global CSS, CSSStyleSheet, MutationObserver */
-import { COLOR_PROPS } from './colors.js'
-import { HIGH_PRIORITY_RULES, OPACITIES, STATES, PSEUDO, STRING_SIZES } from './constants.js'
-import { KEYFRAMES } from './keyframes.js'
-import { QUERIES } from './queries.js'
+import { COLOR_PROPS, OPACITIES } from './colors.js'
+import { HIGH_PRIORITY_RULES, STATES, PSEUDO, STRING_SIZES, KEYFRAMES, QUERIES } from './constants.js'
 import { PREFLIGHT } from './preflight.js'
 import { UTILS } from './utils.js'
 
@@ -269,9 +267,9 @@ function parse (cls) {
       css = dolar(css, dolar(obj.number, `${minus}${number}`))
     } else if (fraction && obj.fraction) {
       css = dolar(css, dolar(obj.fraction, `${minus}${fraction}`))
-    } else if (raw) {
-      css = dolar(css, raw.replace(/_/g, ' '))
-    } else if (custom) {
+    } else if (raw && obj.raw) {
+      css = dolar(css, dolar(obj.raw, raw.replace(/_/g, ' ')))
+    } else if (custom && obj.raw) {
       css = dolar(css, `var(${custom})`)
     } else if (string && STRING_SIZES[string] && obj.string) {
       css = dolar(css, dolar(obj.string, STRING_SIZES[string]))

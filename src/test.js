@@ -1,8 +1,7 @@
 /* global HTMLElement, customElements, tw */
 import { extend } from '#engine/twcss.js'
 import { UTILS } from '#engine/utils.js'
-import { QUERIES } from '#engine/queries.js'
-import { STATES, STRING_SIZES } from '#engine/constants.js'
+import { STATES, STRING_SIZES, QUERIES } from '#engine/constants.js'
 
 function register (name, callback) {
   class CustomElement extends HTMLElement {
@@ -57,28 +56,33 @@ function addDivWithAllClasses () {
 
   // Iterate all utils.
   for (const [cls, value] of UTILS.entries()) {
+    // if (cls === 'bottom') {
+    //   console.log('WTF???')
+    // }
     if (typeof value === 'string') {
       classes.push(cls)
       continue
     }
 
-    if (value.string) {
-      for (const str of Object.keys(STRING_SIZES)) {
-        classes.push(`${cls}${str}`)
-      }
-    }
+    // if (value.string) {
+    //   for (const str of Object.keys(STRING_SIZES)) {
+    //     classes.push(`${cls}${str}`)
+    //   }
+    // }
 
-    if (value.number) {
-      classes.push(`${cls}23`)
-      classes.push(`-${cls}23`)
-    }
+    // if (value.number) {
+    //   classes.push(`${cls}23`)
+    //   classes.push(`-${cls}23`)
+    // }
 
-    if (value.fraction) {
-      classes.push(`${cls}1/4`)
-    }
+    // if (value.fraction) {
+    //   classes.push(`${cls}1/4`)
+    // }
 
-    classes.push(`${cls}(--my-var)`)
-    classes.push(`${cls}[inherit]`)
+    if (value.raw) {
+      classes.push(`${cls}(--my-var)`)
+      classes.push(`${cls}[inherit]`)
+    }
   }
 
   // Some random custom classes.

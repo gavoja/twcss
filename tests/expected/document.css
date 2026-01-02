@@ -9794,7 +9794,7 @@
 .list-none { list-style-type: none; }
 .list-image-none { list-style-image: none; }
 .leading-none { line-height: 1; }
-.line-clamp-none { -webkit-line-clamp: none; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; }
+.line-clamp-none { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: none; }
 .row-start-\[inherit\] { grid-row-start: inherit; }
 .row-start-\(--my-var\) { grid-row-start: var(--my-var); }
 .-row-start-23 { grid-row-start: -23; }
