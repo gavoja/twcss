@@ -10009,6 +10009,7 @@ ul, ol { list-style: none; }
 .aspect-video { aspect-ratio: 16 / 9; }
 .aspect-auto { aspect-ratio: auto; }
 .aspect-1\/4 { aspect-ratio: 1 / 4; }
+.-aspect-1\/4 { }
 .aspect-\(--my-var\) { aspect-ratio: var(--my-var); }
 .aspect-\[inherit\] { aspect-ratio: inherit; }
 .columns-auto { columns: auto; }
@@ -10040,6 +10041,7 @@ ul, ol { list-style: none; }
 .columns-23 { columns: 23; }
 .-columns-23 { }
 .columns-1\/4 { }
+.-columns-1\/4 { }
 .columns-\(--my-var\) { columns: var(--my-var); }
 .columns-\[inherit\] { columns: inherit; }
 .break-after-auto { break-after: auto; }
@@ -10157,6 +10159,7 @@ ul, ol { list-style: none; }
 .inset-23 { inset: calc(92px); }
 .-inset-23 { inset: calc(-92px); }
 .inset-1\/4 { inset: calc(25%); }
+.-inset-1\/4 { inset: calc(-25%); }
 .inset-\(--my-var\) { inset: var(--my-var); }
 .inset-\[inherit\] { inset: inherit; }
 .inset-x-auto { inset-inline: auto; }
@@ -10188,6 +10191,7 @@ ul, ol { list-style: none; }
 .inset-x-23 { inset-inline: calc(92px); }
 .-inset-x-23 { inset-inline: calc(-92px); }
 .inset-x-1\/4 { inset-inline: calc(25%); }
+.-inset-x-1\/4 { inset-inline: calc(-25%); }
 .inset-x-\(--my-var\) { inset-inline: var(--my-var); }
 .inset-x-\[inherit\] { inset-inline: inherit; }
 .inset-y-auto { inset-block: auto; }
@@ -10219,6 +10223,7 @@ ul, ol { list-style: none; }
 .inset-y-23 { inset-block: calc(92px); }
 .-inset-y-23 { inset-block: calc(-92px); }
 .inset-y-1\/4 { inset-block: calc(25%); }
+.-inset-y-1\/4 { inset-block: calc(-25%); }
 .inset-y-\(--my-var\) { inset-block: var(--my-var); }
 .inset-y-\[inherit\] { inset-block: inherit; }
 .start-auto { inset-inline-start: auto; }
@@ -10250,6 +10255,7 @@ ul, ol { list-style: none; }
 .start-23 { inset-inline-start: calc(92px); }
 .-start-23 { inset-inline-start: calc(-92px); }
 .start-1\/4 { inset-inline-start: calc(25%); }
+.-start-1\/4 { inset-inline-start: calc(-25%); }
 .start-\(--my-var\) { inset-inline-start: var(--my-var); }
 .start-\[inherit\] { inset-inline-start: inherit; }
 .end-auto { inset-inline-end: auto; }
@@ -10281,6 +10287,7 @@ ul, ol { list-style: none; }
 .end-23 { inset-inline-end: calc(92px); }
 .-end-23 { inset-inline-end: calc(-92px); }
 .end-1\/4 { inset-inline-end: calc(25%); }
+.-end-1\/4 { inset-inline-end: calc(-25%); }
 .end-\(--my-var\) { inset-inline-end: var(--my-var); }
 .end-\[inherit\] { inset-inline-end: inherit; }
 .top-auto { top: auto; }
@@ -10312,6 +10319,7 @@ ul, ol { list-style: none; }
 .top-23 { top: calc(92px); }
 .-top-23 { top: calc(-92px); }
 .top-1\/4 { top: calc(25%); }
+.-top-1\/4 { top: calc(-25%); }
 .top-\(--my-var\) { top: var(--my-var); }
 .top-\[inherit\] { top: inherit; }
 .right-auto { right: auto; }
@@ -10343,6 +10351,7 @@ ul, ol { list-style: none; }
 .right-23 { right: calc(92px); }
 .-right-23 { right: calc(-92px); }
 .right-1\/4 { right: calc(25%); }
+.-right-1\/4 { right: calc(-25%); }
 .right-\(--my-var\) { right: var(--my-var); }
 .right-\[inherit\] { right: inherit; }
 .bottom-auto { bottom: auto; }
@@ -10374,6 +10383,7 @@ ul, ol { list-style: none; }
 .bottom-23 { bottom: calc(92px); }
 .-bottom-23 { bottom: calc(-92px); }
 .bottom-1\/4 { bottom: calc(25%); }
+.-bottom-1\/4 { bottom: calc(-25%); }
 .bottom-\(--my-var\) { bottom: var(--my-var); }
 .bottom-\[inherit\] { bottom: inherit; }
 .left-auto { left: auto; }
@@ -10405,6 +10415,7 @@ ul, ol { list-style: none; }
 .left-23 { left: calc(92px); }
 .-left-23 { left: calc(-92px); }
 .left-1\/4 { left: calc(25%); }
+.-left-1\/4 { left: calc(-25%); }
 .left-\(--my-var\) { left: var(--my-var); }
 .left-\[inherit\] { left: inherit; }
 .visible { visibility: visible; }
@@ -10444,6 +10455,7 @@ ul, ol { list-style: none; }
 .basis-23 { flex-basis: calc(92px); }
 .-basis-23 { flex-basis: calc(-92px); }
 .basis-1\/4 { flex-basis: calc(25%); }
+.-basis-1\/4 { flex-basis: calc(-25%); }
 .basis-\(--my-var\) { flex-basis: var(--my-var); }
 .basis-\[inherit\] { flex-basis: inherit; }
 .flex-row { flex-direction: row; }
@@ -10457,6 +10469,7 @@ ul, ol { list-style: none; }
 .flex-23 { flex: 23 1 0%; }
 .-flex-23 { }
 .flex-1\/4 { flex: 1 1 calc(25%); }
+.-flex-1\/4 { flex: 1 1 calc(-25%); }
 .flex-\(--my-var\) { flex: var(--my-var); }
 .flex-\[inherit\] { flex: inherit; }
 .grow { flex-grow: 1; }
@@ -11230,6 +11243,7 @@ ul, ol { list-style: none; }
 .w-23 { width: calc(92px); }
 .-w-23 { width: calc(-92px); }
 .w-1\/4 { width: calc(25%); }
+.-w-1\/4 { width: calc(-25%); }
 .w-\(--my-var\) { width: var(--my-var); }
 .w-\[inherit\] { width: inherit; }
 .min-w-auto { min-width: auto; }
@@ -11261,6 +11275,7 @@ ul, ol { list-style: none; }
 .min-w-23 { min-width: calc(92px); }
 .-min-w-23 { min-width: calc(-92px); }
 .min-w-1\/4 { min-width: calc(25%); }
+.-min-w-1\/4 { min-width: calc(-25%); }
 .min-w-\(--my-var\) { min-width: var(--my-var); }
 .min-w-\[inherit\] { min-width: inherit; }
 .max-w-auto { }
@@ -11292,6 +11307,7 @@ ul, ol { list-style: none; }
 .max-w-23 { max-width: calc(92px); }
 .-max-w-23 { max-width: calc(-92px); }
 .max-w-1\/4 { max-width: calc(25%); }
+.-max-w-1\/4 { max-width: calc(-25%); }
 .max-w-\(--my-var\) { max-width: var(--my-var); }
 .max-w-\[inherit\] { max-width: inherit; }
 .h-auto { height: auto; }
@@ -11323,6 +11339,7 @@ ul, ol { list-style: none; }
 .h-23 { height: calc(92px); }
 .-h-23 { height: calc(-92px); }
 .h-1\/4 { height: calc(25%); }
+.-h-1\/4 { height: calc(-25%); }
 .h-\(--my-var\) { height: var(--my-var); }
 .h-\[inherit\] { height: inherit; }
 .min-h-auto { min-height: auto; }
@@ -11354,6 +11371,7 @@ ul, ol { list-style: none; }
 .min-h-23 { min-height: calc(92px); }
 .-min-h-23 { min-height: calc(-92px); }
 .min-h-1\/4 { min-height: calc(25%); }
+.-min-h-1\/4 { min-height: calc(-25%); }
 .min-h-\(--my-var\) { min-height: var(--my-var); }
 .min-h-\[inherit\] { min-height: inherit; }
 .max-h-auto { }
@@ -11385,6 +11403,7 @@ ul, ol { list-style: none; }
 .max-h-23 { max-height: calc(92px); }
 .-max-h-23 { max-height: calc(-92px); }
 .max-h-1\/4 { max-height: calc(25%); }
+.-max-h-1\/4 { max-height: calc(-25%); }
 .max-h-\(--my-var\) { max-height: var(--my-var); }
 .max-h-\[inherit\] { max-height: inherit; }
 .font-serif { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
@@ -31575,6 +31594,7 @@ ul, ol { list-style: none; }
 .translate-23 { translate: calc(92px) calc(92px); }
 .-translate-23 { translate: calc(-92px) calc(-92px); }
 .translate-1\/4 { translate: calc(25%) calc(25%); }
+.-translate-1\/4 { translate: calc(-25%) calc(-25%); }
 .translate-\(--my-var\) { translate: var(--my-var); }
 .translate-\[inherit\] { translate: inherit; }
 .translate-x-auto { }
@@ -31606,6 +31626,7 @@ ul, ol { list-style: none; }
 .translate-x-23 { translate: calc(92px); }
 .-translate-x-23 { translate: calc(-92px); }
 .translate-x-1\/4 { translate: calc(25%); }
+.-translate-x-1\/4 { translate: calc(-25%); }
 .translate-x-\(--my-var\) { translate: var(--my-var); }
 .translate-x-\[inherit\] { translate: inherit; }
 .translate-y-auto { }
@@ -31637,6 +31658,7 @@ ul, ol { list-style: none; }
 .translate-y-23 { translate: 0px calc(92px); }
 .-translate-y-23 { translate: 0px calc(-92px); }
 .translate-y-1\/4 { translate: 0px calc(25%); }
+.-translate-y-1\/4 { translate: 0px calc(-25%); }
 .translate-y-\(--my-var\) { translate: 0 var(--my-var); }
 .translate-y-\[inherit\] { }
 .accent-inherit { accent-color: inherit; }

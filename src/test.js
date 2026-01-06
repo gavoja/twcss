@@ -74,6 +74,7 @@ function addDivWithAllClasses () {
 
     if (value.fraction) {
       classes.push(`${cls}1/4`)
+      classes.push(`-${cls}1/4`)
     }
 
     if (value.raw) {
