@@ -27,15 +27,15 @@ export const BLEND_MODES = [
 ]
 
 export const ORIGINS = [
-  'center',
+  ['top-left', 'top left'],
   'top',
   ['top-right', 'top right'],
-  'right',
-  ['bottom-right', 'bottom right'],
-  'bottom',
-  ['bottom-left', 'bottom left'],
   'left',
-  ['top-left', 'top left']
+  'center',
+  'right',
+  ['bottom-left', 'bottom left'],
+  'bottom',
+  ['bottom-right', 'bottom right']
 ]
 
 export const OVERFLOWS = ['auto', 'hidden', 'clip', 'visible', 'scroll', 'visible']

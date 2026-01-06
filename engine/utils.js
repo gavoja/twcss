@@ -849,17 +849,7 @@ export const UTILS = process([
   ]],
 
   // background-position
-  ['bg', 'background-position', [
-    ['top-left', 'top left'],
-    'top',
-    ['top-right', 'top right'],
-    'left',
-    'center',
-    'right',
-    ['bottom-left', 'bottom left'],
-    'bottom',
-    ['bottom-right', 'bottom right'],
-  ]],
+  ['bg', 'background-position', ORIGINS],
   ['bg-position', 'background-position', [
     { raw: '$' }
   ]],
@@ -1082,17 +1072,7 @@ export const UTILS = process([
   ]],
 
   // mask-position
-  ['mask', 'mask-position', [
-    ['top-left', 'top left'],
-    'top',
-    ['top-right', 'top right'],
-    'left',
-    'center',
-    'right',
-    ['bottom-left', 'bottom left'],
-    'bottom',
-    ['bottom-right', 'bottom right'],
-  ]],
+  ['mask', 'mask-position', ORIGINS],
   ['mask-position', [
     { raw: '$' }
   ]],
