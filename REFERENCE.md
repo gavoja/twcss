@@ -251,7 +251,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-columns-px { columns: -1px }
+```
+
+```
 .columns-full { columns: 100% }
+```
+
+```
+.-columns-full { columns: -100% }
 ```
 
 ```
@@ -841,7 +849,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-inset-px { inset: -1px }
+```
+
+```
 .inset-full { inset: 100% }
+```
+
+```
+.-inset-full { inset: -100% }
 ```
 
 ```
@@ -965,7 +981,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-inset-x-px { inset-inline: -1px }
+```
+
+```
 .inset-x-full { inset-inline: 100% }
+```
+
+```
+.-inset-x-full { inset-inline: -100% }
 ```
 
 ```
@@ -1089,7 +1113,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-inset-y-px { inset-block: -1px }
+```
+
+```
 .inset-y-full { inset-block: 100% }
+```
+
+```
+.-inset-y-full { inset-block: -100% }
 ```
 
 ```
@@ -1213,7 +1245,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-start-px { inset-inline-start: -1px }
+```
+
+```
 .start-full { inset-inline-start: 100% }
+```
+
+```
+.-start-full { inset-inline-start: -100% }
 ```
 
 ```
@@ -1337,7 +1377,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-end-px { inset-inline-end: -1px }
+```
+
+```
 .end-full { inset-inline-end: 100% }
+```
+
+```
+.-end-full { inset-inline-end: -100% }
 ```
 
 ```
@@ -1461,7 +1509,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-top-px { top: -1px }
+```
+
+```
 .top-full { top: 100% }
+```
+
+```
+.-top-full { top: -100% }
 ```
 
 ```
@@ -1585,7 +1641,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-right-px { right: -1px }
+```
+
+```
 .right-full { right: 100% }
+```
+
+```
+.-right-full { right: -100% }
 ```
 
 ```
@@ -1709,7 +1773,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-bottom-px { bottom: -1px }
+```
+
+```
 .bottom-full { bottom: 100% }
+```
+
+```
+.-bottom-full { bottom: -100% }
 ```
 
 ```
@@ -1833,7 +1905,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-left-px { left: -1px }
+```
+
+```
 .left-full { left: 100% }
+```
+
+```
+.-left-full { left: -100% }
 ```
 
 ```
@@ -1997,7 +2077,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-basis-px { flex-basis: -1px }
+```
+
+```
 .basis-full { flex-basis: 100% }
+```
+
+```
+.-basis-full { flex-basis: -100% }
 ```
 
 ```
@@ -2859,7 +2947,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-p-px { padding: -1px }
+```
+
+```
 .p-full { padding: 100% }
+```
+
+```
+.-p-full { padding: -100% }
 ```
 
 ```
@@ -2979,7 +3075,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-px-px { padding-inline: -1px }
+```
+
+```
 .px-full { padding-inline: 100% }
+```
+
+```
+.-px-full { padding-inline: -100% }
 ```
 
 ```
@@ -3099,7 +3203,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-py-px { padding-block: -1px }
+```
+
+```
 .py-full { padding-block: 100% }
+```
+
+```
+.-py-full { padding-block: -100% }
 ```
 
 ```
@@ -3219,7 +3331,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-ps-px { padding-inline-start: -1px }
+```
+
+```
 .ps-full { padding-inline-start: 100% }
+```
+
+```
+.-ps-full { padding-inline-start: -100% }
 ```
 
 ```
@@ -3339,7 +3459,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-pe-px { padding-inline-end: -1px }
+```
+
+```
 .pe-full { padding-inline-end: 100% }
+```
+
+```
+.-pe-full { padding-inline-end: -100% }
 ```
 
 ```
@@ -3459,7 +3587,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-pt-px { padding-top: -1px }
+```
+
+```
 .pt-full { padding-top: 100% }
+```
+
+```
+.-pt-full { padding-top: -100% }
 ```
 
 ```
@@ -3579,7 +3715,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-pr-px { padding-right: -1px }
+```
+
+```
 .pr-full { padding-right: 100% }
+```
+
+```
+.-pr-full { padding-right: -100% }
 ```
 
 ```
@@ -3699,7 +3843,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-pb-px { padding-bottom: -1px }
+```
+
+```
 .pb-full { padding-bottom: 100% }
+```
+
+```
+.-pb-full { padding-bottom: -100% }
 ```
 
 ```
@@ -3819,7 +3971,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-pl-px { padding-left: -1px }
+```
+
+```
 .pl-full { padding-left: 100% }
+```
+
+```
+.-pl-full { padding-left: -100% }
 ```
 
 ```
@@ -3941,7 +4101,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-m-px { margin: -1px }
+```
+
+```
 .m-full { margin: 100% }
+```
+
+```
+.-m-full { margin: -100% }
 ```
 
 ```
@@ -4061,7 +4229,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-mx-px { margin-inline: -1px }
+```
+
+```
 .mx-full { margin-inline: 100% }
+```
+
+```
+.-mx-full { margin-inline: -100% }
 ```
 
 ```
@@ -4181,7 +4357,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-my-px { margin-block: -1px }
+```
+
+```
 .my-full { margin-block: 100% }
+```
+
+```
+.-my-full { margin-block: -100% }
 ```
 
 ```
@@ -4301,7 +4485,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-ms-px { margin-inline-start: -1px }
+```
+
+```
 .ms-full { margin-inline-start: 100% }
+```
+
+```
+.-ms-full { margin-inline-start: -100% }
 ```
 
 ```
@@ -4421,7 +4613,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-me-px { margin-inline-end: -1px }
+```
+
+```
 .me-full { margin-inline-end: 100% }
+```
+
+```
+.-me-full { margin-inline-end: -100% }
 ```
 
 ```
@@ -4541,7 +4741,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-mt-px { margin-top: -1px }
+```
+
+```
 .mt-full { margin-top: 100% }
+```
+
+```
+.-mt-full { margin-top: -100% }
 ```
 
 ```
@@ -4661,7 +4869,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-mr-px { margin-right: -1px }
+```
+
+```
 .mr-full { margin-right: 100% }
+```
+
+```
+.-mr-full { margin-right: -100% }
 ```
 
 ```
@@ -4781,7 +4997,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-mb-px { margin-bottom: -1px }
+```
+
+```
 .mb-full { margin-bottom: 100% }
+```
+
+```
+.-mb-full { margin-bottom: -100% }
 ```
 
 ```
@@ -4901,7 +5125,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-ml-px { margin-left: -1px }
+```
+
+```
 .ml-full { margin-left: 100% }
+```
+
+```
+.-ml-full { margin-left: -100% }
 ```
 
 ```
@@ -5021,7 +5253,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-space-x-px  > :not(:last-child) { margin-inline-end: -1px }
+```
+
+```
 .space-x-full  > :not(:last-child) { margin-inline-end: 100% }
+```
+
+```
+.-space-x-full  > :not(:last-child) { margin-inline-end: -100% }
 ```
 
 ```
@@ -5141,7 +5381,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-space-y-px  > :not(:last-child) { margin-bottom: -1px }
+```
+
+```
 .space-y-full  > :not(:last-child) { margin-bottom: 100% }
+```
+
+```
+.-space-y-full  > :not(:last-child) { margin-bottom: -100% }
 ```
 
 ```
@@ -5265,7 +5513,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-w-px { width: -1px }
+```
+
+```
 .w-full { width: 100% }
+```
+
+```
+.-w-full { width: -100% }
 ```
 
 ```
@@ -5391,7 +5647,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-min-w-px { min-width: -1px }
+```
+
+```
 .min-w-full { min-width: 100% }
+```
+
+```
+.-min-w-full { min-width: -100% }
 ```
 
 ```
@@ -5517,7 +5781,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-max-w-px { max-width: -1px }
+```
+
+```
 .max-w-full { max-width: 100% }
+```
+
+```
+.-max-w-full { max-width: -100% }
 ```
 
 ```
@@ -5643,7 +5915,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-h-px { height: -1px }
+```
+
+```
 .h-full { height: 100% }
+```
+
+```
+.-h-full { height: -100% }
 ```
 
 ```
@@ -5769,7 +6049,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-min-h-px { min-height: -1px }
+```
+
+```
 .min-h-full { min-height: 100% }
+```
+
+```
+.-min-h-full { min-height: -100% }
 ```
 
 ```
@@ -5895,7 +6183,15 @@ Also supported: `inherit`, `transparent` and `current`.
 ```
 
 ```
+.-max-h-px { max-height: -1px }
+```
+
+```
 .max-h-full { max-height: 100% }
+```
+
+```
+.-max-h-full { max-height: -100% }
 ```
 
 ```
@@ -6560,11 +6856,115 @@ Currently unsupported.
 ### text-indent
 
 ```
-.-indent-px { text-indent: -1px }
+.indent-auto { text-indent: auto }
 ```
 
 ```
 .indent-px { text-indent: 1px }
+```
+
+```
+.-indent-px { text-indent: -1px }
+```
+
+```
+.indent-full { text-indent: 100% }
+```
+
+```
+.-indent-full { text-indent: -100% }
+```
+
+```
+.indent-screen { text-indent: 100vw }
+```
+
+```
+.indent-dvw { text-indent: 100vw }
+```
+
+```
+.indent-dvh { text-indent: 100vh }
+```
+
+```
+.indent-lvw { text-indent: 100lvw }
+```
+
+```
+.indent-lvh { text-indent: 100lvh }
+```
+
+```
+.indent-svw { text-indent: 100svw }
+```
+
+```
+.indent-svh { text-indent: 100svh }
+```
+
+```
+.indent-min { text-indent: min-content }
+```
+
+```
+.indent-max { text-indent: max-content }
+```
+
+```
+.indent-fit { text-indent: fit-content }
+```
+
+```
+.indent-3xs { text-indent: 256px }
+```
+
+```
+.indent-2xs { text-indent: 288px }
+```
+
+```
+.indent-xs { text-indent: 320px }
+```
+
+```
+.indent-sm { text-indent: 384px }
+```
+
+```
+.indent-md { text-indent: 448px }
+```
+
+```
+.indent-lg { text-indent: 512px }
+```
+
+```
+.indent-xl { text-indent: 576px }
+```
+
+```
+.indent-2xl { text-indent: 672px }
+```
+
+```
+.indent-3xl { text-indent: 768px }
+```
+
+```
+.indent-4xl { text-indent: 896px }
+```
+
+```
+.indent-5xl { text-indent: 1024px }
+```
+
+```
+.indent-6xl { text-indent: 1152px }
+```
+
+```
+.indent-7xl { text-indent: 1280px }
 ```
 
 ```
@@ -8678,7 +9078,15 @@ Currently unsupported.
 ```
 
 ```
+.-translate-px { translate: -1px -1px }
+```
+
+```
 .translate-full { translate: 100% 100% }
+```
+
+```
+.-translate-full { translate: -100% -100% }
 ```
 
 ```
@@ -8802,7 +9210,15 @@ Currently unsupported.
 ```
 
 ```
+.-translate-x-px { translate: -1px }
+```
+
+```
 .translate-x-full { translate: 100% }
+```
+
+```
+.-translate-x-full { translate: -100% }
 ```
 
 ```
@@ -8926,7 +9342,15 @@ Currently unsupported.
 ```
 
 ```
+.-translate-y-px { translate: 0 -1px }
+```
+
+```
 .translate-y-full { translate: 0 100% }
+```
+
+```
+.-translate-y-full { translate: 0 -100% }
 ```
 
 ```

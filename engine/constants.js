@@ -2,10 +2,6 @@
 // Helper constants.
 //
 
-export const N = 'calc($ * 4px)'
-
-export const F = 'calc($ * 100%)'
-
 export const ANIM_TIME = '250ms'
 
 export const BLEND_MODES = [
@@ -37,6 +33,10 @@ export const BLURS = [
   ['3xl', 'blur(64px)'],
   ['none', 'none']
 ]
+
+export const N = 'calc($ * 4px)'
+
+export const F = 'calc($ * 100%)'
 
 export const ORIGINS = [
   ['top-left', 'top left'],

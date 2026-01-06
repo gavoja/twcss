@@ -270,6 +270,9 @@ function getRules (props) {
       if (val.string) {
         for (const [name, size] of Object.entries(STRING_SIZES)) {
           rules.set(`${cls}${name}`, formatCss(dolar(css, dolar(val.string, size))))
+          if (['px', 'full'].includes(name)) {
+            rules.set(`-${cls}${name}`, formatCss(dolar(css, dolar(val.string, `-${size}`))))
+          }
         }
       }
 
@@ -286,13 +289,6 @@ function getRules (props) {
       rules.set(`${cls}(<custom-property>)`, formatCss(dolar(css, 'var(<custom-property>)')))
       continue
     }
-
-    // // Composite rules.
-    // const isComposite = css.split(/ {/).pop().match(/:/g).length > 1
-    // if (isComposite) {
-    //   rules.set(cls, css.replace(/{ /, '{\n  ').replace(/; */g, ';\n  ').replace(/}/, '\n}'))
-    //   continue
-    // }
 
     // Color rules.
     if (COLOR_PROPS.values().some(p => css.includes(`${p}:`))) {

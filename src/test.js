@@ -64,6 +64,7 @@ function addDivWithAllClasses () {
     if (value.string) {
       for (const str of Object.keys(STRING_SIZES)) {
         classes.push(`${cls}${str}`)
+        classes.push(`-${cls}${str}`)
       }
     }
 

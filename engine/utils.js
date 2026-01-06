@@ -722,10 +722,8 @@ const ENTRIES = [
   ]],
 
   // text-indent
-  ['-indent-px', 'text-indent: -1px'],
   ['indent', 'text-indent', [
-    ['px', '1px'],
-    { raw: '$', number: N }
+    { raw: '$', number: N, string: '$' }
   ]],
 
   // vertical-align

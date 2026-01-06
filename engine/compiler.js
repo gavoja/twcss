@@ -271,7 +271,7 @@ function parse (cls) {
       css = dolar(css, dolar(obj.fraction, `${minus}${fraction}`))
     } else if (string && obj.string && STRING_SIZES[string]) {
       // String
-      css = dolar(css, dolar(obj.string, STRING_SIZES[string]))
+      css = dolar(css, dolar(obj.string, `${minus}${STRING_SIZES[string]}`))
     } else if (raw && obj.raw) {
       // Raw - square brackets
       css = dolar(css, dolar(obj.raw, raw.replace(/_/g, ' ')))
