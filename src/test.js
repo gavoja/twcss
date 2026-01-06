@@ -56,28 +56,25 @@ function addDivWithAllClasses () {
 
   // Iterate all utils.
   for (const [cls, value] of UTILS.entries()) {
-    // if (cls === 'bottom') {
-    //   console.log('WTF???')
-    // }
     if (typeof value === 'string') {
       classes.push(cls)
       continue
     }
 
-    // if (value.string) {
-    //   for (const str of Object.keys(STRING_SIZES)) {
-    //     classes.push(`${cls}${str}`)
-    //   }
-    // }
+    if (value.string) {
+      for (const str of Object.keys(STRING_SIZES)) {
+        classes.push(`${cls}${str}`)
+      }
+    }
 
-    // if (value.number) {
-    //   classes.push(`${cls}23`)
-    //   classes.push(`-${cls}23`)
-    // }
+    if (value.number) {
+      classes.push(`${cls}23`)
+      classes.push(`-${cls}23`)
+    }
 
-    // if (value.fraction) {
-    //   classes.push(`${cls}1/4`)
-    // }
+    if (value.fraction) {
+      classes.push(`${cls}1/4`)
+    }
 
     if (value.raw) {
       classes.push(`${cls}(--my-var)`)

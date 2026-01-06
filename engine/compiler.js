@@ -270,7 +270,7 @@ function parse (cls) {
     } else if (raw && obj.raw) {
       css = dolar(css, dolar(obj.raw, raw.replace(/_/g, ' ')))
     } else if (custom && obj.raw) {
-      css = dolar(css, `var(${custom})`)
+      css = dolar(css, dolar(obj.raw, `var(${custom})`))
     } else if (string && STRING_SIZES[string] && obj.string) {
       css = dolar(css, dolar(obj.string, STRING_SIZES[string]))
     } else {

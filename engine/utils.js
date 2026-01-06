@@ -28,10 +28,7 @@ function process (array) {
       } else {
         // Static rule.
         const [a, b] = Array.isArray(value) ? value : [value, value]
-        const chunks = []
-        name && chunks.push(name)
-        a && chunks.push(a)
-        utils.set(chunks.join('-'), `{ ${prop}: ${b} }`)
+        utils.set([name, a].filter(Boolean).join('-'), `{ ${prop}: ${b} }`)
       }
     }
   }
@@ -56,7 +53,7 @@ export const UTILS = process([
 
   // columns
   ['columns', [
-    { raw: '$', number: '$', fraction: '$' }
+    { raw: '$', number: '$', fraction: '$', string: '$' }
   ]],
 
   // break-after
@@ -86,10 +83,7 @@ export const UTILS = process([
     'auto',
     'avoid',
     'avoid-page',
-    'page',
-    'left',
-    'right',
-    'column'
+    'avoid-column'
   ]],
 
   // box-decoration-break
@@ -177,9 +171,16 @@ export const UTILS = process([
   ['overflow-y', OVERFLOWS],
 
   // overscroll-behavior
-  ['overscroll', 'overscrol-behavior', OVERSCROLLS],
-  ['overscroll-x', 'overscrol-behavior-x', OVERSCROLLS],
-  ['overscroll-y', 'overscrol-behavior-y', OVERSCROLLS],
+  ['overscroll', 'overscroll-behavior', OVERSCROLLS],
+  ['overscroll-x', 'overscroll-behavior-x', OVERSCROLLS],
+  ['overscroll-y', 'overscroll-behavior-y', OVERSCROLLS],
+
+  // scrollbar-gutter
+  ['scrollbar', 'scrollbar-gutter', [
+    'auto',
+    'stable',
+    ['both', 'stable both-edges']
+  ]],
 
   // position
   ['', 'position', [
@@ -190,34 +191,34 @@ export const UTILS = process([
     'sticky'
   ]],
 
-  // // top / right / bottom / left
-  // ['inset', [
-  //   { raw: '$', number: N, fraction: F, string: '$' }
-  // ]],
-  // ['inset-x', 'inset-inline', [
-  //   { raw: '$', number: N, fraction: F, string: '$' }
-  // ]],
-  // ['inset-y', 'inset-block', [
-  //   { raw: '$', number: N, fraction: F, string: '$' }
-  // ]],
-  // ['start', 'inset-inline-start', [
-  //   { raw: '$', number: N, fraction: F, string: '$' }
-  // ]],
-  // ['end', 'inset-inline-end', [
-  //   { raw: '$', number: N, fraction: F, string: '$' }
-  // ]],
-  // ['top', [
-  //   { raw: '$', number: N, fraction: F, string: '$' }
-  // ]],
-  // ['right', [
-  //   { raw: '$', number: N, fraction: F, string: '$' }
-  // ]],
-  // ['bottom', [
-  //   { raw: '$', number: N, fraction: F, string: '$' }
-  // ]],
-  // ['left', [
-  //   { raw: '$', number: N, fraction: F, string: '$' }
-  // ]],
+  // top / right / bottom / left
+  ['inset', [
+    { raw: '$', number: N, fraction: F, string: '$' }
+  ]],
+  ['inset-x', 'inset-inline', [
+    { raw: '$', number: N, fraction: F, string: '$' }
+  ]],
+  ['inset-y', 'inset-block', [
+    { raw: '$', number: N, fraction: F, string: '$' }
+  ]],
+  ['start', 'inset-inline-start', [
+    { raw: '$', number: N, fraction: F, string: '$' }
+  ]],
+  ['end', 'inset-inline-end', [
+    { raw: '$', number: N, fraction: F, string: '$' }
+  ]],
+  ['top', [
+    { raw: '$', number: N, fraction: F, string: '$' }
+  ]],
+  ['right', [
+    { raw: '$', number: N, fraction: F, string: '$' }
+  ]],
+  ['bottom', [
+    { raw: '$', number: N, fraction: F, string: '$' }
+  ]],
+  ['left', [
+    { raw: '$', number: N, fraction: F, string: '$' }
+  ]],
 
   // visibility
   ['', 'visibility', [
@@ -232,9 +233,9 @@ export const UTILS = process([
     { raw: '$', number: '$' }
   ]],
 
-  // // ---------------------------------------------------------------------------
-  // // Flexbox & Grid
-  // // ---------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
+  // Flexbox & Grid
+  // ---------------------------------------------------------------------------
 
   // flex-basis
   ['basis', 'flex-basis', [
@@ -266,11 +267,13 @@ export const UTILS = process([
 
   // flex-grow
   ['grow', 'flex-grow', [
+    ['', 1],
     { raw: '$', number: '$' }
   ]],
 
   // flex-shrink
   ['shrink', 'flex-shrink', [
+    ['', 1],
     { raw: '$', number: '$' }
   ]],
 
@@ -303,6 +306,7 @@ export const UTILS = process([
     { raw: '$', number: '$' }
   ]],
   ['col', 'grid-column', [
+    'auto',
     { raw: '$', number: '$' }
   ]],
 
@@ -327,6 +331,7 @@ export const UTILS = process([
     { raw: '$', number: '$' }
   ]],
   ['row', 'grid-row', [
+    'auto',
     { raw: '$', number: '$' }
   ]],
 
@@ -361,10 +366,10 @@ export const UTILS = process([
   ['gap', [
     { raw: '$', number: N }
   ]],
-  ['gap-x', 'column-gap' [
+  ['gap-x', 'column-gap', [
     { raw: '$', number: N }
   ]],
-  ['gap-y', 'row-gap' [
+  ['gap-y', 'row-gap', [
     { raw: '$', number: N }
   ]],
 
@@ -497,31 +502,31 @@ export const UTILS = process([
   ]],
 
   // maring
-  ['m', 'maring', [
+  ['m', 'margin', [
     { raw: '$', number: N, string: '$' }
   ]],
-  ['mx', 'maring-inline', [
+  ['mx', 'margin-inline', [
     { raw: '$', number: N, string: '$' }
   ]],
-  ['my', 'maring-block', [
+  ['my', 'margin-block', [
     { raw: '$', number: N, string: '$' }
   ]],
-  ['ms', 'maring-inline-start', [
+  ['ms', 'margin-inline-start', [
     { raw: '$', number: N, string: '$' }
   ]],
-  ['me', 'maring-inline-end', [
+  ['me', 'margin-inline-end', [
     { raw: '$', number: N, string: '$' }
   ]],
-  ['mt', 'maring-top', [
+  ['mt', 'margin-top', [
     { raw: '$', number: N, string: '$' }
   ]],
-  ['mr', 'maring-right', [
+  ['mr', 'margin-right', [
     { raw: '$', number: N, string: '$' }
   ]],
-  ['mb', 'maring-bottom', [
+  ['mb', 'margin-bottom', [
     { raw: '$', number: N, string: '$' }
   ]],
-  ['ml', 'maring-left', [
+  ['ml', 'margin-left', [
     { raw: '$', number: N, string: '$' }
   ]],
   ['space-x', 'margin-inline-end', [
@@ -569,7 +574,7 @@ export const UTILS = process([
   ['font-sans', 'font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'],
   ['font-serif', 'font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif'],
   ['font-mono', 'font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'],
-  ['font', [
+  ['font', 'font-family', [
     { raw: '$' }
   ]],
 
@@ -595,7 +600,7 @@ export const UTILS = process([
   // font-style
   ['', 'font-style', [
     'italic',
-    ['non-italic', 'normal']
+    ['not-italic', 'normal']
   ]],
 
   // font-weight
@@ -680,7 +685,8 @@ export const UTILS = process([
   ['list', 'list-style-type', [
     'disc',
     'decimal',
-    'none'
+    'none',
+    { raw: '$' }
   ]],
 
   // text-align
@@ -766,7 +772,8 @@ export const UTILS = process([
     'text-top',
     'text-bottom',
     'sub',
-    'super'
+    'super',
+    { raw: '$' }
   ]],
 
   // white-space
@@ -852,6 +859,8 @@ export const UTILS = process([
     ['bottom-left', 'bottom left'],
     'bottom',
     ['bottom-right', 'bottom right'],
+  ]],
+  ['bg-position', 'background-position', [
     { raw: '$' }
   ]],
 
@@ -871,6 +880,9 @@ export const UTILS = process([
     'cover',
     'contain'
   ]],
+  ['bg-size', 'background-size', [
+    { raw: '$' }
+  ]],
 
   // ---------------------------------------------------------------------------
   // Borders
@@ -879,39 +891,39 @@ export const UTILS = process([
   // border-radius
   ['rounded', 'border-radius', [
     ...RADII,
-    { raw: '$', string: '$' }
+    { raw: '$' }
   ]],
   ['rounded-ss', 'border-start-start-radius', [
     ...RADII,
-    { raw: '$', string: '$' }
+    { raw: '$' }
   ]],
   ['rounded-se', 'border-start-end-radius', [
     ...RADII,
-    { raw: '$', string: '$' }
+    { raw: '$' }
   ]],
   ['rounded-ee', 'border-end-end-radius', [
     ...RADII,
-    { raw: '$', string: '$' }
+    { raw: '$' }
   ]],
   ['rounded-es', 'border-end-start-radius', [
     ...RADII,
-    { raw: '$', string: '$' }
+    { raw: '$' }
   ]],
   ['rounded-tl', 'border-top-left-radius', [
     ...RADII,
-    { raw: '$', string: '$' }
+    { raw: '$' }
   ]],
   ['rounded-tr', 'border-top-right-radius', [
     ...RADII,
-    { raw: '$', string: '$' }
+    { raw: '$' }
   ]],
   ['rounded-br', 'border-bottom-right-radius', [
     ...RADII,
-    { raw: '$', string: '$' }
+    { raw: '$' }
   ]],
   ['rounded-bl', 'border-bottom-left-radius', [
     ...RADII,
-    { raw: '$', string: '$' }
+    { raw: '$' }
   ]],
 
   // border-width
@@ -967,6 +979,7 @@ export const UTILS = process([
 
   // outline-width
   ['outline', 'outline-width', [
+    ['', '1px'],
     { raw: '$', number: '$px' }
   ]],
 
@@ -1027,13 +1040,14 @@ export const UTILS = process([
   ['bg-blend', 'background-blend-mode', BLEND_MODES],
 
   // mask-clip
-  ['mask-clip', [
-    'border',
-    'padding',
-    'content',
-    'fill',
-    'stroke',
-    'view'
+  ['mask', 'mask-clip', [
+    ['clip-border', 'border-box'],
+    ['clip-padding', 'padding-box'],
+    ['clip-content', 'content-box'],
+    ['clip-fill', 'fill-box'],
+    ['clip-stroke', 'stroke-box'],
+    ['clip-view', 'view-box'],
+    'no-clip'
   ]],
 
   // mask-composite
@@ -1059,15 +1073,26 @@ export const UTILS = process([
 
   // mask-origin
   ['mask-origin', [
-    'border',
-    'padding',
-    'content',
-    'fill',
-    'stroke',
-    'view'
+    ['border', 'border-box'],
+    ['padding', 'padding-box'],
+    ['content', 'content-box'],
+    ['fill', 'fill-box'],
+    ['stroke', 'stroke-box'],
+    ['view', 'view-box']
   ]],
 
   // mask-position
+  ['mask', 'mask-position', [
+    ['top-left', 'top left'],
+    'top',
+    ['top-right', 'top right'],
+    'left',
+    'center',
+    'right',
+    ['bottom-left', 'bottom left'],
+    'bottom',
+    ['bottom-right', 'bottom right'],
+  ]],
   ['mask-position', [
     { raw: '$' }
   ]],
@@ -1086,7 +1111,10 @@ export const UTILS = process([
   ['mask', 'mask-size', [
     'auto',
     'cover',
-    'contain',
+    'contain'
+  ]],
+
+  ['mask-size', [
     { raw: '$' }
   ]],
 
@@ -1132,6 +1160,9 @@ export const UTILS = process([
     { raw: 'brightness($)', number: 'brightness($%)' }
   ]],
   // contrast
+  ['contrast', 'filter', [
+    { raw: 'contrast($)', number: 'contrast($%)' }
+  ]],
   ['backdrop-contrast', 'backdrop-filter', [
     { raw: 'contrast($)', number: 'contrast($%)' }
   ]],
@@ -1150,11 +1181,11 @@ export const UTILS = process([
 
   // grayscale
   ['grayscale', 'filter', [
-    ['', 'grayscale(100%'],
+    ['', 'grayscale(100%)'],
     { raw: 'grayscale($)', number: 'grayscale($%)' }
   ]],
   ['backdrop-grayscale', 'backdrop-filter', [
-    ['', 'grayscale(100%'],
+    ['', 'grayscale(100%)'],
     { raw: 'grayscale($)', number: 'grayscale($%)' }
   ]],
 
@@ -1189,9 +1220,11 @@ export const UTILS = process([
 
   // sepia
   ['sepia', 'filter', [
+    ['', 'sepia(100%)'],
     { raw: 'sepia($)', number: 'sepia($%)' }
   ]],
   ['backdrop-sepia', 'backdrop-filter', [
+    ['', 'sepia(100%)'],
     { raw: 'sepia($)', number: 'sepia($%)' }
   ]],
 
@@ -1277,7 +1310,7 @@ export const UTILS = process([
   ]],
 
   // transition-delay
-  ['delay-', 'transition-delay', [
+  ['delay', 'transition-delay', [
     { raw: '$', number: '$ms' }
   ]],
 
@@ -1327,21 +1360,21 @@ export const UTILS = process([
   ['scale', [
     { raw: '$', number: '$% $%' }
   ]],
-  ['scale-x', [
-    { number: '$% 100%' }
+  ['scale-x', 'scale', [
+    { raw: '$ 100%', number: '$% 100%' }
   ]],
-  ['scale-y', [
-    { number: '100% $%' }
+  ['scale-y', 'scale', [
+    { raw: '100% $', number: '100% $%' }
   ]],
 
   // skew
   ['skew', 'transform', [
     { raw: 'skewX($) skewY($)', number: 'skewX($deg) skewY($deg)' }
   ]],
-  ['skew-x', [
+  ['skew-x', 'transform', [
     { raw: 'skewX($)', number: 'skewX($deg)' }
   ]],
-  ['skew-y', [
+  ['skew-y', 'transform', [
     { raw: 'skewY($)', number: 'skewY($deg)' }
   ]],
 
@@ -1355,6 +1388,12 @@ export const UTILS = process([
   ['origin', 'transform-origin', [
     ...ORIGINS,
     { raw: '$' }
+  ]],
+
+  // transform-style
+  ['transform', 'transform-style', [
+    ['3d', 'preserve-3d'],
+    'flat'
   ]],
 
   // translate
@@ -1497,6 +1536,12 @@ export const UTILS = process([
     ['align-none', 'none']
   ]],
 
+  // sroll-snap-stop
+  ['snap', 'scroll-snap-stop', [
+    'normal',
+    'always'
+  ]],
+
   // scroll-snap-type
   ['snap', 'scroll-snap-type', [
     'none',
@@ -1559,5 +1604,3 @@ export const UTILS = process([
     'none'
   ]]
 ])
-
-console.log(UTILS)
