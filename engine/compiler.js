@@ -264,15 +264,20 @@ function parse (cls) {
     css = obj.css
 
     if (number && obj.number) {
+      // Number
       css = dolar(css, dolar(obj.number, `${minus}${number}`))
     } else if (fraction && obj.fraction) {
+      // Fraction
       css = dolar(css, dolar(obj.fraction, `${minus}${fraction}`))
+    } else if (string && obj.string && STRING_SIZES[string]) {
+      // String
+      css = dolar(css, dolar(obj.string, STRING_SIZES[string]))
     } else if (raw && obj.raw) {
+      // Raw - square brackets
       css = dolar(css, dolar(obj.raw, raw.replace(/_/g, ' ')))
     } else if (custom && obj.raw) {
+      // Custom prop - brackets
       css = dolar(css, dolar(obj.raw, `var(${custom})`))
-    } else if (string && STRING_SIZES[string] && obj.string) {
-      css = dolar(css, dolar(obj.string, STRING_SIZES[string]))
     } else {
       throw new Error('Utility class does not exist.')
     }

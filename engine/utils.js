@@ -1398,13 +1398,13 @@ export const UTILS = process([
 
   // translate
   ['translate', [
-    { raw: '$', number: `${N} ${N}`, string: '$ $' }
+    { raw: '$', number: `${N} ${N}`, fraction: `${F} ${F}`, string: '$ $' }
   ]],
-  ['translate-x', [
-    { raw: '$ 0', number: `${N} 0`, string: '$' }
+  ['translate-x', 'translate', [
+    { raw: '$', number: `${N}`, fraction: `${F}`, string: '$' }
   ]],
-  ['translate-y', [
-    { raw: '0 $', number: `0 ${N}`, string: '$' }
+  ['translate-y', 'translate', [
+    { raw: '0 $', number: `0 ${N}`, fraction: `0 ${F}`, string: '0 $' }
   ]],
 
   // ---------------------------------------------------------------------------

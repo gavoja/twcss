@@ -31605,8 +31605,9 @@ ul, ol { list-style: none; }
 .translate-x-7xl { translate: 1280px; }
 .translate-x-23 { translate: calc(92px); }
 .-translate-x-23 { translate: calc(-92px); }
-.translate-x-\(--my-var\) { translate: var(--my-var) 0; }
-.translate-x-\[inherit\] { }
+.translate-x-1\/4 { translate: calc(25%); }
+.translate-x-\(--my-var\) { translate: var(--my-var); }
+.translate-x-\[inherit\] { translate: inherit; }
 .translate-y-auto { }
 .translate-y-px { translate: 0px 1px; }
 .translate-y-full { translate: 0px 100%; }
@@ -31635,6 +31636,7 @@ ul, ol { list-style: none; }
 .translate-y-7xl { translate: 0px 1280px; }
 .translate-y-23 { translate: 0px calc(92px); }
 .-translate-y-23 { translate: 0px calc(-92px); }
+.translate-y-1\/4 { translate: 0px calc(25%); }
 .translate-y-\(--my-var\) { translate: 0 var(--my-var); }
 .translate-y-\[inherit\] { }
 .accent-inherit { accent-color: inherit; }
