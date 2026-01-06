@@ -33,6 +33,7 @@
     "format": "npx eslint --fix",
     "generate-reference": "node ./tools/generate-reference.js",
     "release": "dotenv release-it",
+    "release-candidate": "dotenv release-it --preRelease=rc",
     "deploy": "npm run build && node ./tools/deploy.js"
   },
   "devDependencies": {

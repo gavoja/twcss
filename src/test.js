@@ -1,8 +1,7 @@
 /* global HTMLElement, customElements, tw */
 import { extend } from '#engine/twcss.js'
 import { UTILS } from '#engine/utils.js'
-import { QUERIES } from '#engine/queries.js'
-import { STATES, STRING_SIZES } from '#engine/constants.js'
+import { STATES, STRING_SIZES, QUERIES } from '#engine/constants.js'
 
 function register (name, callback) {
   class CustomElement extends HTMLElement {
@@ -65,6 +64,7 @@ function addDivWithAllClasses () {
     if (value.string) {
       for (const str of Object.keys(STRING_SIZES)) {
         classes.push(`${cls}${str}`)
+        classes.push(`-${cls}${str}`)
       }
     }
 
@@ -75,10 +75,13 @@ function addDivWithAllClasses () {
 
     if (value.fraction) {
       classes.push(`${cls}1/4`)
+      classes.push(`-${cls}1/4`)
     }
 
-    classes.push(`${cls}(--my-var)`)
-    classes.push(`${cls}[inherit]`)
+    if (value.raw) {
+      classes.push(`${cls}(--my-var)`)
+      classes.push(`${cls}[inherit]`)
+    }
   }
 
   // Some random custom classes.

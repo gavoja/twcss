@@ -1,3 +1,5 @@
+export const OPACITIES = [0, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95, 100]
+
 export const COLOR_PROPS = new Map([
   ['bg', 'background-color'],
   ['text', 'color'],
@@ -10,7 +12,7 @@ export const COLOR_PROPS = new Map([
   ['stroke', 'stroke'],
 ])
 
-export const COLORS = new Map([
+export const COLOR_SHADES = new Map([
   ['red-50', '0.971 0.013 17.38'],
   ['red-100', '0.936 0.032 17.717'],
   ['red-200', '0.885 0.062 18.334'],
@@ -256,3 +258,16 @@ export const COLORS = new Map([
   ['black', '0 0 0'],
   ['white', '1 0 0'],
 ])
+
+export const COLORS = (() => {
+  const result = ['inherit', 'transparent', ['current', 'currentColor']]
+
+  for (const [name, value] of COLOR_SHADES.entries()) {
+    result.push([name, `oklch(${value})`])
+    for (const opacity of OPACITIES) {
+      result.push([`${name}/${opacity}`, `oklch(${value} / ${opacity / 100})`])
+    }
+  }
+
+  return result
+})()

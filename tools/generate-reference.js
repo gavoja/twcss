@@ -2,11 +2,9 @@
 import chroma from 'chroma-js'
 import fs from 'node:fs'
 
-import { COLORS, COLOR_PROPS } from '#engine/colors.js'
-import { PSEUDO, STATES, STRING_SIZES } from '#engine/constants.js'
-import { KEYFRAMES } from '#engine/keyframes.js'
+import { COLOR_PROPS, COLOR_SHADES } from '#engine/colors.js'
+import { KEYFRAMES, PSEUDO, QUERIES, STATES, STRING_SIZES } from '#engine/constants.js'
 import { PREFLIGHT } from '#engine/preflight.js'
-import { QUERIES } from '#engine/queries.js'
 import { UTILS } from '#engine/utils.js'
 
 const HIERARCHY = {
@@ -243,6 +241,14 @@ function dolar (str, replacement) {
   return str.replaceAll(/\$/g, replacement)
 }
 
+function formatCss (css) {
+  if (!css.includes(';')) {
+    return css
+  }
+
+  return css.replace(/{ /, '{\n  ').replace(/; */g, ';\n  ').replace(/ }/, ';\n}')
+}
+
 function getRules (props) {
   const rules = new Map()
 
@@ -263,42 +269,38 @@ function getRules (props) {
     if (typeof val === 'object') {
       if (val.string) {
         for (const [name, size] of Object.entries(STRING_SIZES)) {
-          rules.set(`${cls}${name}`, dolar(css, dolar(val.string, size)))
+          rules.set(`${cls}${name}`, formatCss(dolar(css, dolar(val.string, size))))
+          if (['px', 'full'].includes(name)) {
+            rules.set(`-${cls}${name}`, formatCss(dolar(css, dolar(val.string, `-${size}`))))
+          }
         }
       }
 
       if (val.number) {
-        rules.set(`${cls}<number>`, dolar(css, dolar(val.number, '<number>')))
-        rules.set(`-${cls}<number>`, dolar(css, dolar(val.number, '-<number>')))
+        rules.set(`${cls}<number>`, formatCss(dolar(css, dolar(val.number, '<number>'))))
+        rules.set(`-${cls}<number>`, formatCss(dolar(css, dolar(val.number, '-<number>'))))
       }
 
       if (val.fraction) {
-        rules.set(`${cls}<fraction>`, dolar(css, dolar(val.fraction, '<fraction>')))
+        rules.set(`${cls}<fraction>`, dolar(css, formatCss(dolar(val.fraction, '<fraction>'))))
       }
 
-      rules.set(`${cls}[<value>]`, dolar(css, '<value>'))
-      rules.set(`${cls}(<custom-property>)`, dolar(css, 'var(<custom-property>)'))
-      continue
-    }
-
-    // Composite rules.
-    const isComposite = css.split(/ {/).pop().match(/:/g).length > 1
-    if (isComposite) {
-      rules.set(cls, css.replace(/{ /, '{\n  ').replace(/; */g, ';\n  ').replace(/}/, '\n}'))
+      rules.set(`${cls}[<value>]`, formatCss(dolar(css, '<value>')))
+      rules.set(`${cls}(<custom-property>)`, formatCss(dolar(css, 'var(<custom-property>)')))
       continue
     }
 
     // Color rules.
     if (COLOR_PROPS.values().some(p => css.includes(`${p}:`))) {
       if (cls.endsWith('-black')) {
-        rules.set(cls.replace('-black', '-<color>'), css.replace('oklch(0 0 0)', 'oklch(...)'))
+        rules.set(cls.replace('-black', '-<color>'), formatCss(css.replace('oklch(0 0 0)', 'oklch(...)')))
       }
 
       continue
     }
 
     // Simple rule.
-    rules.set(cls, css)
+    rules.set(cls, formatCss(css))
   }
 
   return rules
@@ -359,15 +361,11 @@ function generateReference () {
   //
 
   mdContents.push('### Colors', '')
-  mdContents.push(
-    'In addition to the colors below, `black`, `white`, `transparent`, `current` and `inherit` are also supported.',
-    ''
-  )
   mdContents.push('|   | 50|100|200|300|400|500|600|700|800|900|950|')
   mdContents.push('|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|')
 
   const colorRow = new Set()
-  for (const [cls, color] of COLORS) {
+  for (const [cls, color] of COLOR_SHADES) {
     if (cls.endsWith('-50')) {
       colorRow.clear()
       colorRow.add(`**${cls.replace('-50', '')}**`)
@@ -382,7 +380,7 @@ function generateReference () {
     }
   }
 
-  mdContents.push('')
+  mdContents.push('', 'Also supported: `inherit`, `transparent` and `current`.', '')
 
   //
   // All static utility classes by hierarchy.

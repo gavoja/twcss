@@ -1,5 +1,5 @@
 //
-// Generator helpers.
+// Helper constants.
 //
 
 export const ANIM_TIME = '250ms'
@@ -23,18 +23,31 @@ export const BLEND_MODES = [
   'luminosity',
 ]
 
-export const OPACITIES = [0, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95, 100]
+export const BLURS = [
+  ['xs', 'blur(4px)'],
+  ['sm', 'blur(8px)'],
+  ['md', 'blur(12px)'],
+  ['lg', 'blur(16px)'],
+  ['xl', 'blur(24px)'],
+  ['2xl', 'blur(40px)'],
+  ['3xl', 'blur(64px)'],
+  ['none', 'none']
+]
+
+export const N = 'calc($ * 4px)'
+
+export const F = 'calc($ * 100%)'
 
 export const ORIGINS = [
-  'center',
+  ['top-left', 'top left'],
   'top',
-  'top-right',
-  'right',
-  'bottom-right',
-  'bottom',
-  'bottom-left',
+  ['top-right', 'top right'],
   'left',
-  'top-left',
+  'center',
+  'right',
+  ['bottom-left', 'bottom left'],
+  'bottom',
+  ['bottom-right', 'bottom right']
 ]
 
 export const OVERFLOWS = ['auto', 'hidden', 'clip', 'visible', 'scroll', 'visible']
@@ -42,22 +55,28 @@ export const OVERFLOWS = ['auto', 'hidden', 'clip', 'visible', 'scroll', 'visibl
 export const OVERSCROLLS = ['auto', 'contain', 'none']
 
 export const RADII = [
-  ['-xs', '2px'],
-  ['-sm', '4px'],
-  ['-md', '6px'],
-  ['-lg', '8px'],
-  ['-xl', '12px'],
-  ['-2xl', '16px'],
-  ['-3xl', '24px'],
-  ['-full', '50%'],
-  ['-none', 0]
+  ['xs', '2px'],
+  ['sm', '4px'],
+  ['md', '6px'],
+  ['lg', '8px'],
+  ['xl', '12px'],
+  ['2xl', '16px'],
+  ['3xl', '24px'],
+  ['full', '50%'],
+  ['none', 0]
 ]
 
 //
-// Compiler helpers.
+// Compiler constants.
 //
 
 export const HIGH_PRIORITY_RULES = ['col-start', 'row-start', 'hidden', '-none']
+
+export const KEYFRAMES = new Map([
+  ['expand', 'from { opacity: 0; transform: translateY(-8px) } to { opacity: 1 }'],
+  ['toast', 'from { opacity: 0; transform: translateY(48px) } to { opacity: 1 }'],
+  ['fade', '0% { opacity: 0 } 100% { opacity: 1 }'],
+])
 
 export const PSEUDO = new Set([
   'after',
@@ -74,6 +93,34 @@ export const PSEUDO = new Set([
   'selection',
   'spelling-error',
   'target-text',
+])
+
+export const QUERIES = new Map([
+  ['sm', '@media screen and (max-width: 599px)'],
+  ['md', '@media screen and (min-width: 600px) and (max-width: 959px)'],
+  ['lg', '@media screen and (min-width: 960px)'],
+  ['landscape', '@media (orientation: landscape)'],
+  ['portrait', '@media (orientation: portrait)'],
+  ['light', '@media (prefers-color-scheme: light)'],
+  ['dark', '@media (prefers-color-scheme: dark)'],
+  ['inverted-colors', '@media (inverted-colors: inverted)'],
+  ['pointer-coarse', '@media (pointer: coarse)'],
+  ['pointer-fine', '@media (pointer: fine)'],
+  ['pointer-none', '@media (pointer: none)'],
+  ['print', '@media print'],
+  ['@3xs', '@container (width >= 256px)'],
+  ['@2xs', '@container (width >= 288px)'],
+  ['@xs', '@container (width >= 320px)'],
+  ['@sm', '@container (width >= 384px)'],
+  ['@md', '@container (width >= 448px)'],
+  ['@lg', '@container (width >= 512px)'],
+  ['@xl', '@container (width >= 576px)'],
+  ['@2xl', '@container (width >= 672px)'],
+  ['@3xl', '@container (width >= 768px)'],
+  ['@4xl', '@container (width >= 896px)'],
+  ['@5xl', '@container (width >= 1024px)'],
+  ['@6xl', '@container (width >= 1152px)'],
+  ['@7xl', '@container (width >= 1280px)'],
 ])
 
 export const STATES = new Map([
@@ -128,19 +175,19 @@ export const STATES = new Map([
 }, []))
 
 export const STRING_SIZES = {
-  auto: 'auto',
-  px: '1px',
-  full: '100%',
-  screen: '100vw',
-  dvw: '100vw',
-  dvh: '100vh',
-  lvw: '100lvw',
-  lvh: '100lvh',
-  svw: '100svw',
-  svh: '100svh',
-  min: 'min-content',
-  max: 'max-content',
-  fit: 'fit-content',
+  'auto': 'auto',
+  'px': '1px',
+  'full': '100%',
+  'screen': '100vw',
+  'dvw': '100vw',
+  'dvh': '100vh',
+  'lvw': '100lvw',
+  'lvh': '100lvh',
+  'svw': '100svw',
+  'svh': '100svh',
+  'min': 'min-content',
+  'max': 'max-content',
+  'fit': 'fit-content',
   '3xs': '256px',
   '2xs': '288px',
   'xs': '320px',

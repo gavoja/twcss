@@ -1,8 +1,6 @@
 /* global CSS, CSSStyleSheet, MutationObserver */
-import { COLOR_PROPS } from './colors.js'
-import { HIGH_PRIORITY_RULES, OPACITIES, STATES, PSEUDO, STRING_SIZES } from './constants.js'
-import { KEYFRAMES } from './keyframes.js'
-import { QUERIES } from './queries.js'
+import { COLOR_PROPS, OPACITIES } from './colors.js'
+import { HIGH_PRIORITY_RULES, STATES, PSEUDO, STRING_SIZES, KEYFRAMES, QUERIES } from './constants.js'
 import { PREFLIGHT } from './preflight.js'
 import { UTILS } from './utils.js'
 
@@ -266,15 +264,20 @@ function parse (cls) {
     css = obj.css
 
     if (number && obj.number) {
+      // Number
       css = dolar(css, dolar(obj.number, `${minus}${number}`))
     } else if (fraction && obj.fraction) {
+      // Fraction
       css = dolar(css, dolar(obj.fraction, `${minus}${fraction}`))
-    } else if (raw) {
-      css = dolar(css, raw.replace(/_/g, ' '))
-    } else if (custom) {
-      css = dolar(css, `var(${custom})`)
-    } else if (string && STRING_SIZES[string] && obj.string) {
-      css = dolar(css, dolar(obj.string, STRING_SIZES[string]))
+    } else if (string && obj.string && STRING_SIZES[string]) {
+      // String
+      css = dolar(css, dolar(obj.string, `${minus}${STRING_SIZES[string]}`))
+    } else if (raw && obj.raw) {
+      // Raw - square brackets
+      css = dolar(css, dolar(obj.raw, raw.replace(/_/g, ' ')))
+    } else if (custom && obj.raw) {
+      // Custom prop - brackets
+      css = dolar(css, dolar(obj.raw, `var(${custom})`))
     } else {
       throw new Error('Utility class does not exist.')
     }
