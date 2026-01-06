@@ -210,7 +210,7 @@ Pseudo elements:
 **neutral**|$\color{#fafafa}{\Huge\textsf{█}}$|$\color{#f5f5f5}{\Huge\textsf{█}}$|$\color{#e5e5e5}{\Huge\textsf{█}}$|$\color{#d4d4d4}{\Huge\textsf{█}}$|$\color{#a1a1a1}{\Huge\textsf{█}}$|$\color{#737373}{\Huge\textsf{█}}$|$\color{#525252}{\Huge\textsf{█}}$|$\color{#404040}{\Huge\textsf{█}}$|$\color{#262626}{\Huge\textsf{█}}$|$\color{#171717}{\Huge\textsf{█}}$|$\color{#0a0a0a}{\Huge\textsf{█}}$
 **stone**|$\color{#fafaf9}{\Huge\textsf{█}}$|$\color{#f5f5f4}{\Huge\textsf{█}}$|$\color{#e7e5e4}{\Huge\textsf{█}}$|$\color{#d6d3d1}{\Huge\textsf{█}}$|$\color{#a6a09b}{\Huge\textsf{█}}$|$\color{#79716b}{\Huge\textsf{█}}$|$\color{#57534d}{\Huge\textsf{█}}$|$\color{#44403b}{\Huge\textsf{█}}$|$\color{#292524}{\Huge\textsf{█}}$|$\color{#1c1917}{\Huge\textsf{█}}$|$\color{#0c0a09}{\Huge\textsf{█}}$
 
-Also supported: `inherit`, `transparent` and `current`.
+Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ## Layout
 

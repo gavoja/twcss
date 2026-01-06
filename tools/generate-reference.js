@@ -380,7 +380,7 @@ function generateReference () {
     }
   }
 
-  mdContents.push('', 'Also supported: `inherit`, `transparent` and `current`.', '')
+  mdContents.push('', 'Also supported: `black`, `white`, `inherit`, `transparent` and `current`.', '')
 
   //
   // All static utility classes by hierarchy.
