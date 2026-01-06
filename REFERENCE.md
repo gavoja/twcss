@@ -185,8 +185,6 @@ Pseudo elements:
 
 ### Colors
 
-In addition to the colors below, `black`, `white`, `transparent`, `current` and `inherit` are also supported.
-
 |   | 50|100|200|300|400|500|600|700|800|900|950|
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 **red**|$\color{#fef2f2}{\Huge\textsf{█}}$|$\color{#ffe2e2}{\Huge\textsf{█}}$|$\color{#ffc9c9}{\Huge\textsf{█}}$|$\color{#ffa2a2}{\Huge\textsf{█}}$|$\color{#ff6467}{\Huge\textsf{█}}$|$\color{#fb2c36}{\Huge\textsf{█}}$|$\color{#e7000b}{\Huge\textsf{█}}$|$\color{#c10007}{\Huge\textsf{█}}$|$\color{#9f0712}{\Huge\textsf{█}}$|$\color{#82181a}{\Huge\textsf{█}}$|$\color{#460809}{\Huge\textsf{█}}$
@@ -211,6 +209,8 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 **zinc**|$\color{#fafafa}{\Huge\textsf{█}}$|$\color{#f4f4f5}{\Huge\textsf{█}}$|$\color{#e4e4e7}{\Huge\textsf{█}}$|$\color{#d4d4d8}{\Huge\textsf{█}}$|$\color{#9f9fa9}{\Huge\textsf{█}}$|$\color{#71717b}{\Huge\textsf{█}}$|$\color{#52525c}{\Huge\textsf{█}}$|$\color{#3f3f47}{\Huge\textsf{█}}$|$\color{#27272a}{\Huge\textsf{█}}$|$\color{#18181b}{\Huge\textsf{█}}$|$\color{#09090b}{\Huge\textsf{█}}$
 **neutral**|$\color{#fafafa}{\Huge\textsf{█}}$|$\color{#f5f5f5}{\Huge\textsf{█}}$|$\color{#e5e5e5}{\Huge\textsf{█}}$|$\color{#d4d4d4}{\Huge\textsf{█}}$|$\color{#a1a1a1}{\Huge\textsf{█}}$|$\color{#737373}{\Huge\textsf{█}}$|$\color{#525252}{\Huge\textsf{█}}$|$\color{#404040}{\Huge\textsf{█}}$|$\color{#262626}{\Huge\textsf{█}}$|$\color{#171717}{\Huge\textsf{█}}$|$\color{#0a0a0a}{\Huge\textsf{█}}$
 **stone**|$\color{#fafaf9}{\Huge\textsf{█}}$|$\color{#f5f5f4}{\Huge\textsf{█}}$|$\color{#e7e5e4}{\Huge\textsf{█}}$|$\color{#d6d3d1}{\Huge\textsf{█}}$|$\color{#a6a09b}{\Huge\textsf{█}}$|$\color{#79716b}{\Huge\textsf{█}}$|$\color{#57534d}{\Huge\textsf{█}}$|$\color{#44403b}{\Huge\textsf{█}}$|$\color{#292524}{\Huge\textsf{█}}$|$\color{#1c1917}{\Huge\textsf{█}}$|$\color{#0c0a09}{\Huge\textsf{█}}$
+
+Also supported: `inherit`, `transparent` and `current`.
 
 ## Layout
 
@@ -352,6 +352,10 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 
 ```
 .-columns-<number> { columns: -<number> }
+```
+
+```
+.columns-<fraction> { columns: <fraction> }
 ```
 
 ```
@@ -524,7 +528,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
   margin: -1px;
   overflow: hidden;
   white-space: nowrap;
-  border-width: 0 
+  border-width: 0;
 }
 ```
 
@@ -537,7 +541,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
   padding: 0;
   margin: 0;
   overflow: visible;
-  white-space: normal 
+  white-space: normal;
 }
 ```
 
@@ -723,6 +727,33 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 
 ```
 .overflow-y-scroll { overflow-y: scroll }
+```
+
+```
+.line-clamp-none {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: none;
+}
+```
+
+```
+.line-clamp-[<value>] {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: <value>;
+}
+```
+
+```
+.line-clamp-(<custom-property>) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(<custom-property>);
+}
 ```
 
 ### overscroll-behavior
@@ -2262,11 +2293,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.col-span-[<value>] { grid-column: span <value> / span <value> }
+.col-span-[<value>] { grid-column: <value> }
 ```
 
 ```
-.col-span-(<custom-property>) { grid-column: span var(<custom-property>) / span var(<custom-property>) }
+.col-span-(<custom-property>) { grid-column: var(<custom-property>) }
 ```
 
 ```
@@ -2370,11 +2401,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.row-span-[<value>] { grid-row: span <value> / span <value> }
+.row-span-[<value>] { grid-row: <value> }
 ```
 
 ```
-.row-span-(<custom-property>) { grid-row: span var(<custom-property>) / span var(<custom-property>) }
+.row-span-(<custom-property>) { grid-row: var(<custom-property>) }
 ```
 
 ```
@@ -6008,91 +6039,91 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 .text-xs {
   font-size: 12px;
-  line-height: 1.333 
+  line-height: 1.333;
 }
 ```
 
 ```
 .text-sm {
   font-size: 14px;
-  line-height: 1.429 
+  line-height: 1.429;
 }
 ```
 
 ```
 .text-base {
   font-size: 16px;
-  line-height: 1.5 
+  line-height: 1.5;
 }
 ```
 
 ```
 .text-lg {
   font-size: 18px;
-  line-height: 1.555 
+  line-height: 1.555;
 }
 ```
 
 ```
 .text-xl {
   font-size: 20px;
-  line-height: 1.4 
+  line-height: 1.4;
 }
 ```
 
 ```
 .text-2xl {
   font-size: 24px;
-  line-height: 1.333 
+  line-height: 1.333;
 }
 ```
 
 ```
 .text-3xl {
   font-size: 30px;
-  line-height: 1.2 
+  line-height: 1.2;
 }
 ```
 
 ```
 .text-4xl {
   font-size: 36px;
-  line-height: 1.111 
+  line-height: 1.111;
 }
 ```
 
 ```
 .text-5xl {
   font-size: 48px;
-  line-height: 1 
+  line-height: 1;
 }
 ```
 
 ```
 .text-6xl {
   font-size: 60px;
-  line-height: 1 
+  line-height: 1;
 }
 ```
 
 ```
 .text-7xl {
   font-size: 72px;
-  line-height: 1 
+  line-height: 1;
 }
 ```
 
 ```
 .text-8xl {
   font-size: 96px;
-  line-height: 1 
+  line-height: 1;
 }
 ```
 
 ```
 .text-9xl {
   font-size: 128px;
-  line-height: 1 
+  line-height: 1;
 }
 ```
 
@@ -6101,14 +6132,14 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 .antialiased {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale 
+  -moz-osx-font-smoothing: grayscale;
 }
 ```
 
 ```
 .subpixel-antialiased {
   -webkit-font-smoothing: auto;
-  -moz-osx-font-smoothing: auto 
+  -moz-osx-font-smoothing: auto;
 }
 ```
 
@@ -6272,22 +6303,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 
 ### line-clamp
 
-```
-.line-clamp-none {
-  -webkit-line-clamp: none;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical 
-}
-```
-
-```
-.line-clamp-[<value>] { -webkit-line-clamp: <value>; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical }
-```
-
-```
-.line-clamp-(<custom-property>) { -webkit-line-clamp: var(<custom-property>); overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical }
-```
+Currently unsupported.
 
 ### line-height
 
@@ -6515,7 +6531,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 .truncate {
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap 
+  white-space: nowrap;
 }
 ```
 
@@ -6544,11 +6560,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ### text-indent
 
 ```
-.indent-px { text-indent: 1px }
+.-indent-px { text-indent: -1px }
 ```
 
 ```
-.-indent-px { text-indent: -1px }
+.indent-px { text-indent: 1px }
 ```
 
 ```
@@ -6762,11 +6778,15 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ### background-position
 
 ```
-.bg-bottom { background-position: bottom }
+.bg-top-left { background-position: top left }
 ```
 
 ```
-.bg-center { background-position: center }
+.bg-top { background-position: top }
+```
+
+```
+.bg-top-right { background-position: top right }
 ```
 
 ```
@@ -6774,11 +6794,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.bg-left-bottom { background-position: left bottom }
-```
-
-```
-.bg-left-top { background-position: left top }
+.bg-center { background-position: center }
 ```
 
 ```
@@ -6786,15 +6802,15 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.bg-right-bottom { background-position: right bottom }
+.bg-bottom-left { background-position: bottom left }
 ```
 
 ```
-.bg-right-top { background-position: right top }
+.bg-bottom { background-position: bottom }
 ```
 
 ```
-.bg-top { background-position: top }
+.bg-bottom-right { background-position: bottom right }
 ```
 
 ```
@@ -7606,11 +7622,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.mask-image-[<value>] { mask-image: <value> }
+.mask-[<value>] { mask-image: <value> }
 ```
 
 ```
-.mask-image-(<custom-property>) { mask-image: var(<custom-property>) }
+.mask-(<custom-property>) { mask-image: var(<custom-property>) }
 ```
 
 ### mask-mode
@@ -7794,27 +7810,43 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.blur-[<value>] { filter: blur(<value>) }
+.blur-[<value>] { filter: <value> }
 ```
 
 ```
-.blur-(<custom-property>) { filter: blur(var(<custom-property>)) }
+.blur-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
 ```
-.brightness-[<value>] { filter: brightness(<value>) }
+.brightness-<number> { filter: brightness(<number>%) }
 ```
 
 ```
-.brightness-(<custom-property>) { filter: brightness(var(<custom-property>)) }
+.-brightness-<number> { filter: brightness(-<number>%) }
 ```
 
 ```
-.contrast-[<value>] { filter: contrast(<value>) }
+.brightness-[<value>] { filter: <value> }
 ```
 
 ```
-.contrast-(<custom-property>) { filter: contrast(var(<custom-property>)) }
+.brightness-(<custom-property>) { filter: var(<custom-property>) }
+```
+
+```
+.contrast-<number> { filter: contrast(<number>%) }
+```
+
+```
+.-contrast-<number> { filter: contrast(-<number>%) }
+```
+
+```
+.contrast-[<value>] { filter: <value> }
+```
+
+```
+.contrast-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
 ```
@@ -7846,11 +7878,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.drop-shadow-[<value>] { filter: drop-shadow(<value>) }
+.drop-shadow-[<value>] { filter: <value> }
 ```
 
 ```
-.drop-shadow-(<custom-property>) { filter: drop-shadow(var(<custom-property>)) }
+.drop-shadow-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
 ```
@@ -7866,35 +7898,59 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.grayscale-[<value>] { filter: grayscale(<value>) }
+.grayscale-[<value>] { filter: <value> }
 ```
 
 ```
-.grayscale-(<custom-property>) { filter: grayscale(var(<custom-property>)) }
+.grayscale-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
 ```
-.hue-rotate-[<value>] { filter: hue-rotate(<value>) }
+.hue-rotate-<number> { filter: hue-rotate(<number>deg) }
 ```
 
 ```
-.hue-rotate-(<custom-property>) { filter: hue-rotate(var(<custom-property>)) }
+.-hue-rotate-<number> { filter: hue-rotate(-<number>deg) }
 ```
 
 ```
-.invert-[<value>] { filter: invert(<value>) }
+.hue-rotate-[<value>] { filter: <value> }
 ```
 
 ```
-.invert-(<custom-property>) { filter: invert(var(<custom-property>)) }
+.hue-rotate-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
 ```
-.saturate-[<value>] { filter: saturate(<value>) }
+.invert-<number> { filter: invert(<number>%) }
 ```
 
 ```
-.saturate-(<custom-property>) { filter: saturate(var(<custom-property>)) }
+.-invert-<number> { filter: invert(-<number>%) }
+```
+
+```
+.invert-[<value>] { filter: <value> }
+```
+
+```
+.invert-(<custom-property>) { filter: var(<custom-property>) }
+```
+
+```
+.saturate-<number> { filter: saturate(<number>%) }
+```
+
+```
+.-saturate-<number> { filter: saturate(-<number>%) }
+```
+
+```
+.saturate-[<value>] { filter: <value> }
+```
+
+```
+.saturate-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
 ```
@@ -7902,11 +7958,19 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.sepia-[<value>] { filter: sepia(<value>) }
+.sepia-<number> { filter: sepia(<number>%) }
 ```
 
 ```
-.sepia-(<custom-property>) { filter: sepia(var(<custom-property>)) }
+.-sepia-<number> { filter: sepia(-<number>%) }
+```
+
+```
+.sepia-[<value>] { filter: <value> }
+```
+
+```
+.sepia-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
 ```
@@ -7956,27 +8020,43 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.backdrop-blur-[<value>] { backdrop-filter: blur(<value>) }
+.backdrop-blur-[<value>] { backdrop-filter: <value> }
 ```
 
 ```
-.backdrop-blur-(<custom-property>) { backdrop-filter: blur(var(<custom-property>)) }
+.backdrop-blur-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
 ```
-.backdrop-brightness-[<value>] { backdrop-filter: brightness(<value>) }
+.backdrop-brightness-<number> { backdrop-filter: brightness(<number>%) }
 ```
 
 ```
-.backdrop-brightness-(<custom-property>) { backdrop-filter: brightness(var(<custom-property>)) }
+.-backdrop-brightness-<number> { backdrop-filter: brightness(-<number>%) }
 ```
 
 ```
-.backdrop-contrast-[<value>] { backdrop-filter: contrast(<value>) }
+.backdrop-brightness-[<value>] { backdrop-filter: <value> }
 ```
 
 ```
-.backdrop-contrast-(<custom-property>) { backdrop-filter: contrast(var(<custom-property>)) }
+.backdrop-brightness-(<custom-property>) { backdrop-filter: var(<custom-property>) }
+```
+
+```
+.backdrop-contrast-<number> { backdrop-filter: contrast(<number>%) }
+```
+
+```
+.-backdrop-contrast-<number> { backdrop-filter: contrast(-<number>%) }
+```
+
+```
+.backdrop-contrast-[<value>] { backdrop-filter: <value> }
+```
+
+```
+.backdrop-contrast-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
 ```
@@ -7992,43 +8072,75 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.backdrop-grayscale-[<value>] { backdrop-filter: grayscale(<value>) }
+.backdrop-grayscale-[<value>] { backdrop-filter: <value> }
 ```
 
 ```
-.backdrop-grayscale-(<custom-property>) { backdrop-filter: grayscale(var(<custom-property>)) }
+.backdrop-grayscale-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
 ```
-.backdrop-hue-rotate-[<value>] { backdrop-filter: hue-rotate(<value>) }
+.backdrop-hue-rotate-<number> { backdrop-filter: hue-rotate(<number>deg) }
 ```
 
 ```
-.backdrop-hue-rotate-(<custom-property>) { backdrop-filter: hue-rotate(var(<custom-property>)) }
+.-backdrop-hue-rotate-<number> { backdrop-filter: hue-rotate(-<number>deg) }
 ```
 
 ```
-.backdrop-invert-[<value>] { backdrop-filter: invert(<value>) }
+.backdrop-hue-rotate-[<value>] { backdrop-filter: <value> }
 ```
 
 ```
-.backdrop-invert-(<custom-property>) { backdrop-filter: invert(var(<custom-property>)) }
+.backdrop-hue-rotate-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
 ```
-.backdrop-opacity-[<value>] { backdrop-filter: opacity(<value>) }
+.backdrop-invert-<number> { backdrop-filter: invert(<number>%) }
 ```
 
 ```
-.backdrop-opacity-(<custom-property>) { backdrop-filter: opacity(var(<custom-property>)) }
+.-backdrop-invert-<number> { backdrop-filter: invert(-<number>%) }
 ```
 
 ```
-.backdrop-saturate-[<value>] { backdrop-filter: saturate(<value>) }
+.backdrop-invert-[<value>] { backdrop-filter: <value> }
 ```
 
 ```
-.backdrop-saturate-(<custom-property>) { backdrop-filter: saturate(var(<custom-property>)) }
+.backdrop-invert-(<custom-property>) { backdrop-filter: var(<custom-property>) }
+```
+
+```
+.backdrop-opacity-<number> { backdrop-filter: opacity(<number>%) }
+```
+
+```
+.-backdrop-opacity-<number> { backdrop-filter: opacity(-<number>%) }
+```
+
+```
+.backdrop-opacity-[<value>] { backdrop-filter: <value> }
+```
+
+```
+.backdrop-opacity-(<custom-property>) { backdrop-filter: var(<custom-property>) }
+```
+
+```
+.backdrop-saturate-<number> { backdrop-filter: saturate(<number>%) }
+```
+
+```
+.-backdrop-saturate-<number> { backdrop-filter: saturate(-<number>%) }
+```
+
+```
+.backdrop-saturate-[<value>] { backdrop-filter: <value> }
+```
+
+```
+.backdrop-saturate-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
 ```
@@ -8036,11 +8148,19 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.backdrop-sepia-[<value>] { backdrop-filter: sepia(<value>) }
+.backdrop-sepia-<number> { backdrop-filter: sepia(<number>%) }
 ```
 
 ```
-.backdrop-sepia-(<custom-property>) { backdrop-filter: sepia(var(<custom-property>)) }
+.-backdrop-sepia-<number> { backdrop-filter: sepia(-<number>%) }
+```
+
+```
+.backdrop-sepia-[<value>] { backdrop-filter: <value> }
+```
+
+```
+.backdrop-sepia-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
 ```
@@ -8094,11 +8214,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.border-spacing-x-[<value>] { border-spacing: <value> 0 }
+.border-spacing-x-[<value>] { border-spacing: <value> }
 ```
 
 ```
-.border-spacing-x-(<custom-property>) { border-spacing: var(<custom-property>) 0 }
+.border-spacing-x-(<custom-property>) { border-spacing: var(<custom-property>) }
 ```
 
 ```
@@ -8110,11 +8230,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.border-spacing-y-[<value>] { border-spacing: 0 <value> }
+.border-spacing-y-[<value>] { border-spacing: <value> }
 ```
 
 ```
-.border-spacing-y-(<custom-property>) { border-spacing: 0 var(<custom-property>) }
+.border-spacing-y-(<custom-property>) { border-spacing: var(<custom-property>) }
 ```
 
 ### table-layout
@@ -8142,10 +8262,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ### transition-property
 
 ```
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-duration: 250ms 
-}
+.transition { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter }
 ```
 
 ```
@@ -8153,10 +8270,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.transition-colors {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-duration: 250ms 
-}
+.transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke }
 ```
 
 ```
@@ -8320,7 +8434,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ### perspective-origin
 
 ```
-.perspective-origin-center { perspective-origin: center }
+.perspective-origin-top-left { perspective-origin: top left }
 ```
 
 ```
@@ -8332,15 +8446,15 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
+.perspective-origin-left { perspective-origin: left }
+```
+
+```
+.perspective-origin-center { perspective-origin: center }
+```
+
+```
 .perspective-origin-right { perspective-origin: right }
-```
-
-```
-.perspective-origin-bottom-right { perspective-origin: bottom right }
-```
-
-```
-.perspective-origin-bottom { perspective-origin: bottom }
 ```
 
 ```
@@ -8348,11 +8462,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.perspective-origin-left { perspective-origin: left }
+.perspective-origin-bottom { perspective-origin: bottom }
 ```
 
 ```
-.perspective-origin-top-left { perspective-origin: top left }
+.perspective-origin-bottom-right { perspective-origin: bottom right }
 ```
 
 ```
@@ -8438,27 +8552,51 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ### transform
 
 ```
-.skew-[<value>] { transform: skewX(<value>) skewY(<value>) }
+.skew-<number> { transform: skewX(<number>deg) skewY(<number>deg) }
 ```
 
 ```
-.skew-(<custom-property>) { transform: skewX(var(<custom-property>)) skewY(var(<custom-property>)) }
+.-skew-<number> { transform: skewX(-<number>deg) skewY(-<number>deg) }
 ```
 
 ```
-.skew-x-[<value>] { transform: skewX(<value>) }
+.skew-[<value>] { transform: <value> }
 ```
 
 ```
-.skew-x-(<custom-property>) { transform: skewX(var(<custom-property>)) }
+.skew-(<custom-property>) { transform: var(<custom-property>) }
 ```
 
 ```
-.skew-y-[<value>] { transform: skewY(<value>) }
+.skew-x-<number> { transform: skewX(<number>deg) }
 ```
 
 ```
-.skew-y-(<custom-property>) { transform: skewY(var(<custom-property>)) }
+.-skew-x-<number> { transform: skewX(-<number>deg) }
+```
+
+```
+.skew-x-[<value>] { transform: <value> }
+```
+
+```
+.skew-x-(<custom-property>) { transform: var(<custom-property>) }
+```
+
+```
+.skew-y-<number> { transform: skewY(<number>deg) }
+```
+
+```
+.-skew-y-<number> { transform: skewY(-<number>deg) }
+```
+
+```
+.skew-y-[<value>] { transform: <value> }
+```
+
+```
+.skew-y-(<custom-property>) { transform: var(<custom-property>) }
 ```
 
 ```
@@ -8476,7 +8614,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ### transform-origin
 
 ```
-.origin-center { transform-origin: center }
+.origin-top-left { transform-origin: top left }
 ```
 
 ```
@@ -8488,15 +8626,15 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
+.origin-left { transform-origin: left }
+```
+
+```
+.origin-center { transform-origin: center }
+```
+
+```
 .origin-right { transform-origin: right }
-```
-
-```
-.origin-bottom-right { transform-origin: bottom right }
-```
-
-```
-.origin-bottom { transform-origin: bottom }
 ```
 
 ```
@@ -8504,11 +8642,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.origin-left { transform-origin: left }
+.origin-bottom { transform-origin: bottom }
 ```
 
 ```
-.origin-top-left { transform-origin: top left }
+.origin-bottom-right { transform-origin: bottom right }
 ```
 
 ```
@@ -8656,123 +8794,127 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.translate-x-auto { translate: auto 0 }
+.translate-x-auto { translate: auto }
 ```
 
 ```
-.translate-x-px { translate: 1px 0 }
+.translate-x-px { translate: 1px }
 ```
 
 ```
-.translate-x-full { translate: 100% 0 }
+.translate-x-full { translate: 100% }
 ```
 
 ```
-.translate-x-screen { translate: 100vw 0 }
+.translate-x-screen { translate: 100vw }
 ```
 
 ```
-.translate-x-dvw { translate: 100vw 0 }
+.translate-x-dvw { translate: 100vw }
 ```
 
 ```
-.translate-x-dvh { translate: 100vh 0 }
+.translate-x-dvh { translate: 100vh }
 ```
 
 ```
-.translate-x-lvw { translate: 100lvw 0 }
+.translate-x-lvw { translate: 100lvw }
 ```
 
 ```
-.translate-x-lvh { translate: 100lvh 0 }
+.translate-x-lvh { translate: 100lvh }
 ```
 
 ```
-.translate-x-svw { translate: 100svw 0 }
+.translate-x-svw { translate: 100svw }
 ```
 
 ```
-.translate-x-svh { translate: 100svh 0 }
+.translate-x-svh { translate: 100svh }
 ```
 
 ```
-.translate-x-min { translate: min-content 0 }
+.translate-x-min { translate: min-content }
 ```
 
 ```
-.translate-x-max { translate: max-content 0 }
+.translate-x-max { translate: max-content }
 ```
 
 ```
-.translate-x-fit { translate: fit-content 0 }
+.translate-x-fit { translate: fit-content }
 ```
 
 ```
-.translate-x-3xs { translate: 256px 0 }
+.translate-x-3xs { translate: 256px }
 ```
 
 ```
-.translate-x-2xs { translate: 288px 0 }
+.translate-x-2xs { translate: 288px }
 ```
 
 ```
-.translate-x-xs { translate: 320px 0 }
+.translate-x-xs { translate: 320px }
 ```
 
 ```
-.translate-x-sm { translate: 384px 0 }
+.translate-x-sm { translate: 384px }
 ```
 
 ```
-.translate-x-md { translate: 448px 0 }
+.translate-x-md { translate: 448px }
 ```
 
 ```
-.translate-x-lg { translate: 512px 0 }
+.translate-x-lg { translate: 512px }
 ```
 
 ```
-.translate-x-xl { translate: 576px 0 }
+.translate-x-xl { translate: 576px }
 ```
 
 ```
-.translate-x-2xl { translate: 672px 0 }
+.translate-x-2xl { translate: 672px }
 ```
 
 ```
-.translate-x-3xl { translate: 768px 0 }
+.translate-x-3xl { translate: 768px }
 ```
 
 ```
-.translate-x-4xl { translate: 896px 0 }
+.translate-x-4xl { translate: 896px }
 ```
 
 ```
-.translate-x-5xl { translate: 1024px 0 }
+.translate-x-5xl { translate: 1024px }
 ```
 
 ```
-.translate-x-6xl { translate: 1152px 0 }
+.translate-x-6xl { translate: 1152px }
 ```
 
 ```
-.translate-x-7xl { translate: 1280px 0 }
+.translate-x-7xl { translate: 1280px }
 ```
 
 ```
-.translate-x-<number> { translate: calc(<number> * 4px) 0 }
+.translate-x-<number> { translate: calc(<number> * 4px) }
 ```
 
 ```
-.-translate-x-<number> { translate: calc(-<number> * 4px) 0 }
+.-translate-x-<number> { translate: calc(-<number> * 4px) }
 ```
 
 ```
-.translate-x-[<value>] { translate: <value> 0 }
+.translate-x-<fraction> { translate: calc(<fraction> * 100%) }
 ```
 
 ```
-.translate-x-(<custom-property>) { translate: var(<custom-property>) 0 }
+.translate-x-[<value>] { translate: <value> }
+```
+
+```
+.translate-x-(<custom-property>) { translate: var(<custom-property>) }
 ```
 
 ```
@@ -8888,11 +9030,15 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.translate-y-[<value>] { translate: 0 <value> }
+.translate-y-<fraction> { translate: 0 calc(<fraction> * 100%) }
 ```
 
 ```
-.translate-y-(<custom-property>) { translate: 0 var(<custom-property>) }
+.translate-y-[<value>] { translate: <value> }
+```
+
+```
+.translate-y-(<custom-property>) { translate: var(<custom-property>) }
 ```
 
 ## Interactivity
@@ -9080,11 +9226,11 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ### scroll-snap-stop
 
 ```
-.snap-stop-normal { scroll-snap-stop: normal }
+.snap-normal { scroll-snap-stop: normal }
 ```
 
 ```
-.snap-stop-always { scroll-snap-stop: always }
+.snap-always { scroll-snap-stop: always }
 ```
 
 ### scroll-snap-type
@@ -9098,7 +9244,7 @@ In addition to the colors below, `black`, `white`, `transparent`, `current` and 
 ```
 
 ```
-.snap-y { scroll-snap-type: y proximity }
+.snap-y { scroll-snap-type: y mandatory }
 ```
 
 ```

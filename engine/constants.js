@@ -3,6 +3,7 @@
 //
 
 export const N = 'calc($ * 4px)'
+
 export const F = 'calc($ * 100%)'
 
 export const ANIM_TIME = '250ms'
@@ -24,6 +25,17 @@ export const BLEND_MODES = [
   'saturation',
   'color',
   'luminosity',
+]
+
+export const BLURS = [
+  ['xs', 'blur(4px)'],
+  ['sm', 'blur(8px)'],
+  ['md', 'blur(12px)'],
+  ['lg', 'blur(16px)'],
+  ['xl', 'blur(24px)'],
+  ['2xl', 'blur(40px)'],
+  ['3xl', 'blur(64px)'],
+  ['none', 'none']
 ]
 
 export const ORIGINS = [

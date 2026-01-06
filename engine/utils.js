@@ -1,42 +1,7 @@
-import { ANIM_TIME, BLEND_MODES, ORIGINS, RADII, OVERFLOWS, OVERSCROLLS, N, F } from './constants.js'
 import { COLORS } from './colors.js'
+import { ANIM_TIME, BLEND_MODES, BLURS, F, N, ORIGINS, OVERFLOWS, OVERSCROLLS, RADII } from './constants.js'
 
-// Returns a map of styles.
-function process (array) {
-  const utils = new Map()
-
-  for (const entry of array) {
-    // If second argument is an array it means the property name is equal to class name.
-    // Add it in for consistency.
-    Array.isArray(entry.at(1)) && entry.splice(1, 0, entry.at(0))
-
-    const [name, prop, values] = entry
-
-    // If no values, use the prop as is.
-    if (!values) {
-      utils.set(name, `{ ${prop} }`)
-      continue
-    }
-
-    // Populate values.
-    for (const value of values) {
-      // Dynamic.
-      if (!value.length) {
-        // Dynamic rule.
-        const prefix = value.prefix ? ` ${value.prefix} ` : ''
-        utils.set(`${name}-`, { ...value, css: `${prefix}{ ${prop}: $ }` })
-      } else {
-        // Static rule.
-        const [a, b] = Array.isArray(value) ? value : [value, value]
-        utils.set([name, a].filter(Boolean).join('-'), `{ ${prop}: ${b} }`)
-      }
-    }
-  }
-
-  return utils
-}
-
-export const UTILS = process([
+const ENTRIES = [
   ['@container', 'container-type: inline-size'],
 
   // ---------------------------------------------------------------------------
@@ -1110,25 +1075,11 @@ export const UTILS = process([
 
   // blur
   ['blur', 'filter', [
-    ['xs', 'blur(4px)'],
-    ['sm', 'blur(8px)'],
-    ['md', 'blur(12px)'],
-    ['lg', 'blur(16px)'],
-    ['xl', 'blur(24px)'],
-    ['2xl', 'blur(40px)'],
-    ['3xl', 'blur(64px)'],
-    ['none', 'none'],
+    ...BLURS,
     { raw: 'blur($)' }
   ]],
   ['backdrop-blur', 'backdrop-filter', [
-    ['xs', 'blur(4px)'],
-    ['sm', 'blur(8px)'],
-    ['md', 'blur(12px)'],
-    ['lg', 'blur(16px)'],
-    ['xl', 'blur(24px)'],
-    ['2xl', 'blur(40px)'],
-    ['3xl', 'blur(64px)'],
-    'none',
+    ...BLURS,
     { raw: 'blur($)' }
   ]],
 
@@ -1583,4 +1534,39 @@ export const UTILS = process([
     'auto',
     'none'
   ]]
-])
+]
+
+export const UTILS = (() => {
+  // Returns a map of styles.
+  const utils = new Map()
+
+  for (const entry of ENTRIES) {
+    // If second argument is an array it means the property name is equal to class name.
+    // Add it in for consistency.
+    Array.isArray(entry.at(1)) && entry.splice(1, 0, entry.at(0))
+
+    const [name, prop, values] = entry
+
+    // If no values, use the prop as is.
+    if (!values) {
+      utils.set(name, `{ ${prop} }`)
+      continue
+    }
+
+    // Populate values.
+    for (const value of values) {
+      // Dynamic.
+      if (!value.length) {
+        // Dynamic rule.
+        const prefix = value.prefix ? ` ${value.prefix} ` : ''
+        utils.set(`${name}-`, { ...value, css: `${prefix}{ ${prop}: $ }` })
+      } else {
+        // Static rule.
+        const [a, b] = Array.isArray(value) ? value : [value, value]
+        utils.set([name, a].filter(Boolean).join('-'), `{ ${prop}: ${b} }`)
+      }
+    }
+  }
+
+  return utils
+})()

@@ -12,7 +12,7 @@ export const COLOR_PROPS = new Map([
   ['stroke', 'stroke'],
 ])
 
-export const COLOR_MAP = new Map([
+export const COLOR_SHADES = new Map([
   ['red-50', '0.971 0.013 17.38'],
   ['red-100', '0.936 0.032 17.717'],
   ['red-200', '0.885 0.062 18.334'],
@@ -259,10 +259,10 @@ export const COLOR_MAP = new Map([
   ['white', '1 0 0'],
 ])
 
-function getColors () {
+export const COLORS = (() => {
   const result = ['inherit', 'transparent', ['current', 'currentColor']]
 
-  for (const [name, value] of COLOR_MAP.entries()) {
+  for (const [name, value] of COLOR_SHADES.entries()) {
     result.push([name, `oklch(${value})`])
     for (const opacity of OPACITIES) {
       result.push([`${name}/${opacity}`, `oklch(${value} / ${opacity / 100})`])
@@ -270,6 +270,4 @@ function getColors () {
   }
 
   return result
-}
-
-export const COLORS = getColors()
+})()
