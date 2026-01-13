@@ -64,15 +64,24 @@ export function add (className, root = document) {
   return addRules(tw.instances.get(root), className)
 }
 
-export function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {} }) {
-  // Add custom keyframes.
-  Object.entries(keyframes).forEach(([name, keyframes]) => {
-    tw.instances.values().forEach(instance => {
-      instance.sheet.insertRule(`@keyframes ${name} { ${keyframes} }`, instance.sheet.cssRules.length)
-    })
-  })
+export function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {}, preflight = [] }) {
+  // Add custom rules.
+  for (const instance of tw.instances.values()) {
+    // Add custom preflight rules.
+    preflight.forEach(css =>
+      instance.sheet.insertRule(css), instance.sheet.cssRules.length)
 
-  // Generate classes for custom colors.
+    // Add custom keyframes.
+    Object.entries(keyframes).forEach(([name, keyframes]) =>
+      instance.sheet.insertRule(`@keyframes ${name} { ${keyframes} }`, instance.sheet.cssRules.length))
+  }
+
+  // Extend QUERIES with custom queries.
+  Object.entries(queries).forEach(([name, query]) => STATES.has(name) || PSEUDO.has(name)
+    ? console.error(`[TWCSS] Name "${name}" is reserved and cannot be used for custom queries.`)
+    : QUERIES.set(name, query))
+
+  // Generate new classes for custom colors.
   COLOR_PROPS.entries().forEach(([colorClass, colorProp]) => {
     Object.entries(colors).forEach(([colorSuffix, lch]) => {
       classes[`${colorClass}-${colorSuffix}`] = `{ ${colorProp}: oklch(${lch}) }`
@@ -82,12 +91,7 @@ export function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {
     })
   })
 
-  // Add custom queries.
-  Object.entries(queries).forEach(([name, query]) => STATES.has(name) || PSEUDO.has(name)
-   ? console.error(`[TWCSS] Name "${name}" is reserved and cannot be used for custom queries.`)
-   : QUERIES.set(name, query))
-
-  // Add custom classes.
+  // Extend UTILS with custom classes (including color classes generated in previous step).
   Object.entries(classes).forEach(([name, css]) => UTILS.set(name, css))
 }
 

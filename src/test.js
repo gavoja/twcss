@@ -151,6 +151,9 @@ function addDivWithCustomClasses () {
       'after': '[RESERVED]',
       'active': '[RESERVED]',
     },
+    preflight: [
+      'body { width: 1000px; margin: 0 auto }'
+    ]
   })
 
   const div = document.createElement('div')

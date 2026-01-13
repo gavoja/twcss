@@ -32,3 +32,4 @@ ul, ol { list-style: none; }
 .border-2 { border-width: 2px; }
 .space-y-4 > :not(:last-child) { margin-bottom: calc(16px); }
 .block { display: block; }
+body { width: 1000px; margin: 0px auto; }

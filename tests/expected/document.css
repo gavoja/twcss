@@ -9751,6 +9751,10 @@
 @keyframes spin {
   100% { transform: rotate(360deg); }
 }
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 @media screen and (min-width: 1280px) {
   .xl\:bg-red-300 { background-color: oklch(0.808 0.114 19.571); }
 }
@@ -9950,10 +9954,6 @@
 .not-active\:hidden:not(:active) { display: none; }
 .active\:hidden:active { display: none; }
 .hidden { display: none; }
-@keyframes fade {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
 @keyframes toast {
   0% { opacity: 0; transform: translateY(48px); }
   100% { opacity: 1; }
@@ -9996,6 +9996,7 @@ ul, ol { list-style: none; }
 .w-\[100px\] { width: 100px; }
 .h-\[100px\] { height: 100px; }
 .animate-fade { animation: 250ms ease-in-out 0s 1 normal none running fade; }
+body { width: 1000px; margin: 0px auto; }
 .m-\[30px\] { margin: 30px; }
 .foo { width: 50px; height: 50px; }
 .hide-last-child > :last-child { display: none; }

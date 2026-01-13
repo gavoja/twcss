@@ -31,3 +31,4 @@ ul, ol { list-style: none; }
 .border-2 { border-width: 2px; }
 .rounded-md { border-radius: 6px; }
 .w-\[300px\] { width: 300px; }
+body { width: 1000px; margin: 0px auto; }

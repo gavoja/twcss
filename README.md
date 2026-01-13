@@ -83,6 +83,10 @@ extend({
   queries: {
     'xl': '@media screen and (min-width: 1234px)'
   },
+  // Custom preflight rules.
+  preflight: [
+    'body { width: 1000px; margin: 0 auto; }'
+  ]
 })
 ```
 
