@@ -139,4 +139,5 @@ Changes:
   - `fade` for adding elements to the page in a visually pleasing manner.
 - [:has()](https://tailwindcss.com/docs/hover-focus-and-other-states#has) works only with states via `has-` prefix (e.g. `has-checked`).
 - [:not()](https://tailwindcss.com/docs/hover-focus-and-other-states#not) works only with states via `not-` prefix (e.g. `not-focus`).
+- [Transition property](https://tailwindcss.com/docs/transition-property) does not set the transition duration. Use `duration-*` explicitly.
 - **New:** `scrollbar-gutter` support via `scrollbar-stable`, `scrollbar-auto`, `scrollbar-both` classes (currently not supported in Tailwind).

@@ -17,7 +17,6 @@ button { text-align: unset; background: transparent; color: inherit }
 svg { display: block }
 ::placeholder { color: currentColor; opacity: 0.8 }
 [tw]:not([class]) { display: none }
-html { transition-duration: 250ms }
 ```
 
 ### Media and container queries

@@ -13,7 +13,6 @@
   0% { opacity: 0; transform: translateY(-8px); }
   100% { opacity: 1; }
 }
-html { transition-duration: 250ms; }
 [tw]:not([class]) { display: none; }
 ::placeholder { color: currentcolor; opacity: 0.8; }
 svg { display: block; }
