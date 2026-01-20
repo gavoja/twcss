@@ -46,8 +46,8 @@
     "esbuild-plus": "^0.3.0",
     "eslint": "^9.39.1",
     "neostandard": "^0.12.2",
-    "netlify-cli": "^23.13.0",
+    "netlify-cli": "^23.13.4",
     "playwright": "^1.55.0",
-    "release-it": "^19.0.6"
+    "release-it": "^19.2.3"
   }
 }
