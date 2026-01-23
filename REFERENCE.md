@@ -8321,6 +8321,10 @@ Currently unsupported.
 ```
 
 ```
+.invert { filter: invert(100%) }
+```
+
+```
 .invert-<number> { filter: invert(<number>%) }
 ```
 
@@ -8492,6 +8496,10 @@ Currently unsupported.
 
 ```
 .backdrop-hue-rotate-(<custom-property>) { backdrop-filter: var(<custom-property>) }
+```
+
+```
+.backdrop-invert { backdrop-filter: invert(100%) }
 ```
 
 ```
