@@ -1128,9 +1128,11 @@ const ENTRIES = [
 
   // invert
   ['invert', 'filter', [
+    ['', 'invert(100%)'],
     { raw: 'invert($)', number: 'invert($%)' }
   ]],
   ['backdrop-invert', 'backdrop-filter', [
+    ['', 'invert(100%)'],
     { raw: 'invert($)', number: 'invert($%)' }
   ]],
 

@@ -32433,10 +32433,12 @@ body { width: 1000px; margin: 0px auto; }
 .-backdrop-hue-rotate-23 { backdrop-filter: hue-rotate(-23deg); }
 .backdrop-hue-rotate-\(--my-var\) { backdrop-filter: hue-rotate(var(--my-var)); }
 .backdrop-hue-rotate-\[inherit\] { }
+.invert { filter: invert(100%); }
 .invert-23 { filter: invert(23%); }
 .-invert-23 { }
 .invert-\(--my-var\) { filter: invert(var(--my-var)); }
 .invert-\[inherit\] { }
+.backdrop-invert { backdrop-filter: invert(100%); }
 .backdrop-invert-23 { backdrop-filter: invert(23%); }
 .-backdrop-invert-23 { }
 .backdrop-invert-\(--my-var\) { backdrop-filter: invert(var(--my-var)); }
