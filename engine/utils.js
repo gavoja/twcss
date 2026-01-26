@@ -557,6 +557,9 @@ const ENTRIES = [
   ['text-7xl', 'font-size: 72px; line-height: 1'],
   ['text-8xl', 'font-size: 96px; line-height: 1'],
   ['text-9xl', 'font-size: 128px; line-height: 1'],
+  ['text', 'font-size', [
+    { raw: '$' }
+  ]],
 
   // font-smoothing
   ['antialiased', '-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale'],

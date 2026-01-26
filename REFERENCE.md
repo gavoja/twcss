@@ -6422,6 +6422,14 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 }
 ```
 
+```
+.text-[<value>] { font-size: <value> }
+```
+
+```
+.text-(<custom-property>) { font-size: var(<custom-property>) }
+```
+
 ### font-smoothing
 
 ```

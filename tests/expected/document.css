@@ -12384,6 +12384,8 @@ body { width: 1000px; margin: 0px auto; }
 .text-7xl { font-size: 72px; line-height: 1; }
 .text-8xl { font-size: 96px; line-height: 1; }
 .text-9xl { font-size: 128px; line-height: 1; }
+.text-\(--my-var\) { font-size: var(--my-var); }
+.text-\[inherit\] { font-size: inherit; }
 .antialiased { -webkit-font-smoothing: antialiased; }
 .subpixel-antialiased { -webkit-font-smoothing: auto; }
 .italic { font-style: italic; }
