@@ -13,6 +13,7 @@
   0% { opacity: 0; transform: translateY(-8px); }
   100% { opacity: 1; }
 }
+body { width: 1000px; margin: 0px auto; }
 [tw]:not([class]) { display: none; }
 ::placeholder { color: currentcolor; opacity: 0.8; }
 svg { display: block; }
@@ -29,4 +30,3 @@ ul, ol { list-style: none; }
 .p-4 { padding: calc(16px); }
 .rounded-md { border-radius: 6px; }
 .border-2 { border-width: 2px; }
-body { width: 1000px; margin: 0px auto; }

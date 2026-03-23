@@ -47,11 +47,11 @@ test('default', async ({ page }) => {
 
   // Verify reserved names.
   await expect(errors).toEqual([
+    '[TWCSS] Name "after" is reserved and cannot be used for custom queries.',
+    '[TWCSS] Name "active" is reserved and cannot be used for custom queries.',
     '[TWCSS] Unable to process "bad-util". Utility class does not exist.',
     '[TWCSS] Unable to process "bad-prefix:hidden". Prefix "bad-prefix" is invalid.',
     '[TWCSS] Unable to process "sm:sm:hidden". Query "sm" is duplicated.',
     '[TWCSS] Unable to process "before:before:hidden". Pseudo element "before" is duplicated.',
-    '[TWCSS] Name "after" is reserved and cannot be used for custom queries.',
-    '[TWCSS] Name "active" is reserved and cannot be used for custom queries.',
   ])
 })

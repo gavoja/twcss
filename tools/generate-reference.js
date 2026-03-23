@@ -2,10 +2,10 @@
 import chroma from 'chroma-js'
 import fs from 'node:fs'
 
-import { COLOR_PROPS, COLOR_SHADES } from '#engine/colors.js'
-import { KEYFRAMES, PSEUDO, QUERIES, STATES, STRING_SIZES } from '#engine/constants.js'
-import { PREFLIGHT } from '#engine/preflight.js'
-import { UTILS } from '#engine/utils.js'
+import { COLOR_PROPS, COLOR_SHADES } from 'twcss/colors'
+import { KEYFRAMES, PSEUDO, QUERIES, STATES, STRING_SIZES } from 'twcss/constants'
+import { PREFLIGHT } from 'twcss/preflight'
+import { UTILS } from 'twcss/utils'
 
 const HIERARCHY = {
   'Layout': {
@@ -400,7 +400,7 @@ function generateReference () {
       }
 
       for (const [cls, css] of rules) {
-        mdContents.push(`\`\`\`\n.${cls} ${css}\n\`\`\``, '')
+        mdContents.push(`\`\`\`txt\n.${cls} ${css}\n\`\`\``, '')
       }
     }
   }

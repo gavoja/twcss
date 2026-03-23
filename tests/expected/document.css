@@ -1,3 +1,393 @@
+@media screen and (min-width: 1280px) {
+  .xl\:has-visited\:hidden:has(:visited) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-visited\:hidden:not(:visited) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:visited\:hidden:visited { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-valid\:hidden:has(:valid) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-valid\:hidden:not(:valid) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:valid\:hidden:valid { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-user-valid\:hidden:has(:user-valid) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-user-valid\:hidden:not(:user-valid) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:user-valid\:hidden:user-valid { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-user-invalid\:hidden:has(:user-invalid) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-user-invalid\:hidden:not(:user-invalid) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:user-invalid\:hidden:user-invalid { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-target\:hidden:has(:target) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-target\:hidden:not(:target) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:target\:hidden:target { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-scope\:hidden:has(:scope) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-scope\:hidden:not(:scope) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:scope\:hidden:scope { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-root\:hidden:has(:root) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-root\:hidden:not(:root) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:root\:hidden:root { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-required\:hidden:has(:required) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-required\:hidden:not(:required) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:required\:hidden:required { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-read-write\:hidden:has(:read-write) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-read-write\:hidden:not(:read-write) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:read-write\:hidden:read-write { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-read-only\:hidden:has(:read-only) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-read-only\:hidden:not(:read-only) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:read-only\:hidden:read-only { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-popover-open\:hidden:has(:popover-open) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-popover-open\:hidden:not(:popover-open) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:popover-open\:hidden:popover-open { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-placeholder-shown\:hidden:has(:placeholder-shown) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-placeholder-shown\:hidden:not(:placeholder-shown) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:placeholder-shown\:hidden:placeholder-shown { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-picture-in-picture\:hidden:has(:picture-in-picture) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-picture-in-picture\:hidden:not(:picture-in-picture) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:picture-in-picture\:hidden:picture-in-picture { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-past\:hidden:has(:past) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-past\:hidden:not(:past) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:past\:hidden:past { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-out-of-range\:hidden:has(:out-of-range) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-out-of-range\:hidden:not(:out-of-range) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:out-of-range\:hidden:out-of-range { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-optional\:hidden:has(:optional) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-optional\:hidden:not(:optional) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:optional\:hidden:optional { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-open\:hidden:has(:open) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-open\:hidden:not(:open) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:open\:hidden:open { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-only-of-type\:hidden:has(:only-of-type) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-only-of-type\:hidden:not(:only-of-type) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:only-of-type\:hidden:only-of-type { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-only-child\:hidden:has(:only-child) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-only-child\:hidden:not(:only-child) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:only-child\:hidden:only-child { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-modal\:hidden:has(:modal) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-modal\:hidden:not(:modal) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:modal\:hidden:modal { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-link\:hidden:has(:link) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-link\:hidden:not(:link) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:link\:hidden:link { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-last-of-type\:hidden:has(:last-of-type) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-last-of-type\:hidden:not(:last-of-type) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:last-of-type\:hidden:last-of-type { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-last-child\:hidden:has(:last-child) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-last-child\:hidden:not(:last-child) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:last-child\:hidden:last-child { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-invalid\:hidden:has(:invalid) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-invalid\:hidden:not(:invalid) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:invalid\:hidden:invalid { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-indeterminate\:hidden:has(:indeterminate) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-indeterminate\:hidden:not(:indeterminate) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:indeterminate\:hidden:indeterminate { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-in-range\:hidden:has(:in-range) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-in-range\:hidden:not(:in-range) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:in-range\:hidden:in-range { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-hover\:hidden:has(:hover) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-hover\:hidden:not(:hover) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:hover\:hidden:hover { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-host\:hidden:has(:host) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-host\:hidden:not(:host) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:host\:hidden:host { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-future\:hidden:has(:future) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-future\:hidden:not(:future) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:future\:hidden:future { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-fullscreen\:hidden:has(:fullscreen) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-fullscreen\:hidden:not(:fullscreen) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:fullscreen\:hidden:fullscreen { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-focus-within\:hidden:has(:focus-within) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-focus-within\:hidden:not(:focus-within) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:focus-within\:hidden:focus-within { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-focus-visible\:hidden:has(:focus-visible) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-focus-visible\:hidden:not(:focus-visible) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:focus-visible\:hidden:focus-visible { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-focus\:hidden:has(:focus) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-focus\:hidden:not(:focus) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:focus\:hidden:focus { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-first-of-type\:hidden:has(:first-of-type) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-first-of-type\:hidden:not(:first-of-type) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:first-of-type\:hidden:first-of-type { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-first-child\:hidden:has(:first-child) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-first-child\:hidden:not(:first-child) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:first-child\:hidden:first-child { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-enabled\:hidden:has(:enabled) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-enabled\:hidden:not(:enabled) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:enabled\:hidden:enabled { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-empty\:hidden:has(:empty) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-empty\:hidden:not(:empty) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:empty\:hidden:empty { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-disabled\:hidden:has(:disabled) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-disabled\:hidden:not(:disabled) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:disabled\:hidden:disabled { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-defined\:hidden:has(:defined) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-defined\:hidden:not(:defined) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:defined\:hidden:defined { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-default\:hidden:has(:default) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-default\:hidden:not(:default) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:default\:hidden:default { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-checked\:hidden:has(:checked) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-checked\:hidden:not(:checked) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:checked\:hidden:checked { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-any-link\:hidden:has(:any-link) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-any-link\:hidden:not(:any-link) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:any-link\:hidden:any-link { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:has-active\:hidden:has(:active) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:not-active\:hidden:not(:active) { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:active\:hidden:active { display: none; }
+}
+@media screen and (min-width: 1280px) {
+  .xl\:hidden { display: none; }
+}
 @container (width >= 1280px) {
   .\@7xl\:has-visited\:hidden:has(:visited) { display: none; }
 }
@@ -9748,13 +10138,6 @@
 @media screen and (max-width: 599px) {
   .sm\:hidden { display: none; }
 }
-@keyframes spin {
-  100% { transform: rotate(360deg); }
-}
-@keyframes fade {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
 @media screen and (min-width: 1280px) {
   .xl\:bg-red-300 { background-color: oklch(0.808 0.114 19.571); }
 }
@@ -9954,6 +10337,13 @@
 .not-active\:hidden:not(:active) { display: none; }
 .active\:hidden:active { display: none; }
 .hidden { display: none; }
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 @keyframes toast {
   0% { opacity: 0; transform: translateY(48px); }
   100% { opacity: 1; }
@@ -9962,6 +10352,7 @@
   0% { opacity: 0; transform: translateY(-8px); }
   100% { opacity: 1; }
 }
+body { width: 1000px; margin: 0px auto; }
 [tw]:not([class]) { display: none; }
 ::placeholder { color: currentcolor; opacity: 0.8; }
 svg { display: block; }
@@ -9995,7 +10386,6 @@ ul, ol { list-style: none; }
 .w-\[100px\] { width: 100px; }
 .h-\[100px\] { height: 100px; }
 .animate-fade { animation: 250ms ease-in-out 0s 1 normal none running fade; }
-body { width: 1000px; margin: 0px auto; }
 .m-\[30px\] { margin: 30px; }
 .foo { width: 50px; height: 50px; }
 .hide-last-child > :last-child { display: none; }

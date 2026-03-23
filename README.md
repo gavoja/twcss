@@ -17,7 +17,7 @@ Tailwind is awesome, but it requires a build setup. Twind exists, but the projec
 Node, Deno, Bun:
 
 ```js
-import 'twcss'
+import 'twcss' // Initialises TWCSS on document.
 ```
 
 Directly in browser:
@@ -53,12 +53,14 @@ Once imported, TWCSS detects DOM changes with a mutation observer and generates 
 
 ## Extensibility
 
-You can define your own utility classes, colors, animations, and media queries with the `extend()` function. Overriding existing defaults is also possible.
+You can define your own utility classes, colors, animations, and media queries. Overriding existing defaults is also possible.
+
+Node, Deno, Bun:
 
 ```js
-import { extend } from 'twcss'
+import { init } from 'twcss/compiler'
 
-extend({
+init(document, {
   // Keys are class names and values are blobs of CSS.
   classes: {
     // The below will yield:
@@ -90,23 +92,28 @@ extend({
 })
 ```
 
+HTML:
+
+```html
+<script>
+  twExtend = {
+    // Add your extensions here.
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/twcss/target/twcss.min.js"></script>
+```
+
 > [!WARNING]
 > Custom queries must not clash with states or pseudo element.
 
-## The `add` function
+## Direct call
 
-The `add` function works similarly to Twind's `tw` function by generating styles directly when called and adding them to the selected root (`document` by default). It could be useful when migrating from Twind to TWCSS. Note that the `add` function and `tw` attribute should never be used on the same element, since the latter always replaces the value of `class` attribute.
-
-Signature:
-
-```ts
-function add (className: String, root: Document | ShadowRoot = document)
-```
-
-Usage:
+Styles can be also resolved via a direct call, similarly to how Twind does it:
 
 ```jsx
-import { add as tw } from 'twcss'
+import { init } from 'twcss/compiler'
+
+const tw = init(document) // or const tw = init (shadowRoot)
 
 function Button ({ children }) {
   return <button className="{tw('p-4 rounded-xl')}">{children}</button>

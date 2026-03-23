@@ -27,11 +27,18 @@ const PARSER = new RegExp([
 // -----------------------------------------------------------------------------
 
 // Global object.
-export const tw = { instances: new Map(), add, extend }
+export const tw = { instances: new Map() }
 
-export function init (root) {
+export function init (root = document, extensions = {}) {
+  extend(extensions || {})
+
+  // Initialize for the document.
+  if (!root) {
+    throw new Error('Root is not defined.')
+  }
+
   if (tw.instances.has(root)) {
-    return
+    return className => addRules(tw.instances.get(root), className)
   }
 
   const timestamp = Date.now()
@@ -57,42 +64,8 @@ export function init (root) {
 
   // Performance metrics.
   instance.initTime = Date.now() - timestamp
-}
 
-export function add (className, root = document) {
-  init(root)
-  return addRules(tw.instances.get(root), className)
-}
-
-export function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {}, preflight = [] }) {
-  // Add custom rules.
-  for (const instance of tw.instances.values()) {
-    // Add custom preflight rules.
-    preflight.forEach(css =>
-      instance.sheet.insertRule(css), instance.sheet.cssRules.length)
-
-    // Add custom keyframes.
-    Object.entries(keyframes).forEach(([name, keyframes]) =>
-      instance.sheet.insertRule(`@keyframes ${name} { ${keyframes} }`, instance.sheet.cssRules.length))
-  }
-
-  // Extend QUERIES with custom queries.
-  Object.entries(queries).forEach(([name, query]) => STATES.has(name) || PSEUDO.has(name)
-    ? console.error(`[TWCSS] Name "${name}" is reserved and cannot be used for custom queries.`)
-    : QUERIES.set(name, query))
-
-  // Generate new classes for custom colors.
-  COLOR_PROPS.entries().forEach(([colorClass, colorProp]) => {
-    Object.entries(colors).forEach(([colorSuffix, lch]) => {
-      classes[`${colorClass}-${colorSuffix}`] = `{ ${colorProp}: oklch(${lch}) }`
-      OPACITIES.forEach(opacity => {
-        classes[`${colorClass}-${colorSuffix}/${opacity}`] = `{ ${colorProp}: oklch(${lch} / ${opacity / 100}) }`
-      })
-    })
-  })
-
-  // Extend UTILS with custom classes (including color classes generated in previous step).
-  Object.entries(classes).forEach(([name, css]) => UTILS.set(name, css))
+  return className => addRules(instance, className)
 }
 
 // -----------------------------------------------------------------------------
@@ -155,6 +128,37 @@ async function mutationHandler (instance, mutations) {
 // -----------------------------------------------------------------------------
 // Class processing and style injection
 // -----------------------------------------------------------------------------
+
+function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {}, preflight = [] }) {
+  for (const [name, value] of Object.entries(classes)) {
+    UTILS.set(name, value)
+  }
+
+  // Generate new classes for custom colors.
+  COLOR_PROPS.entries().forEach(([colorClass, colorProp]) => {
+    Object.entries(colors).forEach(([colorSuffix, lch]) => {
+      UTILS.set(`${colorClass}-${colorSuffix}`, `{ ${colorProp}: oklch(${lch}) }`)
+      OPACITIES.forEach(opacity => {
+        UTILS.set(`${colorClass}-${colorSuffix}/${opacity}`, `{ ${colorProp}: oklch(${lch} / ${opacity / 100}) }`)
+      })
+    })
+  })
+
+  for (const [name, value] of Object.entries(keyframes)) {
+    KEYFRAMES.set(name, value)
+  }
+
+  for (const [name, query] of Object.entries(queries)) {
+    if (PSEUDO.has(name) || STATES.has(name)) {
+      console.error(`[TWCSS] Name "${name}" is reserved and cannot be used for custom queries.`)
+      continue
+    }
+
+    QUERIES.set(name, query)
+  }
+
+  PREFLIGHT.push(...preflight)
+}
 
 function createSheet () {
   const sheet = new CSSStyleSheet()

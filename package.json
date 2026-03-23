@@ -22,14 +22,19 @@
     "type": "git",
     "url": "https://github.com/gavoja/twcss.git"
   },
-  "imports": {
-    "#engine/*.js": "./engine/*.js"
+  "exports": {
+    ".": "./engine/twcss.js",
+    "./compiler": "./engine/compiler.js",
+    "./utils": "./engine/utils.js",
+    "./constants": "./engine/constants.js",
+    "./colors": "./engine/colors.js",
+    "./preflight": "./engine/preflight.js"
   },
   "scripts": {
     "start": "npx ebp --dev",
     "build": "npx ebp --iife",
     "test": "npx playwright test",
-    "lint": "npx eslint",
+    "lint": "npx eslint && npx rumdl check .",
     "format": "npx eslint --fix",
     "generate-reference": "node ./tools/generate-reference.js",
     "release": "dotenv release-it -- --verbose",
@@ -45,9 +50,10 @@
     "esbuild": "^0.27.0",
     "esbuild-plus": "^0.3.0",
     "eslint": "^9.39.1",
-    "neostandard": "^0.12.2",
-    "netlify-cli": "^23.13.4",
+    "neostandard": "^0.13.0",
+    "netlify-cli": "^24.4.1",
     "playwright": "^1.55.0",
-    "release-it": "^19.2.3"
+    "release-it": "^19.2.4",
+    "rumdl": "^0.1.58"
   }
 }

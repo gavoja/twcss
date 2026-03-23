@@ -1,4 +1,4 @@
-import '#engine/twcss.js'
+import 'twcss'
 
 document.addEventListener('DOMContentLoaded', () => {
   const elements = 10000

@@ -1,8 +1,4 @@
-import { tw, init } from './compiler.js'
-export { add, extend } from './compiler.js'
+import { init, tw } from './compiler.js'
 
-// Initialize for the document.
-if (typeof document !== 'undefined') {
-  window.tw ||= tw
-  init(document)
-}
+init(document, globalThis.twExtend)
+globalThis.tw = tw

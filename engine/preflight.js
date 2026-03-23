@@ -10,5 +10,5 @@ export const PREFLIGHT = [
   'button { text-align: unset; background: transparent; color: inherit }',
   'svg { display: block }',
   '::placeholder { color: currentColor; opacity: 0.8 }',
-  '[tw]:not([class]) { display: none }' // Prevent repaint.
+  '[tw]:not([class]) { display: none }' // Prevent flash of unstyled content.
 ]

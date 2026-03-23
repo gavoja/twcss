@@ -1,7 +1,33 @@
-/* global HTMLElement, customElements, tw */
-import { extend } from '#engine/twcss.js'
-import { UTILS } from '#engine/utils.js'
-import { STATES, STRING_SIZES, QUERIES } from '#engine/constants.js'
+/* global HTMLElement, customElements */
+import { init } from 'twcss/compiler'
+import { UTILS } from 'twcss/utils'
+import { STATES, STRING_SIZES, QUERIES } from 'twcss/constants'
+
+init(document, {
+  classes: {
+    foo: '{ width: 50px; height: 50px }',
+    'hide-last-child': '> :last-child { display: none }',
+    'animate-spin': '{ animation: spin 3s linear infinite }',
+    'after': '{ content: "after" }',
+    'active': '{ content: "active" }',
+    'sm': '{ content: "sm" }',
+    'xl': '{ content: "xl" }', // Custom
+  },
+  colors: {
+    octarine: '0.9 0.4 20',
+  },
+  keyframes: {
+    spin: 'to { transform: rotate(360deg) }',
+  },
+  queries: {
+    xl: '@media screen and (min-width: 1280px)',
+    'after': '[RESERVED]',
+    'active': '[RESERVED]',
+  },
+  preflight: [
+    'body { width: 1000px; margin: 0 auto }'
+  ]
+})
 
 function register (name, callback) {
   class CustomElement extends HTMLElement {
@@ -22,11 +48,15 @@ function registerOuterInner () {
     </div>
   `)
 
-  register('inner-element-2', shadowRoot => `
-    <div class="${tw.add('p-4 bg-fuchsia-300 border-2 rounded-md w-[300px]', shadowRoot)}">
-      Shadow DOM: inner-element-2
-    </div>
-  `)
+  register('inner-element-2', shadowRoot => {
+    const add = init(shadowRoot)
+    const classes = add('p-4 bg-fuchsia-300 border-2 rounded-md w-[300px]', shadowRoot)
+    return `
+      <div class="${classes}">
+        Shadow DOM: inner-element-2
+      </div>
+    `
+  })
 
   register('outer-element', () => `
     <div tw="bg-blue-300 p-4 rounded-md border-2 space-y-4">
@@ -130,32 +160,6 @@ function addCustomElement (name) {
 }
 
 function addDivWithCustomClasses () {
-  extend({
-    classes: {
-      foo: '{ width: 50px; height: 50px }',
-      'hide-last-child': '> :last-child { display: none }',
-      'animate-spin': '{ animation: spin 3s linear infinite }',
-      'after': '{ content: "after" }',
-      'active': '{ content: "active" }',
-      'sm': '{ content: "sm" }',
-      'xl': '{ content: "xl" }', // Custom
-    },
-    colors: {
-      octarine: '0.9 0.4 20',
-    },
-    keyframes: {
-      spin: 'to { transform: rotate(360deg) }',
-    },
-    queries: {
-      xl: '@media screen and (min-width: 1280px)',
-      'after': '[RESERVED]',
-      'active': '[RESERVED]',
-    },
-    preflight: [
-      'body { width: 1000px; margin: 0 auto }'
-    ]
-  })
-
   const div = document.createElement('div')
   div.setAttribute(
     'tw',
