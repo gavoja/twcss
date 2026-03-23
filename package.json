@@ -55,5 +55,8 @@
     "playwright": "^1.55.0",
     "release-it": "^19.2.4",
     "rumdl": "^0.1.58"
+  },
+  "overrides": {
+    "undici": "^6.24.0"
   }
 }
