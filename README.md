@@ -17,7 +17,7 @@ Tailwind is awesome, but it requires a build setup. Twind exists, but the projec
 Node, Deno, Bun:
 
 ```js
-import 'twcss' // Initialises TWCSS on document.
+import 'twcss' // Initialises TWCSS automatically on document.
 ```
 
 Directly in browser:
@@ -45,6 +45,18 @@ function Wrapper ({ children, isRounded }) {
 }
 ```
 
+If you prefer to use Twind's approach, do:
+
+```jsx
+import { init } from 'twcss/compiler'
+
+const tw = init(document) // Pass document or shadow root.
+
+function Button ({ children }) {
+  return <button className="{tw('p-4 rounded-xl')}">{children}</button>
+}
+```
+
 Once imported, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructable stylesheets. Simple CSS preflight is included.
 
 > [!NOTE]
@@ -60,6 +72,7 @@ Node, Deno, Bun:
 ```js
 import { init } from 'twcss/compiler'
 
+// Initialises TWCSS explicitly.
 init(document, {
   // Keys are class names and values are blobs of CSS.
   classes: {
@@ -105,20 +118,6 @@ HTML:
 
 > [!WARNING]
 > Custom queries must not clash with states or pseudo element.
-
-## Direct call
-
-Styles can be also resolved via a direct call, similarly to how Twind does it:
-
-```jsx
-import { init } from 'twcss/compiler'
-
-const tw = init(document) // or const tw = init (shadowRoot)
-
-function Button ({ children }) {
-  return <button className="{tw('p-4 rounded-xl')}">{children}</button>
-}
-```
 
 ## Compatibility
 
