@@ -10196,6 +10196,7 @@
 .grid-cols-none { grid-template-columns: none; }
 .order-none { order: 0; }
 .flex-none { flex: 0 0 auto; }
+.scrollbar-width-none { scrollbar-width: none; }
 .overscroll-y-none { overscroll-behavior-y: none; }
 .overscroll-x-none { overscroll-behavior-x: none; }
 .overscroll-none { overscroll-behavior: none; }
@@ -10538,9 +10539,14 @@ ul, ol { list-style: none; }
 .overscroll-x-contain { overscroll-behavior-x: contain; }
 .overscroll-y-auto { overscroll-behavior-y: auto; }
 .overscroll-y-contain { overscroll-behavior-y: contain; }
-.scrollbar-auto { scrollbar-gutter: auto; }
-.scrollbar-stable { scrollbar-gutter: stable; }
-.scrollbar-both { scrollbar-gutter: stable both-edges; }
+.scrollbar-gutter-auto { scrollbar-gutter: auto; }
+.scrollbar-gutter-stable { scrollbar-gutter: stable; }
+.scrollbar-gutter-both { scrollbar-gutter: stable both-edges; }
+.scrollbar-width-auto { scrollbar-width: auto; }
+.scrollbar-width-thin { scrollbar-width: thin; }
+.scrollbar-color-auto { scrollbar-color: auto; }
+.scrollbar-color-\(--my-var\) { scrollbar-color: var(--my-var); }
+.scrollbar-color-\[inherit\] { scrollbar-color: inherit; }
 .static { position: static; }
 .fixed { position: fixed; }
 .absolute { position: absolute; }

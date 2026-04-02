@@ -804,15 +804,43 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ### scrollbar-gutter
 
 ```txt
-.scrollbar-auto { scrollbar-gutter: auto }
+.scrollbar-gutter-auto { scrollbar-gutter: auto }
 ```
 
 ```txt
-.scrollbar-stable { scrollbar-gutter: stable }
+.scrollbar-gutter-stable { scrollbar-gutter: stable }
 ```
 
 ```txt
-.scrollbar-both { scrollbar-gutter: stable both-edges }
+.scrollbar-gutter-both { scrollbar-gutter: stable both-edges }
+```
+
+### scrollbar-width
+
+```txt
+.scrollbar-width-auto { scrollbar-width: auto }
+```
+
+```txt
+.scrollbar-width-thin { scrollbar-width: thin }
+```
+
+```txt
+.scrollbar-width-none { scrollbar-width: none }
+```
+
+### scrollbar-color
+
+```txt
+.scrollbar-color-auto { scrollbar-color: auto }
+```
+
+```txt
+.scrollbar-color-[<value>] { scrollbar-color: <value> }
+```
+
+```txt
+.scrollbar-color-(<custom-property>) { scrollbar-color: var(<custom-property>) }
 ```
 
 ### position
@@ -6606,7 +6634,32 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### line-clamp
 
-Currently unsupported.
+```txt
+.line-clamp-none {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: none;
+}
+```
+
+```txt
+.line-clamp-[<value>] {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: <value>;
+}
+```
+
+```txt
+.line-clamp-(<custom-property>) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(<custom-property>);
+}
+```
 
 ### line-height
 

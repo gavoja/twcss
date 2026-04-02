@@ -9,7 +9,7 @@ export const COLOR_PROPS = new Map([
   ['accent', 'accent-color'],
   ['caret', 'caret-color'],
   ['fill', 'fill'],
-  ['stroke', 'stroke'],
+  ['stroke', 'stroke']
 ])
 
 export const COLOR_SHADES = new Map([

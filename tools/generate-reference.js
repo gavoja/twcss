@@ -25,6 +25,8 @@ const HIERARCHY = {
     'overflow': ['overflow', 'overflow-x', 'overflow-y'],
     'overscroll-behavior': ['overscroll-behavior', 'overscroll-behavior-x', 'overscroll-behavior-y'],
     'scrollbar-gutter': ['scrollbar-gutter'],
+    'scrollbar-width': ['scrollbar-width'],
+    'scrollbar-color': ['scrollbar-color'],
     'position': ['position'],
     'top / right / bottom / left': [
       'inset',
@@ -107,7 +109,7 @@ const HIERARCHY = {
     'font-stretch': ['font-stretch'],
     'font-variant-numeric': ['font-variant-numeric'],
     'letter-spacing': ['letter-spacing'],
-    'line-clamp': ['-webkit-line-clamp'],
+    'line-clamp': ['overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp'],
     'line-height': ['line-height'],
     'list-style-image': ['list-style-image'],
     'list-style-position': ['list-style-position'],
@@ -291,7 +293,7 @@ function getRules (props) {
     }
 
     // Color rules.
-    if (COLOR_PROPS.values().some(p => css.includes(`${p}:`))) {
+    if (COLOR_PROPS.values().some(p => css.includes(` ${p}:`))) {
       if (cls.endsWith('-black')) {
         rules.set(cls.replace('-black', '-<color>'), formatCss(css.replace('oklch(0 0 0)', 'oklch(...)')))
       }

@@ -141,10 +141,23 @@ const ENTRIES = [
   ['overscroll-y', 'overscroll-behavior-y', OVERSCROLLS],
 
   // scrollbar-gutter
-  ['scrollbar', 'scrollbar-gutter', [
+  ['scrollbar-gutter', [
     'auto',
     'stable',
     ['both', 'stable both-edges']
+  ]],
+
+  // scrollbar-width
+  ['scrollbar-width', [
+    'auto',
+    'thin',
+    'none'
+  ]],
+
+  // scrollbar-color
+  ['scrollbar-color', [
+    'auto',
+    { raw: '$' }
   ]],
 
   // position
@@ -950,7 +963,6 @@ const ENTRIES = [
     'double',
     'none'
   ]],
-  // ['outline-hidden', 'outline: 2px solid transparent; outline-offset: 2px'],
 
   // outline-offset
   ['outline-offset', [
