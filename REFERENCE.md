@@ -148,6 +148,71 @@ All container queries are relative to the ancestor with `@container` class.
 @container (width >= 1280px)
 ```
 
+```css
+/* @max-3xs */
+@container (width < 256px)
+```
+
+```css
+/* @max-2xs */
+@container (width < 288px)
+```
+
+```css
+/* @max-xs */
+@container (width < 320px)
+```
+
+```css
+/* @max-sm */
+@container (width < 384px)
+```
+
+```css
+/* @max-md */
+@container (width < 448px)
+```
+
+```css
+/* @max-lg */
+@container (width < 512px)
+```
+
+```css
+/* @max-xl */
+@container (width < 576px)
+```
+
+```css
+/* @max-2xl */
+@container (width < 672px)
+```
+
+```css
+/* @max-3xl */
+@container (width < 768px)
+```
+
+```css
+/* @max-4xl */
+@container (width < 896px)
+```
+
+```css
+/* @max-5xl */
+@container (width < 1024px)
+```
+
+```css
+/* @max-6xl */
+@container (width < 1152px)
+```
+
+```css
+/* @max-7xl */
+@container (width < 1280px)
+```
+
 ### Prefixes
 
 Classes can be prefixed. The order is always `query:state:pseudo:class`. Multiple states are supported.
