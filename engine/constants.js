@@ -121,6 +121,19 @@ export const QUERIES = new Map([
   ['@5xl', '@container (width >= 1024px)'],
   ['@6xl', '@container (width >= 1152px)'],
   ['@7xl', '@container (width >= 1280px)'],
+  ['@max-3xs', '@container (width < 256px)'],
+  ['@max-2xs', '@container (width < 288px)'],
+  ['@max-xs', '@container (width < 320px)'],
+  ['@max-sm', '@container (width < 384px)'],
+  ['@max-md', '@container (width < 448px)'],
+  ['@max-lg', '@container (width < 512px)'],
+  ['@max-xl', '@container (width < 576px)'],
+  ['@max-2xl', '@container (width < 672px)'],
+  ['@max-3xl', '@container (width < 768px)'],
+  ['@max-4xl', '@container (width < 896px)'],
+  ['@max-5xl', '@container (width < 1024px)'],
+  ['@max-6xl', '@container (width < 1152px)'],
+  ['@max-7xl', '@container (width < 1280px)'],
 ])
 
 export const STATES = new Map([
