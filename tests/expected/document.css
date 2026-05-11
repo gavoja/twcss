@@ -15442,6 +15442,7 @@ ul, ol { list-style: none; }
 .text-2xl { font-size: 24px; line-height: 1.333; }
 .after\:content-\[\'\:after\'\]::after { content: ":after"; }
 .after\:block::after { display: block; }
+.hover\:after\:content-\[\'\:after_\+\'\]:hover::after { content: ":after +"; }
 .before\:content-\[\'\:before\'\]::before { content: ":before"; }
 .before\:block::before { display: block; }
 .flex { display: flex; }

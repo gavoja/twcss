@@ -291,7 +291,7 @@ function parse (cls) {
     }
   }
 
-  const baseRule = `.${CSS.escape(cls)}${pseudo}${state} ${css}`
+  const baseRule = `.${CSS.escape(cls)}${state}${pseudo} ${css}`
   const rule = mq ? `${QUERIES.get(mq)} { ${baseRule} }` : baseRule
   const isHighPriority = Boolean(HIGH_PRIORITY_RULES.find(r => util.includes(r)))
   const hasQuery = Boolean(mq)
