@@ -26,8 +26,45 @@ input, button, textarea, select { font: inherit; }
 h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
 ul, ol { list-style: none; }
 *, ::before, ::after { box-sizing: border-box; border-width: 0px; border-style: solid; border-color: currentcolor; margin: 0px; padding: 0px; }
+@property --text-9xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
+@property --text-8xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
+@property --text-7xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
+@property --text-6xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
+@property --text-5xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
+@property --text-4xl--line-height { syntax: "*"; inherits: true; initial-value: 1.111; }
+@property --text-3xl--line-height { syntax: "*"; inherits: true; initial-value: 1.2; }
+@property --text-2xl--line-height { syntax: "*"; inherits: true; initial-value: 1.333; }
+@property --text-xl--line-height { syntax: "*"; inherits: true; initial-value: 1.4; }
+@property --text-lg--line-height { syntax: "*"; inherits: true; initial-value: 1.555; }
+@property --text-base--line-height { syntax: "*"; inherits: true; initial-value: 1.5; }
+@property --text-sm--line-height { syntax: "*"; inherits: true; initial-value: 1.429; }
+@property --text-xs--line-height { syntax: "*"; inherits: true; initial-value: 1.333; }
+@property --text-9xl { syntax: "*"; inherits: true; initial-value: 128px; }
+@property --text-8xl { syntax: "*"; inherits: true; initial-value: 96px; }
+@property --text-7xl { syntax: "*"; inherits: true; initial-value: 72px; }
+@property --text-6xl { syntax: "*"; inherits: true; initial-value: 60px; }
+@property --text-5xl { syntax: "*"; inherits: true; initial-value: 48px; }
+@property --text-4xl { syntax: "*"; inherits: true; initial-value: 36px; }
+@property --text-3xl { syntax: "*"; inherits: true; initial-value: 30px; }
+@property --text-2xl { syntax: "*"; inherits: true; initial-value: 24px; }
+@property --text-xl { syntax: "*"; inherits: true; initial-value: 20px; }
+@property --text-lg { syntax: "*"; inherits: true; initial-value: 18px; }
+@property --text-base { syntax: "*"; inherits: true; initial-value: 16px; }
+@property --text-sm { syntax: "*"; inherits: true; initial-value: 14px; }
+@property --text-xs { syntax: "*"; inherits: true; initial-value: 12px; }
+@property --radius-4xl { syntax: "*"; inherits: true; initial-value: 32px; }
+@property --radius-3xl { syntax: "*"; inherits: true; initial-value: 24px; }
+@property --radius-2xl { syntax: "*"; inherits: true; initial-value: 16px; }
+@property --radius-xl { syntax: "*"; inherits: true; initial-value: 12px; }
+@property --radius-lg { syntax: "*"; inherits: true; initial-value: 8px; }
+@property --radius-md { syntax: "*"; inherits: true; initial-value: 6px; }
+@property --radius-sm { syntax: "*"; inherits: true; initial-value: 4px; }
+@property --radius-xs { syntax: "*"; inherits: true; initial-value: 2px; }
+@property --font-mono { syntax: "*"; inherits: true; initial-value: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+@property --font-serif { syntax: "*"; inherits: true; initial-value: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
+@property --font-sans { syntax: "*"; inherits: true; initial-value: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
 .p-4 { padding: calc(16px); }
 .bg-fuchsia-300 { background-color: oklch(0.833 0.145 321.434); }
 .border-2 { border-width: 2px; }
-.rounded-md { border-radius: 6px; }
+.rounded-md { border-radius: var(--radius-md); }
 .w-\[300px\] { width: 300px; }

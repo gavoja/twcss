@@ -19,6 +19,50 @@ svg { display: block }
 [tw]:not([class]) { display: none }
 ```
 
+### Config
+
+Selected values are defined via custom properties for easy overridding.
+
+```CSS
+--font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+--font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+--radius-xs: 2px;
+--radius-sm: 4px;
+--radius-md: 6px;
+--radius-lg: 8px;
+--radius-xl: 12px;
+--radius-2xl: 16px;
+--radius-3xl: 24px;
+--radius-4xl: 32px;
+--text-xs: 12px;
+--text-sm: 14px;
+--text-base: 16px;
+--text-lg: 18px;
+--text-xl: 20px;
+--text-2xl: 24px;
+--text-3xl: 30px;
+--text-4xl: 36px;
+--text-5xl: 48px;
+--text-6xl: 60px;
+--text-7xl: 72px;
+--text-8xl: 96px;
+--text-9xl: 128px;
+--text-xs--line-height: 1.333;
+--text-sm--line-height: 1.429;
+--text-base--line-height: 1.5;
+--text-lg--line-height: 1.555;
+--text-xl--line-height: 1.4;
+--text-2xl--line-height: 1.333;
+--text-3xl--line-height: 1.2;
+--text-4xl--line-height: 1.111;
+--text-5xl--line-height: 1;
+--text-6xl--line-height: 1;
+--text-7xl--line-height: 1;
+--text-8xl--line-height: 1;
+--text-9xl--line-height: 1;
+```
+
 ### Media and container queries
 
 All container queries are relative to the ancestor with `@container` class.
@@ -280,317 +324,317 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### aspect-ratio
 
-```txt
+```css
 .aspect-square { aspect-ratio: 1 / 1 }
 ```
 
-```txt
+```css
 .aspect-video { aspect-ratio: 16 / 9 }
 ```
 
-```txt
+```css
 .aspect-auto { aspect-ratio: auto }
 ```
 
-```txt
+```css
 .aspect-<fraction> { aspect-ratio: <fraction> }
 ```
 
-```txt
+```css
 .aspect-[<value>] { aspect-ratio: <value> }
 ```
 
-```txt
+```css
 .aspect-(<custom-property>) { aspect-ratio: var(<custom-property>) }
 ```
 
 ### columns
 
-```txt
+```css
 .columns-auto { columns: auto }
 ```
 
-```txt
+```css
 .columns-px { columns: 1px }
 ```
 
-```txt
+```css
 .-columns-px { columns: -1px }
 ```
 
-```txt
+```css
 .columns-full { columns: 100% }
 ```
 
-```txt
+```css
 .-columns-full { columns: -100% }
 ```
 
-```txt
+```css
 .columns-screen { columns: 100vw }
 ```
 
-```txt
+```css
 .columns-dvw { columns: 100vw }
 ```
 
-```txt
+```css
 .columns-dvh { columns: 100vh }
 ```
 
-```txt
+```css
 .columns-lvw { columns: 100lvw }
 ```
 
-```txt
+```css
 .columns-lvh { columns: 100lvh }
 ```
 
-```txt
+```css
 .columns-svw { columns: 100svw }
 ```
 
-```txt
+```css
 .columns-svh { columns: 100svh }
 ```
 
-```txt
+```css
 .columns-min { columns: min-content }
 ```
 
-```txt
+```css
 .columns-max { columns: max-content }
 ```
 
-```txt
+```css
 .columns-fit { columns: fit-content }
 ```
 
-```txt
+```css
 .columns-3xs { columns: 256px }
 ```
 
-```txt
+```css
 .columns-2xs { columns: 288px }
 ```
 
-```txt
+```css
 .columns-xs { columns: 320px }
 ```
 
-```txt
+```css
 .columns-sm { columns: 384px }
 ```
 
-```txt
+```css
 .columns-md { columns: 448px }
 ```
 
-```txt
+```css
 .columns-lg { columns: 512px }
 ```
 
-```txt
+```css
 .columns-xl { columns: 576px }
 ```
 
-```txt
+```css
 .columns-2xl { columns: 672px }
 ```
 
-```txt
+```css
 .columns-3xl { columns: 768px }
 ```
 
-```txt
+```css
 .columns-4xl { columns: 896px }
 ```
 
-```txt
+```css
 .columns-5xl { columns: 1024px }
 ```
 
-```txt
+```css
 .columns-6xl { columns: 1152px }
 ```
 
-```txt
+```css
 .columns-7xl { columns: 1280px }
 ```
 
-```txt
+```css
 .columns-<number> { columns: <number> }
 ```
 
-```txt
+```css
 .-columns-<number> { columns: -<number> }
 ```
 
-```txt
+```css
 .columns-<fraction> { columns: <fraction> }
 ```
 
-```txt
+```css
 .columns-[<value>] { columns: <value> }
 ```
 
-```txt
+```css
 .columns-(<custom-property>) { columns: var(<custom-property>) }
 ```
 
 ### break-after
 
-```txt
+```css
 .break-after-auto { break-after: auto }
 ```
 
-```txt
+```css
 .break-after-avoid { break-after: avoid }
 ```
 
-```txt
+```css
 .break-after-avoid-page { break-after: avoid-page }
 ```
 
-```txt
+```css
 .break-after-page { break-after: page }
 ```
 
-```txt
+```css
 .break-after-left { break-after: left }
 ```
 
-```txt
+```css
 .break-after-right { break-after: right }
 ```
 
-```txt
+```css
 .break-after-column { break-after: column }
 ```
 
 ### break-before
 
-```txt
+```css
 .break-before-auto { break-before: auto }
 ```
 
-```txt
+```css
 .break-before-avoid { break-before: avoid }
 ```
 
-```txt
+```css
 .break-before-avoid-page { break-before: avoid-page }
 ```
 
-```txt
+```css
 .break-before-page { break-before: page }
 ```
 
-```txt
+```css
 .break-before-left { break-before: left }
 ```
 
-```txt
+```css
 .break-before-right { break-before: right }
 ```
 
-```txt
+```css
 .break-before-column { break-before: column }
 ```
 
 ### break-inside
 
-```txt
+```css
 .break-inside-auto { break-inside: auto }
 ```
 
-```txt
+```css
 .break-inside-avoid { break-inside: avoid }
 ```
 
-```txt
+```css
 .break-inside-avoid-page { break-inside: avoid-page }
 ```
 
-```txt
+```css
 .break-inside-avoid-column { break-inside: avoid-column }
 ```
 
 ### box-decoration-break
 
-```txt
+```css
 .box-decoration-clone { box-decoration-break: clone }
 ```
 
-```txt
+```css
 .box-decoration-slice { box-decoration-break: slice }
 ```
 
 ### box-sizing
 
-```txt
+```css
 .box-border { box-sizing: border-box }
 ```
 
-```txt
+```css
 .box-content { box-sizing: content-box }
 ```
 
 ### display
 
-```txt
+```css
 .inline { display: inline }
 ```
 
-```txt
+```css
 .block { display: block }
 ```
 
-```txt
+```css
 .inline-block { display: inline-block }
 ```
 
-```txt
+```css
 .flow-root { display: flow-root }
 ```
 
-```txt
+```css
 .flex { display: flex }
 ```
 
-```txt
+```css
 .inline-flex { display: inline-flex }
 ```
 
-```txt
+```css
 .grid { display: grid }
 ```
 
-```txt
+```css
 .inline-grid { display: inline-grid }
 ```
 
-```txt
+```css
 .contents { display: contents }
 ```
 
-```txt
+```css
 .table { display: table }
 ```
 
-```txt
+```css
 .inline-table { display: inline-table }
 ```
 
-```txt
+```css
 .list-item { display: list-item }
 ```
 
-```txt
+```css
 .hidden { display: none }
 ```
 
-```txt
+```css
 .sr-only {
   clip: rect(0, 0, 0, 0);
   position: absolute;
@@ -604,7 +648,7 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 }
 ```
 
-```txt
+```css
 .not-sr-only {
   clip: auto;
   position: static;
@@ -619,189 +663,189 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### float
 
-```txt
+```css
 .float-start { float: inline-start }
 ```
 
-```txt
+```css
 .float-end { float: inline-end }
 ```
 
-```txt
+```css
 .float-left { float: left }
 ```
 
-```txt
+```css
 .float-right { float: right }
 ```
 
-```txt
+```css
 .float-none { float: none }
 ```
 
 ### clear
 
-```txt
+```css
 .clear-start { clear: inline-start }
 ```
 
-```txt
+```css
 .clear-end { clear: inline-end }
 ```
 
-```txt
+```css
 .clear-left { clear: left }
 ```
 
-```txt
+```css
 .clear-right { clear: right }
 ```
 
-```txt
+```css
 .clear-both { clear: both }
 ```
 
-```txt
+```css
 .clear-none { clear: none }
 ```
 
 ### isolation
 
-```txt
+```css
 .isolate { isolation: isolate }
 ```
 
-```txt
+```css
 .isolation-auto { isolation: auto }
 ```
 
 ### object-fit
 
-```txt
+```css
 .object-contain { object-fit: contain }
 ```
 
-```txt
+```css
 .object-cover { object-fit: cover }
 ```
 
-```txt
+```css
 .object-fill { object-fit: fill }
 ```
 
-```txt
+```css
 .object-none { object-fit: none }
 ```
 
-```txt
+```css
 .object-scale-down { object-fit: scale-down }
 ```
 
 ### object-position
 
-```txt
+```css
 .object-bottom { object-position: bottom }
 ```
 
-```txt
+```css
 .object-center { object-position: center }
 ```
 
-```txt
+```css
 .object-left { object-position: left }
 ```
 
-```txt
+```css
 .object-left-bottom { object-position: left bottom }
 ```
 
-```txt
+```css
 .object-left-top { object-position: left top }
 ```
 
-```txt
+```css
 .object-right { object-position: right }
 ```
 
-```txt
+```css
 .object-right-bottom { object-position: right bottom }
 ```
 
-```txt
+```css
 .object-right-top { object-position: right top }
 ```
 
-```txt
+```css
 .object-top { object-position: top }
 ```
 
-```txt
+```css
 .object-[<value>] { object-position: <value> }
 ```
 
-```txt
+```css
 .object-(<custom-property>) { object-position: var(<custom-property>) }
 ```
 
 ### overflow
 
-```txt
+```css
 .overflow-auto { overflow: auto }
 ```
 
-```txt
+```css
 .overflow-hidden { overflow: hidden }
 ```
 
-```txt
+```css
 .overflow-visible { overflow: visible }
 ```
 
-```txt
+```css
 .overflow-scroll { overflow: scroll }
 ```
 
-```txt
+```css
 .overflow-x-auto { overflow-x: auto }
 ```
 
-```txt
+```css
 .overflow-x-hidden { overflow-x: hidden }
 ```
 
-```txt
+```css
 .overflow-x-clip { overflow-x: clip }
 ```
 
-```txt
+```css
 .overflow-x-visible { overflow-x: visible }
 ```
 
-```txt
+```css
 .overflow-x-scroll { overflow-x: scroll }
 ```
 
-```txt
+```css
 .overflow-y-auto { overflow-y: auto }
 ```
 
-```txt
+```css
 .overflow-y-hidden { overflow-y: hidden }
 ```
 
-```txt
+```css
 .overflow-y-clip { overflow-y: clip }
 ```
 
-```txt
+```css
 .overflow-y-visible { overflow-y: visible }
 ```
 
-```txt
+```css
 .overflow-y-scroll { overflow-y: scroll }
 ```
 
-```txt
+```css
 .line-clamp-none {
   overflow: hidden;
   display: -webkit-box;
@@ -810,7 +854,7 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 }
 ```
 
-```txt
+```css
 .line-clamp-[<value>] {
   overflow: hidden;
   display: -webkit-box;
@@ -819,7 +863,7 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 }
 ```
 
-```txt
+```css
 .line-clamp-(<custom-property>) {
   overflow: hidden;
   display: -webkit-box;
@@ -830,1329 +874,1329 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### overscroll-behavior
 
-```txt
+```css
 .overscroll-auto { overscroll-behavior: auto }
 ```
 
-```txt
+```css
 .overscroll-contain { overscroll-behavior: contain }
 ```
 
-```txt
+```css
 .overscroll-none { overscroll-behavior: none }
 ```
 
-```txt
+```css
 .overscroll-x-auto { overscroll-behavior-x: auto }
 ```
 
-```txt
+```css
 .overscroll-x-contain { overscroll-behavior-x: contain }
 ```
 
-```txt
+```css
 .overscroll-x-none { overscroll-behavior-x: none }
 ```
 
-```txt
+```css
 .overscroll-y-auto { overscroll-behavior-y: auto }
 ```
 
-```txt
+```css
 .overscroll-y-contain { overscroll-behavior-y: contain }
 ```
 
-```txt
+```css
 .overscroll-y-none { overscroll-behavior-y: none }
 ```
 
 ### scrollbar-gutter
 
-```txt
+```css
 .scrollbar-gutter-auto { scrollbar-gutter: auto }
 ```
 
-```txt
+```css
 .scrollbar-gutter-stable { scrollbar-gutter: stable }
 ```
 
-```txt
+```css
 .scrollbar-gutter-both { scrollbar-gutter: stable both-edges }
 ```
 
 ### scrollbar-width
 
-```txt
+```css
 .scrollbar-width-auto { scrollbar-width: auto }
 ```
 
-```txt
+```css
 .scrollbar-width-thin { scrollbar-width: thin }
 ```
 
-```txt
+```css
 .scrollbar-width-none { scrollbar-width: none }
 ```
 
 ### scrollbar-color
 
-```txt
+```css
 .scrollbar-color-auto { scrollbar-color: auto }
 ```
 
-```txt
+```css
 .scrollbar-color-[<value>] { scrollbar-color: <value> }
 ```
 
-```txt
+```css
 .scrollbar-color-(<custom-property>) { scrollbar-color: var(<custom-property>) }
 ```
 
 ### position
 
-```txt
+```css
 .static { position: static }
 ```
 
-```txt
+```css
 .fixed { position: fixed }
 ```
 
-```txt
+```css
 .absolute { position: absolute }
 ```
 
-```txt
+```css
 .relative { position: relative }
 ```
 
-```txt
+```css
 .sticky { position: sticky }
 ```
 
 ### top / right / bottom / left
 
-```txt
+```css
 .inset-auto { inset: auto }
 ```
 
-```txt
+```css
 .inset-px { inset: 1px }
 ```
 
-```txt
+```css
 .-inset-px { inset: -1px }
 ```
 
-```txt
+```css
 .inset-full { inset: 100% }
 ```
 
-```txt
+```css
 .-inset-full { inset: -100% }
 ```
 
-```txt
+```css
 .inset-screen { inset: 100vw }
 ```
 
-```txt
+```css
 .inset-dvw { inset: 100vw }
 ```
 
-```txt
+```css
 .inset-dvh { inset: 100vh }
 ```
 
-```txt
+```css
 .inset-lvw { inset: 100lvw }
 ```
 
-```txt
+```css
 .inset-lvh { inset: 100lvh }
 ```
 
-```txt
+```css
 .inset-svw { inset: 100svw }
 ```
 
-```txt
+```css
 .inset-svh { inset: 100svh }
 ```
 
-```txt
+```css
 .inset-min { inset: min-content }
 ```
 
-```txt
+```css
 .inset-max { inset: max-content }
 ```
 
-```txt
+```css
 .inset-fit { inset: fit-content }
 ```
 
-```txt
+```css
 .inset-3xs { inset: 256px }
 ```
 
-```txt
+```css
 .inset-2xs { inset: 288px }
 ```
 
-```txt
+```css
 .inset-xs { inset: 320px }
 ```
 
-```txt
+```css
 .inset-sm { inset: 384px }
 ```
 
-```txt
+```css
 .inset-md { inset: 448px }
 ```
 
-```txt
+```css
 .inset-lg { inset: 512px }
 ```
 
-```txt
+```css
 .inset-xl { inset: 576px }
 ```
 
-```txt
+```css
 .inset-2xl { inset: 672px }
 ```
 
-```txt
+```css
 .inset-3xl { inset: 768px }
 ```
 
-```txt
+```css
 .inset-4xl { inset: 896px }
 ```
 
-```txt
+```css
 .inset-5xl { inset: 1024px }
 ```
 
-```txt
+```css
 .inset-6xl { inset: 1152px }
 ```
 
-```txt
+```css
 .inset-7xl { inset: 1280px }
 ```
 
-```txt
+```css
 .inset-<number> { inset: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-inset-<number> { inset: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .inset-<fraction> { inset: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .inset-[<value>] { inset: <value> }
 ```
 
-```txt
+```css
 .inset-(<custom-property>) { inset: var(<custom-property>) }
 ```
 
-```txt
+```css
 .inset-x-auto { inset-inline: auto }
 ```
 
-```txt
+```css
 .inset-x-px { inset-inline: 1px }
 ```
 
-```txt
+```css
 .-inset-x-px { inset-inline: -1px }
 ```
 
-```txt
+```css
 .inset-x-full { inset-inline: 100% }
 ```
 
-```txt
+```css
 .-inset-x-full { inset-inline: -100% }
 ```
 
-```txt
+```css
 .inset-x-screen { inset-inline: 100vw }
 ```
 
-```txt
+```css
 .inset-x-dvw { inset-inline: 100vw }
 ```
 
-```txt
+```css
 .inset-x-dvh { inset-inline: 100vh }
 ```
 
-```txt
+```css
 .inset-x-lvw { inset-inline: 100lvw }
 ```
 
-```txt
+```css
 .inset-x-lvh { inset-inline: 100lvh }
 ```
 
-```txt
+```css
 .inset-x-svw { inset-inline: 100svw }
 ```
 
-```txt
+```css
 .inset-x-svh { inset-inline: 100svh }
 ```
 
-```txt
+```css
 .inset-x-min { inset-inline: min-content }
 ```
 
-```txt
+```css
 .inset-x-max { inset-inline: max-content }
 ```
 
-```txt
+```css
 .inset-x-fit { inset-inline: fit-content }
 ```
 
-```txt
+```css
 .inset-x-3xs { inset-inline: 256px }
 ```
 
-```txt
+```css
 .inset-x-2xs { inset-inline: 288px }
 ```
 
-```txt
+```css
 .inset-x-xs { inset-inline: 320px }
 ```
 
-```txt
+```css
 .inset-x-sm { inset-inline: 384px }
 ```
 
-```txt
+```css
 .inset-x-md { inset-inline: 448px }
 ```
 
-```txt
+```css
 .inset-x-lg { inset-inline: 512px }
 ```
 
-```txt
+```css
 .inset-x-xl { inset-inline: 576px }
 ```
 
-```txt
+```css
 .inset-x-2xl { inset-inline: 672px }
 ```
 
-```txt
+```css
 .inset-x-3xl { inset-inline: 768px }
 ```
 
-```txt
+```css
 .inset-x-4xl { inset-inline: 896px }
 ```
 
-```txt
+```css
 .inset-x-5xl { inset-inline: 1024px }
 ```
 
-```txt
+```css
 .inset-x-6xl { inset-inline: 1152px }
 ```
 
-```txt
+```css
 .inset-x-7xl { inset-inline: 1280px }
 ```
 
-```txt
+```css
 .inset-x-<number> { inset-inline: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-inset-x-<number> { inset-inline: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .inset-x-<fraction> { inset-inline: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .inset-x-[<value>] { inset-inline: <value> }
 ```
 
-```txt
+```css
 .inset-x-(<custom-property>) { inset-inline: var(<custom-property>) }
 ```
 
-```txt
+```css
 .inset-y-auto { inset-block: auto }
 ```
 
-```txt
+```css
 .inset-y-px { inset-block: 1px }
 ```
 
-```txt
+```css
 .-inset-y-px { inset-block: -1px }
 ```
 
-```txt
+```css
 .inset-y-full { inset-block: 100% }
 ```
 
-```txt
+```css
 .-inset-y-full { inset-block: -100% }
 ```
 
-```txt
+```css
 .inset-y-screen { inset-block: 100vw }
 ```
 
-```txt
+```css
 .inset-y-dvw { inset-block: 100vw }
 ```
 
-```txt
+```css
 .inset-y-dvh { inset-block: 100vh }
 ```
 
-```txt
+```css
 .inset-y-lvw { inset-block: 100lvw }
 ```
 
-```txt
+```css
 .inset-y-lvh { inset-block: 100lvh }
 ```
 
-```txt
+```css
 .inset-y-svw { inset-block: 100svw }
 ```
 
-```txt
+```css
 .inset-y-svh { inset-block: 100svh }
 ```
 
-```txt
+```css
 .inset-y-min { inset-block: min-content }
 ```
 
-```txt
+```css
 .inset-y-max { inset-block: max-content }
 ```
 
-```txt
+```css
 .inset-y-fit { inset-block: fit-content }
 ```
 
-```txt
+```css
 .inset-y-3xs { inset-block: 256px }
 ```
 
-```txt
+```css
 .inset-y-2xs { inset-block: 288px }
 ```
 
-```txt
+```css
 .inset-y-xs { inset-block: 320px }
 ```
 
-```txt
+```css
 .inset-y-sm { inset-block: 384px }
 ```
 
-```txt
+```css
 .inset-y-md { inset-block: 448px }
 ```
 
-```txt
+```css
 .inset-y-lg { inset-block: 512px }
 ```
 
-```txt
+```css
 .inset-y-xl { inset-block: 576px }
 ```
 
-```txt
+```css
 .inset-y-2xl { inset-block: 672px }
 ```
 
-```txt
+```css
 .inset-y-3xl { inset-block: 768px }
 ```
 
-```txt
+```css
 .inset-y-4xl { inset-block: 896px }
 ```
 
-```txt
+```css
 .inset-y-5xl { inset-block: 1024px }
 ```
 
-```txt
+```css
 .inset-y-6xl { inset-block: 1152px }
 ```
 
-```txt
+```css
 .inset-y-7xl { inset-block: 1280px }
 ```
 
-```txt
+```css
 .inset-y-<number> { inset-block: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-inset-y-<number> { inset-block: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .inset-y-<fraction> { inset-block: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .inset-y-[<value>] { inset-block: <value> }
 ```
 
-```txt
+```css
 .inset-y-(<custom-property>) { inset-block: var(<custom-property>) }
 ```
 
-```txt
+```css
 .start-auto { inset-inline-start: auto }
 ```
 
-```txt
+```css
 .start-px { inset-inline-start: 1px }
 ```
 
-```txt
+```css
 .-start-px { inset-inline-start: -1px }
 ```
 
-```txt
+```css
 .start-full { inset-inline-start: 100% }
 ```
 
-```txt
+```css
 .-start-full { inset-inline-start: -100% }
 ```
 
-```txt
+```css
 .start-screen { inset-inline-start: 100vw }
 ```
 
-```txt
+```css
 .start-dvw { inset-inline-start: 100vw }
 ```
 
-```txt
+```css
 .start-dvh { inset-inline-start: 100vh }
 ```
 
-```txt
+```css
 .start-lvw { inset-inline-start: 100lvw }
 ```
 
-```txt
+```css
 .start-lvh { inset-inline-start: 100lvh }
 ```
 
-```txt
+```css
 .start-svw { inset-inline-start: 100svw }
 ```
 
-```txt
+```css
 .start-svh { inset-inline-start: 100svh }
 ```
 
-```txt
+```css
 .start-min { inset-inline-start: min-content }
 ```
 
-```txt
+```css
 .start-max { inset-inline-start: max-content }
 ```
 
-```txt
+```css
 .start-fit { inset-inline-start: fit-content }
 ```
 
-```txt
+```css
 .start-3xs { inset-inline-start: 256px }
 ```
 
-```txt
+```css
 .start-2xs { inset-inline-start: 288px }
 ```
 
-```txt
+```css
 .start-xs { inset-inline-start: 320px }
 ```
 
-```txt
+```css
 .start-sm { inset-inline-start: 384px }
 ```
 
-```txt
+```css
 .start-md { inset-inline-start: 448px }
 ```
 
-```txt
+```css
 .start-lg { inset-inline-start: 512px }
 ```
 
-```txt
+```css
 .start-xl { inset-inline-start: 576px }
 ```
 
-```txt
+```css
 .start-2xl { inset-inline-start: 672px }
 ```
 
-```txt
+```css
 .start-3xl { inset-inline-start: 768px }
 ```
 
-```txt
+```css
 .start-4xl { inset-inline-start: 896px }
 ```
 
-```txt
+```css
 .start-5xl { inset-inline-start: 1024px }
 ```
 
-```txt
+```css
 .start-6xl { inset-inline-start: 1152px }
 ```
 
-```txt
+```css
 .start-7xl { inset-inline-start: 1280px }
 ```
 
-```txt
+```css
 .start-<number> { inset-inline-start: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-start-<number> { inset-inline-start: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .start-<fraction> { inset-inline-start: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .start-[<value>] { inset-inline-start: <value> }
 ```
 
-```txt
+```css
 .start-(<custom-property>) { inset-inline-start: var(<custom-property>) }
 ```
 
-```txt
+```css
 .end-auto { inset-inline-end: auto }
 ```
 
-```txt
+```css
 .end-px { inset-inline-end: 1px }
 ```
 
-```txt
+```css
 .-end-px { inset-inline-end: -1px }
 ```
 
-```txt
+```css
 .end-full { inset-inline-end: 100% }
 ```
 
-```txt
+```css
 .-end-full { inset-inline-end: -100% }
 ```
 
-```txt
+```css
 .end-screen { inset-inline-end: 100vw }
 ```
 
-```txt
+```css
 .end-dvw { inset-inline-end: 100vw }
 ```
 
-```txt
+```css
 .end-dvh { inset-inline-end: 100vh }
 ```
 
-```txt
+```css
 .end-lvw { inset-inline-end: 100lvw }
 ```
 
-```txt
+```css
 .end-lvh { inset-inline-end: 100lvh }
 ```
 
-```txt
+```css
 .end-svw { inset-inline-end: 100svw }
 ```
 
-```txt
+```css
 .end-svh { inset-inline-end: 100svh }
 ```
 
-```txt
+```css
 .end-min { inset-inline-end: min-content }
 ```
 
-```txt
+```css
 .end-max { inset-inline-end: max-content }
 ```
 
-```txt
+```css
 .end-fit { inset-inline-end: fit-content }
 ```
 
-```txt
+```css
 .end-3xs { inset-inline-end: 256px }
 ```
 
-```txt
+```css
 .end-2xs { inset-inline-end: 288px }
 ```
 
-```txt
+```css
 .end-xs { inset-inline-end: 320px }
 ```
 
-```txt
+```css
 .end-sm { inset-inline-end: 384px }
 ```
 
-```txt
+```css
 .end-md { inset-inline-end: 448px }
 ```
 
-```txt
+```css
 .end-lg { inset-inline-end: 512px }
 ```
 
-```txt
+```css
 .end-xl { inset-inline-end: 576px }
 ```
 
-```txt
+```css
 .end-2xl { inset-inline-end: 672px }
 ```
 
-```txt
+```css
 .end-3xl { inset-inline-end: 768px }
 ```
 
-```txt
+```css
 .end-4xl { inset-inline-end: 896px }
 ```
 
-```txt
+```css
 .end-5xl { inset-inline-end: 1024px }
 ```
 
-```txt
+```css
 .end-6xl { inset-inline-end: 1152px }
 ```
 
-```txt
+```css
 .end-7xl { inset-inline-end: 1280px }
 ```
 
-```txt
+```css
 .end-<number> { inset-inline-end: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-end-<number> { inset-inline-end: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .end-<fraction> { inset-inline-end: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .end-[<value>] { inset-inline-end: <value> }
 ```
 
-```txt
+```css
 .end-(<custom-property>) { inset-inline-end: var(<custom-property>) }
 ```
 
-```txt
+```css
 .top-auto { top: auto }
 ```
 
-```txt
+```css
 .top-px { top: 1px }
 ```
 
-```txt
+```css
 .-top-px { top: -1px }
 ```
 
-```txt
+```css
 .top-full { top: 100% }
 ```
 
-```txt
+```css
 .-top-full { top: -100% }
 ```
 
-```txt
+```css
 .top-screen { top: 100vw }
 ```
 
-```txt
+```css
 .top-dvw { top: 100vw }
 ```
 
-```txt
+```css
 .top-dvh { top: 100vh }
 ```
 
-```txt
+```css
 .top-lvw { top: 100lvw }
 ```
 
-```txt
+```css
 .top-lvh { top: 100lvh }
 ```
 
-```txt
+```css
 .top-svw { top: 100svw }
 ```
 
-```txt
+```css
 .top-svh { top: 100svh }
 ```
 
-```txt
+```css
 .top-min { top: min-content }
 ```
 
-```txt
+```css
 .top-max { top: max-content }
 ```
 
-```txt
+```css
 .top-fit { top: fit-content }
 ```
 
-```txt
+```css
 .top-3xs { top: 256px }
 ```
 
-```txt
+```css
 .top-2xs { top: 288px }
 ```
 
-```txt
+```css
 .top-xs { top: 320px }
 ```
 
-```txt
+```css
 .top-sm { top: 384px }
 ```
 
-```txt
+```css
 .top-md { top: 448px }
 ```
 
-```txt
+```css
 .top-lg { top: 512px }
 ```
 
-```txt
+```css
 .top-xl { top: 576px }
 ```
 
-```txt
+```css
 .top-2xl { top: 672px }
 ```
 
-```txt
+```css
 .top-3xl { top: 768px }
 ```
 
-```txt
+```css
 .top-4xl { top: 896px }
 ```
 
-```txt
+```css
 .top-5xl { top: 1024px }
 ```
 
-```txt
+```css
 .top-6xl { top: 1152px }
 ```
 
-```txt
+```css
 .top-7xl { top: 1280px }
 ```
 
-```txt
+```css
 .top-<number> { top: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-top-<number> { top: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .top-<fraction> { top: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .top-[<value>] { top: <value> }
 ```
 
-```txt
+```css
 .top-(<custom-property>) { top: var(<custom-property>) }
 ```
 
-```txt
+```css
 .right-auto { right: auto }
 ```
 
-```txt
+```css
 .right-px { right: 1px }
 ```
 
-```txt
+```css
 .-right-px { right: -1px }
 ```
 
-```txt
+```css
 .right-full { right: 100% }
 ```
 
-```txt
+```css
 .-right-full { right: -100% }
 ```
 
-```txt
+```css
 .right-screen { right: 100vw }
 ```
 
-```txt
+```css
 .right-dvw { right: 100vw }
 ```
 
-```txt
+```css
 .right-dvh { right: 100vh }
 ```
 
-```txt
+```css
 .right-lvw { right: 100lvw }
 ```
 
-```txt
+```css
 .right-lvh { right: 100lvh }
 ```
 
-```txt
+```css
 .right-svw { right: 100svw }
 ```
 
-```txt
+```css
 .right-svh { right: 100svh }
 ```
 
-```txt
+```css
 .right-min { right: min-content }
 ```
 
-```txt
+```css
 .right-max { right: max-content }
 ```
 
-```txt
+```css
 .right-fit { right: fit-content }
 ```
 
-```txt
+```css
 .right-3xs { right: 256px }
 ```
 
-```txt
+```css
 .right-2xs { right: 288px }
 ```
 
-```txt
+```css
 .right-xs { right: 320px }
 ```
 
-```txt
+```css
 .right-sm { right: 384px }
 ```
 
-```txt
+```css
 .right-md { right: 448px }
 ```
 
-```txt
+```css
 .right-lg { right: 512px }
 ```
 
-```txt
+```css
 .right-xl { right: 576px }
 ```
 
-```txt
+```css
 .right-2xl { right: 672px }
 ```
 
-```txt
+```css
 .right-3xl { right: 768px }
 ```
 
-```txt
+```css
 .right-4xl { right: 896px }
 ```
 
-```txt
+```css
 .right-5xl { right: 1024px }
 ```
 
-```txt
+```css
 .right-6xl { right: 1152px }
 ```
 
-```txt
+```css
 .right-7xl { right: 1280px }
 ```
 
-```txt
+```css
 .right-<number> { right: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-right-<number> { right: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .right-<fraction> { right: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .right-[<value>] { right: <value> }
 ```
 
-```txt
+```css
 .right-(<custom-property>) { right: var(<custom-property>) }
 ```
 
-```txt
+```css
 .bottom-auto { bottom: auto }
 ```
 
-```txt
+```css
 .bottom-px { bottom: 1px }
 ```
 
-```txt
+```css
 .-bottom-px { bottom: -1px }
 ```
 
-```txt
+```css
 .bottom-full { bottom: 100% }
 ```
 
-```txt
+```css
 .-bottom-full { bottom: -100% }
 ```
 
-```txt
+```css
 .bottom-screen { bottom: 100vw }
 ```
 
-```txt
+```css
 .bottom-dvw { bottom: 100vw }
 ```
 
-```txt
+```css
 .bottom-dvh { bottom: 100vh }
 ```
 
-```txt
+```css
 .bottom-lvw { bottom: 100lvw }
 ```
 
-```txt
+```css
 .bottom-lvh { bottom: 100lvh }
 ```
 
-```txt
+```css
 .bottom-svw { bottom: 100svw }
 ```
 
-```txt
+```css
 .bottom-svh { bottom: 100svh }
 ```
 
-```txt
+```css
 .bottom-min { bottom: min-content }
 ```
 
-```txt
+```css
 .bottom-max { bottom: max-content }
 ```
 
-```txt
+```css
 .bottom-fit { bottom: fit-content }
 ```
 
-```txt
+```css
 .bottom-3xs { bottom: 256px }
 ```
 
-```txt
+```css
 .bottom-2xs { bottom: 288px }
 ```
 
-```txt
+```css
 .bottom-xs { bottom: 320px }
 ```
 
-```txt
+```css
 .bottom-sm { bottom: 384px }
 ```
 
-```txt
+```css
 .bottom-md { bottom: 448px }
 ```
 
-```txt
+```css
 .bottom-lg { bottom: 512px }
 ```
 
-```txt
+```css
 .bottom-xl { bottom: 576px }
 ```
 
-```txt
+```css
 .bottom-2xl { bottom: 672px }
 ```
 
-```txt
+```css
 .bottom-3xl { bottom: 768px }
 ```
 
-```txt
+```css
 .bottom-4xl { bottom: 896px }
 ```
 
-```txt
+```css
 .bottom-5xl { bottom: 1024px }
 ```
 
-```txt
+```css
 .bottom-6xl { bottom: 1152px }
 ```
 
-```txt
+```css
 .bottom-7xl { bottom: 1280px }
 ```
 
-```txt
+```css
 .bottom-<number> { bottom: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-bottom-<number> { bottom: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .bottom-<fraction> { bottom: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .bottom-[<value>] { bottom: <value> }
 ```
 
-```txt
+```css
 .bottom-(<custom-property>) { bottom: var(<custom-property>) }
 ```
 
-```txt
+```css
 .left-auto { left: auto }
 ```
 
-```txt
+```css
 .left-px { left: 1px }
 ```
 
-```txt
+```css
 .-left-px { left: -1px }
 ```
 
-```txt
+```css
 .left-full { left: 100% }
 ```
 
-```txt
+```css
 .-left-full { left: -100% }
 ```
 
-```txt
+```css
 .left-screen { left: 100vw }
 ```
 
-```txt
+```css
 .left-dvw { left: 100vw }
 ```
 
-```txt
+```css
 .left-dvh { left: 100vh }
 ```
 
-```txt
+```css
 .left-lvw { left: 100lvw }
 ```
 
-```txt
+```css
 .left-lvh { left: 100lvh }
 ```
 
-```txt
+```css
 .left-svw { left: 100svw }
 ```
 
-```txt
+```css
 .left-svh { left: 100svh }
 ```
 
-```txt
+```css
 .left-min { left: min-content }
 ```
 
-```txt
+```css
 .left-max { left: max-content }
 ```
 
-```txt
+```css
 .left-fit { left: fit-content }
 ```
 
-```txt
+```css
 .left-3xs { left: 256px }
 ```
 
-```txt
+```css
 .left-2xs { left: 288px }
 ```
 
-```txt
+```css
 .left-xs { left: 320px }
 ```
 
-```txt
+```css
 .left-sm { left: 384px }
 ```
 
-```txt
+```css
 .left-md { left: 448px }
 ```
 
-```txt
+```css
 .left-lg { left: 512px }
 ```
 
-```txt
+```css
 .left-xl { left: 576px }
 ```
 
-```txt
+```css
 .left-2xl { left: 672px }
 ```
 
-```txt
+```css
 .left-3xl { left: 768px }
 ```
 
-```txt
+```css
 .left-4xl { left: 896px }
 ```
 
-```txt
+```css
 .left-5xl { left: 1024px }
 ```
 
-```txt
+```css
 .left-6xl { left: 1152px }
 ```
 
-```txt
+```css
 .left-7xl { left: 1280px }
 ```
 
-```txt
+```css
 .left-<number> { left: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-left-<number> { left: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .left-<fraction> { left: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .left-[<value>] { left: <value> }
 ```
 
-```txt
+```css
 .left-(<custom-property>) { left: var(<custom-property>) }
 ```
 
 ### visibility
 
-```txt
+```css
 .visible { visibility: visible }
 ```
 
-```txt
+```css
 .invisible { visibility: hidden }
 ```
 
-```txt
+```css
 .collapse { visibility: collapse }
 ```
 
 ### z-index
 
-```txt
+```css
 .z-auto { z-index: auto }
 ```
 
-```txt
+```css
 .z-<number> { z-index: <number> }
 ```
 
-```txt
+```css
 .-z-<number> { z-index: -<number> }
 ```
 
-```txt
+```css
 .z-[<value>] { z-index: <value> }
 ```
 
-```txt
+```css
 .z-(<custom-property>) { z-index: var(<custom-property>) }
 ```
 
@@ -2160,869 +2204,869 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### flex-basis
 
-```txt
+```css
 .basis-auto { flex-basis: auto }
 ```
 
-```txt
+```css
 .basis-px { flex-basis: 1px }
 ```
 
-```txt
+```css
 .-basis-px { flex-basis: -1px }
 ```
 
-```txt
+```css
 .basis-full { flex-basis: 100% }
 ```
 
-```txt
+```css
 .-basis-full { flex-basis: -100% }
 ```
 
-```txt
+```css
 .basis-screen { flex-basis: 100vw }
 ```
 
-```txt
+```css
 .basis-dvw { flex-basis: 100vw }
 ```
 
-```txt
+```css
 .basis-dvh { flex-basis: 100vh }
 ```
 
-```txt
+```css
 .basis-lvw { flex-basis: 100lvw }
 ```
 
-```txt
+```css
 .basis-lvh { flex-basis: 100lvh }
 ```
 
-```txt
+```css
 .basis-svw { flex-basis: 100svw }
 ```
 
-```txt
+```css
 .basis-svh { flex-basis: 100svh }
 ```
 
-```txt
+```css
 .basis-min { flex-basis: min-content }
 ```
 
-```txt
+```css
 .basis-max { flex-basis: max-content }
 ```
 
-```txt
+```css
 .basis-fit { flex-basis: fit-content }
 ```
 
-```txt
+```css
 .basis-3xs { flex-basis: 256px }
 ```
 
-```txt
+```css
 .basis-2xs { flex-basis: 288px }
 ```
 
-```txt
+```css
 .basis-xs { flex-basis: 320px }
 ```
 
-```txt
+```css
 .basis-sm { flex-basis: 384px }
 ```
 
-```txt
+```css
 .basis-md { flex-basis: 448px }
 ```
 
-```txt
+```css
 .basis-lg { flex-basis: 512px }
 ```
 
-```txt
+```css
 .basis-xl { flex-basis: 576px }
 ```
 
-```txt
+```css
 .basis-2xl { flex-basis: 672px }
 ```
 
-```txt
+```css
 .basis-3xl { flex-basis: 768px }
 ```
 
-```txt
+```css
 .basis-4xl { flex-basis: 896px }
 ```
 
-```txt
+```css
 .basis-5xl { flex-basis: 1024px }
 ```
 
-```txt
+```css
 .basis-6xl { flex-basis: 1152px }
 ```
 
-```txt
+```css
 .basis-7xl { flex-basis: 1280px }
 ```
 
-```txt
+```css
 .basis-<number> { flex-basis: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-basis-<number> { flex-basis: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .basis-<fraction> { flex-basis: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .basis-[<value>] { flex-basis: <value> }
 ```
 
-```txt
+```css
 .basis-(<custom-property>) { flex-basis: var(<custom-property>) }
 ```
 
 ### flex-direction
 
-```txt
+```css
 .flex-row { flex-direction: row }
 ```
 
-```txt
+```css
 .flex-row-reverse { flex-direction: row-reverse }
 ```
 
-```txt
+```css
 .flex-col { flex-direction: column }
 ```
 
-```txt
+```css
 .flex-col-reverse { flex-direction: column-reverse }
 ```
 
 ### flex-wrap
 
-```txt
+```css
 .flex-nowrap { flex-wrap: nowrap }
 ```
 
-```txt
+```css
 .flex-wrap { flex-wrap: wrap }
 ```
 
-```txt
+```css
 .flex-wrap-reverse { flex-wrap: wrap-reverse }
 ```
 
 ### flex
 
-```txt
+```css
 .flex-auto { flex: 1 1 auto }
 ```
 
-```txt
+```css
 .flex-initial { flex: 0 1 auto }
 ```
 
-```txt
+```css
 .flex-none { flex: none }
 ```
 
-```txt
+```css
 .flex-<number> { flex: <number> }
 ```
 
-```txt
+```css
 .-flex-<number> { flex: -<number> }
 ```
 
-```txt
+```css
 .flex-<fraction> { flex: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .flex-[<value>] { flex: <value> }
 ```
 
-```txt
+```css
 .flex-(<custom-property>) { flex: var(<custom-property>) }
 ```
 
 ### flex-grow
 
-```txt
+```css
 .grow { flex-grow: 1 }
 ```
 
-```txt
+```css
 .grow-<number> { flex-grow: <number> }
 ```
 
-```txt
+```css
 .-grow-<number> { flex-grow: -<number> }
 ```
 
-```txt
+```css
 .grow-[<value>] { flex-grow: <value> }
 ```
 
-```txt
+```css
 .grow-(<custom-property>) { flex-grow: var(<custom-property>) }
 ```
 
 ### flex-shrink
 
-```txt
+```css
 .shrink { flex-shrink: 1 }
 ```
 
-```txt
+```css
 .shrink-<number> { flex-shrink: <number> }
 ```
 
-```txt
+```css
 .-shrink-<number> { flex-shrink: -<number> }
 ```
 
-```txt
+```css
 .shrink-[<value>] { flex-shrink: <value> }
 ```
 
-```txt
+```css
 .shrink-(<custom-property>) { flex-shrink: var(<custom-property>) }
 ```
 
 ### order
 
-```txt
+```css
 .order-first { order: -9999 }
 ```
 
-```txt
+```css
 .order-last { order: 9999 }
 ```
 
-```txt
+```css
 .order-none { order: 0 }
 ```
 
-```txt
+```css
 .order-<number> { order: <number> }
 ```
 
-```txt
+```css
 .-order-<number> { order: -<number> }
 ```
 
-```txt
+```css
 .order-[<value>] { order: <value> }
 ```
 
-```txt
+```css
 .order-(<custom-property>) { order: var(<custom-property>) }
 ```
 
 ### grid-template-columns
 
-```txt
+```css
 .grid-cols-none { grid-template-columns: none }
 ```
 
-```txt
+```css
 .grid-cols-subgrid { grid-template-columns: subgrid }
 ```
 
-```txt
+```css
 .grid-cols-<number> { grid-template-columns: repeat(<number>, minmax(0, 1fr)) }
 ```
 
-```txt
+```css
 .-grid-cols-<number> { grid-template-columns: repeat(-<number>, minmax(0, 1fr)) }
 ```
 
-```txt
+```css
 .grid-cols-[<value>] { grid-template-columns: <value> }
 ```
 
-```txt
+```css
 .grid-cols-(<custom-property>) { grid-template-columns: var(<custom-property>) }
 ```
 
 ### grid-column
 
-```txt
+```css
 .col-span-full { grid-column: 1 / -1 }
 ```
 
-```txt
+```css
 .col-span-<number> { grid-column: span <number> / span <number> }
 ```
 
-```txt
+```css
 .-col-span-<number> { grid-column: span -<number> / span -<number> }
 ```
 
-```txt
+```css
 .col-span-[<value>] { grid-column: <value> }
 ```
 
-```txt
+```css
 .col-span-(<custom-property>) { grid-column: var(<custom-property>) }
 ```
 
-```txt
+```css
 .col-start-auto { grid-column-start: auto }
 ```
 
-```txt
+```css
 .col-start-<number> { grid-column-start: <number> }
 ```
 
-```txt
+```css
 .-col-start-<number> { grid-column-start: -<number> }
 ```
 
-```txt
+```css
 .col-start-[<value>] { grid-column-start: <value> }
 ```
 
-```txt
+```css
 .col-start-(<custom-property>) { grid-column-start: var(<custom-property>) }
 ```
 
-```txt
+```css
 .col-end-auto { grid-column-end: auto }
 ```
 
-```txt
+```css
 .col-end-<number> { grid-column-end: <number> }
 ```
 
-```txt
+```css
 .-col-end-<number> { grid-column-end: -<number> }
 ```
 
-```txt
+```css
 .col-end-[<value>] { grid-column-end: <value> }
 ```
 
-```txt
+```css
 .col-end-(<custom-property>) { grid-column-end: var(<custom-property>) }
 ```
 
-```txt
+```css
 .col-auto { grid-column: auto }
 ```
 
-```txt
+```css
 .col-<number> { grid-column: <number> }
 ```
 
-```txt
+```css
 .-col-<number> { grid-column: -<number> }
 ```
 
-```txt
+```css
 .col-[<value>] { grid-column: <value> }
 ```
 
-```txt
+```css
 .col-(<custom-property>) { grid-column: var(<custom-property>) }
 ```
 
 ### grid-template-rows
 
-```txt
+```css
 .grid-rows-none { grid-template-rows: none }
 ```
 
-```txt
+```css
 .grid-rows-subgrid { grid-template-rows: subgrid }
 ```
 
-```txt
+```css
 .grid-rows-<number> { grid-template-rows: repeat(<number>, minmax(0, 1fr)) }
 ```
 
-```txt
+```css
 .-grid-rows-<number> { grid-template-rows: repeat(-<number>, minmax(0, 1fr)) }
 ```
 
-```txt
+```css
 .grid-rows-[<value>] { grid-template-rows: <value> }
 ```
 
-```txt
+```css
 .grid-rows-(<custom-property>) { grid-template-rows: var(<custom-property>) }
 ```
 
 ### grid-row
 
-```txt
+```css
 .row-span-full { grid-row: 1 / -1 }
 ```
 
-```txt
+```css
 .row-span-<number> { grid-row: span <number> / span <number> }
 ```
 
-```txt
+```css
 .-row-span-<number> { grid-row: span -<number> / span -<number> }
 ```
 
-```txt
+```css
 .row-span-[<value>] { grid-row: <value> }
 ```
 
-```txt
+```css
 .row-span-(<custom-property>) { grid-row: var(<custom-property>) }
 ```
 
-```txt
+```css
 .row-start-auto { grid-row-start: auto }
 ```
 
-```txt
+```css
 .row-start-<number> { grid-row-start: <number> }
 ```
 
-```txt
+```css
 .-row-start-<number> { grid-row-start: -<number> }
 ```
 
-```txt
+```css
 .row-start-[<value>] { grid-row-start: <value> }
 ```
 
-```txt
+```css
 .row-start-(<custom-property>) { grid-row-start: var(<custom-property>) }
 ```
 
-```txt
+```css
 .row-end-auto { grid-row-end: auto }
 ```
 
-```txt
+```css
 .row-end-<number> { grid-row-end: <number> }
 ```
 
-```txt
+```css
 .-row-end-<number> { grid-row-end: -<number> }
 ```
 
-```txt
+```css
 .row-end-[<value>] { grid-row-end: <value> }
 ```
 
-```txt
+```css
 .row-end-(<custom-property>) { grid-row-end: var(<custom-property>) }
 ```
 
-```txt
+```css
 .row-auto { grid-row: auto }
 ```
 
-```txt
+```css
 .row-<number> { grid-row: <number> }
 ```
 
-```txt
+```css
 .-row-<number> { grid-row: -<number> }
 ```
 
-```txt
+```css
 .row-[<value>] { grid-row: <value> }
 ```
 
-```txt
+```css
 .row-(<custom-property>) { grid-row: var(<custom-property>) }
 ```
 
 ### grid-auto-flow
 
-```txt
+```css
 .grid-flow-row { grid-auto-flow: row }
 ```
 
-```txt
+```css
 .grid-flow-col { grid-auto-flow: column }
 ```
 
-```txt
+```css
 .grid-flow-dense { grid-auto-flow: dense }
 ```
 
-```txt
+```css
 .grid-flow-row-dense { grid-auto-flow: row dense }
 ```
 
-```txt
+```css
 .grid-flow-col-dense { grid-auto-flow: column dense }
 ```
 
 ### grid-auto-columns
 
-```txt
+```css
 .auto-cols-auto { grid-auto-columns: auto }
 ```
 
-```txt
+```css
 .auto-cols-min { grid-auto-columns: min-content }
 ```
 
-```txt
+```css
 .auto-cols-max { grid-auto-columns: max-content }
 ```
 
-```txt
+```css
 .auto-cols-fr { grid-auto-columns: minmax(0, 1fr) }
 ```
 
-```txt
+```css
 .auto-cols-[<value>] { grid-auto-columns: <value> }
 ```
 
-```txt
+```css
 .auto-cols-(<custom-property>) { grid-auto-columns: var(<custom-property>) }
 ```
 
 ### grid-auto-rows
 
-```txt
+```css
 .auto-rows-auto { grid-auto-rows: auto }
 ```
 
-```txt
+```css
 .auto-rows-min { grid-auto-rows: min-content }
 ```
 
-```txt
+```css
 .auto-rows-max { grid-auto-rows: max-content }
 ```
 
-```txt
+```css
 .auto-rows-fr { grid-auto-rows: minmax(0, 1fr) }
 ```
 
-```txt
+```css
 .auto-rows-[<value>] { grid-auto-rows: <value> }
 ```
 
-```txt
+```css
 .auto-rows-(<custom-property>) { grid-auto-rows: var(<custom-property>) }
 ```
 
 ### gap
 
-```txt
+```css
 .gap-<number> { gap: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-gap-<number> { gap: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .gap-[<value>] { gap: <value> }
 ```
 
-```txt
+```css
 .gap-(<custom-property>) { gap: var(<custom-property>) }
 ```
 
-```txt
+```css
 .gap-x-<number> { column-gap: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-gap-x-<number> { column-gap: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .gap-x-[<value>] { column-gap: <value> }
 ```
 
-```txt
+```css
 .gap-x-(<custom-property>) { column-gap: var(<custom-property>) }
 ```
 
-```txt
+```css
 .gap-y-<number> { row-gap: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-gap-y-<number> { row-gap: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .gap-y-[<value>] { row-gap: <value> }
 ```
 
-```txt
+```css
 .gap-y-(<custom-property>) { row-gap: var(<custom-property>) }
 ```
 
 ### justify-content
 
-```txt
+```css
 .justify-start { justify-content: flex-start }
 ```
 
-```txt
+```css
 .justify-end { justify-content: flex-end }
 ```
 
-```txt
+```css
 .justify-center { justify-content: center }
 ```
 
-```txt
+```css
 .justify-between { justify-content: space-between }
 ```
 
-```txt
+```css
 .justify-around { justify-content: space-around }
 ```
 
-```txt
+```css
 .justify-evenly { justify-content: space-evenly }
 ```
 
-```txt
+```css
 .justify-stretch { justify-content: stretch }
 ```
 
-```txt
+```css
 .justify-normal { justify-content: normal }
 ```
 
 ### justify-items
 
-```txt
+```css
 .justify-items-start { justify-items: start }
 ```
 
-```txt
+```css
 .justify-items-end { justify-items: end }
 ```
 
-```txt
+```css
 .justify-items-center { justify-items: center }
 ```
 
-```txt
+```css
 .justify-items-stretch { justify-items: stretch }
 ```
 
-```txt
+```css
 .justify-items-normal { justify-items: normal }
 ```
 
 ### justify-self
 
-```txt
+```css
 .justify-self-auto { justify-self: auto }
 ```
 
-```txt
+```css
 .justify-self-start { justify-self: start }
 ```
 
-```txt
+```css
 .justify-self-end { justify-self: end }
 ```
 
-```txt
+```css
 .justify-self-center { justify-self: center }
 ```
 
-```txt
+```css
 .justify-self-stretch { justify-self: stretch }
 ```
 
 ### align-content
 
-```txt
+```css
 .content-normal { align-content: normal }
 ```
 
-```txt
+```css
 .content-center { align-content: center }
 ```
 
-```txt
+```css
 .content-start { align-content: flex-start }
 ```
 
-```txt
+```css
 .content-end { align-content: flex-end }
 ```
 
-```txt
+```css
 .content-between { align-content: space-between }
 ```
 
-```txt
+```css
 .content-around { align-content: space-around }
 ```
 
-```txt
+```css
 .content-evenly { align-content: space-evenly }
 ```
 
-```txt
+```css
 .content-baseline { align-content: baseline }
 ```
 
-```txt
+```css
 .content-stretch { align-content: stretch }
 ```
 
 ### align-items
 
-```txt
+```css
 .items-start { align-items: flex-start }
 ```
 
-```txt
+```css
 .items-end { align-items: flex-end }
 ```
 
-```txt
+```css
 .items-end-safe { align-items: safe flex-end }
 ```
 
-```txt
+```css
 .items-center { align-items: center }
 ```
 
-```txt
+```css
 .items-center-safe { align-items: safe center }
 ```
 
-```txt
+```css
 .items-baseline { align-items: baseline }
 ```
 
-```txt
+```css
 .items-baseline-last { align-items: last baseline }
 ```
 
-```txt
+```css
 .items-stretch { align-items: stretch }
 ```
 
 ### align-self
 
-```txt
+```css
 .self-auto { align-self: auto }
 ```
 
-```txt
+```css
 .self-start { align-self: flex-start }
 ```
 
-```txt
+```css
 .self-end { align-self: flex-end }
 ```
 
-```txt
+```css
 .self-center { align-self: center }
 ```
 
-```txt
+```css
 .self-stretch { align-self: stretch }
 ```
 
-```txt
+```css
 .self-baseline { align-self: baseline }
 ```
 
 ### place-content
 
-```txt
+```css
 .place-content-center { place-content: center }
 ```
 
-```txt
+```css
 .place-content-start { place-content: flex-start }
 ```
 
-```txt
+```css
 .place-content-end { place-content: flex-end }
 ```
 
-```txt
+```css
 .place-content-between { place-content: space-between }
 ```
 
-```txt
+```css
 .place-content-around { place-content: space-around }
 ```
 
-```txt
+```css
 .place-content-evenly { place-content: space-evenly }
 ```
 
-```txt
+```css
 .place-content-baseline { place-content: baseline }
 ```
 
-```txt
+```css
 .place-content-stretch { place-content: stretch }
 ```
 
 ### place-items
 
-```txt
+```css
 .place-items-start { place-items: start }
 ```
 
-```txt
+```css
 .place-items-end { place-items: end }
 ```
 
-```txt
+```css
 .place-items-center { place-items: center }
 ```
 
-```txt
+```css
 .place-items-baseline { place-items: baseline }
 ```
 
-```txt
+```css
 .place-items-stretch { place-items: stretch }
 ```
 
 ### place-self
 
-```txt
+```css
 .place-self-auto { place-self: auto }
 ```
 
-```txt
+```css
 .place-self-start { place-self: start }
 ```
 
-```txt
+```css
 .place-self-end { place-self: end }
 ```
 
-```txt
+```css
 .place-self-center { place-self: center }
 ```
 
-```txt
+```css
 .place-self-stretch { place-self: stretch }
 ```
 
@@ -3030,2565 +3074,2565 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### padding
 
-```txt
+```css
 .p-auto { padding: auto }
 ```
 
-```txt
+```css
 .p-px { padding: 1px }
 ```
 
-```txt
+```css
 .-p-px { padding: -1px }
 ```
 
-```txt
+```css
 .p-full { padding: 100% }
 ```
 
-```txt
+```css
 .-p-full { padding: -100% }
 ```
 
-```txt
+```css
 .p-screen { padding: 100vw }
 ```
 
-```txt
+```css
 .p-dvw { padding: 100vw }
 ```
 
-```txt
+```css
 .p-dvh { padding: 100vh }
 ```
 
-```txt
+```css
 .p-lvw { padding: 100lvw }
 ```
 
-```txt
+```css
 .p-lvh { padding: 100lvh }
 ```
 
-```txt
+```css
 .p-svw { padding: 100svw }
 ```
 
-```txt
+```css
 .p-svh { padding: 100svh }
 ```
 
-```txt
+```css
 .p-min { padding: min-content }
 ```
 
-```txt
+```css
 .p-max { padding: max-content }
 ```
 
-```txt
+```css
 .p-fit { padding: fit-content }
 ```
 
-```txt
+```css
 .p-3xs { padding: 256px }
 ```
 
-```txt
+```css
 .p-2xs { padding: 288px }
 ```
 
-```txt
+```css
 .p-xs { padding: 320px }
 ```
 
-```txt
+```css
 .p-sm { padding: 384px }
 ```
 
-```txt
+```css
 .p-md { padding: 448px }
 ```
 
-```txt
+```css
 .p-lg { padding: 512px }
 ```
 
-```txt
+```css
 .p-xl { padding: 576px }
 ```
 
-```txt
+```css
 .p-2xl { padding: 672px }
 ```
 
-```txt
+```css
 .p-3xl { padding: 768px }
 ```
 
-```txt
+```css
 .p-4xl { padding: 896px }
 ```
 
-```txt
+```css
 .p-5xl { padding: 1024px }
 ```
 
-```txt
+```css
 .p-6xl { padding: 1152px }
 ```
 
-```txt
+```css
 .p-7xl { padding: 1280px }
 ```
 
-```txt
+```css
 .p-<number> { padding: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-p-<number> { padding: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .p-[<value>] { padding: <value> }
 ```
 
-```txt
+```css
 .p-(<custom-property>) { padding: var(<custom-property>) }
 ```
 
-```txt
+```css
 .px-auto { padding-inline: auto }
 ```
 
-```txt
+```css
 .px-px { padding-inline: 1px }
 ```
 
-```txt
+```css
 .-px-px { padding-inline: -1px }
 ```
 
-```txt
+```css
 .px-full { padding-inline: 100% }
 ```
 
-```txt
+```css
 .-px-full { padding-inline: -100% }
 ```
 
-```txt
+```css
 .px-screen { padding-inline: 100vw }
 ```
 
-```txt
+```css
 .px-dvw { padding-inline: 100vw }
 ```
 
-```txt
+```css
 .px-dvh { padding-inline: 100vh }
 ```
 
-```txt
+```css
 .px-lvw { padding-inline: 100lvw }
 ```
 
-```txt
+```css
 .px-lvh { padding-inline: 100lvh }
 ```
 
-```txt
+```css
 .px-svw { padding-inline: 100svw }
 ```
 
-```txt
+```css
 .px-svh { padding-inline: 100svh }
 ```
 
-```txt
+```css
 .px-min { padding-inline: min-content }
 ```
 
-```txt
+```css
 .px-max { padding-inline: max-content }
 ```
 
-```txt
+```css
 .px-fit { padding-inline: fit-content }
 ```
 
-```txt
+```css
 .px-3xs { padding-inline: 256px }
 ```
 
-```txt
+```css
 .px-2xs { padding-inline: 288px }
 ```
 
-```txt
+```css
 .px-xs { padding-inline: 320px }
 ```
 
-```txt
+```css
 .px-sm { padding-inline: 384px }
 ```
 
-```txt
+```css
 .px-md { padding-inline: 448px }
 ```
 
-```txt
+```css
 .px-lg { padding-inline: 512px }
 ```
 
-```txt
+```css
 .px-xl { padding-inline: 576px }
 ```
 
-```txt
+```css
 .px-2xl { padding-inline: 672px }
 ```
 
-```txt
+```css
 .px-3xl { padding-inline: 768px }
 ```
 
-```txt
+```css
 .px-4xl { padding-inline: 896px }
 ```
 
-```txt
+```css
 .px-5xl { padding-inline: 1024px }
 ```
 
-```txt
+```css
 .px-6xl { padding-inline: 1152px }
 ```
 
-```txt
+```css
 .px-7xl { padding-inline: 1280px }
 ```
 
-```txt
+```css
 .px-<number> { padding-inline: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-px-<number> { padding-inline: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .px-[<value>] { padding-inline: <value> }
 ```
 
-```txt
+```css
 .px-(<custom-property>) { padding-inline: var(<custom-property>) }
 ```
 
-```txt
+```css
 .py-auto { padding-block: auto }
 ```
 
-```txt
+```css
 .py-px { padding-block: 1px }
 ```
 
-```txt
+```css
 .-py-px { padding-block: -1px }
 ```
 
-```txt
+```css
 .py-full { padding-block: 100% }
 ```
 
-```txt
+```css
 .-py-full { padding-block: -100% }
 ```
 
-```txt
+```css
 .py-screen { padding-block: 100vw }
 ```
 
-```txt
+```css
 .py-dvw { padding-block: 100vw }
 ```
 
-```txt
+```css
 .py-dvh { padding-block: 100vh }
 ```
 
-```txt
+```css
 .py-lvw { padding-block: 100lvw }
 ```
 
-```txt
+```css
 .py-lvh { padding-block: 100lvh }
 ```
 
-```txt
+```css
 .py-svw { padding-block: 100svw }
 ```
 
-```txt
+```css
 .py-svh { padding-block: 100svh }
 ```
 
-```txt
+```css
 .py-min { padding-block: min-content }
 ```
 
-```txt
+```css
 .py-max { padding-block: max-content }
 ```
 
-```txt
+```css
 .py-fit { padding-block: fit-content }
 ```
 
-```txt
+```css
 .py-3xs { padding-block: 256px }
 ```
 
-```txt
+```css
 .py-2xs { padding-block: 288px }
 ```
 
-```txt
+```css
 .py-xs { padding-block: 320px }
 ```
 
-```txt
+```css
 .py-sm { padding-block: 384px }
 ```
 
-```txt
+```css
 .py-md { padding-block: 448px }
 ```
 
-```txt
+```css
 .py-lg { padding-block: 512px }
 ```
 
-```txt
+```css
 .py-xl { padding-block: 576px }
 ```
 
-```txt
+```css
 .py-2xl { padding-block: 672px }
 ```
 
-```txt
+```css
 .py-3xl { padding-block: 768px }
 ```
 
-```txt
+```css
 .py-4xl { padding-block: 896px }
 ```
 
-```txt
+```css
 .py-5xl { padding-block: 1024px }
 ```
 
-```txt
+```css
 .py-6xl { padding-block: 1152px }
 ```
 
-```txt
+```css
 .py-7xl { padding-block: 1280px }
 ```
 
-```txt
+```css
 .py-<number> { padding-block: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-py-<number> { padding-block: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .py-[<value>] { padding-block: <value> }
 ```
 
-```txt
+```css
 .py-(<custom-property>) { padding-block: var(<custom-property>) }
 ```
 
-```txt
+```css
 .ps-auto { padding-inline-start: auto }
 ```
 
-```txt
+```css
 .ps-px { padding-inline-start: 1px }
 ```
 
-```txt
+```css
 .-ps-px { padding-inline-start: -1px }
 ```
 
-```txt
+```css
 .ps-full { padding-inline-start: 100% }
 ```
 
-```txt
+```css
 .-ps-full { padding-inline-start: -100% }
 ```
 
-```txt
+```css
 .ps-screen { padding-inline-start: 100vw }
 ```
 
-```txt
+```css
 .ps-dvw { padding-inline-start: 100vw }
 ```
 
-```txt
+```css
 .ps-dvh { padding-inline-start: 100vh }
 ```
 
-```txt
+```css
 .ps-lvw { padding-inline-start: 100lvw }
 ```
 
-```txt
+```css
 .ps-lvh { padding-inline-start: 100lvh }
 ```
 
-```txt
+```css
 .ps-svw { padding-inline-start: 100svw }
 ```
 
-```txt
+```css
 .ps-svh { padding-inline-start: 100svh }
 ```
 
-```txt
+```css
 .ps-min { padding-inline-start: min-content }
 ```
 
-```txt
+```css
 .ps-max { padding-inline-start: max-content }
 ```
 
-```txt
+```css
 .ps-fit { padding-inline-start: fit-content }
 ```
 
-```txt
+```css
 .ps-3xs { padding-inline-start: 256px }
 ```
 
-```txt
+```css
 .ps-2xs { padding-inline-start: 288px }
 ```
 
-```txt
+```css
 .ps-xs { padding-inline-start: 320px }
 ```
 
-```txt
+```css
 .ps-sm { padding-inline-start: 384px }
 ```
 
-```txt
+```css
 .ps-md { padding-inline-start: 448px }
 ```
 
-```txt
+```css
 .ps-lg { padding-inline-start: 512px }
 ```
 
-```txt
+```css
 .ps-xl { padding-inline-start: 576px }
 ```
 
-```txt
+```css
 .ps-2xl { padding-inline-start: 672px }
 ```
 
-```txt
+```css
 .ps-3xl { padding-inline-start: 768px }
 ```
 
-```txt
+```css
 .ps-4xl { padding-inline-start: 896px }
 ```
 
-```txt
+```css
 .ps-5xl { padding-inline-start: 1024px }
 ```
 
-```txt
+```css
 .ps-6xl { padding-inline-start: 1152px }
 ```
 
-```txt
+```css
 .ps-7xl { padding-inline-start: 1280px }
 ```
 
-```txt
+```css
 .ps-<number> { padding-inline-start: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-ps-<number> { padding-inline-start: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .ps-[<value>] { padding-inline-start: <value> }
 ```
 
-```txt
+```css
 .ps-(<custom-property>) { padding-inline-start: var(<custom-property>) }
 ```
 
-```txt
+```css
 .pe-auto { padding-inline-end: auto }
 ```
 
-```txt
+```css
 .pe-px { padding-inline-end: 1px }
 ```
 
-```txt
+```css
 .-pe-px { padding-inline-end: -1px }
 ```
 
-```txt
+```css
 .pe-full { padding-inline-end: 100% }
 ```
 
-```txt
+```css
 .-pe-full { padding-inline-end: -100% }
 ```
 
-```txt
+```css
 .pe-screen { padding-inline-end: 100vw }
 ```
 
-```txt
+```css
 .pe-dvw { padding-inline-end: 100vw }
 ```
 
-```txt
+```css
 .pe-dvh { padding-inline-end: 100vh }
 ```
 
-```txt
+```css
 .pe-lvw { padding-inline-end: 100lvw }
 ```
 
-```txt
+```css
 .pe-lvh { padding-inline-end: 100lvh }
 ```
 
-```txt
+```css
 .pe-svw { padding-inline-end: 100svw }
 ```
 
-```txt
+```css
 .pe-svh { padding-inline-end: 100svh }
 ```
 
-```txt
+```css
 .pe-min { padding-inline-end: min-content }
 ```
 
-```txt
+```css
 .pe-max { padding-inline-end: max-content }
 ```
 
-```txt
+```css
 .pe-fit { padding-inline-end: fit-content }
 ```
 
-```txt
+```css
 .pe-3xs { padding-inline-end: 256px }
 ```
 
-```txt
+```css
 .pe-2xs { padding-inline-end: 288px }
 ```
 
-```txt
+```css
 .pe-xs { padding-inline-end: 320px }
 ```
 
-```txt
+```css
 .pe-sm { padding-inline-end: 384px }
 ```
 
-```txt
+```css
 .pe-md { padding-inline-end: 448px }
 ```
 
-```txt
+```css
 .pe-lg { padding-inline-end: 512px }
 ```
 
-```txt
+```css
 .pe-xl { padding-inline-end: 576px }
 ```
 
-```txt
+```css
 .pe-2xl { padding-inline-end: 672px }
 ```
 
-```txt
+```css
 .pe-3xl { padding-inline-end: 768px }
 ```
 
-```txt
+```css
 .pe-4xl { padding-inline-end: 896px }
 ```
 
-```txt
+```css
 .pe-5xl { padding-inline-end: 1024px }
 ```
 
-```txt
+```css
 .pe-6xl { padding-inline-end: 1152px }
 ```
 
-```txt
+```css
 .pe-7xl { padding-inline-end: 1280px }
 ```
 
-```txt
+```css
 .pe-<number> { padding-inline-end: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-pe-<number> { padding-inline-end: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .pe-[<value>] { padding-inline-end: <value> }
 ```
 
-```txt
+```css
 .pe-(<custom-property>) { padding-inline-end: var(<custom-property>) }
 ```
 
-```txt
+```css
 .pt-auto { padding-top: auto }
 ```
 
-```txt
+```css
 .pt-px { padding-top: 1px }
 ```
 
-```txt
+```css
 .-pt-px { padding-top: -1px }
 ```
 
-```txt
+```css
 .pt-full { padding-top: 100% }
 ```
 
-```txt
+```css
 .-pt-full { padding-top: -100% }
 ```
 
-```txt
+```css
 .pt-screen { padding-top: 100vw }
 ```
 
-```txt
+```css
 .pt-dvw { padding-top: 100vw }
 ```
 
-```txt
+```css
 .pt-dvh { padding-top: 100vh }
 ```
 
-```txt
+```css
 .pt-lvw { padding-top: 100lvw }
 ```
 
-```txt
+```css
 .pt-lvh { padding-top: 100lvh }
 ```
 
-```txt
+```css
 .pt-svw { padding-top: 100svw }
 ```
 
-```txt
+```css
 .pt-svh { padding-top: 100svh }
 ```
 
-```txt
+```css
 .pt-min { padding-top: min-content }
 ```
 
-```txt
+```css
 .pt-max { padding-top: max-content }
 ```
 
-```txt
+```css
 .pt-fit { padding-top: fit-content }
 ```
 
-```txt
+```css
 .pt-3xs { padding-top: 256px }
 ```
 
-```txt
+```css
 .pt-2xs { padding-top: 288px }
 ```
 
-```txt
+```css
 .pt-xs { padding-top: 320px }
 ```
 
-```txt
+```css
 .pt-sm { padding-top: 384px }
 ```
 
-```txt
+```css
 .pt-md { padding-top: 448px }
 ```
 
-```txt
+```css
 .pt-lg { padding-top: 512px }
 ```
 
-```txt
+```css
 .pt-xl { padding-top: 576px }
 ```
 
-```txt
+```css
 .pt-2xl { padding-top: 672px }
 ```
 
-```txt
+```css
 .pt-3xl { padding-top: 768px }
 ```
 
-```txt
+```css
 .pt-4xl { padding-top: 896px }
 ```
 
-```txt
+```css
 .pt-5xl { padding-top: 1024px }
 ```
 
-```txt
+```css
 .pt-6xl { padding-top: 1152px }
 ```
 
-```txt
+```css
 .pt-7xl { padding-top: 1280px }
 ```
 
-```txt
+```css
 .pt-<number> { padding-top: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-pt-<number> { padding-top: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .pt-[<value>] { padding-top: <value> }
 ```
 
-```txt
+```css
 .pt-(<custom-property>) { padding-top: var(<custom-property>) }
 ```
 
-```txt
+```css
 .pr-auto { padding-right: auto }
 ```
 
-```txt
+```css
 .pr-px { padding-right: 1px }
 ```
 
-```txt
+```css
 .-pr-px { padding-right: -1px }
 ```
 
-```txt
+```css
 .pr-full { padding-right: 100% }
 ```
 
-```txt
+```css
 .-pr-full { padding-right: -100% }
 ```
 
-```txt
+```css
 .pr-screen { padding-right: 100vw }
 ```
 
-```txt
+```css
 .pr-dvw { padding-right: 100vw }
 ```
 
-```txt
+```css
 .pr-dvh { padding-right: 100vh }
 ```
 
-```txt
+```css
 .pr-lvw { padding-right: 100lvw }
 ```
 
-```txt
+```css
 .pr-lvh { padding-right: 100lvh }
 ```
 
-```txt
+```css
 .pr-svw { padding-right: 100svw }
 ```
 
-```txt
+```css
 .pr-svh { padding-right: 100svh }
 ```
 
-```txt
+```css
 .pr-min { padding-right: min-content }
 ```
 
-```txt
+```css
 .pr-max { padding-right: max-content }
 ```
 
-```txt
+```css
 .pr-fit { padding-right: fit-content }
 ```
 
-```txt
+```css
 .pr-3xs { padding-right: 256px }
 ```
 
-```txt
+```css
 .pr-2xs { padding-right: 288px }
 ```
 
-```txt
+```css
 .pr-xs { padding-right: 320px }
 ```
 
-```txt
+```css
 .pr-sm { padding-right: 384px }
 ```
 
-```txt
+```css
 .pr-md { padding-right: 448px }
 ```
 
-```txt
+```css
 .pr-lg { padding-right: 512px }
 ```
 
-```txt
+```css
 .pr-xl { padding-right: 576px }
 ```
 
-```txt
+```css
 .pr-2xl { padding-right: 672px }
 ```
 
-```txt
+```css
 .pr-3xl { padding-right: 768px }
 ```
 
-```txt
+```css
 .pr-4xl { padding-right: 896px }
 ```
 
-```txt
+```css
 .pr-5xl { padding-right: 1024px }
 ```
 
-```txt
+```css
 .pr-6xl { padding-right: 1152px }
 ```
 
-```txt
+```css
 .pr-7xl { padding-right: 1280px }
 ```
 
-```txt
+```css
 .pr-<number> { padding-right: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-pr-<number> { padding-right: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .pr-[<value>] { padding-right: <value> }
 ```
 
-```txt
+```css
 .pr-(<custom-property>) { padding-right: var(<custom-property>) }
 ```
 
-```txt
+```css
 .pb-auto { padding-bottom: auto }
 ```
 
-```txt
+```css
 .pb-px { padding-bottom: 1px }
 ```
 
-```txt
+```css
 .-pb-px { padding-bottom: -1px }
 ```
 
-```txt
+```css
 .pb-full { padding-bottom: 100% }
 ```
 
-```txt
+```css
 .-pb-full { padding-bottom: -100% }
 ```
 
-```txt
+```css
 .pb-screen { padding-bottom: 100vw }
 ```
 
-```txt
+```css
 .pb-dvw { padding-bottom: 100vw }
 ```
 
-```txt
+```css
 .pb-dvh { padding-bottom: 100vh }
 ```
 
-```txt
+```css
 .pb-lvw { padding-bottom: 100lvw }
 ```
 
-```txt
+```css
 .pb-lvh { padding-bottom: 100lvh }
 ```
 
-```txt
+```css
 .pb-svw { padding-bottom: 100svw }
 ```
 
-```txt
+```css
 .pb-svh { padding-bottom: 100svh }
 ```
 
-```txt
+```css
 .pb-min { padding-bottom: min-content }
 ```
 
-```txt
+```css
 .pb-max { padding-bottom: max-content }
 ```
 
-```txt
+```css
 .pb-fit { padding-bottom: fit-content }
 ```
 
-```txt
+```css
 .pb-3xs { padding-bottom: 256px }
 ```
 
-```txt
+```css
 .pb-2xs { padding-bottom: 288px }
 ```
 
-```txt
+```css
 .pb-xs { padding-bottom: 320px }
 ```
 
-```txt
+```css
 .pb-sm { padding-bottom: 384px }
 ```
 
-```txt
+```css
 .pb-md { padding-bottom: 448px }
 ```
 
-```txt
+```css
 .pb-lg { padding-bottom: 512px }
 ```
 
-```txt
+```css
 .pb-xl { padding-bottom: 576px }
 ```
 
-```txt
+```css
 .pb-2xl { padding-bottom: 672px }
 ```
 
-```txt
+```css
 .pb-3xl { padding-bottom: 768px }
 ```
 
-```txt
+```css
 .pb-4xl { padding-bottom: 896px }
 ```
 
-```txt
+```css
 .pb-5xl { padding-bottom: 1024px }
 ```
 
-```txt
+```css
 .pb-6xl { padding-bottom: 1152px }
 ```
 
-```txt
+```css
 .pb-7xl { padding-bottom: 1280px }
 ```
 
-```txt
+```css
 .pb-<number> { padding-bottom: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-pb-<number> { padding-bottom: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .pb-[<value>] { padding-bottom: <value> }
 ```
 
-```txt
+```css
 .pb-(<custom-property>) { padding-bottom: var(<custom-property>) }
 ```
 
-```txt
+```css
 .pl-auto { padding-left: auto }
 ```
 
-```txt
+```css
 .pl-px { padding-left: 1px }
 ```
 
-```txt
+```css
 .-pl-px { padding-left: -1px }
 ```
 
-```txt
+```css
 .pl-full { padding-left: 100% }
 ```
 
-```txt
+```css
 .-pl-full { padding-left: -100% }
 ```
 
-```txt
+```css
 .pl-screen { padding-left: 100vw }
 ```
 
-```txt
+```css
 .pl-dvw { padding-left: 100vw }
 ```
 
-```txt
+```css
 .pl-dvh { padding-left: 100vh }
 ```
 
-```txt
+```css
 .pl-lvw { padding-left: 100lvw }
 ```
 
-```txt
+```css
 .pl-lvh { padding-left: 100lvh }
 ```
 
-```txt
+```css
 .pl-svw { padding-left: 100svw }
 ```
 
-```txt
+```css
 .pl-svh { padding-left: 100svh }
 ```
 
-```txt
+```css
 .pl-min { padding-left: min-content }
 ```
 
-```txt
+```css
 .pl-max { padding-left: max-content }
 ```
 
-```txt
+```css
 .pl-fit { padding-left: fit-content }
 ```
 
-```txt
+```css
 .pl-3xs { padding-left: 256px }
 ```
 
-```txt
+```css
 .pl-2xs { padding-left: 288px }
 ```
 
-```txt
+```css
 .pl-xs { padding-left: 320px }
 ```
 
-```txt
+```css
 .pl-sm { padding-left: 384px }
 ```
 
-```txt
+```css
 .pl-md { padding-left: 448px }
 ```
 
-```txt
+```css
 .pl-lg { padding-left: 512px }
 ```
 
-```txt
+```css
 .pl-xl { padding-left: 576px }
 ```
 
-```txt
+```css
 .pl-2xl { padding-left: 672px }
 ```
 
-```txt
+```css
 .pl-3xl { padding-left: 768px }
 ```
 
-```txt
+```css
 .pl-4xl { padding-left: 896px }
 ```
 
-```txt
+```css
 .pl-5xl { padding-left: 1024px }
 ```
 
-```txt
+```css
 .pl-6xl { padding-left: 1152px }
 ```
 
-```txt
+```css
 .pl-7xl { padding-left: 1280px }
 ```
 
-```txt
+```css
 .pl-<number> { padding-left: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-pl-<number> { padding-left: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .pl-[<value>] { padding-left: <value> }
 ```
 
-```txt
+```css
 .pl-(<custom-property>) { padding-left: var(<custom-property>) }
 ```
 
 ### margin
 
-```txt
+```css
 .m-auto { margin: auto }
 ```
 
-```txt
+```css
 .m-px { margin: 1px }
 ```
 
-```txt
+```css
 .-m-px { margin: -1px }
 ```
 
-```txt
+```css
 .m-full { margin: 100% }
 ```
 
-```txt
+```css
 .-m-full { margin: -100% }
 ```
 
-```txt
+```css
 .m-screen { margin: 100vw }
 ```
 
-```txt
+```css
 .m-dvw { margin: 100vw }
 ```
 
-```txt
+```css
 .m-dvh { margin: 100vh }
 ```
 
-```txt
+```css
 .m-lvw { margin: 100lvw }
 ```
 
-```txt
+```css
 .m-lvh { margin: 100lvh }
 ```
 
-```txt
+```css
 .m-svw { margin: 100svw }
 ```
 
-```txt
+```css
 .m-svh { margin: 100svh }
 ```
 
-```txt
+```css
 .m-min { margin: min-content }
 ```
 
-```txt
+```css
 .m-max { margin: max-content }
 ```
 
-```txt
+```css
 .m-fit { margin: fit-content }
 ```
 
-```txt
+```css
 .m-3xs { margin: 256px }
 ```
 
-```txt
+```css
 .m-2xs { margin: 288px }
 ```
 
-```txt
+```css
 .m-xs { margin: 320px }
 ```
 
-```txt
+```css
 .m-sm { margin: 384px }
 ```
 
-```txt
+```css
 .m-md { margin: 448px }
 ```
 
-```txt
+```css
 .m-lg { margin: 512px }
 ```
 
-```txt
+```css
 .m-xl { margin: 576px }
 ```
 
-```txt
+```css
 .m-2xl { margin: 672px }
 ```
 
-```txt
+```css
 .m-3xl { margin: 768px }
 ```
 
-```txt
+```css
 .m-4xl { margin: 896px }
 ```
 
-```txt
+```css
 .m-5xl { margin: 1024px }
 ```
 
-```txt
+```css
 .m-6xl { margin: 1152px }
 ```
 
-```txt
+```css
 .m-7xl { margin: 1280px }
 ```
 
-```txt
+```css
 .m-<number> { margin: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-m-<number> { margin: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .m-[<value>] { margin: <value> }
 ```
 
-```txt
+```css
 .m-(<custom-property>) { margin: var(<custom-property>) }
 ```
 
-```txt
+```css
 .mx-auto { margin-inline: auto }
 ```
 
-```txt
+```css
 .mx-px { margin-inline: 1px }
 ```
 
-```txt
+```css
 .-mx-px { margin-inline: -1px }
 ```
 
-```txt
+```css
 .mx-full { margin-inline: 100% }
 ```
 
-```txt
+```css
 .-mx-full { margin-inline: -100% }
 ```
 
-```txt
+```css
 .mx-screen { margin-inline: 100vw }
 ```
 
-```txt
+```css
 .mx-dvw { margin-inline: 100vw }
 ```
 
-```txt
+```css
 .mx-dvh { margin-inline: 100vh }
 ```
 
-```txt
+```css
 .mx-lvw { margin-inline: 100lvw }
 ```
 
-```txt
+```css
 .mx-lvh { margin-inline: 100lvh }
 ```
 
-```txt
+```css
 .mx-svw { margin-inline: 100svw }
 ```
 
-```txt
+```css
 .mx-svh { margin-inline: 100svh }
 ```
 
-```txt
+```css
 .mx-min { margin-inline: min-content }
 ```
 
-```txt
+```css
 .mx-max { margin-inline: max-content }
 ```
 
-```txt
+```css
 .mx-fit { margin-inline: fit-content }
 ```
 
-```txt
+```css
 .mx-3xs { margin-inline: 256px }
 ```
 
-```txt
+```css
 .mx-2xs { margin-inline: 288px }
 ```
 
-```txt
+```css
 .mx-xs { margin-inline: 320px }
 ```
 
-```txt
+```css
 .mx-sm { margin-inline: 384px }
 ```
 
-```txt
+```css
 .mx-md { margin-inline: 448px }
 ```
 
-```txt
+```css
 .mx-lg { margin-inline: 512px }
 ```
 
-```txt
+```css
 .mx-xl { margin-inline: 576px }
 ```
 
-```txt
+```css
 .mx-2xl { margin-inline: 672px }
 ```
 
-```txt
+```css
 .mx-3xl { margin-inline: 768px }
 ```
 
-```txt
+```css
 .mx-4xl { margin-inline: 896px }
 ```
 
-```txt
+```css
 .mx-5xl { margin-inline: 1024px }
 ```
 
-```txt
+```css
 .mx-6xl { margin-inline: 1152px }
 ```
 
-```txt
+```css
 .mx-7xl { margin-inline: 1280px }
 ```
 
-```txt
+```css
 .mx-<number> { margin-inline: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-mx-<number> { margin-inline: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .mx-[<value>] { margin-inline: <value> }
 ```
 
-```txt
+```css
 .mx-(<custom-property>) { margin-inline: var(<custom-property>) }
 ```
 
-```txt
+```css
 .my-auto { margin-block: auto }
 ```
 
-```txt
+```css
 .my-px { margin-block: 1px }
 ```
 
-```txt
+```css
 .-my-px { margin-block: -1px }
 ```
 
-```txt
+```css
 .my-full { margin-block: 100% }
 ```
 
-```txt
+```css
 .-my-full { margin-block: -100% }
 ```
 
-```txt
+```css
 .my-screen { margin-block: 100vw }
 ```
 
-```txt
+```css
 .my-dvw { margin-block: 100vw }
 ```
 
-```txt
+```css
 .my-dvh { margin-block: 100vh }
 ```
 
-```txt
+```css
 .my-lvw { margin-block: 100lvw }
 ```
 
-```txt
+```css
 .my-lvh { margin-block: 100lvh }
 ```
 
-```txt
+```css
 .my-svw { margin-block: 100svw }
 ```
 
-```txt
+```css
 .my-svh { margin-block: 100svh }
 ```
 
-```txt
+```css
 .my-min { margin-block: min-content }
 ```
 
-```txt
+```css
 .my-max { margin-block: max-content }
 ```
 
-```txt
+```css
 .my-fit { margin-block: fit-content }
 ```
 
-```txt
+```css
 .my-3xs { margin-block: 256px }
 ```
 
-```txt
+```css
 .my-2xs { margin-block: 288px }
 ```
 
-```txt
+```css
 .my-xs { margin-block: 320px }
 ```
 
-```txt
+```css
 .my-sm { margin-block: 384px }
 ```
 
-```txt
+```css
 .my-md { margin-block: 448px }
 ```
 
-```txt
+```css
 .my-lg { margin-block: 512px }
 ```
 
-```txt
+```css
 .my-xl { margin-block: 576px }
 ```
 
-```txt
+```css
 .my-2xl { margin-block: 672px }
 ```
 
-```txt
+```css
 .my-3xl { margin-block: 768px }
 ```
 
-```txt
+```css
 .my-4xl { margin-block: 896px }
 ```
 
-```txt
+```css
 .my-5xl { margin-block: 1024px }
 ```
 
-```txt
+```css
 .my-6xl { margin-block: 1152px }
 ```
 
-```txt
+```css
 .my-7xl { margin-block: 1280px }
 ```
 
-```txt
+```css
 .my-<number> { margin-block: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-my-<number> { margin-block: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .my-[<value>] { margin-block: <value> }
 ```
 
-```txt
+```css
 .my-(<custom-property>) { margin-block: var(<custom-property>) }
 ```
 
-```txt
+```css
 .ms-auto { margin-inline-start: auto }
 ```
 
-```txt
+```css
 .ms-px { margin-inline-start: 1px }
 ```
 
-```txt
+```css
 .-ms-px { margin-inline-start: -1px }
 ```
 
-```txt
+```css
 .ms-full { margin-inline-start: 100% }
 ```
 
-```txt
+```css
 .-ms-full { margin-inline-start: -100% }
 ```
 
-```txt
+```css
 .ms-screen { margin-inline-start: 100vw }
 ```
 
-```txt
+```css
 .ms-dvw { margin-inline-start: 100vw }
 ```
 
-```txt
+```css
 .ms-dvh { margin-inline-start: 100vh }
 ```
 
-```txt
+```css
 .ms-lvw { margin-inline-start: 100lvw }
 ```
 
-```txt
+```css
 .ms-lvh { margin-inline-start: 100lvh }
 ```
 
-```txt
+```css
 .ms-svw { margin-inline-start: 100svw }
 ```
 
-```txt
+```css
 .ms-svh { margin-inline-start: 100svh }
 ```
 
-```txt
+```css
 .ms-min { margin-inline-start: min-content }
 ```
 
-```txt
+```css
 .ms-max { margin-inline-start: max-content }
 ```
 
-```txt
+```css
 .ms-fit { margin-inline-start: fit-content }
 ```
 
-```txt
+```css
 .ms-3xs { margin-inline-start: 256px }
 ```
 
-```txt
+```css
 .ms-2xs { margin-inline-start: 288px }
 ```
 
-```txt
+```css
 .ms-xs { margin-inline-start: 320px }
 ```
 
-```txt
+```css
 .ms-sm { margin-inline-start: 384px }
 ```
 
-```txt
+```css
 .ms-md { margin-inline-start: 448px }
 ```
 
-```txt
+```css
 .ms-lg { margin-inline-start: 512px }
 ```
 
-```txt
+```css
 .ms-xl { margin-inline-start: 576px }
 ```
 
-```txt
+```css
 .ms-2xl { margin-inline-start: 672px }
 ```
 
-```txt
+```css
 .ms-3xl { margin-inline-start: 768px }
 ```
 
-```txt
+```css
 .ms-4xl { margin-inline-start: 896px }
 ```
 
-```txt
+```css
 .ms-5xl { margin-inline-start: 1024px }
 ```
 
-```txt
+```css
 .ms-6xl { margin-inline-start: 1152px }
 ```
 
-```txt
+```css
 .ms-7xl { margin-inline-start: 1280px }
 ```
 
-```txt
+```css
 .ms-<number> { margin-inline-start: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-ms-<number> { margin-inline-start: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .ms-[<value>] { margin-inline-start: <value> }
 ```
 
-```txt
+```css
 .ms-(<custom-property>) { margin-inline-start: var(<custom-property>) }
 ```
 
-```txt
+```css
 .me-auto { margin-inline-end: auto }
 ```
 
-```txt
+```css
 .me-px { margin-inline-end: 1px }
 ```
 
-```txt
+```css
 .-me-px { margin-inline-end: -1px }
 ```
 
-```txt
+```css
 .me-full { margin-inline-end: 100% }
 ```
 
-```txt
+```css
 .-me-full { margin-inline-end: -100% }
 ```
 
-```txt
+```css
 .me-screen { margin-inline-end: 100vw }
 ```
 
-```txt
+```css
 .me-dvw { margin-inline-end: 100vw }
 ```
 
-```txt
+```css
 .me-dvh { margin-inline-end: 100vh }
 ```
 
-```txt
+```css
 .me-lvw { margin-inline-end: 100lvw }
 ```
 
-```txt
+```css
 .me-lvh { margin-inline-end: 100lvh }
 ```
 
-```txt
+```css
 .me-svw { margin-inline-end: 100svw }
 ```
 
-```txt
+```css
 .me-svh { margin-inline-end: 100svh }
 ```
 
-```txt
+```css
 .me-min { margin-inline-end: min-content }
 ```
 
-```txt
+```css
 .me-max { margin-inline-end: max-content }
 ```
 
-```txt
+```css
 .me-fit { margin-inline-end: fit-content }
 ```
 
-```txt
+```css
 .me-3xs { margin-inline-end: 256px }
 ```
 
-```txt
+```css
 .me-2xs { margin-inline-end: 288px }
 ```
 
-```txt
+```css
 .me-xs { margin-inline-end: 320px }
 ```
 
-```txt
+```css
 .me-sm { margin-inline-end: 384px }
 ```
 
-```txt
+```css
 .me-md { margin-inline-end: 448px }
 ```
 
-```txt
+```css
 .me-lg { margin-inline-end: 512px }
 ```
 
-```txt
+```css
 .me-xl { margin-inline-end: 576px }
 ```
 
-```txt
+```css
 .me-2xl { margin-inline-end: 672px }
 ```
 
-```txt
+```css
 .me-3xl { margin-inline-end: 768px }
 ```
 
-```txt
+```css
 .me-4xl { margin-inline-end: 896px }
 ```
 
-```txt
+```css
 .me-5xl { margin-inline-end: 1024px }
 ```
 
-```txt
+```css
 .me-6xl { margin-inline-end: 1152px }
 ```
 
-```txt
+```css
 .me-7xl { margin-inline-end: 1280px }
 ```
 
-```txt
+```css
 .me-<number> { margin-inline-end: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-me-<number> { margin-inline-end: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .me-[<value>] { margin-inline-end: <value> }
 ```
 
-```txt
+```css
 .me-(<custom-property>) { margin-inline-end: var(<custom-property>) }
 ```
 
-```txt
+```css
 .mt-auto { margin-top: auto }
 ```
 
-```txt
+```css
 .mt-px { margin-top: 1px }
 ```
 
-```txt
+```css
 .-mt-px { margin-top: -1px }
 ```
 
-```txt
+```css
 .mt-full { margin-top: 100% }
 ```
 
-```txt
+```css
 .-mt-full { margin-top: -100% }
 ```
 
-```txt
+```css
 .mt-screen { margin-top: 100vw }
 ```
 
-```txt
+```css
 .mt-dvw { margin-top: 100vw }
 ```
 
-```txt
+```css
 .mt-dvh { margin-top: 100vh }
 ```
 
-```txt
+```css
 .mt-lvw { margin-top: 100lvw }
 ```
 
-```txt
+```css
 .mt-lvh { margin-top: 100lvh }
 ```
 
-```txt
+```css
 .mt-svw { margin-top: 100svw }
 ```
 
-```txt
+```css
 .mt-svh { margin-top: 100svh }
 ```
 
-```txt
+```css
 .mt-min { margin-top: min-content }
 ```
 
-```txt
+```css
 .mt-max { margin-top: max-content }
 ```
 
-```txt
+```css
 .mt-fit { margin-top: fit-content }
 ```
 
-```txt
+```css
 .mt-3xs { margin-top: 256px }
 ```
 
-```txt
+```css
 .mt-2xs { margin-top: 288px }
 ```
 
-```txt
+```css
 .mt-xs { margin-top: 320px }
 ```
 
-```txt
+```css
 .mt-sm { margin-top: 384px }
 ```
 
-```txt
+```css
 .mt-md { margin-top: 448px }
 ```
 
-```txt
+```css
 .mt-lg { margin-top: 512px }
 ```
 
-```txt
+```css
 .mt-xl { margin-top: 576px }
 ```
 
-```txt
+```css
 .mt-2xl { margin-top: 672px }
 ```
 
-```txt
+```css
 .mt-3xl { margin-top: 768px }
 ```
 
-```txt
+```css
 .mt-4xl { margin-top: 896px }
 ```
 
-```txt
+```css
 .mt-5xl { margin-top: 1024px }
 ```
 
-```txt
+```css
 .mt-6xl { margin-top: 1152px }
 ```
 
-```txt
+```css
 .mt-7xl { margin-top: 1280px }
 ```
 
-```txt
+```css
 .mt-<number> { margin-top: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-mt-<number> { margin-top: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .mt-[<value>] { margin-top: <value> }
 ```
 
-```txt
+```css
 .mt-(<custom-property>) { margin-top: var(<custom-property>) }
 ```
 
-```txt
+```css
 .mr-auto { margin-right: auto }
 ```
 
-```txt
+```css
 .mr-px { margin-right: 1px }
 ```
 
-```txt
+```css
 .-mr-px { margin-right: -1px }
 ```
 
-```txt
+```css
 .mr-full { margin-right: 100% }
 ```
 
-```txt
+```css
 .-mr-full { margin-right: -100% }
 ```
 
-```txt
+```css
 .mr-screen { margin-right: 100vw }
 ```
 
-```txt
+```css
 .mr-dvw { margin-right: 100vw }
 ```
 
-```txt
+```css
 .mr-dvh { margin-right: 100vh }
 ```
 
-```txt
+```css
 .mr-lvw { margin-right: 100lvw }
 ```
 
-```txt
+```css
 .mr-lvh { margin-right: 100lvh }
 ```
 
-```txt
+```css
 .mr-svw { margin-right: 100svw }
 ```
 
-```txt
+```css
 .mr-svh { margin-right: 100svh }
 ```
 
-```txt
+```css
 .mr-min { margin-right: min-content }
 ```
 
-```txt
+```css
 .mr-max { margin-right: max-content }
 ```
 
-```txt
+```css
 .mr-fit { margin-right: fit-content }
 ```
 
-```txt
+```css
 .mr-3xs { margin-right: 256px }
 ```
 
-```txt
+```css
 .mr-2xs { margin-right: 288px }
 ```
 
-```txt
+```css
 .mr-xs { margin-right: 320px }
 ```
 
-```txt
+```css
 .mr-sm { margin-right: 384px }
 ```
 
-```txt
+```css
 .mr-md { margin-right: 448px }
 ```
 
-```txt
+```css
 .mr-lg { margin-right: 512px }
 ```
 
-```txt
+```css
 .mr-xl { margin-right: 576px }
 ```
 
-```txt
+```css
 .mr-2xl { margin-right: 672px }
 ```
 
-```txt
+```css
 .mr-3xl { margin-right: 768px }
 ```
 
-```txt
+```css
 .mr-4xl { margin-right: 896px }
 ```
 
-```txt
+```css
 .mr-5xl { margin-right: 1024px }
 ```
 
-```txt
+```css
 .mr-6xl { margin-right: 1152px }
 ```
 
-```txt
+```css
 .mr-7xl { margin-right: 1280px }
 ```
 
-```txt
+```css
 .mr-<number> { margin-right: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-mr-<number> { margin-right: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .mr-[<value>] { margin-right: <value> }
 ```
 
-```txt
+```css
 .mr-(<custom-property>) { margin-right: var(<custom-property>) }
 ```
 
-```txt
+```css
 .mb-auto { margin-bottom: auto }
 ```
 
-```txt
+```css
 .mb-px { margin-bottom: 1px }
 ```
 
-```txt
+```css
 .-mb-px { margin-bottom: -1px }
 ```
 
-```txt
+```css
 .mb-full { margin-bottom: 100% }
 ```
 
-```txt
+```css
 .-mb-full { margin-bottom: -100% }
 ```
 
-```txt
+```css
 .mb-screen { margin-bottom: 100vw }
 ```
 
-```txt
+```css
 .mb-dvw { margin-bottom: 100vw }
 ```
 
-```txt
+```css
 .mb-dvh { margin-bottom: 100vh }
 ```
 
-```txt
+```css
 .mb-lvw { margin-bottom: 100lvw }
 ```
 
-```txt
+```css
 .mb-lvh { margin-bottom: 100lvh }
 ```
 
-```txt
+```css
 .mb-svw { margin-bottom: 100svw }
 ```
 
-```txt
+```css
 .mb-svh { margin-bottom: 100svh }
 ```
 
-```txt
+```css
 .mb-min { margin-bottom: min-content }
 ```
 
-```txt
+```css
 .mb-max { margin-bottom: max-content }
 ```
 
-```txt
+```css
 .mb-fit { margin-bottom: fit-content }
 ```
 
-```txt
+```css
 .mb-3xs { margin-bottom: 256px }
 ```
 
-```txt
+```css
 .mb-2xs { margin-bottom: 288px }
 ```
 
-```txt
+```css
 .mb-xs { margin-bottom: 320px }
 ```
 
-```txt
+```css
 .mb-sm { margin-bottom: 384px }
 ```
 
-```txt
+```css
 .mb-md { margin-bottom: 448px }
 ```
 
-```txt
+```css
 .mb-lg { margin-bottom: 512px }
 ```
 
-```txt
+```css
 .mb-xl { margin-bottom: 576px }
 ```
 
-```txt
+```css
 .mb-2xl { margin-bottom: 672px }
 ```
 
-```txt
+```css
 .mb-3xl { margin-bottom: 768px }
 ```
 
-```txt
+```css
 .mb-4xl { margin-bottom: 896px }
 ```
 
-```txt
+```css
 .mb-5xl { margin-bottom: 1024px }
 ```
 
-```txt
+```css
 .mb-6xl { margin-bottom: 1152px }
 ```
 
-```txt
+```css
 .mb-7xl { margin-bottom: 1280px }
 ```
 
-```txt
+```css
 .mb-<number> { margin-bottom: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-mb-<number> { margin-bottom: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .mb-[<value>] { margin-bottom: <value> }
 ```
 
-```txt
+```css
 .mb-(<custom-property>) { margin-bottom: var(<custom-property>) }
 ```
 
-```txt
+```css
 .ml-auto { margin-left: auto }
 ```
 
-```txt
+```css
 .ml-px { margin-left: 1px }
 ```
 
-```txt
+```css
 .-ml-px { margin-left: -1px }
 ```
 
-```txt
+```css
 .ml-full { margin-left: 100% }
 ```
 
-```txt
+```css
 .-ml-full { margin-left: -100% }
 ```
 
-```txt
+```css
 .ml-screen { margin-left: 100vw }
 ```
 
-```txt
+```css
 .ml-dvw { margin-left: 100vw }
 ```
 
-```txt
+```css
 .ml-dvh { margin-left: 100vh }
 ```
 
-```txt
+```css
 .ml-lvw { margin-left: 100lvw }
 ```
 
-```txt
+```css
 .ml-lvh { margin-left: 100lvh }
 ```
 
-```txt
+```css
 .ml-svw { margin-left: 100svw }
 ```
 
-```txt
+```css
 .ml-svh { margin-left: 100svh }
 ```
 
-```txt
+```css
 .ml-min { margin-left: min-content }
 ```
 
-```txt
+```css
 .ml-max { margin-left: max-content }
 ```
 
-```txt
+```css
 .ml-fit { margin-left: fit-content }
 ```
 
-```txt
+```css
 .ml-3xs { margin-left: 256px }
 ```
 
-```txt
+```css
 .ml-2xs { margin-left: 288px }
 ```
 
-```txt
+```css
 .ml-xs { margin-left: 320px }
 ```
 
-```txt
+```css
 .ml-sm { margin-left: 384px }
 ```
 
-```txt
+```css
 .ml-md { margin-left: 448px }
 ```
 
-```txt
+```css
 .ml-lg { margin-left: 512px }
 ```
 
-```txt
+```css
 .ml-xl { margin-left: 576px }
 ```
 
-```txt
+```css
 .ml-2xl { margin-left: 672px }
 ```
 
-```txt
+```css
 .ml-3xl { margin-left: 768px }
 ```
 
-```txt
+```css
 .ml-4xl { margin-left: 896px }
 ```
 
-```txt
+```css
 .ml-5xl { margin-left: 1024px }
 ```
 
-```txt
+```css
 .ml-6xl { margin-left: 1152px }
 ```
 
-```txt
+```css
 .ml-7xl { margin-left: 1280px }
 ```
 
-```txt
+```css
 .ml-<number> { margin-left: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-ml-<number> { margin-left: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .ml-[<value>] { margin-left: <value> }
 ```
 
-```txt
+```css
 .ml-(<custom-property>) { margin-left: var(<custom-property>) }
 ```
 
-```txt
+```css
 .space-x-auto  > :not(:last-child) { margin-inline-end: auto }
 ```
 
-```txt
+```css
 .space-x-px  > :not(:last-child) { margin-inline-end: 1px }
 ```
 
-```txt
+```css
 .-space-x-px  > :not(:last-child) { margin-inline-end: -1px }
 ```
 
-```txt
+```css
 .space-x-full  > :not(:last-child) { margin-inline-end: 100% }
 ```
 
-```txt
+```css
 .-space-x-full  > :not(:last-child) { margin-inline-end: -100% }
 ```
 
-```txt
+```css
 .space-x-screen  > :not(:last-child) { margin-inline-end: 100vw }
 ```
 
-```txt
+```css
 .space-x-dvw  > :not(:last-child) { margin-inline-end: 100vw }
 ```
 
-```txt
+```css
 .space-x-dvh  > :not(:last-child) { margin-inline-end: 100vh }
 ```
 
-```txt
+```css
 .space-x-lvw  > :not(:last-child) { margin-inline-end: 100lvw }
 ```
 
-```txt
+```css
 .space-x-lvh  > :not(:last-child) { margin-inline-end: 100lvh }
 ```
 
-```txt
+```css
 .space-x-svw  > :not(:last-child) { margin-inline-end: 100svw }
 ```
 
-```txt
+```css
 .space-x-svh  > :not(:last-child) { margin-inline-end: 100svh }
 ```
 
-```txt
+```css
 .space-x-min  > :not(:last-child) { margin-inline-end: min-content }
 ```
 
-```txt
+```css
 .space-x-max  > :not(:last-child) { margin-inline-end: max-content }
 ```
 
-```txt
+```css
 .space-x-fit  > :not(:last-child) { margin-inline-end: fit-content }
 ```
 
-```txt
+```css
 .space-x-3xs  > :not(:last-child) { margin-inline-end: 256px }
 ```
 
-```txt
+```css
 .space-x-2xs  > :not(:last-child) { margin-inline-end: 288px }
 ```
 
-```txt
+```css
 .space-x-xs  > :not(:last-child) { margin-inline-end: 320px }
 ```
 
-```txt
+```css
 .space-x-sm  > :not(:last-child) { margin-inline-end: 384px }
 ```
 
-```txt
+```css
 .space-x-md  > :not(:last-child) { margin-inline-end: 448px }
 ```
 
-```txt
+```css
 .space-x-lg  > :not(:last-child) { margin-inline-end: 512px }
 ```
 
-```txt
+```css
 .space-x-xl  > :not(:last-child) { margin-inline-end: 576px }
 ```
 
-```txt
+```css
 .space-x-2xl  > :not(:last-child) { margin-inline-end: 672px }
 ```
 
-```txt
+```css
 .space-x-3xl  > :not(:last-child) { margin-inline-end: 768px }
 ```
 
-```txt
+```css
 .space-x-4xl  > :not(:last-child) { margin-inline-end: 896px }
 ```
 
-```txt
+```css
 .space-x-5xl  > :not(:last-child) { margin-inline-end: 1024px }
 ```
 
-```txt
+```css
 .space-x-6xl  > :not(:last-child) { margin-inline-end: 1152px }
 ```
 
-```txt
+```css
 .space-x-7xl  > :not(:last-child) { margin-inline-end: 1280px }
 ```
 
-```txt
+```css
 .space-x-<number>  > :not(:last-child) { margin-inline-end: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-space-x-<number>  > :not(:last-child) { margin-inline-end: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .space-x-[<value>]  > :not(:last-child) { margin-inline-end: <value> }
 ```
 
-```txt
+```css
 .space-x-(<custom-property>)  > :not(:last-child) { margin-inline-end: var(<custom-property>) }
 ```
 
-```txt
+```css
 .space-y-auto  > :not(:last-child) { margin-bottom: auto }
 ```
 
-```txt
+```css
 .space-y-px  > :not(:last-child) { margin-bottom: 1px }
 ```
 
-```txt
+```css
 .-space-y-px  > :not(:last-child) { margin-bottom: -1px }
 ```
 
-```txt
+```css
 .space-y-full  > :not(:last-child) { margin-bottom: 100% }
 ```
 
-```txt
+```css
 .-space-y-full  > :not(:last-child) { margin-bottom: -100% }
 ```
 
-```txt
+```css
 .space-y-screen  > :not(:last-child) { margin-bottom: 100vw }
 ```
 
-```txt
+```css
 .space-y-dvw  > :not(:last-child) { margin-bottom: 100vw }
 ```
 
-```txt
+```css
 .space-y-dvh  > :not(:last-child) { margin-bottom: 100vh }
 ```
 
-```txt
+```css
 .space-y-lvw  > :not(:last-child) { margin-bottom: 100lvw }
 ```
 
-```txt
+```css
 .space-y-lvh  > :not(:last-child) { margin-bottom: 100lvh }
 ```
 
-```txt
+```css
 .space-y-svw  > :not(:last-child) { margin-bottom: 100svw }
 ```
 
-```txt
+```css
 .space-y-svh  > :not(:last-child) { margin-bottom: 100svh }
 ```
 
-```txt
+```css
 .space-y-min  > :not(:last-child) { margin-bottom: min-content }
 ```
 
-```txt
+```css
 .space-y-max  > :not(:last-child) { margin-bottom: max-content }
 ```
 
-```txt
+```css
 .space-y-fit  > :not(:last-child) { margin-bottom: fit-content }
 ```
 
-```txt
+```css
 .space-y-3xs  > :not(:last-child) { margin-bottom: 256px }
 ```
 
-```txt
+```css
 .space-y-2xs  > :not(:last-child) { margin-bottom: 288px }
 ```
 
-```txt
+```css
 .space-y-xs  > :not(:last-child) { margin-bottom: 320px }
 ```
 
-```txt
+```css
 .space-y-sm  > :not(:last-child) { margin-bottom: 384px }
 ```
 
-```txt
+```css
 .space-y-md  > :not(:last-child) { margin-bottom: 448px }
 ```
 
-```txt
+```css
 .space-y-lg  > :not(:last-child) { margin-bottom: 512px }
 ```
 
-```txt
+```css
 .space-y-xl  > :not(:last-child) { margin-bottom: 576px }
 ```
 
-```txt
+```css
 .space-y-2xl  > :not(:last-child) { margin-bottom: 672px }
 ```
 
-```txt
+```css
 .space-y-3xl  > :not(:last-child) { margin-bottom: 768px }
 ```
 
-```txt
+```css
 .space-y-4xl  > :not(:last-child) { margin-bottom: 896px }
 ```
 
-```txt
+```css
 .space-y-5xl  > :not(:last-child) { margin-bottom: 1024px }
 ```
 
-```txt
+```css
 .space-y-6xl  > :not(:last-child) { margin-bottom: 1152px }
 ```
 
-```txt
+```css
 .space-y-7xl  > :not(:last-child) { margin-bottom: 1280px }
 ```
 
-```txt
+```css
 .space-y-<number>  > :not(:last-child) { margin-bottom: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-space-y-<number>  > :not(:last-child) { margin-bottom: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .space-y-[<value>]  > :not(:last-child) { margin-bottom: <value> }
 ```
 
-```txt
+```css
 .space-y-(<custom-property>)  > :not(:last-child) { margin-bottom: var(<custom-property>) }
 ```
 
@@ -5596,805 +5640,805 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### width
 
-```txt
+```css
 .w-auto { width: auto }
 ```
 
-```txt
+```css
 .w-px { width: 1px }
 ```
 
-```txt
+```css
 .-w-px { width: -1px }
 ```
 
-```txt
+```css
 .w-full { width: 100% }
 ```
 
-```txt
+```css
 .-w-full { width: -100% }
 ```
 
-```txt
+```css
 .w-screen { width: 100vw }
 ```
 
-```txt
+```css
 .w-dvw { width: 100vw }
 ```
 
-```txt
+```css
 .w-dvh { width: 100vh }
 ```
 
-```txt
+```css
 .w-lvw { width: 100lvw }
 ```
 
-```txt
+```css
 .w-lvh { width: 100lvh }
 ```
 
-```txt
+```css
 .w-svw { width: 100svw }
 ```
 
-```txt
+```css
 .w-svh { width: 100svh }
 ```
 
-```txt
+```css
 .w-min { width: min-content }
 ```
 
-```txt
+```css
 .w-max { width: max-content }
 ```
 
-```txt
+```css
 .w-fit { width: fit-content }
 ```
 
-```txt
+```css
 .w-3xs { width: 256px }
 ```
 
-```txt
+```css
 .w-2xs { width: 288px }
 ```
 
-```txt
+```css
 .w-xs { width: 320px }
 ```
 
-```txt
+```css
 .w-sm { width: 384px }
 ```
 
-```txt
+```css
 .w-md { width: 448px }
 ```
 
-```txt
+```css
 .w-lg { width: 512px }
 ```
 
-```txt
+```css
 .w-xl { width: 576px }
 ```
 
-```txt
+```css
 .w-2xl { width: 672px }
 ```
 
-```txt
+```css
 .w-3xl { width: 768px }
 ```
 
-```txt
+```css
 .w-4xl { width: 896px }
 ```
 
-```txt
+```css
 .w-5xl { width: 1024px }
 ```
 
-```txt
+```css
 .w-6xl { width: 1152px }
 ```
 
-```txt
+```css
 .w-7xl { width: 1280px }
 ```
 
-```txt
+```css
 .w-<number> { width: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-w-<number> { width: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .w-<fraction> { width: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .w-[<value>] { width: <value> }
 ```
 
-```txt
+```css
 .w-(<custom-property>) { width: var(<custom-property>) }
 ```
 
 ### min-width
 
-```txt
+```css
 .min-w-auto { min-width: auto }
 ```
 
-```txt
+```css
 .min-w-px { min-width: 1px }
 ```
 
-```txt
+```css
 .-min-w-px { min-width: -1px }
 ```
 
-```txt
+```css
 .min-w-full { min-width: 100% }
 ```
 
-```txt
+```css
 .-min-w-full { min-width: -100% }
 ```
 
-```txt
+```css
 .min-w-screen { min-width: 100vw }
 ```
 
-```txt
+```css
 .min-w-dvw { min-width: 100vw }
 ```
 
-```txt
+```css
 .min-w-dvh { min-width: 100vh }
 ```
 
-```txt
+```css
 .min-w-lvw { min-width: 100lvw }
 ```
 
-```txt
+```css
 .min-w-lvh { min-width: 100lvh }
 ```
 
-```txt
+```css
 .min-w-svw { min-width: 100svw }
 ```
 
-```txt
+```css
 .min-w-svh { min-width: 100svh }
 ```
 
-```txt
+```css
 .min-w-min { min-width: min-content }
 ```
 
-```txt
+```css
 .min-w-max { min-width: max-content }
 ```
 
-```txt
+```css
 .min-w-fit { min-width: fit-content }
 ```
 
-```txt
+```css
 .min-w-3xs { min-width: 256px }
 ```
 
-```txt
+```css
 .min-w-2xs { min-width: 288px }
 ```
 
-```txt
+```css
 .min-w-xs { min-width: 320px }
 ```
 
-```txt
+```css
 .min-w-sm { min-width: 384px }
 ```
 
-```txt
+```css
 .min-w-md { min-width: 448px }
 ```
 
-```txt
+```css
 .min-w-lg { min-width: 512px }
 ```
 
-```txt
+```css
 .min-w-xl { min-width: 576px }
 ```
 
-```txt
+```css
 .min-w-2xl { min-width: 672px }
 ```
 
-```txt
+```css
 .min-w-3xl { min-width: 768px }
 ```
 
-```txt
+```css
 .min-w-4xl { min-width: 896px }
 ```
 
-```txt
+```css
 .min-w-5xl { min-width: 1024px }
 ```
 
-```txt
+```css
 .min-w-6xl { min-width: 1152px }
 ```
 
-```txt
+```css
 .min-w-7xl { min-width: 1280px }
 ```
 
-```txt
+```css
 .min-w-<number> { min-width: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-min-w-<number> { min-width: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .min-w-<fraction> { min-width: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .min-w-[<value>] { min-width: <value> }
 ```
 
-```txt
+```css
 .min-w-(<custom-property>) { min-width: var(<custom-property>) }
 ```
 
 ### max-width
 
-```txt
+```css
 .max-w-auto { max-width: auto }
 ```
 
-```txt
+```css
 .max-w-px { max-width: 1px }
 ```
 
-```txt
+```css
 .-max-w-px { max-width: -1px }
 ```
 
-```txt
+```css
 .max-w-full { max-width: 100% }
 ```
 
-```txt
+```css
 .-max-w-full { max-width: -100% }
 ```
 
-```txt
+```css
 .max-w-screen { max-width: 100vw }
 ```
 
-```txt
+```css
 .max-w-dvw { max-width: 100vw }
 ```
 
-```txt
+```css
 .max-w-dvh { max-width: 100vh }
 ```
 
-```txt
+```css
 .max-w-lvw { max-width: 100lvw }
 ```
 
-```txt
+```css
 .max-w-lvh { max-width: 100lvh }
 ```
 
-```txt
+```css
 .max-w-svw { max-width: 100svw }
 ```
 
-```txt
+```css
 .max-w-svh { max-width: 100svh }
 ```
 
-```txt
+```css
 .max-w-min { max-width: min-content }
 ```
 
-```txt
+```css
 .max-w-max { max-width: max-content }
 ```
 
-```txt
+```css
 .max-w-fit { max-width: fit-content }
 ```
 
-```txt
+```css
 .max-w-3xs { max-width: 256px }
 ```
 
-```txt
+```css
 .max-w-2xs { max-width: 288px }
 ```
 
-```txt
+```css
 .max-w-xs { max-width: 320px }
 ```
 
-```txt
+```css
 .max-w-sm { max-width: 384px }
 ```
 
-```txt
+```css
 .max-w-md { max-width: 448px }
 ```
 
-```txt
+```css
 .max-w-lg { max-width: 512px }
 ```
 
-```txt
+```css
 .max-w-xl { max-width: 576px }
 ```
 
-```txt
+```css
 .max-w-2xl { max-width: 672px }
 ```
 
-```txt
+```css
 .max-w-3xl { max-width: 768px }
 ```
 
-```txt
+```css
 .max-w-4xl { max-width: 896px }
 ```
 
-```txt
+```css
 .max-w-5xl { max-width: 1024px }
 ```
 
-```txt
+```css
 .max-w-6xl { max-width: 1152px }
 ```
 
-```txt
+```css
 .max-w-7xl { max-width: 1280px }
 ```
 
-```txt
+```css
 .max-w-<number> { max-width: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-max-w-<number> { max-width: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .max-w-<fraction> { max-width: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .max-w-[<value>] { max-width: <value> }
 ```
 
-```txt
+```css
 .max-w-(<custom-property>) { max-width: var(<custom-property>) }
 ```
 
 ### height
 
-```txt
+```css
 .h-auto { height: auto }
 ```
 
-```txt
+```css
 .h-px { height: 1px }
 ```
 
-```txt
+```css
 .-h-px { height: -1px }
 ```
 
-```txt
+```css
 .h-full { height: 100% }
 ```
 
-```txt
+```css
 .-h-full { height: -100% }
 ```
 
-```txt
+```css
 .h-screen { height: 100vw }
 ```
 
-```txt
+```css
 .h-dvw { height: 100vw }
 ```
 
-```txt
+```css
 .h-dvh { height: 100vh }
 ```
 
-```txt
+```css
 .h-lvw { height: 100lvw }
 ```
 
-```txt
+```css
 .h-lvh { height: 100lvh }
 ```
 
-```txt
+```css
 .h-svw { height: 100svw }
 ```
 
-```txt
+```css
 .h-svh { height: 100svh }
 ```
 
-```txt
+```css
 .h-min { height: min-content }
 ```
 
-```txt
+```css
 .h-max { height: max-content }
 ```
 
-```txt
+```css
 .h-fit { height: fit-content }
 ```
 
-```txt
+```css
 .h-3xs { height: 256px }
 ```
 
-```txt
+```css
 .h-2xs { height: 288px }
 ```
 
-```txt
+```css
 .h-xs { height: 320px }
 ```
 
-```txt
+```css
 .h-sm { height: 384px }
 ```
 
-```txt
+```css
 .h-md { height: 448px }
 ```
 
-```txt
+```css
 .h-lg { height: 512px }
 ```
 
-```txt
+```css
 .h-xl { height: 576px }
 ```
 
-```txt
+```css
 .h-2xl { height: 672px }
 ```
 
-```txt
+```css
 .h-3xl { height: 768px }
 ```
 
-```txt
+```css
 .h-4xl { height: 896px }
 ```
 
-```txt
+```css
 .h-5xl { height: 1024px }
 ```
 
-```txt
+```css
 .h-6xl { height: 1152px }
 ```
 
-```txt
+```css
 .h-7xl { height: 1280px }
 ```
 
-```txt
+```css
 .h-<number> { height: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-h-<number> { height: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .h-<fraction> { height: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .h-[<value>] { height: <value> }
 ```
 
-```txt
+```css
 .h-(<custom-property>) { height: var(<custom-property>) }
 ```
 
 ### min-height
 
-```txt
+```css
 .min-h-auto { min-height: auto }
 ```
 
-```txt
+```css
 .min-h-px { min-height: 1px }
 ```
 
-```txt
+```css
 .-min-h-px { min-height: -1px }
 ```
 
-```txt
+```css
 .min-h-full { min-height: 100% }
 ```
 
-```txt
+```css
 .-min-h-full { min-height: -100% }
 ```
 
-```txt
+```css
 .min-h-screen { min-height: 100vw }
 ```
 
-```txt
+```css
 .min-h-dvw { min-height: 100vw }
 ```
 
-```txt
+```css
 .min-h-dvh { min-height: 100vh }
 ```
 
-```txt
+```css
 .min-h-lvw { min-height: 100lvw }
 ```
 
-```txt
+```css
 .min-h-lvh { min-height: 100lvh }
 ```
 
-```txt
+```css
 .min-h-svw { min-height: 100svw }
 ```
 
-```txt
+```css
 .min-h-svh { min-height: 100svh }
 ```
 
-```txt
+```css
 .min-h-min { min-height: min-content }
 ```
 
-```txt
+```css
 .min-h-max { min-height: max-content }
 ```
 
-```txt
+```css
 .min-h-fit { min-height: fit-content }
 ```
 
-```txt
+```css
 .min-h-3xs { min-height: 256px }
 ```
 
-```txt
+```css
 .min-h-2xs { min-height: 288px }
 ```
 
-```txt
+```css
 .min-h-xs { min-height: 320px }
 ```
 
-```txt
+```css
 .min-h-sm { min-height: 384px }
 ```
 
-```txt
+```css
 .min-h-md { min-height: 448px }
 ```
 
-```txt
+```css
 .min-h-lg { min-height: 512px }
 ```
 
-```txt
+```css
 .min-h-xl { min-height: 576px }
 ```
 
-```txt
+```css
 .min-h-2xl { min-height: 672px }
 ```
 
-```txt
+```css
 .min-h-3xl { min-height: 768px }
 ```
 
-```txt
+```css
 .min-h-4xl { min-height: 896px }
 ```
 
-```txt
+```css
 .min-h-5xl { min-height: 1024px }
 ```
 
-```txt
+```css
 .min-h-6xl { min-height: 1152px }
 ```
 
-```txt
+```css
 .min-h-7xl { min-height: 1280px }
 ```
 
-```txt
+```css
 .min-h-<number> { min-height: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-min-h-<number> { min-height: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .min-h-<fraction> { min-height: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .min-h-[<value>] { min-height: <value> }
 ```
 
-```txt
+```css
 .min-h-(<custom-property>) { min-height: var(<custom-property>) }
 ```
 
 ### max-height
 
-```txt
+```css
 .max-h-auto { max-height: auto }
 ```
 
-```txt
+```css
 .max-h-px { max-height: 1px }
 ```
 
-```txt
+```css
 .-max-h-px { max-height: -1px }
 ```
 
-```txt
+```css
 .max-h-full { max-height: 100% }
 ```
 
-```txt
+```css
 .-max-h-full { max-height: -100% }
 ```
 
-```txt
+```css
 .max-h-screen { max-height: 100vw }
 ```
 
-```txt
+```css
 .max-h-dvw { max-height: 100vw }
 ```
 
-```txt
+```css
 .max-h-dvh { max-height: 100vh }
 ```
 
-```txt
+```css
 .max-h-lvw { max-height: 100lvw }
 ```
 
-```txt
+```css
 .max-h-lvh { max-height: 100lvh }
 ```
 
-```txt
+```css
 .max-h-svw { max-height: 100svw }
 ```
 
-```txt
+```css
 .max-h-svh { max-height: 100svh }
 ```
 
-```txt
+```css
 .max-h-min { max-height: min-content }
 ```
 
-```txt
+```css
 .max-h-max { max-height: max-content }
 ```
 
-```txt
+```css
 .max-h-fit { max-height: fit-content }
 ```
 
-```txt
+```css
 .max-h-3xs { max-height: 256px }
 ```
 
-```txt
+```css
 .max-h-2xs { max-height: 288px }
 ```
 
-```txt
+```css
 .max-h-xs { max-height: 320px }
 ```
 
-```txt
+```css
 .max-h-sm { max-height: 384px }
 ```
 
-```txt
+```css
 .max-h-md { max-height: 448px }
 ```
 
-```txt
+```css
 .max-h-lg { max-height: 512px }
 ```
 
-```txt
+```css
 .max-h-xl { max-height: 576px }
 ```
 
-```txt
+```css
 .max-h-2xl { max-height: 672px }
 ```
 
-```txt
+```css
 .max-h-3xl { max-height: 768px }
 ```
 
-```txt
+```css
 .max-h-4xl { max-height: 896px }
 ```
 
-```txt
+```css
 .max-h-5xl { max-height: 1024px }
 ```
 
-```txt
+```css
 .max-h-6xl { max-height: 1152px }
 ```
 
-```txt
+```css
 .max-h-7xl { max-height: 1280px }
 ```
 
-```txt
+```css
 .max-h-<number> { max-height: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-max-h-<number> { max-height: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .max-h-<fraction> { max-height: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .max-h-[<value>] { max-height: <value> }
 ```
 
-```txt
+```css
 .max-h-(<custom-property>) { max-height: var(<custom-property>) }
 ```
 
@@ -6402,137 +6446,137 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### font-family
 
-```txt
-.font-sans { font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" }
+```css
+.font-sans { font-family: var(--font-sans) }
 ```
 
-```txt
-.font-serif { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif }
+```css
+.font-serif { font-family: var(--font-serif) }
 ```
 
-```txt
-.font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace }
+```css
+.font-mono { font-family: var(--font-mono) }
 ```
 
-```txt
+```css
 .font-[<value>] { font-family: <value> }
 ```
 
-```txt
+```css
 .font-(<custom-property>) { font-family: var(<custom-property>) }
 ```
 
 ### font-size
 
-```txt
+```css
 .text-xs {
-  font-size: 12px;
-  line-height: 1.333;
+  font-size: var(--text-xs);
+  line-height: var(--text-xs--line-height);
 }
 ```
 
-```txt
+```css
 .text-sm {
-  font-size: 14px;
-  line-height: 1.429;
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
 }
 ```
 
-```txt
+```css
 .text-base {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: var(--text-base);
+  line-height: var(--text-base--line-height);
 }
 ```
 
-```txt
+```css
 .text-lg {
-  font-size: 18px;
-  line-height: 1.555;
+  font-size: var(--text-lg);
+  line-height: var(--text-lg--line-height);
 }
 ```
 
-```txt
+```css
 .text-xl {
-  font-size: 20px;
-  line-height: 1.4;
+  font-size: var(--text-xl);
+  line-height: var(--text-xl--line-height);
 }
 ```
 
-```txt
+```css
 .text-2xl {
-  font-size: 24px;
-  line-height: 1.333;
+  font-size: var(--text-2xl);
+  line-height: var(--text-2xl--line-height);
 }
 ```
 
-```txt
+```css
 .text-3xl {
-  font-size: 30px;
-  line-height: 1.2;
+  font-size: var(--text-3xl);
+  line-height: var(--text-3xl--line-height);
 }
 ```
 
-```txt
+```css
 .text-4xl {
-  font-size: 36px;
-  line-height: 1.111;
+  font-size: var(--text-4xl);
+  line-height: var(--text-4xl--line-height);
 }
 ```
 
-```txt
+```css
 .text-5xl {
-  font-size: 48px;
-  line-height: 1;
+  font-size: var(--text-5xl);
+  line-height: var(--text-5xl--line-height);
 }
 ```
 
-```txt
+```css
 .text-6xl {
-  font-size: 60px;
-  line-height: 1;
+  font-size: var(--text-6xl);
+  line-height: var(--text-6xl--line-height);
 }
 ```
 
-```txt
+```css
 .text-7xl {
-  font-size: 72px;
-  line-height: 1;
+  font-size: var(--text-7xl);
+  line-height: var(--text-7xl--line-height);
 }
 ```
 
-```txt
+```css
 .text-8xl {
-  font-size: 96px;
-  line-height: 1;
+  font-size: var(--text-8xl);
+  line-height: var(--text-8xl--line-height);
 }
 ```
 
-```txt
+```css
 .text-9xl {
-  font-size: 128px;
-  line-height: 1;
+  font-size: var(--text-9xl);
+  line-height: var(--text-9xl--line-height);
 }
 ```
 
-```txt
+```css
 .text-[<value>] { font-size: <value> }
 ```
 
-```txt
+```css
 .text-(<custom-property>) { font-size: var(<custom-property>) }
 ```
 
 ### font-smoothing
 
-```txt
+```css
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 ```
 
-```txt
+```css
 .subpixel-antialiased {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
@@ -6541,165 +6585,165 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### font-style
 
-```txt
+```css
 .italic { font-style: italic }
 ```
 
-```txt
+```css
 .not-italic { font-style: normal }
 ```
 
 ### font-weight
 
-```txt
+```css
 .font-thin { font-weight: 100 }
 ```
 
-```txt
+```css
 .font-extralight { font-weight: 200 }
 ```
 
-```txt
+```css
 .font-light { font-weight: 300 }
 ```
 
-```txt
+```css
 .font-normal { font-weight: 400 }
 ```
 
-```txt
+```css
 .font-medium { font-weight: 500 }
 ```
 
-```txt
+```css
 .font-semibold { font-weight: 600 }
 ```
 
-```txt
+```css
 .font-bold { font-weight: 700 }
 ```
 
-```txt
+```css
 .font-extrabold { font-weight: 800 }
 ```
 
-```txt
+```css
 .font-black { font-weight: 900 }
 ```
 
 ### font-stretch
 
-```txt
+```css
 .font-stretch-ultra-condensed { font-stretch: ultra-condensed }
 ```
 
-```txt
+```css
 .font-stretch-extra-condensed { font-stretch: extra-condensed }
 ```
 
-```txt
+```css
 .font-stretch-condensed { font-stretch: condensed }
 ```
 
-```txt
+```css
 .font-stretch-semi-condensed { font-stretch: semi-condensed }
 ```
 
-```txt
+```css
 .font-stretch-normal { font-stretch: normal }
 ```
 
-```txt
+```css
 .font-stretch-semi-expanded { font-stretch: semi-expanded }
 ```
 
-```txt
+```css
 .font-stretch-expanded { font-stretch: expanded }
 ```
 
-```txt
+```css
 .font-stretch-extra-expanded { font-stretch: extra-expanded }
 ```
 
-```txt
+```css
 .font-stretch-ultra-expanded { font-stretch: ultra-expanded }
 ```
 
 ### font-variant-numeric
 
-```txt
+```css
 .normal-nums { font-variant-numeric: normal }
 ```
 
-```txt
+```css
 .ordinal { font-variant-numeric: ordinal }
 ```
 
-```txt
+```css
 .slashed-zero { font-variant-numeric: slashed-zero }
 ```
 
-```txt
+```css
 .lining-nums { font-variant-numeric: lining-nums }
 ```
 
-```txt
+```css
 .oldstyle-nums { font-variant-numeric: oldstyle-nums }
 ```
 
-```txt
+```css
 .proportional-nums { font-variant-numeric: proportional-nums }
 ```
 
-```txt
+```css
 .tabular-nums { font-variant-numeric: tabular-nums }
 ```
 
-```txt
+```css
 .diagonal-fractions { font-variant-numeric: diagonal-fractions }
 ```
 
-```txt
+```css
 .stacked-fractions { font-variant-numeric: stacked-fractions }
 ```
 
 ### letter-spacing
 
-```txt
+```css
 .tracking-tighter { letter-spacing: -0.05em }
 ```
 
-```txt
+```css
 .tracking-tight { letter-spacing: -0.025em }
 ```
 
-```txt
+```css
 .tracking-normal { letter-spacing: 0px }
 ```
 
-```txt
+```css
 .tracking-wide { letter-spacing: 0.025em }
 ```
 
-```txt
+```css
 .tracking-wider { letter-spacing: 0.05em }
 ```
 
-```txt
+```css
 .tracking-widest { letter-spacing: 0.1em }
 ```
 
-```txt
+```css
 .tracking-[<value>] { letter-spacing: <value> }
 ```
 
-```txt
+```css
 .tracking-(<custom-property>) { letter-spacing: var(<custom-property>) }
 ```
 
 ### line-clamp
 
-```txt
+```css
 .line-clamp-none {
   overflow: hidden;
   display: -webkit-box;
@@ -6708,7 +6752,7 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 }
 ```
 
-```txt
+```css
 .line-clamp-[<value>] {
   overflow: hidden;
   display: -webkit-box;
@@ -6717,7 +6761,7 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 }
 ```
 
-```txt
+```css
 .line-clamp-(<custom-property>) {
   overflow: hidden;
   display: -webkit-box;
@@ -6728,227 +6772,227 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### line-height
 
-```txt
+```css
 .leading-none { line-height: 1 }
 ```
 
-```txt
+```css
 .leading-tight { line-height: 1.25 }
 ```
 
-```txt
+```css
 .leading-snug { line-height: 1.375 }
 ```
 
-```txt
+```css
 .leading-normal { line-height: 1.5 }
 ```
 
-```txt
+```css
 .leading-relaxed { line-height: 1.625 }
 ```
 
-```txt
+```css
 .leading-loose { line-height: 2 }
 ```
 
 ### list-style-image
 
-```txt
+```css
 .list-image-none { list-style-image: none }
 ```
 
-```txt
+```css
 .list-image-[<value>] { list-style-image: <value> }
 ```
 
-```txt
+```css
 .list-image-(<custom-property>) { list-style-image: var(<custom-property>) }
 ```
 
 ### list-style-position
 
-```txt
+```css
 .list-inside { list-style-position: inside }
 ```
 
-```txt
+```css
 .list-outside { list-style-position: outside }
 ```
 
 ### list-style-type
 
-```txt
+```css
 .list-disc { list-style-type: disc }
 ```
 
-```txt
+```css
 .list-decimal { list-style-type: decimal }
 ```
 
-```txt
+```css
 .list-none { list-style-type: none }
 ```
 
-```txt
+```css
 .list-[<value>] { list-style-type: <value> }
 ```
 
-```txt
+```css
 .list-(<custom-property>) { list-style-type: var(<custom-property>) }
 ```
 
 ### text-align
 
-```txt
+```css
 .text-left { text-align: left }
 ```
 
-```txt
+```css
 .text-center { text-align: center }
 ```
 
-```txt
+```css
 .text-right { text-align: right }
 ```
 
-```txt
+```css
 .text-justify { text-align: justify }
 ```
 
-```txt
+```css
 .text-start { text-align: start }
 ```
 
-```txt
+```css
 .text-end { text-align: end }
 ```
 
 ### color
 
-```txt
+```css
 .text-<color> { color: oklch(...) }
 ```
 
 ### text-decoration-line
 
-```txt
+```css
 .underline { text-decoration-line: underline }
 ```
 
-```txt
+```css
 .overline { text-decoration-line: overline }
 ```
 
-```txt
+```css
 .line-through { text-decoration-line: line-through }
 ```
 
-```txt
+```css
 .no-underline { text-decoration-line: none }
 ```
 
 ### text-decoration-color
 
-```txt
+```css
 .decoration-<color> { text-decoration-color: oklch(...) }
 ```
 
 ### text-decoration-style
 
-```txt
+```css
 .decoration-solid { text-decoration-style: solid }
 ```
 
-```txt
+```css
 .decoration-double { text-decoration-style: double }
 ```
 
-```txt
+```css
 .decoration-dotted { text-decoration-style: dotted }
 ```
 
-```txt
+```css
 .decoration-dashed { text-decoration-style: dashed }
 ```
 
-```txt
+```css
 .decoration-wavy { text-decoration-style: wavy }
 ```
 
 ### text-decoration-thickness
 
-```txt
+```css
 .decoration-auto { text-decoration-thickness: auto }
 ```
 
-```txt
+```css
 .decoration-from-font { text-decoration-thickness: from-font }
 ```
 
-```txt
+```css
 .decoration-<number> { text-decoration-thickness: <number>px }
 ```
 
-```txt
+```css
 .-decoration-<number> { text-decoration-thickness: -<number>px }
 ```
 
-```txt
+```css
 .decoration-[<value>] { text-decoration-thickness: <value> }
 ```
 
-```txt
+```css
 .decoration-(<custom-property>) { text-decoration-thickness: var(<custom-property>) }
 ```
 
 ### text-underline-offset
 
-```txt
+```css
 .underline-offset-auto { text-underline-offset: auto }
 ```
 
-```txt
+```css
 .underline-offset-<number> { text-underline-offset: <number>px }
 ```
 
-```txt
+```css
 .-underline-offset-<number> { text-underline-offset: -<number>px }
 ```
 
-```txt
+```css
 .underline-offset-[<value>] { text-underline-offset: <value> }
 ```
 
-```txt
+```css
 .underline-offset-(<custom-property>) { text-underline-offset: var(<custom-property>) }
 ```
 
 ### text-transform
 
-```txt
+```css
 .uppercase { text-transform: uppercase }
 ```
 
-```txt
+```css
 .lowercase { text-transform: lowercase }
 ```
 
-```txt
+```css
 .capitalize { text-transform: capitalize }
 ```
 
-```txt
+```css
 .normal-case { text-transform: none }
 ```
 
 ### text-overflow
 
-```txt
+```css
 .overflow-clip { text-overflow: clip }
 ```
 
-```txt
+```css
 .truncate {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -6956,279 +7000,279 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 }
 ```
 
-```txt
+```css
 .overflow-ellipsis { text-overflow: ellipsis }
 ```
 
 ### text-wrap
 
-```txt
+```css
 .text-wrap { text-wrap: wrap }
 ```
 
-```txt
+```css
 .text-nowrap { text-wrap: nowrap }
 ```
 
-```txt
+```css
 .text-balance { text-wrap: balance }
 ```
 
-```txt
+```css
 .text-pretty { text-wrap: pretty }
 ```
 
 ### text-indent
 
-```txt
+```css
 .indent-auto { text-indent: auto }
 ```
 
-```txt
+```css
 .indent-px { text-indent: 1px }
 ```
 
-```txt
+```css
 .-indent-px { text-indent: -1px }
 ```
 
-```txt
+```css
 .indent-full { text-indent: 100% }
 ```
 
-```txt
+```css
 .-indent-full { text-indent: -100% }
 ```
 
-```txt
+```css
 .indent-screen { text-indent: 100vw }
 ```
 
-```txt
+```css
 .indent-dvw { text-indent: 100vw }
 ```
 
-```txt
+```css
 .indent-dvh { text-indent: 100vh }
 ```
 
-```txt
+```css
 .indent-lvw { text-indent: 100lvw }
 ```
 
-```txt
+```css
 .indent-lvh { text-indent: 100lvh }
 ```
 
-```txt
+```css
 .indent-svw { text-indent: 100svw }
 ```
 
-```txt
+```css
 .indent-svh { text-indent: 100svh }
 ```
 
-```txt
+```css
 .indent-min { text-indent: min-content }
 ```
 
-```txt
+```css
 .indent-max { text-indent: max-content }
 ```
 
-```txt
+```css
 .indent-fit { text-indent: fit-content }
 ```
 
-```txt
+```css
 .indent-3xs { text-indent: 256px }
 ```
 
-```txt
+```css
 .indent-2xs { text-indent: 288px }
 ```
 
-```txt
+```css
 .indent-xs { text-indent: 320px }
 ```
 
-```txt
+```css
 .indent-sm { text-indent: 384px }
 ```
 
-```txt
+```css
 .indent-md { text-indent: 448px }
 ```
 
-```txt
+```css
 .indent-lg { text-indent: 512px }
 ```
 
-```txt
+```css
 .indent-xl { text-indent: 576px }
 ```
 
-```txt
+```css
 .indent-2xl { text-indent: 672px }
 ```
 
-```txt
+```css
 .indent-3xl { text-indent: 768px }
 ```
 
-```txt
+```css
 .indent-4xl { text-indent: 896px }
 ```
 
-```txt
+```css
 .indent-5xl { text-indent: 1024px }
 ```
 
-```txt
+```css
 .indent-6xl { text-indent: 1152px }
 ```
 
-```txt
+```css
 .indent-7xl { text-indent: 1280px }
 ```
 
-```txt
+```css
 .indent-<number> { text-indent: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-indent-<number> { text-indent: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .indent-[<value>] { text-indent: <value> }
 ```
 
-```txt
+```css
 .indent-(<custom-property>) { text-indent: var(<custom-property>) }
 ```
 
 ### vertical-align
 
-```txt
+```css
 .align-baseline { vertical-align: baseline }
 ```
 
-```txt
+```css
 .align-top { vertical-align: top }
 ```
 
-```txt
+```css
 .align-middle { vertical-align: middle }
 ```
 
-```txt
+```css
 .align-bottom { vertical-align: bottom }
 ```
 
-```txt
+```css
 .align-text-top { vertical-align: text-top }
 ```
 
-```txt
+```css
 .align-text-bottom { vertical-align: text-bottom }
 ```
 
-```txt
+```css
 .align-sub { vertical-align: sub }
 ```
 
-```txt
+```css
 .align-super { vertical-align: super }
 ```
 
-```txt
+```css
 .align-[<value>] { vertical-align: <value> }
 ```
 
-```txt
+```css
 .align-(<custom-property>) { vertical-align: var(<custom-property>) }
 ```
 
 ### white-space
 
-```txt
+```css
 .whitespace-normal { white-space: normal }
 ```
 
-```txt
+```css
 .whitespace-nowrap { white-space: nowrap }
 ```
 
-```txt
+```css
 .whitespace-pre { white-space: pre }
 ```
 
-```txt
+```css
 .whitespace-pre-line { white-space: pre-line }
 ```
 
-```txt
+```css
 .whitespace-pre-wrap { white-space: pre-wrap }
 ```
 
-```txt
+```css
 .whitespace-break-spaces { white-space: break-spaces }
 ```
 
 ### word-break
 
-```txt
+```css
 .break-normal { word-break: normal }
 ```
 
-```txt
+```css
 .break-all { word-break: break-all }
 ```
 
-```txt
+```css
 .break-keep { word-break: keep-all }
 ```
 
 ### overflow-wrap
 
-```txt
+```css
 .wrap-break-word { overflow-wrap: break-word }
 ```
 
-```txt
+```css
 .wrap-anywhere { overflow-wrap: anywhere }
 ```
 
-```txt
+```css
 .wrap-normal { overflow-wrap: normal }
 ```
 
 ### hyphens
 
-```txt
+```css
 .hyphens-none { hyphens: none }
 ```
 
-```txt
+```css
 .hyphens-manual { hyphens: manual }
 ```
 
-```txt
+```css
 .hyphens-auto { hyphens: auto }
 ```
 
 ### content
 
-```txt
+```css
 .content-none { content: none }
 ```
 
-```txt
+```css
 .content-[<value>] { content: <value> }
 ```
 
-```txt
+```css
 .content-(<custom-property>) { content: var(<custom-property>) }
 ```
 
@@ -7236,161 +7280,161 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### background-attachment
 
-```txt
+```css
 .bg-fixed { background-attachment: fixed }
 ```
 
-```txt
+```css
 .bg-local { background-attachment: local }
 ```
 
-```txt
+```css
 .bg-scroll { background-attachment: scroll }
 ```
 
 ### background-clip
 
-```txt
+```css
 .bg-clip-border { background-clip: border-box }
 ```
 
-```txt
+```css
 .bg-clip-padding { background-clip: padding-box }
 ```
 
-```txt
+```css
 .bg-clip-content { background-clip: content-box }
 ```
 
-```txt
+```css
 .bg-clip-text { background-clip: text }
 ```
 
 ### background-color
 
-```txt
+```css
 .bg-<color> { background-color: oklch(...) }
 ```
 
 ### background-image
 
-```txt
+```css
 .bg-none { background-image: none }
 ```
 
-```txt
+```css
 .bg-[<value>] { background-image: <value> }
 ```
 
-```txt
+```css
 .bg-(<custom-property>) { background-image: var(<custom-property>) }
 ```
 
 ### background-origin
 
-```txt
+```css
 .bg-border-box { background-origin: border-box }
 ```
 
-```txt
+```css
 .bg-padding-box { background-origin: padding-box }
 ```
 
-```txt
+```css
 .bg-content-box { background-origin: content-box }
 ```
 
 ### background-position
 
-```txt
+```css
 .bg-top-left { background-position: top left }
 ```
 
-```txt
+```css
 .bg-top { background-position: top }
 ```
 
-```txt
+```css
 .bg-top-right { background-position: top right }
 ```
 
-```txt
+```css
 .bg-left { background-position: left }
 ```
 
-```txt
+```css
 .bg-center { background-position: center }
 ```
 
-```txt
+```css
 .bg-right { background-position: right }
 ```
 
-```txt
+```css
 .bg-bottom-left { background-position: bottom left }
 ```
 
-```txt
+```css
 .bg-bottom { background-position: bottom }
 ```
 
-```txt
+```css
 .bg-bottom-right { background-position: bottom right }
 ```
 
-```txt
+```css
 .bg-position-[<value>] { background-position: <value> }
 ```
 
-```txt
+```css
 .bg-position-(<custom-property>) { background-position: var(<custom-property>) }
 ```
 
 ### background-repeat
 
-```txt
+```css
 .bg-repeat { background-repeat: repeat }
 ```
 
-```txt
+```css
 .bg-repeat-x { background-repeat: repeat-x }
 ```
 
-```txt
+```css
 .bg-repeat-y { background-repeat: repeat-y }
 ```
 
-```txt
+```css
 .bg-space { background-repeat: space }
 ```
 
-```txt
+```css
 .bg-round { background-repeat: round }
 ```
 
-```txt
+```css
 .bg-no-repeat { background-repeat: no-repeat }
 ```
 
 ### background-size
 
-```txt
+```css
 .bg-auto { background-size: auto }
 ```
 
-```txt
+```css
 .bg-cover { background-size: cover }
 ```
 
-```txt
+```css
 .bg-contain { background-size: contain }
 ```
 
-```txt
+```css
 .bg-size-[<value>] { background-size: <value> }
 ```
 
-```txt
+```css
 .bg-size-(<custom-property>) { background-size: var(<custom-property>) }
 ```
 
@@ -7398,465 +7442,485 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### border-radius
 
-```txt
-.rounded-xs { border-radius: 2px }
+```css
+.rounded-xs { border-radius: var(--radius-xs) }
 ```
 
-```txt
-.rounded-sm { border-radius: 4px }
+```css
+.rounded-sm { border-radius: var(--radius-sm) }
 ```
 
-```txt
-.rounded-md { border-radius: 6px }
+```css
+.rounded-md { border-radius: var(--radius-md) }
 ```
 
-```txt
-.rounded-lg { border-radius: 8px }
+```css
+.rounded-lg { border-radius: var(--radius-lg) }
 ```
 
-```txt
-.rounded-xl { border-radius: 12px }
+```css
+.rounded-xl { border-radius: var(--radius-xl) }
 ```
 
-```txt
-.rounded-2xl { border-radius: 16px }
+```css
+.rounded-2xl { border-radius: var(--radius-2xl) }
 ```
 
-```txt
-.rounded-3xl { border-radius: 24px }
+```css
+.rounded-3xl { border-radius: var(--radius-3xl) }
 ```
 
-```txt
+```css
+.rounded-4xl { border-radius: var(--radius-4xl) }
+```
+
+```css
 .rounded-full { border-radius: 50% }
 ```
 
-```txt
+```css
 .rounded-none { border-radius: 0 }
 ```
 
-```txt
+```css
 .rounded-[<value>] { border-radius: <value> }
 ```
 
-```txt
+```css
 .rounded-(<custom-property>) { border-radius: var(<custom-property>) }
 ```
 
-```txt
-.rounded-tl-xs { border-top-left-radius: 2px }
+```css
+.rounded-tl-xs { border-top-left-radius: var(--radius-xs) }
 ```
 
-```txt
-.rounded-tl-sm { border-top-left-radius: 4px }
+```css
+.rounded-tl-sm { border-top-left-radius: var(--radius-sm) }
 ```
 
-```txt
-.rounded-tl-md { border-top-left-radius: 6px }
+```css
+.rounded-tl-md { border-top-left-radius: var(--radius-md) }
 ```
 
-```txt
-.rounded-tl-lg { border-top-left-radius: 8px }
+```css
+.rounded-tl-lg { border-top-left-radius: var(--radius-lg) }
 ```
 
-```txt
-.rounded-tl-xl { border-top-left-radius: 12px }
+```css
+.rounded-tl-xl { border-top-left-radius: var(--radius-xl) }
 ```
 
-```txt
-.rounded-tl-2xl { border-top-left-radius: 16px }
+```css
+.rounded-tl-2xl { border-top-left-radius: var(--radius-2xl) }
 ```
 
-```txt
-.rounded-tl-3xl { border-top-left-radius: 24px }
+```css
+.rounded-tl-3xl { border-top-left-radius: var(--radius-3xl) }
 ```
 
-```txt
+```css
+.rounded-tl-4xl { border-top-left-radius: var(--radius-4xl) }
+```
+
+```css
 .rounded-tl-full { border-top-left-radius: 50% }
 ```
 
-```txt
+```css
 .rounded-tl-none { border-top-left-radius: 0 }
 ```
 
-```txt
+```css
 .rounded-tl-[<value>] { border-top-left-radius: <value> }
 ```
 
-```txt
+```css
 .rounded-tl-(<custom-property>) { border-top-left-radius: var(<custom-property>) }
 ```
 
-```txt
-.rounded-tr-xs { border-top-right-radius: 2px }
+```css
+.rounded-tr-xs { border-top-right-radius: var(--radius-xs) }
 ```
 
-```txt
-.rounded-tr-sm { border-top-right-radius: 4px }
+```css
+.rounded-tr-sm { border-top-right-radius: var(--radius-sm) }
 ```
 
-```txt
-.rounded-tr-md { border-top-right-radius: 6px }
+```css
+.rounded-tr-md { border-top-right-radius: var(--radius-md) }
 ```
 
-```txt
-.rounded-tr-lg { border-top-right-radius: 8px }
+```css
+.rounded-tr-lg { border-top-right-radius: var(--radius-lg) }
 ```
 
-```txt
-.rounded-tr-xl { border-top-right-radius: 12px }
+```css
+.rounded-tr-xl { border-top-right-radius: var(--radius-xl) }
 ```
 
-```txt
-.rounded-tr-2xl { border-top-right-radius: 16px }
+```css
+.rounded-tr-2xl { border-top-right-radius: var(--radius-2xl) }
 ```
 
-```txt
-.rounded-tr-3xl { border-top-right-radius: 24px }
+```css
+.rounded-tr-3xl { border-top-right-radius: var(--radius-3xl) }
 ```
 
-```txt
+```css
+.rounded-tr-4xl { border-top-right-radius: var(--radius-4xl) }
+```
+
+```css
 .rounded-tr-full { border-top-right-radius: 50% }
 ```
 
-```txt
+```css
 .rounded-tr-none { border-top-right-radius: 0 }
 ```
 
-```txt
+```css
 .rounded-tr-[<value>] { border-top-right-radius: <value> }
 ```
 
-```txt
+```css
 .rounded-tr-(<custom-property>) { border-top-right-radius: var(<custom-property>) }
 ```
 
-```txt
-.rounded-br-xs { border-bottom-right-radius: 2px }
+```css
+.rounded-br-xs { border-bottom-right-radius: var(--radius-xs) }
 ```
 
-```txt
-.rounded-br-sm { border-bottom-right-radius: 4px }
+```css
+.rounded-br-sm { border-bottom-right-radius: var(--radius-sm) }
 ```
 
-```txt
-.rounded-br-md { border-bottom-right-radius: 6px }
+```css
+.rounded-br-md { border-bottom-right-radius: var(--radius-md) }
 ```
 
-```txt
-.rounded-br-lg { border-bottom-right-radius: 8px }
+```css
+.rounded-br-lg { border-bottom-right-radius: var(--radius-lg) }
 ```
 
-```txt
-.rounded-br-xl { border-bottom-right-radius: 12px }
+```css
+.rounded-br-xl { border-bottom-right-radius: var(--radius-xl) }
 ```
 
-```txt
-.rounded-br-2xl { border-bottom-right-radius: 16px }
+```css
+.rounded-br-2xl { border-bottom-right-radius: var(--radius-2xl) }
 ```
 
-```txt
-.rounded-br-3xl { border-bottom-right-radius: 24px }
+```css
+.rounded-br-3xl { border-bottom-right-radius: var(--radius-3xl) }
 ```
 
-```txt
+```css
+.rounded-br-4xl { border-bottom-right-radius: var(--radius-4xl) }
+```
+
+```css
 .rounded-br-full { border-bottom-right-radius: 50% }
 ```
 
-```txt
+```css
 .rounded-br-none { border-bottom-right-radius: 0 }
 ```
 
-```txt
+```css
 .rounded-br-[<value>] { border-bottom-right-radius: <value> }
 ```
 
-```txt
+```css
 .rounded-br-(<custom-property>) { border-bottom-right-radius: var(<custom-property>) }
 ```
 
-```txt
-.rounded-bl-xs { border-bottom-left-radius: 2px }
+```css
+.rounded-bl-xs { border-bottom-left-radius: var(--radius-xs) }
 ```
 
-```txt
-.rounded-bl-sm { border-bottom-left-radius: 4px }
+```css
+.rounded-bl-sm { border-bottom-left-radius: var(--radius-sm) }
 ```
 
-```txt
-.rounded-bl-md { border-bottom-left-radius: 6px }
+```css
+.rounded-bl-md { border-bottom-left-radius: var(--radius-md) }
 ```
 
-```txt
-.rounded-bl-lg { border-bottom-left-radius: 8px }
+```css
+.rounded-bl-lg { border-bottom-left-radius: var(--radius-lg) }
 ```
 
-```txt
-.rounded-bl-xl { border-bottom-left-radius: 12px }
+```css
+.rounded-bl-xl { border-bottom-left-radius: var(--radius-xl) }
 ```
 
-```txt
-.rounded-bl-2xl { border-bottom-left-radius: 16px }
+```css
+.rounded-bl-2xl { border-bottom-left-radius: var(--radius-2xl) }
 ```
 
-```txt
-.rounded-bl-3xl { border-bottom-left-radius: 24px }
+```css
+.rounded-bl-3xl { border-bottom-left-radius: var(--radius-3xl) }
 ```
 
-```txt
+```css
+.rounded-bl-4xl { border-bottom-left-radius: var(--radius-4xl) }
+```
+
+```css
 .rounded-bl-full { border-bottom-left-radius: 50% }
 ```
 
-```txt
+```css
 .rounded-bl-none { border-bottom-left-radius: 0 }
 ```
 
-```txt
+```css
 .rounded-bl-[<value>] { border-bottom-left-radius: <value> }
 ```
 
-```txt
+```css
 .rounded-bl-(<custom-property>) { border-bottom-left-radius: var(<custom-property>) }
 ```
 
 ### border-width
 
-```txt
+```css
 .border { border-width: 1px }
 ```
 
-```txt
+```css
 .border-<number> { border-width: <number>px }
 ```
 
-```txt
+```css
 .-border-<number> { border-width: -<number>px }
 ```
 
-```txt
+```css
 .border-[<value>] { border-width: <value> }
 ```
 
-```txt
+```css
 .border-(<custom-property>) { border-width: var(<custom-property>) }
 ```
 
-```txt
+```css
 .border-s { border-inline-start-width: 1px }
 ```
 
-```txt
+```css
 .border-s-<number> { border-inline-start-width: <number>px }
 ```
 
-```txt
+```css
 .-border-s-<number> { border-inline-start-width: -<number>px }
 ```
 
-```txt
+```css
 .border-s-[<value>] { border-inline-start-width: <value> }
 ```
 
-```txt
+```css
 .border-s-(<custom-property>) { border-inline-start-width: var(<custom-property>) }
 ```
 
-```txt
+```css
 .border-e { border-inline-end-width: 1px }
 ```
 
-```txt
+```css
 .border-e-<number> { border-inline-end-width: <number>px }
 ```
 
-```txt
+```css
 .-border-e-<number> { border-inline-end-width: -<number>px }
 ```
 
-```txt
+```css
 .border-e-[<value>] { border-inline-end-width: <value> }
 ```
 
-```txt
+```css
 .border-e-(<custom-property>) { border-inline-end-width: var(<custom-property>) }
 ```
 
-```txt
+```css
 .border-t { border-top-width: 1px }
 ```
 
-```txt
+```css
 .border-t-<number> { border-top-width: <number>px }
 ```
 
-```txt
+```css
 .-border-t-<number> { border-top-width: -<number>px }
 ```
 
-```txt
+```css
 .border-t-[<value>] { border-top-width: <value> }
 ```
 
-```txt
+```css
 .border-t-(<custom-property>) { border-top-width: var(<custom-property>) }
 ```
 
-```txt
+```css
 .border-r { border-right-width: 1px }
 ```
 
-```txt
+```css
 .border-r-<number> { border-right-width: <number>px }
 ```
 
-```txt
+```css
 .-border-r-<number> { border-right-width: -<number>px }
 ```
 
-```txt
+```css
 .border-r-[<value>] { border-right-width: <value> }
 ```
 
-```txt
+```css
 .border-r-(<custom-property>) { border-right-width: var(<custom-property>) }
 ```
 
-```txt
+```css
 .border-b { border-bottom-width: 1px }
 ```
 
-```txt
+```css
 .border-b-<number> { border-bottom-width: <number>px }
 ```
 
-```txt
+```css
 .-border-b-<number> { border-bottom-width: -<number>px }
 ```
 
-```txt
+```css
 .border-b-[<value>] { border-bottom-width: <value> }
 ```
 
-```txt
+```css
 .border-b-(<custom-property>) { border-bottom-width: var(<custom-property>) }
 ```
 
-```txt
+```css
 .border-l { border-left-width: 1px }
 ```
 
-```txt
+```css
 .border-l-<number> { border-left-width: <number>px }
 ```
 
-```txt
+```css
 .-border-l-<number> { border-left-width: -<number>px }
 ```
 
-```txt
+```css
 .border-l-[<value>] { border-left-width: <value> }
 ```
 
-```txt
+```css
 .border-l-(<custom-property>) { border-left-width: var(<custom-property>) }
 ```
 
 ### border-color
 
-```txt
+```css
 .border-<color> { border-color: oklch(...) }
 ```
 
 ### border-style
 
-```txt
+```css
 .border-solid { border-style: solid }
 ```
 
-```txt
+```css
 .border-dashed { border-style: dashed }
 ```
 
-```txt
+```css
 .border-dotted { border-style: dotted }
 ```
 
-```txt
+```css
 .border-double { border-style: double }
 ```
 
-```txt
+```css
 .border-hidden { border-style: hidden }
 ```
 
-```txt
+```css
 .border-none { border-style: none }
 ```
 
 ### outline-width
 
-```txt
+```css
 .outline { outline-width: 1px }
 ```
 
-```txt
+```css
 .outline-<number> { outline-width: <number>px }
 ```
 
-```txt
+```css
 .-outline-<number> { outline-width: -<number>px }
 ```
 
-```txt
+```css
 .outline-[<value>] { outline-width: <value> }
 ```
 
-```txt
+```css
 .outline-(<custom-property>) { outline-width: var(<custom-property>) }
 ```
 
 ### outline-color
 
-```txt
+```css
 .outline-<color> { outline-color: oklch(...) }
 ```
 
 ### outline-style
 
-```txt
+```css
 .outline-solid { outline-style: solid }
 ```
 
-```txt
+```css
 .outline-dashed { outline-style: dashed }
 ```
 
-```txt
+```css
 .outline-dotted { outline-style: dotted }
 ```
 
-```txt
+```css
 .outline-double { outline-style: double }
 ```
 
-```txt
+```css
 .outline-none { outline-style: none }
 ```
 
 ### outline-offset
 
-```txt
+```css
 .outline-offset-<number> { outline-offset: <number>px }
 ```
 
-```txt
+```css
 .-outline-offset-<number> { outline-offset: -<number>px }
 ```
 
-```txt
+```css
 .outline-offset-[<value>] { outline-offset: <value> }
 ```
 
-```txt
+```css
 .outline-offset-(<custom-property>) { outline-offset: var(<custom-property>) }
 ```
 
@@ -7864,437 +7928,437 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### box-shadow
 
-```txt
+```css
 .shadow { box-shadow: 0 1px rgb(0 0 0 / 0.05) }
 ```
 
-```txt
+```css
 .shadow-2xs { box-shadow: 0 1px rgb(0 0 0 / 0.05) }
 ```
 
-```txt
+```css
 .shadow-xs { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05) }
 ```
 
-```txt
+```css
 .shadow-sm { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) }
 ```
 
-```txt
+```css
 .shadow-md { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) }
 ```
 
-```txt
+```css
 .shadow-lg { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) }
 ```
 
-```txt
+```css
 .shadow-xl { box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) }
 ```
 
-```txt
+```css
 .shadow-2xl { box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25) }
 ```
 
-```txt
+```css
 .shadow-none { box-shadow: 0 0 rgb(0 0 0 / 0) }
 ```
 
-```txt
+```css
 .shadow-[<value>] { box-shadow: <value> }
 ```
 
-```txt
+```css
 .shadow-(<custom-property>) { box-shadow: var(<custom-property>) }
 ```
 
 ### text-shadow
 
-```txt
+```css
 .text-shadow-2xs { text-shadow: 0px 1px 0px rgb(0 0 0 / 0.15) }
 ```
 
-```txt
+```css
 .text-shadow-xs { text-shadow: 0px 1px 1px rgb(0 0 0 / 0.2) }
 ```
 
-```txt
+```css
 .text-shadow-sm { text-shadow: 0px 1px 0px rgb(0 0 0 / 0.075), 0px 1px 1px rgb(0 0 0 / 0.075), 0px 2px 2px rgb(0 0 0 / 0.075) }
 ```
 
-```txt
+```css
 .text-shadow-md { text-shadow: 0px 1px 1px rgb(0 0 0 / 0.1), 0px 1px 2px rgb(0 0 0 / 0.1), 0px 2px 4px rgb(0 0 0 / 0.1) }
 ```
 
-```txt
+```css
 .text-shadow-lg { text-shadow: 0px 1px 2px rgb(0 0 0 / 0.1), 0px 3px 2px rgb(0 0 0 / 0.1), 0px 4px 8px rgb(0 0 0 / 0.1) }
 ```
 
-```txt
+```css
 .text-shadow-none { text-shadow: none }
 ```
 
-```txt
+```css
 .text-shadow-[<value>] { text-shadow: <value> }
 ```
 
-```txt
+```css
 .text-shadow-(<custom-property>) { text-shadow: var(<custom-property>) }
 ```
 
 ### opacity
 
-```txt
+```css
 .opacity-<number> { opacity: <number>% }
 ```
 
-```txt
+```css
 .-opacity-<number> { opacity: -<number>% }
 ```
 
-```txt
+```css
 .opacity-[<value>] { opacity: <value> }
 ```
 
-```txt
+```css
 .opacity-(<custom-property>) { opacity: var(<custom-property>) }
 ```
 
 ### mix-blend-mode
 
-```txt
+```css
 .mix-blend-normal { mix-blend-mode: normal }
 ```
 
-```txt
+```css
 .mix-blend-multiply { mix-blend-mode: multiply }
 ```
 
-```txt
+```css
 .mix-blend-screen { mix-blend-mode: screen }
 ```
 
-```txt
+```css
 .mix-blend-overlay { mix-blend-mode: overlay }
 ```
 
-```txt
+```css
 .mix-blend-darken { mix-blend-mode: darken }
 ```
 
-```txt
+```css
 .mix-blend-lighten { mix-blend-mode: lighten }
 ```
 
-```txt
+```css
 .mix-blend-color-dodge { mix-blend-mode: color-dodge }
 ```
 
-```txt
+```css
 .mix-blend-color-burn { mix-blend-mode: color-burn }
 ```
 
-```txt
+```css
 .mix-blend-hard-light { mix-blend-mode: hard-light }
 ```
 
-```txt
+```css
 .mix-blend-soft-light { mix-blend-mode: soft-light }
 ```
 
-```txt
+```css
 .mix-blend-difference { mix-blend-mode: difference }
 ```
 
-```txt
+```css
 .mix-blend-exclusion { mix-blend-mode: exclusion }
 ```
 
-```txt
+```css
 .mix-blend-hue { mix-blend-mode: hue }
 ```
 
-```txt
+```css
 .mix-blend-saturation { mix-blend-mode: saturation }
 ```
 
-```txt
+```css
 .mix-blend-color { mix-blend-mode: color }
 ```
 
-```txt
+```css
 .mix-blend-luminosity { mix-blend-mode: luminosity }
 ```
 
 ### background-blend-mode
 
-```txt
+```css
 .bg-blend-normal { background-blend-mode: normal }
 ```
 
-```txt
+```css
 .bg-blend-multiply { background-blend-mode: multiply }
 ```
 
-```txt
+```css
 .bg-blend-screen { background-blend-mode: screen }
 ```
 
-```txt
+```css
 .bg-blend-overlay { background-blend-mode: overlay }
 ```
 
-```txt
+```css
 .bg-blend-darken { background-blend-mode: darken }
 ```
 
-```txt
+```css
 .bg-blend-lighten { background-blend-mode: lighten }
 ```
 
-```txt
+```css
 .bg-blend-color-dodge { background-blend-mode: color-dodge }
 ```
 
-```txt
+```css
 .bg-blend-color-burn { background-blend-mode: color-burn }
 ```
 
-```txt
+```css
 .bg-blend-hard-light { background-blend-mode: hard-light }
 ```
 
-```txt
+```css
 .bg-blend-soft-light { background-blend-mode: soft-light }
 ```
 
-```txt
+```css
 .bg-blend-difference { background-blend-mode: difference }
 ```
 
-```txt
+```css
 .bg-blend-exclusion { background-blend-mode: exclusion }
 ```
 
-```txt
+```css
 .bg-blend-hue { background-blend-mode: hue }
 ```
 
-```txt
+```css
 .bg-blend-saturation { background-blend-mode: saturation }
 ```
 
-```txt
+```css
 .bg-blend-color { background-blend-mode: color }
 ```
 
-```txt
+```css
 .bg-blend-luminosity { background-blend-mode: luminosity }
 ```
 
 ### mask-clip
 
-```txt
+```css
 .mask-clip-border { mask-clip: border-box }
 ```
 
-```txt
+```css
 .mask-clip-padding { mask-clip: padding-box }
 ```
 
-```txt
+```css
 .mask-clip-content { mask-clip: content-box }
 ```
 
-```txt
+```css
 .mask-clip-fill { mask-clip: fill-box }
 ```
 
-```txt
+```css
 .mask-clip-stroke { mask-clip: stroke-box }
 ```
 
-```txt
+```css
 .mask-clip-view { mask-clip: view-box }
 ```
 
-```txt
+```css
 .mask-no-clip { mask-clip: no-clip }
 ```
 
 ### mask-composite
 
-```txt
+```css
 .mask-add { mask-composite: add }
 ```
 
-```txt
+```css
 .mask-subtract { mask-composite: subtract }
 ```
 
-```txt
+```css
 .mask-intersect { mask-composite: intersect }
 ```
 
-```txt
+```css
 .mask-exclude { mask-composite: exclude }
 ```
 
 ### mask-image
 
-```txt
+```css
 .mask-none { mask-image: none }
 ```
 
-```txt
+```css
 .mask-[<value>] { mask-image: <value> }
 ```
 
-```txt
+```css
 .mask-(<custom-property>) { mask-image: var(<custom-property>) }
 ```
 
 ### mask-mode
 
-```txt
+```css
 .mask-alpha { mask-mode: alpha }
 ```
 
-```txt
+```css
 .mask-luminance { mask-mode: luminance }
 ```
 
-```txt
+```css
 .mask-match { mask-mode: match-source }
 ```
 
 ### mask-origin
 
-```txt
+```css
 .mask-origin-border { mask-origin: border-box }
 ```
 
-```txt
+```css
 .mask-origin-padding { mask-origin: padding-box }
 ```
 
-```txt
+```css
 .mask-origin-content { mask-origin: content-box }
 ```
 
-```txt
+```css
 .mask-origin-fill { mask-origin: fill-box }
 ```
 
-```txt
+```css
 .mask-origin-stroke { mask-origin: stroke-box }
 ```
 
-```txt
+```css
 .mask-origin-view { mask-origin: view-box }
 ```
 
 ### mask-position
 
-```txt
+```css
 .mask-top-left { mask-position: top left }
 ```
 
-```txt
+```css
 .mask-top { mask-position: top }
 ```
 
-```txt
+```css
 .mask-top-right { mask-position: top right }
 ```
 
-```txt
+```css
 .mask-left { mask-position: left }
 ```
 
-```txt
+```css
 .mask-center { mask-position: center }
 ```
 
-```txt
+```css
 .mask-right { mask-position: right }
 ```
 
-```txt
+```css
 .mask-bottom-left { mask-position: bottom left }
 ```
 
-```txt
+```css
 .mask-bottom { mask-position: bottom }
 ```
 
-```txt
+```css
 .mask-bottom-right { mask-position: bottom right }
 ```
 
-```txt
+```css
 .mask-position-[<value>] { mask-position: <value> }
 ```
 
-```txt
+```css
 .mask-position-(<custom-property>) { mask-position: var(<custom-property>) }
 ```
 
 ### mask-repeat
 
-```txt
+```css
 .mask-repeat { mask-repeat: repeat }
 ```
 
-```txt
+```css
 .mask-no-repeat { mask-repeat: no-repeat }
 ```
 
-```txt
+```css
 .mask-repeat-x { mask-repeat: repeat-x }
 ```
 
-```txt
+```css
 .mask-repeat-y { mask-repeat: repeat-y }
 ```
 
-```txt
+```css
 .mask-repeat-space { mask-repeat: space }
 ```
 
-```txt
+```css
 .mask-repeat-round { mask-repeat: round }
 ```
 
 ### mask-size
 
-```txt
+```css
 .mask-auto { mask-size: auto }
 ```
 
-```txt
+```css
 .mask-cover { mask-size: cover }
 ```
 
-```txt
+```css
 .mask-contain { mask-size: contain }
 ```
 
-```txt
+```css
 .mask-size-[<value>] { mask-size: <value> }
 ```
 
-```txt
+```css
 .mask-size-(<custom-property>) { mask-size: var(<custom-property>) }
 ```
 
 ### mask-type
 
-```txt
+```css
 .mask-type-alpha { mask-type: alpha }
 ```
 
-```txt
+```css
 .mask-type-luminance { mask-type: luminance }
 ```
 
@@ -8302,409 +8366,409 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### filter
 
-```txt
+```css
 .blur-xs { filter: blur(4px) }
 ```
 
-```txt
+```css
 .blur-sm { filter: blur(8px) }
 ```
 
-```txt
+```css
 .blur-md { filter: blur(12px) }
 ```
 
-```txt
+```css
 .blur-lg { filter: blur(16px) }
 ```
 
-```txt
+```css
 .blur-xl { filter: blur(24px) }
 ```
 
-```txt
+```css
 .blur-2xl { filter: blur(40px) }
 ```
 
-```txt
+```css
 .blur-3xl { filter: blur(64px) }
 ```
 
-```txt
+```css
 .blur-none { filter: none }
 ```
 
-```txt
+```css
 .blur-[<value>] { filter: <value> }
 ```
 
-```txt
+```css
 .blur-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .brightness-<number> { filter: brightness(<number>%) }
 ```
 
-```txt
+```css
 .-brightness-<number> { filter: brightness(-<number>%) }
 ```
 
-```txt
+```css
 .brightness-[<value>] { filter: <value> }
 ```
 
-```txt
+```css
 .brightness-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .contrast-<number> { filter: contrast(<number>%) }
 ```
 
-```txt
+```css
 .-contrast-<number> { filter: contrast(-<number>%) }
 ```
 
-```txt
+```css
 .contrast-[<value>] { filter: <value> }
 ```
 
-```txt
+```css
 .contrast-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .drop-shadow-xs { filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05)) }
 ```
 
-```txt
+```css
 .drop-shadow-sm { filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.15)) }
 ```
 
-```txt
+```css
 .drop-shadow-md { filter: drop-shadow(0 3px 3px rgb(0 0 0 / 0.12)) }
 ```
 
-```txt
+```css
 .drop-shadow-lg { filter: drop-shadow(0 4px 4px rgb(0 0 0 / 0.15)) }
 ```
 
-```txt
+```css
 .drop-shadow-xl { filter: drop-shadow(0 9px 7px rgb(0 0 0 / 0.1)) }
 ```
 
-```txt
+```css
 .drop-shadow-2xl { filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15)) }
 ```
 
-```txt
+```css
 .drop-shadow-none { filter: drop-shadow(0 0 rgba(0, 0, 0, 0)) }
 ```
 
-```txt
+```css
 .drop-shadow-[<value>] { filter: <value> }
 ```
 
-```txt
+```css
 .drop-shadow-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .grayscale { filter: grayscale(100%) }
 ```
 
-```txt
+```css
 .grayscale-<number> { filter: grayscale(<number>%) }
 ```
 
-```txt
+```css
 .-grayscale-<number> { filter: grayscale(-<number>%) }
 ```
 
-```txt
+```css
 .grayscale-[<value>] { filter: <value> }
 ```
 
-```txt
+```css
 .grayscale-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .hue-rotate-<number> { filter: hue-rotate(<number>deg) }
 ```
 
-```txt
+```css
 .-hue-rotate-<number> { filter: hue-rotate(-<number>deg) }
 ```
 
-```txt
+```css
 .hue-rotate-[<value>] { filter: <value> }
 ```
 
-```txt
+```css
 .hue-rotate-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .invert { filter: invert(100%) }
 ```
 
-```txt
+```css
 .invert-<number> { filter: invert(<number>%) }
 ```
 
-```txt
+```css
 .-invert-<number> { filter: invert(-<number>%) }
 ```
 
-```txt
+```css
 .invert-[<value>] { filter: <value> }
 ```
 
-```txt
+```css
 .invert-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .saturate-<number> { filter: saturate(<number>%) }
 ```
 
-```txt
+```css
 .-saturate-<number> { filter: saturate(-<number>%) }
 ```
 
-```txt
+```css
 .saturate-[<value>] { filter: <value> }
 ```
 
-```txt
+```css
 .saturate-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .sepia { filter: sepia(100%) }
 ```
 
-```txt
+```css
 .sepia-<number> { filter: sepia(<number>%) }
 ```
 
-```txt
+```css
 .-sepia-<number> { filter: sepia(-<number>%) }
 ```
 
-```txt
+```css
 .sepia-[<value>] { filter: <value> }
 ```
 
-```txt
+```css
 .sepia-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .filter-none { filter: none }
 ```
 
-```txt
+```css
 .filter-[<value>] { filter: <value> }
 ```
 
-```txt
+```css
 .filter-(<custom-property>) { filter: var(<custom-property>) }
 ```
 
 ### backdrop-filter
 
-```txt
+```css
 .backdrop-blur-xs { backdrop-filter: blur(4px) }
 ```
 
-```txt
+```css
 .backdrop-blur-sm { backdrop-filter: blur(8px) }
 ```
 
-```txt
+```css
 .backdrop-blur-md { backdrop-filter: blur(12px) }
 ```
 
-```txt
+```css
 .backdrop-blur-lg { backdrop-filter: blur(16px) }
 ```
 
-```txt
+```css
 .backdrop-blur-xl { backdrop-filter: blur(24px) }
 ```
 
-```txt
+```css
 .backdrop-blur-2xl { backdrop-filter: blur(40px) }
 ```
 
-```txt
+```css
 .backdrop-blur-3xl { backdrop-filter: blur(64px) }
 ```
 
-```txt
+```css
 .backdrop-blur-none { backdrop-filter: none }
 ```
 
-```txt
+```css
 .backdrop-blur-[<value>] { backdrop-filter: <value> }
 ```
 
-```txt
+```css
 .backdrop-blur-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .backdrop-brightness-<number> { backdrop-filter: brightness(<number>%) }
 ```
 
-```txt
+```css
 .-backdrop-brightness-<number> { backdrop-filter: brightness(-<number>%) }
 ```
 
-```txt
+```css
 .backdrop-brightness-[<value>] { backdrop-filter: <value> }
 ```
 
-```txt
+```css
 .backdrop-brightness-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .backdrop-contrast-<number> { backdrop-filter: contrast(<number>%) }
 ```
 
-```txt
+```css
 .-backdrop-contrast-<number> { backdrop-filter: contrast(-<number>%) }
 ```
 
-```txt
+```css
 .backdrop-contrast-[<value>] { backdrop-filter: <value> }
 ```
 
-```txt
+```css
 .backdrop-contrast-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .backdrop-grayscale { backdrop-filter: grayscale(100%) }
 ```
 
-```txt
+```css
 .backdrop-grayscale-<number> { backdrop-filter: grayscale(<number>%) }
 ```
 
-```txt
+```css
 .-backdrop-grayscale-<number> { backdrop-filter: grayscale(-<number>%) }
 ```
 
-```txt
+```css
 .backdrop-grayscale-[<value>] { backdrop-filter: <value> }
 ```
 
-```txt
+```css
 .backdrop-grayscale-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .backdrop-hue-rotate-<number> { backdrop-filter: hue-rotate(<number>deg) }
 ```
 
-```txt
+```css
 .-backdrop-hue-rotate-<number> { backdrop-filter: hue-rotate(-<number>deg) }
 ```
 
-```txt
+```css
 .backdrop-hue-rotate-[<value>] { backdrop-filter: <value> }
 ```
 
-```txt
+```css
 .backdrop-hue-rotate-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .backdrop-invert { backdrop-filter: invert(100%) }
 ```
 
-```txt
+```css
 .backdrop-invert-<number> { backdrop-filter: invert(<number>%) }
 ```
 
-```txt
+```css
 .-backdrop-invert-<number> { backdrop-filter: invert(-<number>%) }
 ```
 
-```txt
+```css
 .backdrop-invert-[<value>] { backdrop-filter: <value> }
 ```
 
-```txt
+```css
 .backdrop-invert-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .backdrop-opacity-<number> { backdrop-filter: opacity(<number>%) }
 ```
 
-```txt
+```css
 .-backdrop-opacity-<number> { backdrop-filter: opacity(-<number>%) }
 ```
 
-```txt
+```css
 .backdrop-opacity-[<value>] { backdrop-filter: <value> }
 ```
 
-```txt
+```css
 .backdrop-opacity-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .backdrop-saturate-<number> { backdrop-filter: saturate(<number>%) }
 ```
 
-```txt
+```css
 .-backdrop-saturate-<number> { backdrop-filter: saturate(-<number>%) }
 ```
 
-```txt
+```css
 .backdrop-saturate-[<value>] { backdrop-filter: <value> }
 ```
 
-```txt
+```css
 .backdrop-saturate-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .backdrop-sepia { backdrop-filter: sepia(100%) }
 ```
 
-```txt
+```css
 .backdrop-sepia-<number> { backdrop-filter: sepia(<number>%) }
 ```
 
-```txt
+```css
 .-backdrop-sepia-<number> { backdrop-filter: sepia(-<number>%) }
 ```
 
-```txt
+```css
 .backdrop-sepia-[<value>] { backdrop-filter: <value> }
 ```
 
-```txt
+```css
 .backdrop-sepia-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
-```txt
+```css
 .backdrop-filter-none { backdrop-filter: none }
 ```
 
-```txt
+```css
 .backdrop-filter-[<value>] { backdrop-filter: <value> }
 ```
 
-```txt
+```css
 .backdrop-filter-(<custom-property>) { backdrop-filter: var(<custom-property>) }
 ```
 
@@ -8712,81 +8776,81 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### border-collapse
 
-```txt
+```css
 .border-collapse { border-collapse: collapse }
 ```
 
-```txt
+```css
 .border-separate { border-collapse: separate }
 ```
 
 ### border-spacing
 
-```txt
+```css
 .border-spacing-<number> { border-spacing: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-border-spacing-<number> { border-spacing: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .border-spacing-[<value>] { border-spacing: <value> }
 ```
 
-```txt
+```css
 .border-spacing-(<custom-property>) { border-spacing: var(<custom-property>) }
 ```
 
-```txt
+```css
 .border-spacing-x-<number> { border-spacing: calc(<number> * 4px) 0 }
 ```
 
-```txt
+```css
 .-border-spacing-x-<number> { border-spacing: calc(-<number> * 4px) 0 }
 ```
 
-```txt
+```css
 .border-spacing-x-[<value>] { border-spacing: <value> }
 ```
 
-```txt
+```css
 .border-spacing-x-(<custom-property>) { border-spacing: var(<custom-property>) }
 ```
 
-```txt
+```css
 .border-spacing-y-<number> { border-spacing: 0 calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-border-spacing-y-<number> { border-spacing: 0 calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .border-spacing-y-[<value>] { border-spacing: <value> }
 ```
 
-```txt
+```css
 .border-spacing-y-(<custom-property>) { border-spacing: var(<custom-property>) }
 ```
 
 ### table-layout
 
-```txt
+```css
 .table-auto { table-layout: auto }
 ```
 
-```txt
+```css
 .table-fixed { table-layout: fixed }
 ```
 
 ### caption-side
 
-```txt
+```css
 .caption-top { caption-side: top }
 ```
 
-```txt
+```css
 .caption-bottom { caption-side: bottom }
 ```
 
@@ -8794,127 +8858,127 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### transition-property
 
-```txt
+```css
 .transition { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter }
 ```
 
-```txt
+```css
 .transition-all { transition-property: all }
 ```
 
-```txt
+```css
 .transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke }
 ```
 
-```txt
+```css
 .transition-opacity { transition-property: opacity }
 ```
 
-```txt
+```css
 .transition-shadow { transition-property: box-shadow }
 ```
 
-```txt
+```css
 .transition-transform { transition-property: transform }
 ```
 
-```txt
+```css
 .transition-none { transition-property: none }
 ```
 
-```txt
+```css
 .transition-[<value>] { transition-property: <value> }
 ```
 
-```txt
+```css
 .transition-(<custom-property>) { transition-property: var(<custom-property>) }
 ```
 
 ### transition-behavior
 
-```txt
+```css
 .transition-normal { transition-behavior: normal }
 ```
 
-```txt
+```css
 .transition-discrete { transition-behavior: allow-discrete }
 ```
 
 ### transition-duration
 
-```txt
+```css
 .duration-initial { transition-duration: initial }
 ```
 
-```txt
+```css
 .duration-<number> { transition-duration: <number>ms }
 ```
 
-```txt
+```css
 .-duration-<number> { transition-duration: -<number>ms }
 ```
 
-```txt
+```css
 .duration-[<value>] { transition-duration: <value> }
 ```
 
-```txt
+```css
 .duration-(<custom-property>) { transition-duration: var(<custom-property>) }
 ```
 
 ### transition-timing-function
 
-```txt
+```css
 .ease-linear { transition-timing-function: linear }
 ```
 
-```txt
+```css
 .ease-in { transition-timing-function: ease-in }
 ```
 
-```txt
+```css
 .ease-out { transition-timing-function: ease-out }
 ```
 
-```txt
+```css
 .ease-in-out { transition-timing-function: ease-in-out }
 ```
 
-```txt
+```css
 .ease-initial { transition-timing-function: initial }
 ```
 
-```txt
+```css
 .ease-[<value>] { transition-timing-function: <value> }
 ```
 
-```txt
+```css
 .ease-(<custom-property>) { transition-timing-function: var(<custom-property>) }
 ```
 
 ### animation
 
-```txt
+```css
 .animate-expand { animation: expand 250ms ease-in-out }
 ```
 
-```txt
+```css
 .animate-toast { animation: toast 250ms ease-in-out }
 ```
 
-```txt
+```css
 .animate-fade { animation: fade 250ms ease-in-out }
 ```
 
-```txt
+```css
 .animate-none { animation: none }
 ```
 
-```txt
+```css
 .animate-[<value>] { animation: <value> }
 ```
 
-```txt
+```css
 .animate-(<custom-property>) { animation: var(<custom-property>) }
 ```
 
@@ -8922,679 +8986,679 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### backface-visibility
 
-```txt
+```css
 .backface-visible { backface-visibility: visible }
 ```
 
-```txt
+```css
 .backface-hidden { backface-visibility: hidden }
 ```
 
 ### perspective
 
-```txt
+```css
 .perspective-dramatic { perspective: 100px }
 ```
 
-```txt
+```css
 .perspective-near { perspective: 300px }
 ```
 
-```txt
+```css
 .perspective-normal { perspective: 500px }
 ```
 
-```txt
+```css
 .perspective-midrange { perspective: 800px }
 ```
 
-```txt
+```css
 .perspective-distant { perspective: 1200px }
 ```
 
-```txt
+```css
 .perspective-none { perspective: none }
 ```
 
-```txt
+```css
 .perspective-[<value>] { perspective: <value> }
 ```
 
-```txt
+```css
 .perspective-(<custom-property>) { perspective: var(<custom-property>) }
 ```
 
 ### perspective-origin
 
-```txt
+```css
 .perspective-origin-top-left { perspective-origin: top left }
 ```
 
-```txt
+```css
 .perspective-origin-top { perspective-origin: top }
 ```
 
-```txt
+```css
 .perspective-origin-top-right { perspective-origin: top right }
 ```
 
-```txt
+```css
 .perspective-origin-left { perspective-origin: left }
 ```
 
-```txt
+```css
 .perspective-origin-center { perspective-origin: center }
 ```
 
-```txt
+```css
 .perspective-origin-right { perspective-origin: right }
 ```
 
-```txt
+```css
 .perspective-origin-bottom-left { perspective-origin: bottom left }
 ```
 
-```txt
+```css
 .perspective-origin-bottom { perspective-origin: bottom }
 ```
 
-```txt
+```css
 .perspective-origin-bottom-right { perspective-origin: bottom right }
 ```
 
-```txt
+```css
 .perspective-origin-[<value>] { perspective-origin: <value> }
 ```
 
-```txt
+```css
 .perspective-origin-(<custom-property>) { perspective-origin: var(<custom-property>) }
 ```
 
 ### rotate
 
-```txt
+```css
 .rotate-none { rotate: none }
 ```
 
-```txt
+```css
 .rotate-<number> { rotate: <number>deg }
 ```
 
-```txt
+```css
 .-rotate-<number> { rotate: -<number>deg }
 ```
 
-```txt
+```css
 .rotate-[<value>] { rotate: <value> }
 ```
 
-```txt
+```css
 .rotate-(<custom-property>) { rotate: var(<custom-property>) }
 ```
 
 ### scale
 
-```txt
+```css
 .scale-<number> { scale: <number>% <number>% }
 ```
 
-```txt
+```css
 .-scale-<number> { scale: -<number>% -<number>% }
 ```
 
-```txt
+```css
 .scale-[<value>] { scale: <value> }
 ```
 
-```txt
+```css
 .scale-(<custom-property>) { scale: var(<custom-property>) }
 ```
 
-```txt
+```css
 .scale-x-<number> { scale: <number>% 100% }
 ```
 
-```txt
+```css
 .-scale-x-<number> { scale: -<number>% 100% }
 ```
 
-```txt
+```css
 .scale-x-[<value>] { scale: <value> }
 ```
 
-```txt
+```css
 .scale-x-(<custom-property>) { scale: var(<custom-property>) }
 ```
 
-```txt
+```css
 .scale-y-<number> { scale: 100% <number>% }
 ```
 
-```txt
+```css
 .-scale-y-<number> { scale: 100% -<number>% }
 ```
 
-```txt
+```css
 .scale-y-[<value>] { scale: <value> }
 ```
 
-```txt
+```css
 .scale-y-(<custom-property>) { scale: var(<custom-property>) }
 ```
 
 ### transform
 
-```txt
+```css
 .skew-<number> { transform: skewX(<number>deg) skewY(<number>deg) }
 ```
 
-```txt
+```css
 .-skew-<number> { transform: skewX(-<number>deg) skewY(-<number>deg) }
 ```
 
-```txt
+```css
 .skew-[<value>] { transform: <value> }
 ```
 
-```txt
+```css
 .skew-(<custom-property>) { transform: var(<custom-property>) }
 ```
 
-```txt
+```css
 .skew-x-<number> { transform: skewX(<number>deg) }
 ```
 
-```txt
+```css
 .-skew-x-<number> { transform: skewX(-<number>deg) }
 ```
 
-```txt
+```css
 .skew-x-[<value>] { transform: <value> }
 ```
 
-```txt
+```css
 .skew-x-(<custom-property>) { transform: var(<custom-property>) }
 ```
 
-```txt
+```css
 .skew-y-<number> { transform: skewY(<number>deg) }
 ```
 
-```txt
+```css
 .-skew-y-<number> { transform: skewY(-<number>deg) }
 ```
 
-```txt
+```css
 .skew-y-[<value>] { transform: <value> }
 ```
 
-```txt
+```css
 .skew-y-(<custom-property>) { transform: var(<custom-property>) }
 ```
 
-```txt
+```css
 .transform-none { transform: none }
 ```
 
-```txt
+```css
 .transform-[<value>] { transform: <value> }
 ```
 
-```txt
+```css
 .transform-(<custom-property>) { transform: var(<custom-property>) }
 ```
 
 ### transform-origin
 
-```txt
+```css
 .origin-top-left { transform-origin: top left }
 ```
 
-```txt
+```css
 .origin-top { transform-origin: top }
 ```
 
-```txt
+```css
 .origin-top-right { transform-origin: top right }
 ```
 
-```txt
+```css
 .origin-left { transform-origin: left }
 ```
 
-```txt
+```css
 .origin-center { transform-origin: center }
 ```
 
-```txt
+```css
 .origin-right { transform-origin: right }
 ```
 
-```txt
+```css
 .origin-bottom-left { transform-origin: bottom left }
 ```
 
-```txt
+```css
 .origin-bottom { transform-origin: bottom }
 ```
 
-```txt
+```css
 .origin-bottom-right { transform-origin: bottom right }
 ```
 
-```txt
+```css
 .origin-[<value>] { transform-origin: <value> }
 ```
 
-```txt
+```css
 .origin-(<custom-property>) { transform-origin: var(<custom-property>) }
 ```
 
 ### transform-style
 
-```txt
+```css
 .transform-3d { transform-style: preserve-3d }
 ```
 
-```txt
+```css
 .transform-flat { transform-style: flat }
 ```
 
 ### translate
 
-```txt
+```css
 .translate-auto { translate: auto auto }
 ```
 
-```txt
+```css
 .translate-px { translate: 1px 1px }
 ```
 
-```txt
+```css
 .-translate-px { translate: -1px -1px }
 ```
 
-```txt
+```css
 .translate-full { translate: 100% 100% }
 ```
 
-```txt
+```css
 .-translate-full { translate: -100% -100% }
 ```
 
-```txt
+```css
 .translate-screen { translate: 100vw 100vw }
 ```
 
-```txt
+```css
 .translate-dvw { translate: 100vw 100vw }
 ```
 
-```txt
+```css
 .translate-dvh { translate: 100vh 100vh }
 ```
 
-```txt
+```css
 .translate-lvw { translate: 100lvw 100lvw }
 ```
 
-```txt
+```css
 .translate-lvh { translate: 100lvh 100lvh }
 ```
 
-```txt
+```css
 .translate-svw { translate: 100svw 100svw }
 ```
 
-```txt
+```css
 .translate-svh { translate: 100svh 100svh }
 ```
 
-```txt
+```css
 .translate-min { translate: min-content min-content }
 ```
 
-```txt
+```css
 .translate-max { translate: max-content max-content }
 ```
 
-```txt
+```css
 .translate-fit { translate: fit-content fit-content }
 ```
 
-```txt
+```css
 .translate-3xs { translate: 256px 256px }
 ```
 
-```txt
+```css
 .translate-2xs { translate: 288px 288px }
 ```
 
-```txt
+```css
 .translate-xs { translate: 320px 320px }
 ```
 
-```txt
+```css
 .translate-sm { translate: 384px 384px }
 ```
 
-```txt
+```css
 .translate-md { translate: 448px 448px }
 ```
 
-```txt
+```css
 .translate-lg { translate: 512px 512px }
 ```
 
-```txt
+```css
 .translate-xl { translate: 576px 576px }
 ```
 
-```txt
+```css
 .translate-2xl { translate: 672px 672px }
 ```
 
-```txt
+```css
 .translate-3xl { translate: 768px 768px }
 ```
 
-```txt
+```css
 .translate-4xl { translate: 896px 896px }
 ```
 
-```txt
+```css
 .translate-5xl { translate: 1024px 1024px }
 ```
 
-```txt
+```css
 .translate-6xl { translate: 1152px 1152px }
 ```
 
-```txt
+```css
 .translate-7xl { translate: 1280px 1280px }
 ```
 
-```txt
+```css
 .translate-<number> { translate: calc(<number> * 4px) calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-translate-<number> { translate: calc(-<number> * 4px) calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .translate-<fraction> { translate: calc(<fraction> * 100%) calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .translate-[<value>] { translate: <value> }
 ```
 
-```txt
+```css
 .translate-(<custom-property>) { translate: var(<custom-property>) }
 ```
 
-```txt
+```css
 .translate-x-auto { translate: auto }
 ```
 
-```txt
+```css
 .translate-x-px { translate: 1px }
 ```
 
-```txt
+```css
 .-translate-x-px { translate: -1px }
 ```
 
-```txt
+```css
 .translate-x-full { translate: 100% }
 ```
 
-```txt
+```css
 .-translate-x-full { translate: -100% }
 ```
 
-```txt
+```css
 .translate-x-screen { translate: 100vw }
 ```
 
-```txt
+```css
 .translate-x-dvw { translate: 100vw }
 ```
 
-```txt
+```css
 .translate-x-dvh { translate: 100vh }
 ```
 
-```txt
+```css
 .translate-x-lvw { translate: 100lvw }
 ```
 
-```txt
+```css
 .translate-x-lvh { translate: 100lvh }
 ```
 
-```txt
+```css
 .translate-x-svw { translate: 100svw }
 ```
 
-```txt
+```css
 .translate-x-svh { translate: 100svh }
 ```
 
-```txt
+```css
 .translate-x-min { translate: min-content }
 ```
 
-```txt
+```css
 .translate-x-max { translate: max-content }
 ```
 
-```txt
+```css
 .translate-x-fit { translate: fit-content }
 ```
 
-```txt
+```css
 .translate-x-3xs { translate: 256px }
 ```
 
-```txt
+```css
 .translate-x-2xs { translate: 288px }
 ```
 
-```txt
+```css
 .translate-x-xs { translate: 320px }
 ```
 
-```txt
+```css
 .translate-x-sm { translate: 384px }
 ```
 
-```txt
+```css
 .translate-x-md { translate: 448px }
 ```
 
-```txt
+```css
 .translate-x-lg { translate: 512px }
 ```
 
-```txt
+```css
 .translate-x-xl { translate: 576px }
 ```
 
-```txt
+```css
 .translate-x-2xl { translate: 672px }
 ```
 
-```txt
+```css
 .translate-x-3xl { translate: 768px }
 ```
 
-```txt
+```css
 .translate-x-4xl { translate: 896px }
 ```
 
-```txt
+```css
 .translate-x-5xl { translate: 1024px }
 ```
 
-```txt
+```css
 .translate-x-6xl { translate: 1152px }
 ```
 
-```txt
+```css
 .translate-x-7xl { translate: 1280px }
 ```
 
-```txt
+```css
 .translate-x-<number> { translate: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-translate-x-<number> { translate: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .translate-x-<fraction> { translate: calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .translate-x-[<value>] { translate: <value> }
 ```
 
-```txt
+```css
 .translate-x-(<custom-property>) { translate: var(<custom-property>) }
 ```
 
-```txt
+```css
 .translate-y-auto { translate: 0 auto }
 ```
 
-```txt
+```css
 .translate-y-px { translate: 0 1px }
 ```
 
-```txt
+```css
 .-translate-y-px { translate: 0 -1px }
 ```
 
-```txt
+```css
 .translate-y-full { translate: 0 100% }
 ```
 
-```txt
+```css
 .-translate-y-full { translate: 0 -100% }
 ```
 
-```txt
+```css
 .translate-y-screen { translate: 0 100vw }
 ```
 
-```txt
+```css
 .translate-y-dvw { translate: 0 100vw }
 ```
 
-```txt
+```css
 .translate-y-dvh { translate: 0 100vh }
 ```
 
-```txt
+```css
 .translate-y-lvw { translate: 0 100lvw }
 ```
 
-```txt
+```css
 .translate-y-lvh { translate: 0 100lvh }
 ```
 
-```txt
+```css
 .translate-y-svw { translate: 0 100svw }
 ```
 
-```txt
+```css
 .translate-y-svh { translate: 0 100svh }
 ```
 
-```txt
+```css
 .translate-y-min { translate: 0 min-content }
 ```
 
-```txt
+```css
 .translate-y-max { translate: 0 max-content }
 ```
 
-```txt
+```css
 .translate-y-fit { translate: 0 fit-content }
 ```
 
-```txt
+```css
 .translate-y-3xs { translate: 0 256px }
 ```
 
-```txt
+```css
 .translate-y-2xs { translate: 0 288px }
 ```
 
-```txt
+```css
 .translate-y-xs { translate: 0 320px }
 ```
 
-```txt
+```css
 .translate-y-sm { translate: 0 384px }
 ```
 
-```txt
+```css
 .translate-y-md { translate: 0 448px }
 ```
 
-```txt
+```css
 .translate-y-lg { translate: 0 512px }
 ```
 
-```txt
+```css
 .translate-y-xl { translate: 0 576px }
 ```
 
-```txt
+```css
 .translate-y-2xl { translate: 0 672px }
 ```
 
-```txt
+```css
 .translate-y-3xl { translate: 0 768px }
 ```
 
-```txt
+```css
 .translate-y-4xl { translate: 0 896px }
 ```
 
-```txt
+```css
 .translate-y-5xl { translate: 0 1024px }
 ```
 
-```txt
+```css
 .translate-y-6xl { translate: 0 1152px }
 ```
 
-```txt
+```css
 .translate-y-7xl { translate: 0 1280px }
 ```
 
-```txt
+```css
 .translate-y-<number> { translate: 0 calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-translate-y-<number> { translate: 0 calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .translate-y-<fraction> { translate: 0 calc(<fraction> * 100%) }
 ```
 
-```txt
+```css
 .translate-y-[<value>] { translate: <value> }
 ```
 
-```txt
+```css
 .translate-y-(<custom-property>) { translate: var(<custom-property>) }
 ```
 
@@ -9602,295 +9666,295 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### accent-color
 
-```txt
+```css
 .accent-<color> { accent-color: oklch(...) }
 ```
 
 ### appearance
 
-```txt
+```css
 .appearance-none { appearance: none }
 ```
 
-```txt
+```css
 .appearance-auto { appearance: auto }
 ```
 
 ### caret-color
 
-```txt
+```css
 .caret-<color> { caret-color: oklch(...) }
 ```
 
 ### color-scheme
 
-```txt
+```css
 .scheme-normal { color-scheme: normal }
 ```
 
-```txt
+```css
 .scheme-dark { color-scheme: dark }
 ```
 
-```txt
+```css
 .scheme-light { color-scheme: light }
 ```
 
-```txt
+```css
 .scheme-light-dark { color-scheme: light dark }
 ```
 
-```txt
+```css
 .scheme-only-dark { color-scheme: only dark }
 ```
 
-```txt
+```css
 .scheme-only-light { color-scheme: only light }
 ```
 
 ### cursor
 
-```txt
+```css
 .cursor-auto { cursor: auto }
 ```
 
-```txt
+```css
 .cursor-default { cursor: default }
 ```
 
-```txt
+```css
 .cursor-pointer { cursor: pointer }
 ```
 
-```txt
+```css
 .cursor-wait { cursor: wait }
 ```
 
-```txt
+```css
 .cursor-text { cursor: text }
 ```
 
-```txt
+```css
 .cursor-move { cursor: move }
 ```
 
-```txt
+```css
 .cursor-not-allowed { cursor: not-allowed }
 ```
 
 ### field-sizing
 
-```txt
+```css
 .field-sizing-fixed { field-sizing: fixed }
 ```
 
-```txt
+```css
 .field-sizing-content { field-sizing: content }
 ```
 
 ### pointer-events
 
-```txt
+```css
 .pointer-events-none { pointer-events: none }
 ```
 
-```txt
+```css
 .pointer-events-auto { pointer-events: auto }
 ```
 
 ### resize
 
-```txt
+```css
 .resize-none { resize: none }
 ```
 
-```txt
+```css
 .resize-x { resize: horizontal }
 ```
 
-```txt
+```css
 .resize-y { resize: vertical }
 ```
 
-```txt
+```css
 .resize-both { resize: both }
 ```
 
 ### scroll-behavior
 
-```txt
+```css
 .scroll-auto { scroll-behavior: auto }
 ```
 
-```txt
+```css
 .scroll-smooth { scroll-behavior: smooth }
 ```
 
 ### scroll-margin
 
-```txt
+```css
 .scroll-m-<number> { scroll-margin: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-scroll-m-<number> { scroll-margin: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .scroll-m-[<value>] { scroll-margin: <value> }
 ```
 
-```txt
+```css
 .scroll-m-(<custom-property>) { scroll-margin: var(<custom-property>) }
 ```
 
 ### scroll-padding
 
-```txt
+```css
 .scroll-p-<number> { scroll-padding: calc(<number> * 4px) }
 ```
 
-```txt
+```css
 .-scroll-p-<number> { scroll-padding: calc(-<number> * 4px) }
 ```
 
-```txt
+```css
 .scroll-p-[<value>] { scroll-padding: <value> }
 ```
 
-```txt
+```css
 .scroll-p-(<custom-property>) { scroll-padding: var(<custom-property>) }
 ```
 
 ### scroll-snap-align
 
-```txt
+```css
 .snap-start { scroll-snap-align: start }
 ```
 
-```txt
+```css
 .snap-end { scroll-snap-align: end }
 ```
 
-```txt
+```css
 .snap-center { scroll-snap-align: center }
 ```
 
-```txt
+```css
 .snap-align-none { scroll-snap-align: none }
 ```
 
 ### scroll-snap-stop
 
-```txt
+```css
 .snap-normal { scroll-snap-stop: normal }
 ```
 
-```txt
+```css
 .snap-always { scroll-snap-stop: always }
 ```
 
 ### scroll-snap-type
 
-```txt
+```css
 .snap-none { scroll-snap-type: none }
 ```
 
-```txt
+```css
 .snap-x { scroll-snap-type: x mandatory }
 ```
 
-```txt
+```css
 .snap-y { scroll-snap-type: y mandatory }
 ```
 
-```txt
+```css
 .snap-both { scroll-snap-type: both proximity }
 ```
 
 ### touch-action
 
-```txt
+```css
 .touch-auto { touch-action: auto }
 ```
 
-```txt
+```css
 .touch-none { touch-action: none }
 ```
 
-```txt
+```css
 .touch-pan-x { touch-action: pan-x }
 ```
 
-```txt
+```css
 .touch-pan-left { touch-action: pan-left }
 ```
 
-```txt
+```css
 .touch-pan-right { touch-action: pan-right }
 ```
 
-```txt
+```css
 .touch-pan-y { touch-action: pan-y }
 ```
 
-```txt
+```css
 .touch-pan-up { touch-action: pan-up }
 ```
 
-```txt
+```css
 .touch-pan-down { touch-action: pan-down }
 ```
 
-```txt
+```css
 .touch-pinch-zoom { touch-action: pinch-zoom }
 ```
 
-```txt
+```css
 .touch-manipulation { touch-action: manipulation }
 ```
 
 ### user-select
 
-```txt
+```css
 .select-text { user-select: text }
 ```
 
-```txt
+```css
 .select-all { user-select: all }
 ```
 
-```txt
+```css
 .select-auto { user-select: auto }
 ```
 
-```txt
+```css
 .select-none { user-select: none }
 ```
 
 ### will-change
 
-```txt
+```css
 .will-change-auto { will-change: auto }
 ```
 
-```txt
+```css
 .will-change-scroll { will-change: scroll-position }
 ```
 
-```txt
+```css
 .will-change-contents { will-change: contents }
 ```
 
-```txt
+```css
 .will-change-transform { will-change: transform }
 ```
 
-```txt
+```css
 .will-change-[<value>] { will-change: <value> }
 ```
 
-```txt
+```css
 .will-change-(<custom-property>) { will-change: var(<custom-property>) }
 ```
 
@@ -9898,31 +9962,31 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### fill
 
-```txt
+```css
 .fill-<color> { fill: oklch(...) }
 ```
 
 ### stroke
 
-```txt
+```css
 .stroke-<color> { stroke: oklch(...) }
 ```
 
 ### stroke-width
 
-```txt
+```css
 .stroke-<number> { stroke-width: <number>px }
 ```
 
-```txt
+```css
 .-stroke-<number> { stroke-width: -<number>px }
 ```
 
-```txt
+```css
 .stroke-[<value>] { stroke-width: <value> }
 ```
 
-```txt
+```css
 .stroke-(<custom-property>) { stroke-width: var(<custom-property>) }
 ```
 
@@ -9930,10 +9994,10 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ### forced-color-adjust
 
-```txt
+```css
 .forced-color-adjust-auto { forced-color-adjust: auto }
 ```
 
-```txt
+```css
 .forced-color-adjust-none { forced-color-adjust: none }
 ```

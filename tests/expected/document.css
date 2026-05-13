@@ -15436,10 +15436,47 @@ input, button, textarea, select { font: inherit; }
 h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
 ul, ol { list-style: none; }
 *, ::before, ::after { box-sizing: border-box; border-width: 0px; border-style: solid; border-color: currentcolor; margin: 0px; padding: 0px; }
-.font-sans { font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+@property --text-9xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
+@property --text-8xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
+@property --text-7xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
+@property --text-6xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
+@property --text-5xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
+@property --text-4xl--line-height { syntax: "*"; inherits: true; initial-value: 1.111; }
+@property --text-3xl--line-height { syntax: "*"; inherits: true; initial-value: 1.2; }
+@property --text-2xl--line-height { syntax: "*"; inherits: true; initial-value: 1.333; }
+@property --text-xl--line-height { syntax: "*"; inherits: true; initial-value: 1.4; }
+@property --text-lg--line-height { syntax: "*"; inherits: true; initial-value: 1.555; }
+@property --text-base--line-height { syntax: "*"; inherits: true; initial-value: 1.5; }
+@property --text-sm--line-height { syntax: "*"; inherits: true; initial-value: 1.429; }
+@property --text-xs--line-height { syntax: "*"; inherits: true; initial-value: 1.333; }
+@property --text-9xl { syntax: "*"; inherits: true; initial-value: 128px; }
+@property --text-8xl { syntax: "*"; inherits: true; initial-value: 96px; }
+@property --text-7xl { syntax: "*"; inherits: true; initial-value: 72px; }
+@property --text-6xl { syntax: "*"; inherits: true; initial-value: 60px; }
+@property --text-5xl { syntax: "*"; inherits: true; initial-value: 48px; }
+@property --text-4xl { syntax: "*"; inherits: true; initial-value: 36px; }
+@property --text-3xl { syntax: "*"; inherits: true; initial-value: 30px; }
+@property --text-2xl { syntax: "*"; inherits: true; initial-value: 24px; }
+@property --text-xl { syntax: "*"; inherits: true; initial-value: 20px; }
+@property --text-lg { syntax: "*"; inherits: true; initial-value: 18px; }
+@property --text-base { syntax: "*"; inherits: true; initial-value: 16px; }
+@property --text-sm { syntax: "*"; inherits: true; initial-value: 14px; }
+@property --text-xs { syntax: "*"; inherits: true; initial-value: 12px; }
+@property --radius-4xl { syntax: "*"; inherits: true; initial-value: 32px; }
+@property --radius-3xl { syntax: "*"; inherits: true; initial-value: 24px; }
+@property --radius-2xl { syntax: "*"; inherits: true; initial-value: 16px; }
+@property --radius-xl { syntax: "*"; inherits: true; initial-value: 12px; }
+@property --radius-lg { syntax: "*"; inherits: true; initial-value: 8px; }
+@property --radius-md { syntax: "*"; inherits: true; initial-value: 6px; }
+@property --radius-sm { syntax: "*"; inherits: true; initial-value: 4px; }
+@property --radius-xs { syntax: "*"; inherits: true; initial-value: 2px; }
+@property --font-mono { syntax: "*"; inherits: true; initial-value: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+@property --font-serif { syntax: "*"; inherits: true; initial-value: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
+@property --font-sans { syntax: "*"; inherits: true; initial-value: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+.font-sans { font-family: var(--font-sans); }
 .p-4 { padding: calc(16px); }
 .space-y-4 > :not(:last-child) { margin-bottom: calc(16px); }
-.text-2xl { font-size: 24px; line-height: 1.333; }
+.text-2xl { font-size: var(--text-2xl); line-height: var(--text-2xl--line-height); }
 .after\:content-\[\'\:after\'\]::after { content: ":after"; }
 .after\:block::after { display: block; }
 .hover\:after\:content-\[\'\:after_\+\'\]:hover::after { content: ":after +"; }
@@ -15450,7 +15487,7 @@ ul, ol { list-style: none; }
 .flex-2 { flex: 2 1 0%; }
 .block { display: block; }
 .bg-violet-300 { background-color: oklch(0.811 0.111 293.571); }
-.rounded-md { border-radius: 6px; }
+.rounded-md { border-radius: var(--radius-md); }
 .w-\[calc\(50\%_-_50px\)\] { width: calc(50% - 50px); }
 .h-\[200px\] { height: 200px; }
 .border-2 { border-width: 2px; }
@@ -17835,22 +17872,22 @@ ul, ol { list-style: none; }
 .-max-h-1\/4 { max-height: calc(-25%); }
 .max-h-\(--my-var\) { max-height: var(--my-var); }
 .max-h-\[inherit\] { max-height: inherit; }
-.font-serif { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
-.font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.font-serif { font-family: var(--font-serif); }
+.font-mono { font-family: var(--font-mono); }
 .font-\(--my-var\) { font-family: var(--my-var); }
 .font-\[inherit\] { font-family: inherit; }
-.text-xs { font-size: 12px; line-height: 1.333; }
-.text-sm { font-size: 14px; line-height: 1.429; }
-.text-base { font-size: 16px; line-height: 1.5; }
-.text-lg { font-size: 18px; line-height: 1.555; }
-.text-xl { font-size: 20px; line-height: 1.4; }
-.text-3xl { font-size: 30px; line-height: 1.2; }
-.text-4xl { font-size: 36px; line-height: 1.111; }
-.text-5xl { font-size: 48px; line-height: 1; }
-.text-6xl { font-size: 60px; line-height: 1; }
-.text-7xl { font-size: 72px; line-height: 1; }
-.text-8xl { font-size: 96px; line-height: 1; }
-.text-9xl { font-size: 128px; line-height: 1; }
+.text-xs { font-size: var(--text-xs); line-height: var(--text-xs--line-height); }
+.text-sm { font-size: var(--text-sm); line-height: var(--text-sm--line-height); }
+.text-base { font-size: var(--text-base); line-height: var(--text-base--line-height); }
+.text-lg { font-size: var(--text-lg); line-height: var(--text-lg--line-height); }
+.text-xl { font-size: var(--text-xl); line-height: var(--text-xl--line-height); }
+.text-3xl { font-size: var(--text-3xl); line-height: var(--text-3xl--line-height); }
+.text-4xl { font-size: var(--text-4xl); line-height: var(--text-4xl--line-height); }
+.text-5xl { font-size: var(--text-5xl); line-height: var(--text-5xl--line-height); }
+.text-6xl { font-size: var(--text-6xl); line-height: var(--text-6xl--line-height); }
+.text-7xl { font-size: var(--text-7xl); line-height: var(--text-7xl--line-height); }
+.text-8xl { font-size: var(--text-8xl); line-height: var(--text-8xl--line-height); }
+.text-9xl { font-size: var(--text-9xl); line-height: var(--text-9xl--line-height); }
 .text-\(--my-var\) { font-size: var(--my-var); }
 .text-\[inherit\] { font-size: inherit; }
 .antialiased { -webkit-font-smoothing: antialiased; }
@@ -29778,92 +29815,101 @@ ul, ol { list-style: none; }
 .bg-contain { background-size: contain; }
 .bg-size-\(--my-var\) { background-size: var(--my-var); }
 .bg-size-\[inherit\] { background-size: inherit; }
-.rounded-xs { border-radius: 2px; }
-.rounded-sm { border-radius: 4px; }
-.rounded-lg { border-radius: 8px; }
-.rounded-xl { border-radius: 12px; }
-.rounded-2xl { border-radius: 16px; }
-.rounded-3xl { border-radius: 24px; }
+.rounded-xs { border-radius: var(--radius-xs); }
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-2xl { border-radius: var(--radius-2xl); }
+.rounded-3xl { border-radius: var(--radius-3xl); }
+.rounded-4xl { border-radius: var(--radius-4xl); }
 .rounded-full { border-radius: 50%; }
 .rounded-\(--my-var\) { border-radius: var(--my-var); }
 .rounded-\[inherit\] { border-radius: inherit; }
-.rounded-ss-xs { border-start-start-radius: 2px; }
-.rounded-ss-sm { border-start-start-radius: 4px; }
-.rounded-ss-md { border-start-start-radius: 6px; }
-.rounded-ss-lg { border-start-start-radius: 8px; }
-.rounded-ss-xl { border-start-start-radius: 12px; }
-.rounded-ss-2xl { border-start-start-radius: 16px; }
-.rounded-ss-3xl { border-start-start-radius: 24px; }
+.rounded-ss-xs { border-start-start-radius: var(--radius-xs); }
+.rounded-ss-sm { border-start-start-radius: var(--radius-sm); }
+.rounded-ss-md { border-start-start-radius: var(--radius-md); }
+.rounded-ss-lg { border-start-start-radius: var(--radius-lg); }
+.rounded-ss-xl { border-start-start-radius: var(--radius-xl); }
+.rounded-ss-2xl { border-start-start-radius: var(--radius-2xl); }
+.rounded-ss-3xl { border-start-start-radius: var(--radius-3xl); }
+.rounded-ss-4xl { border-start-start-radius: var(--radius-4xl); }
 .rounded-ss-full { border-start-start-radius: 50%; }
 .rounded-ss-\(--my-var\) { border-start-start-radius: var(--my-var); }
 .rounded-ss-\[inherit\] { border-start-start-radius: inherit; }
-.rounded-se-xs { border-start-end-radius: 2px; }
-.rounded-se-sm { border-start-end-radius: 4px; }
-.rounded-se-md { border-start-end-radius: 6px; }
-.rounded-se-lg { border-start-end-radius: 8px; }
-.rounded-se-xl { border-start-end-radius: 12px; }
-.rounded-se-2xl { border-start-end-radius: 16px; }
-.rounded-se-3xl { border-start-end-radius: 24px; }
+.rounded-se-xs { border-start-end-radius: var(--radius-xs); }
+.rounded-se-sm { border-start-end-radius: var(--radius-sm); }
+.rounded-se-md { border-start-end-radius: var(--radius-md); }
+.rounded-se-lg { border-start-end-radius: var(--radius-lg); }
+.rounded-se-xl { border-start-end-radius: var(--radius-xl); }
+.rounded-se-2xl { border-start-end-radius: var(--radius-2xl); }
+.rounded-se-3xl { border-start-end-radius: var(--radius-3xl); }
+.rounded-se-4xl { border-start-end-radius: var(--radius-4xl); }
 .rounded-se-full { border-start-end-radius: 50%; }
 .rounded-se-\(--my-var\) { border-start-end-radius: var(--my-var); }
 .rounded-se-\[inherit\] { border-start-end-radius: inherit; }
-.rounded-ee-xs { border-end-end-radius: 2px; }
-.rounded-ee-sm { border-end-end-radius: 4px; }
-.rounded-ee-md { border-end-end-radius: 6px; }
-.rounded-ee-lg { border-end-end-radius: 8px; }
-.rounded-ee-xl { border-end-end-radius: 12px; }
-.rounded-ee-2xl { border-end-end-radius: 16px; }
-.rounded-ee-3xl { border-end-end-radius: 24px; }
+.rounded-ee-xs { border-end-end-radius: var(--radius-xs); }
+.rounded-ee-sm { border-end-end-radius: var(--radius-sm); }
+.rounded-ee-md { border-end-end-radius: var(--radius-md); }
+.rounded-ee-lg { border-end-end-radius: var(--radius-lg); }
+.rounded-ee-xl { border-end-end-radius: var(--radius-xl); }
+.rounded-ee-2xl { border-end-end-radius: var(--radius-2xl); }
+.rounded-ee-3xl { border-end-end-radius: var(--radius-3xl); }
+.rounded-ee-4xl { border-end-end-radius: var(--radius-4xl); }
 .rounded-ee-full { border-end-end-radius: 50%; }
 .rounded-ee-\(--my-var\) { border-end-end-radius: var(--my-var); }
 .rounded-ee-\[inherit\] { border-end-end-radius: inherit; }
-.rounded-es-xs { border-end-start-radius: 2px; }
-.rounded-es-sm { border-end-start-radius: 4px; }
-.rounded-es-md { border-end-start-radius: 6px; }
-.rounded-es-lg { border-end-start-radius: 8px; }
-.rounded-es-xl { border-end-start-radius: 12px; }
-.rounded-es-2xl { border-end-start-radius: 16px; }
-.rounded-es-3xl { border-end-start-radius: 24px; }
+.rounded-es-xs { border-end-start-radius: var(--radius-xs); }
+.rounded-es-sm { border-end-start-radius: var(--radius-sm); }
+.rounded-es-md { border-end-start-radius: var(--radius-md); }
+.rounded-es-lg { border-end-start-radius: var(--radius-lg); }
+.rounded-es-xl { border-end-start-radius: var(--radius-xl); }
+.rounded-es-2xl { border-end-start-radius: var(--radius-2xl); }
+.rounded-es-3xl { border-end-start-radius: var(--radius-3xl); }
+.rounded-es-4xl { border-end-start-radius: var(--radius-4xl); }
 .rounded-es-full { border-end-start-radius: 50%; }
 .rounded-es-\(--my-var\) { border-end-start-radius: var(--my-var); }
 .rounded-es-\[inherit\] { border-end-start-radius: inherit; }
-.rounded-tl-xs { border-top-left-radius: 2px; }
-.rounded-tl-sm { border-top-left-radius: 4px; }
-.rounded-tl-md { border-top-left-radius: 6px; }
-.rounded-tl-lg { border-top-left-radius: 8px; }
-.rounded-tl-xl { border-top-left-radius: 12px; }
-.rounded-tl-2xl { border-top-left-radius: 16px; }
-.rounded-tl-3xl { border-top-left-radius: 24px; }
+.rounded-tl-xs { border-top-left-radius: var(--radius-xs); }
+.rounded-tl-sm { border-top-left-radius: var(--radius-sm); }
+.rounded-tl-md { border-top-left-radius: var(--radius-md); }
+.rounded-tl-lg { border-top-left-radius: var(--radius-lg); }
+.rounded-tl-xl { border-top-left-radius: var(--radius-xl); }
+.rounded-tl-2xl { border-top-left-radius: var(--radius-2xl); }
+.rounded-tl-3xl { border-top-left-radius: var(--radius-3xl); }
+.rounded-tl-4xl { border-top-left-radius: var(--radius-4xl); }
 .rounded-tl-full { border-top-left-radius: 50%; }
 .rounded-tl-\(--my-var\) { border-top-left-radius: var(--my-var); }
 .rounded-tl-\[inherit\] { border-top-left-radius: inherit; }
-.rounded-tr-xs { border-top-right-radius: 2px; }
-.rounded-tr-sm { border-top-right-radius: 4px; }
-.rounded-tr-md { border-top-right-radius: 6px; }
-.rounded-tr-lg { border-top-right-radius: 8px; }
-.rounded-tr-xl { border-top-right-radius: 12px; }
-.rounded-tr-2xl { border-top-right-radius: 16px; }
-.rounded-tr-3xl { border-top-right-radius: 24px; }
+.rounded-tr-xs { border-top-right-radius: var(--radius-xs); }
+.rounded-tr-sm { border-top-right-radius: var(--radius-sm); }
+.rounded-tr-md { border-top-right-radius: var(--radius-md); }
+.rounded-tr-lg { border-top-right-radius: var(--radius-lg); }
+.rounded-tr-xl { border-top-right-radius: var(--radius-xl); }
+.rounded-tr-2xl { border-top-right-radius: var(--radius-2xl); }
+.rounded-tr-3xl { border-top-right-radius: var(--radius-3xl); }
+.rounded-tr-4xl { border-top-right-radius: var(--radius-4xl); }
 .rounded-tr-full { border-top-right-radius: 50%; }
 .rounded-tr-\(--my-var\) { border-top-right-radius: var(--my-var); }
 .rounded-tr-\[inherit\] { border-top-right-radius: inherit; }
-.rounded-br-xs { border-bottom-right-radius: 2px; }
-.rounded-br-sm { border-bottom-right-radius: 4px; }
-.rounded-br-md { border-bottom-right-radius: 6px; }
-.rounded-br-lg { border-bottom-right-radius: 8px; }
-.rounded-br-xl { border-bottom-right-radius: 12px; }
-.rounded-br-2xl { border-bottom-right-radius: 16px; }
-.rounded-br-3xl { border-bottom-right-radius: 24px; }
+.rounded-br-xs { border-bottom-right-radius: var(--radius-xs); }
+.rounded-br-sm { border-bottom-right-radius: var(--radius-sm); }
+.rounded-br-md { border-bottom-right-radius: var(--radius-md); }
+.rounded-br-lg { border-bottom-right-radius: var(--radius-lg); }
+.rounded-br-xl { border-bottom-right-radius: var(--radius-xl); }
+.rounded-br-2xl { border-bottom-right-radius: var(--radius-2xl); }
+.rounded-br-3xl { border-bottom-right-radius: var(--radius-3xl); }
+.rounded-br-4xl { border-bottom-right-radius: var(--radius-4xl); }
 .rounded-br-full { border-bottom-right-radius: 50%; }
 .rounded-br-\(--my-var\) { border-bottom-right-radius: var(--my-var); }
 .rounded-br-\[inherit\] { border-bottom-right-radius: inherit; }
-.rounded-bl-xs { border-bottom-left-radius: 2px; }
-.rounded-bl-sm { border-bottom-left-radius: 4px; }
-.rounded-bl-md { border-bottom-left-radius: 6px; }
-.rounded-bl-lg { border-bottom-left-radius: 8px; }
-.rounded-bl-xl { border-bottom-left-radius: 12px; }
-.rounded-bl-2xl { border-bottom-left-radius: 16px; }
-.rounded-bl-3xl { border-bottom-left-radius: 24px; }
+.rounded-bl-xs { border-bottom-left-radius: var(--radius-xs); }
+.rounded-bl-sm { border-bottom-left-radius: var(--radius-sm); }
+.rounded-bl-md { border-bottom-left-radius: var(--radius-md); }
+.rounded-bl-lg { border-bottom-left-radius: var(--radius-lg); }
+.rounded-bl-xl { border-bottom-left-radius: var(--radius-xl); }
+.rounded-bl-2xl { border-bottom-left-radius: var(--radius-2xl); }
+.rounded-bl-3xl { border-bottom-left-radius: var(--radius-3xl); }
+.rounded-bl-4xl { border-bottom-left-radius: var(--radius-4xl); }
 .rounded-bl-full { border-bottom-left-radius: 50%; }
 .rounded-bl-\(--my-var\) { border-bottom-left-radius: var(--my-var); }
 .rounded-bl-\[inherit\] { border-bottom-left-radius: inherit; }

@@ -55,13 +55,14 @@ export const OVERFLOWS = ['auto', 'hidden', 'clip', 'visible', 'scroll', 'visibl
 export const OVERSCROLLS = ['auto', 'contain', 'none']
 
 export const RADII = [
-  ['xs', '2px'],
-  ['sm', '4px'],
-  ['md', '6px'],
-  ['lg', '8px'],
-  ['xl', '12px'],
-  ['2xl', '16px'],
-  ['3xl', '24px'],
+  ['xs', 'var(--radius-xs)'],
+  ['sm', 'var(--radius-sm)'],
+  ['md', 'var(--radius-md)'],
+  ['lg', 'var(--radius-lg)'],
+  ['xl', 'var(--radius-xl)'],
+  ['2xl', 'var(--radius-2xl)'],
+  ['3xl', 'var(--radius-3xl)'],
+  ['4xl', 'var(--radius-4xl)'],
   ['full', '50%'],
   ['none', 0]
 ]

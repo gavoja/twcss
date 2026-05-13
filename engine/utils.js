@@ -549,27 +549,27 @@ const ENTRIES = [
   // ---------------------------------------------------------------------------
 
   // font-family
-  ['font-sans', 'font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'],
-  ['font-serif', 'font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif'],
-  ['font-mono', 'font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'],
+  ['font-sans', 'font-family: var(--font-sans)'],
+  ['font-serif', 'font-family: var(--font-serif)'],
+  ['font-mono', 'font-family: var(--font-mono)'],
   ['font', 'font-family', [
     { raw: '$' }
   ]],
 
   // font-size
-  ['text-xs', 'font-size: 12px; line-height: 1.333'],
-  ['text-sm', 'font-size: 14px; line-height: 1.429'],
-  ['text-base', 'font-size: 16px; line-height: 1.5'],
-  ['text-lg', 'font-size: 18px; line-height: 1.555'],
-  ['text-xl', 'font-size: 20px; line-height: 1.4'],
-  ['text-2xl', 'font-size: 24px; line-height: 1.333'],
-  ['text-3xl', 'font-size: 30px; line-height: 1.2'],
-  ['text-4xl', 'font-size: 36px; line-height: 1.111'],
-  ['text-5xl', 'font-size: 48px; line-height: 1'],
-  ['text-6xl', 'font-size: 60px; line-height: 1'],
-  ['text-7xl', 'font-size: 72px; line-height: 1'],
-  ['text-8xl', 'font-size: 96px; line-height: 1'],
-  ['text-9xl', 'font-size: 128px; line-height: 1'],
+  ['text-xs', 'font-size: var(--text-xs); line-height: var(--text-xs--line-height)'],
+  ['text-sm', 'font-size: var(--text-sm); line-height: var(--text-sm--line-height)'],
+  ['text-base', 'font-size: var(--text-base); line-height: var(--text-base--line-height)'],
+  ['text-lg', 'font-size: var(--text-lg); line-height: var(--text-lg--line-height)'],
+  ['text-xl', 'font-size: var(--text-xl); line-height: var(--text-xl--line-height)'],
+  ['text-2xl', 'font-size: var(--text-2xl); line-height: var(--text-2xl--line-height)'],
+  ['text-3xl', 'font-size: var(--text-3xl); line-height: var(--text-3xl--line-height)'],
+  ['text-4xl', 'font-size: var(--text-4xl); line-height: var(--text-4xl--line-height)'],
+  ['text-5xl', 'font-size: var(--text-5xl); line-height: var(--text-5xl--line-height)'],
+  ['text-6xl', 'font-size: var(--text-6xl); line-height: var(--text-6xl--line-height)'],
+  ['text-7xl', 'font-size: var(--text-7xl); line-height: var(--text-7xl--line-height)'],
+  ['text-8xl', 'font-size: var(--text-8xl); line-height: var(--text-8xl--line-height)'],
+  ['text-9xl', 'font-size: var(--text-9xl); line-height: var(--text-9xl--line-height)'],
   ['text', 'font-size', [
     { raw: '$' }
   ]],

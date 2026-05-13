@@ -28,6 +28,7 @@
     "./utils": "./engine/utils.js",
     "./constants": "./engine/constants.js",
     "./colors": "./engine/colors.js",
+    "./config": "./engine/config.js",
     "./preflight": "./engine/preflight.js"
   },
   "scripts": {

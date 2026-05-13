@@ -5,6 +5,7 @@ import fs from 'node:fs'
 import { COLOR_PROPS, COLOR_SHADES } from 'twcss/colors'
 import { KEYFRAMES, PSEUDO, QUERIES, STATES, STRING_SIZES } from 'twcss/constants'
 import { PREFLIGHT } from 'twcss/preflight'
+import { CONFIG } from 'twcss/config'
 import { UTILS } from 'twcss/utils'
 
 const HIERARCHY = {
@@ -321,6 +322,18 @@ function generateReference () {
   mdContents.push(`\`\`\`css\n${PREFLIGHT.join('\n')}\n\`\`\``, '')
 
   //
+  // Config.
+  //
+
+  mdContents.push('### Config', '')
+  mdContents.push('Selected values are defined via custom properties for easy overridding.', '')
+  mdContents.push('```CSS')
+  for (const [key, value] of CONFIG) {
+    mdContents.push(`${key}: ${value};`)
+  }
+  mdContents.push('```', '')
+
+  //
   // Media queries.
   //
 
@@ -402,7 +415,7 @@ function generateReference () {
       }
 
       for (const [cls, css] of rules) {
-        mdContents.push(`\`\`\`txt\n.${cls} ${css}\n\`\`\``, '')
+        mdContents.push(`\`\`\`css\n.${cls} ${css}\n\`\`\``, '')
       }
     }
   }
