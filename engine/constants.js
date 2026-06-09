@@ -24,13 +24,13 @@ export const BLEND_MODES = [
 ]
 
 export const BLURS = [
-  ['xs', 'blur(4px)'],
-  ['sm', 'blur(8px)'],
-  ['md', 'blur(12px)'],
-  ['lg', 'blur(16px)'],
-  ['xl', 'blur(24px)'],
-  ['2xl', 'blur(40px)'],
-  ['3xl', 'blur(64px)'],
+  ['xs', 'blur(--blur-xs)'],
+  ['sm', 'blur(--blur-sm)'],
+  ['md', 'blur(--blur-md)'],
+  ['lg', 'blur(--blur-lg)'],
+  ['xl', 'blur(--blur-xl)'],
+  ['2xl', 'blur(--blur-2xl)'],
+  ['3xl', 'blur(--blur-3xl)'],
   ['none', 'none']
 ]
 
@@ -63,8 +63,8 @@ export const RADII = [
   ['2xl', 'var(--radius-2xl)'],
   ['3xl', 'var(--radius-3xl)'],
   ['4xl', 'var(--radius-4xl)'],
-  ['full', '50%'],
-  ['none', 0]
+  ['full', 'var(--radius-full)'],
+  ['none', 'var(--radius-none)']
 ]
 
 //

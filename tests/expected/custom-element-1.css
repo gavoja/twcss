@@ -26,6 +26,14 @@ input, button, textarea, select { font: inherit; }
 h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
 ul, ol { list-style: none; }
 *, ::before, ::after { box-sizing: border-box; border-width: 0px; border-style: solid; border-color: currentcolor; margin: 0px; padding: 0px; }
+@property --blur-3xl { syntax: "*"; inherits: true; initial-value: 64px; }
+@property --blur-2xl { syntax: "*"; inherits: true; initial-value: 40px; }
+@property --blur-xl { syntax: "*"; inherits: true; initial-value: 24px; }
+@property --blur-lg { syntax: "*"; inherits: true; initial-value: 16px; }
+@property --blur-md { syntax: "*"; inherits: true; initial-value: 12px; }
+@property --blur-sm { syntax: "*"; inherits: true; initial-value: 8px; }
+@property --blur-xs { syntax: "*"; inherits: true; initial-value: 4px; }
+@property --blur-none { syntax: "*"; inherits: true; initial-value: 0px; }
 @property --text-9xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
 @property --text-8xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
 @property --text-7xl--line-height { syntax: "*"; inherits: true; initial-value: 1; }
@@ -52,6 +60,8 @@ ul, ol { list-style: none; }
 @property --text-base { syntax: "*"; inherits: true; initial-value: 16px; }
 @property --text-sm { syntax: "*"; inherits: true; initial-value: 14px; }
 @property --text-xs { syntax: "*"; inherits: true; initial-value: 12px; }
+@property --radius-none { syntax: "*"; inherits: true; initial-value: 0; }
+@property --radius-full { syntax: "*"; inherits: true; initial-value: 50%; }
 @property --radius-4xl { syntax: "*"; inherits: true; initial-value: 32px; }
 @property --radius-3xl { syntax: "*"; inherits: true; initial-value: 24px; }
 @property --radius-2xl { syntax: "*"; inherits: true; initial-value: 16px; }

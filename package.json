@@ -28,7 +28,7 @@
     "./utils": "./engine/utils.js",
     "./constants": "./engine/constants.js",
     "./colors": "./engine/colors.js",
-    "./config": "./engine/config.js",
+    "./props": "./engine/props.js",
     "./preflight": "./engine/preflight.js"
   },
   "scripts": {
@@ -54,7 +54,7 @@
     "neostandard": "^0.13.0",
     "playwright": "^1.55.0",
     "release-it": "^20.0.1",
-    "rumdl": "^0.1.58"
+    "rumdl": "^0.2.10"
   },
   "overrides": {
     "undici": "^6.24.0"

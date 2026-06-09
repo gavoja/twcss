@@ -1,19 +1,22 @@
-export const CONFIG = [
+export const PROPS = [
+  // Fonts
   ['--font-sans', 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'],
   ['--font-serif', 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif'],
   ['--font-mono', 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'],
 
   // Radii
   ...[
-    ['xs', 2],
-    ['sm', 4],
-    ['md', 6],
-    ['lg', 8],
-    ['xl', 12],
-    ['2xl', 16],
-    ['3xl', 24],
-    ['4xl', 32]
-  ].map(([size, value]) => [`--radius-${size}`, `${value}px`]),
+    ['xs', '2px'],
+    ['sm', '4px'],
+    ['md', '6px'],
+    ['lg', '8px'],
+    ['xl', '12px'],
+    ['2xl', '16px'],
+    ['3xl', '24px'],
+    ['4xl', '32px'],
+    ['full', '50%'],
+    ['none', '0']
+  ].map(([size, value]) => [`--radius-${size}`, value]),
 
   // Text sizes
   ...[
@@ -31,6 +34,8 @@ export const CONFIG = [
     ['8xl', 96],
     ['9xl', 128]
   ].map(([size, value]) => [`--text-${size}`, `${value}px`]),
+
+  // Line heights (for text sizes)
   ...[
     ['xs', 1.333],
     ['sm', 1.429],
@@ -45,5 +50,17 @@ export const CONFIG = [
     ['7xl', 1],
     ['8xl', 1],
     ['9xl', 1]
-  ].map(([size, value]) => [`--text-${size}--line-height`, `${value}`])
+  ].map(([size, value]) => [`--text-${size}--line-height`, `${value}`]),
+
+  // Blurs
+  ...[
+    ['none', 0],
+    ['xs', 4],
+    ['sm', 8],
+    ['md', 12],
+    ['lg', 16],
+    ['xl', 24],
+    ['2xl', 40],
+    ['3xl', 64]
+  ].map(([size, value]) => [`--blur-${size}`, `${value}px`])
 ]

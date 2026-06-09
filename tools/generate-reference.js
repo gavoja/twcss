@@ -5,7 +5,7 @@ import fs from 'node:fs'
 import { COLOR_PROPS, COLOR_SHADES } from 'twcss/colors'
 import { KEYFRAMES, PSEUDO, QUERIES, STATES, STRING_SIZES } from 'twcss/constants'
 import { PREFLIGHT } from 'twcss/preflight'
-import { CONFIG } from 'twcss/config'
+import { PROPS } from 'twcss/props'
 import { UTILS } from 'twcss/utils'
 
 const HIERARCHY = {
@@ -328,7 +328,7 @@ function generateReference () {
   mdContents.push('### Config', '')
   mdContents.push('Selected values are defined via custom properties for easy overridding.', '')
   mdContents.push('```CSS')
-  for (const [key, value] of CONFIG) {
+  for (const [key, value] of PROPS) {
     mdContents.push(`${key}: ${value};`)
   }
   mdContents.push('```', '')

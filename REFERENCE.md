@@ -35,6 +35,8 @@ Selected values are defined via custom properties for easy overridding.
 --radius-2xl: 16px;
 --radius-3xl: 24px;
 --radius-4xl: 32px;
+--radius-full: 50%;
+--radius-none: 0;
 --text-xs: 12px;
 --text-sm: 14px;
 --text-base: 16px;
@@ -61,6 +63,14 @@ Selected values are defined via custom properties for easy overridding.
 --text-7xl--line-height: 1;
 --text-8xl--line-height: 1;
 --text-9xl--line-height: 1;
+--blur-none: 0px;
+--blur-xs: 4px;
+--blur-sm: 8px;
+--blur-md: 12px;
+--blur-lg: 16px;
+--blur-xl: 24px;
+--blur-2xl: 40px;
+--blur-3xl: 64px;
 ```
 
 ### Media and container queries
@@ -7475,11 +7485,11 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ```
 
 ```css
-.rounded-full { border-radius: 50% }
+.rounded-full { border-radius: var(--radius-full) }
 ```
 
 ```css
-.rounded-none { border-radius: 0 }
+.rounded-none { border-radius: var(--radius-none) }
 ```
 
 ```css
@@ -7523,11 +7533,11 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ```
 
 ```css
-.rounded-tl-full { border-top-left-radius: 50% }
+.rounded-tl-full { border-top-left-radius: var(--radius-full) }
 ```
 
 ```css
-.rounded-tl-none { border-top-left-radius: 0 }
+.rounded-tl-none { border-top-left-radius: var(--radius-none) }
 ```
 
 ```css
@@ -7571,11 +7581,11 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ```
 
 ```css
-.rounded-tr-full { border-top-right-radius: 50% }
+.rounded-tr-full { border-top-right-radius: var(--radius-full) }
 ```
 
 ```css
-.rounded-tr-none { border-top-right-radius: 0 }
+.rounded-tr-none { border-top-right-radius: var(--radius-none) }
 ```
 
 ```css
@@ -7619,11 +7629,11 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ```
 
 ```css
-.rounded-br-full { border-bottom-right-radius: 50% }
+.rounded-br-full { border-bottom-right-radius: var(--radius-full) }
 ```
 
 ```css
-.rounded-br-none { border-bottom-right-radius: 0 }
+.rounded-br-none { border-bottom-right-radius: var(--radius-none) }
 ```
 
 ```css
@@ -7667,11 +7677,11 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ```
 
 ```css
-.rounded-bl-full { border-bottom-left-radius: 50% }
+.rounded-bl-full { border-bottom-left-radius: var(--radius-full) }
 ```
 
 ```css
-.rounded-bl-none { border-bottom-left-radius: 0 }
+.rounded-bl-none { border-bottom-left-radius: var(--radius-none) }
 ```
 
 ```css
@@ -8367,31 +8377,31 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ### filter
 
 ```css
-.blur-xs { filter: blur(4px) }
+.blur-xs { filter: blur(--blur-xs) }
 ```
 
 ```css
-.blur-sm { filter: blur(8px) }
+.blur-sm { filter: blur(--blur-sm) }
 ```
 
 ```css
-.blur-md { filter: blur(12px) }
+.blur-md { filter: blur(--blur-md) }
 ```
 
 ```css
-.blur-lg { filter: blur(16px) }
+.blur-lg { filter: blur(--blur-lg) }
 ```
 
 ```css
-.blur-xl { filter: blur(24px) }
+.blur-xl { filter: blur(--blur-xl) }
 ```
 
 ```css
-.blur-2xl { filter: blur(40px) }
+.blur-2xl { filter: blur(--blur-2xl) }
 ```
 
 ```css
-.blur-3xl { filter: blur(64px) }
+.blur-3xl { filter: blur(--blur-3xl) }
 ```
 
 ```css
@@ -8581,31 +8591,31 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ### backdrop-filter
 
 ```css
-.backdrop-blur-xs { backdrop-filter: blur(4px) }
+.backdrop-blur-xs { backdrop-filter: blur(--blur-xs) }
 ```
 
 ```css
-.backdrop-blur-sm { backdrop-filter: blur(8px) }
+.backdrop-blur-sm { backdrop-filter: blur(--blur-sm) }
 ```
 
 ```css
-.backdrop-blur-md { backdrop-filter: blur(12px) }
+.backdrop-blur-md { backdrop-filter: blur(--blur-md) }
 ```
 
 ```css
-.backdrop-blur-lg { backdrop-filter: blur(16px) }
+.backdrop-blur-lg { backdrop-filter: blur(--blur-lg) }
 ```
 
 ```css
-.backdrop-blur-xl { backdrop-filter: blur(24px) }
+.backdrop-blur-xl { backdrop-filter: blur(--blur-xl) }
 ```
 
 ```css
-.backdrop-blur-2xl { backdrop-filter: blur(40px) }
+.backdrop-blur-2xl { backdrop-filter: blur(--blur-2xl) }
 ```
 
 ```css
-.backdrop-blur-3xl { backdrop-filter: blur(64px) }
+.backdrop-blur-3xl { backdrop-filter: blur(--blur-3xl) }
 ```
 
 ```css

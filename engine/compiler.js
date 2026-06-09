@@ -2,7 +2,7 @@
 import { COLOR_PROPS, OPACITIES } from './colors.js'
 import { HIGH_PRIORITY_RULES, STATES, PSEUDO, STRING_SIZES, KEYFRAMES, QUERIES } from './constants.js'
 import { PREFLIGHT } from './preflight.js'
-import { CONFIG } from './config.js'
+import { PROPS } from './props.js'
 import { UTILS } from './utils.js'
 
 /* eslint-disable @stylistic/indent */
@@ -164,7 +164,7 @@ function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {}, pref
 function createSheet () {
   const sheet = new CSSStyleSheet()
 
-  for (const [name, value] of CONFIG) {
+  for (const [name, value] of PROPS) {
     sheet.insertRule(`@property ${name} { syntax: '*'; inherits: true; initial-value: ${value} }`, sheet.cssRules.length)
   }
 
