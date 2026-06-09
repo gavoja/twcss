@@ -8377,31 +8377,31 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ### filter
 
 ```css
-.blur-xs { filter: var(--blur-xs) }
+.blur-xs { filter: blur(var(--blur-xs)) }
 ```
 
 ```css
-.blur-sm { filter: var(--blur-sm) }
+.blur-sm { filter: blur(var(--blur-sm)) }
 ```
 
 ```css
-.blur-md { filter: var(--blur-md) }
+.blur-md { filter: blur(var(--blur-md)) }
 ```
 
 ```css
-.blur-lg { filter: var(--blur-lg) }
+.blur-lg { filter: blur(var(--blur-lg)) }
 ```
 
 ```css
-.blur-xl { filter: var(--blur-xl) }
+.blur-xl { filter: blur(var(--blur-xl)) }
 ```
 
 ```css
-.blur-2xl { filter: var(--blur-2xl) }
+.blur-2xl { filter: blur(var(--blur-2xl)) }
 ```
 
 ```css
-.blur-3xl { filter: var(--blur-3xl) }
+.blur-3xl { filter: blur(var(--blur-3xl)) }
 ```
 
 ```css
@@ -8591,31 +8591,31 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ### backdrop-filter
 
 ```css
-.backdrop-blur-xs { backdrop-filter: var(--blur-xs) }
+.backdrop-blur-xs { backdrop-filter: blur(var(--blur-xs)) }
 ```
 
 ```css
-.backdrop-blur-sm { backdrop-filter: var(--blur-sm) }
+.backdrop-blur-sm { backdrop-filter: blur(var(--blur-sm)) }
 ```
 
 ```css
-.backdrop-blur-md { backdrop-filter: var(--blur-md) }
+.backdrop-blur-md { backdrop-filter: blur(var(--blur-md)) }
 ```
 
 ```css
-.backdrop-blur-lg { backdrop-filter: var(--blur-lg) }
+.backdrop-blur-lg { backdrop-filter: blur(var(--blur-lg)) }
 ```
 
 ```css
-.backdrop-blur-xl { backdrop-filter: var(--blur-xl) }
+.backdrop-blur-xl { backdrop-filter: blur(var(--blur-xl)) }
 ```
 
 ```css
-.backdrop-blur-2xl { backdrop-filter: var(--blur-2xl) }
+.backdrop-blur-2xl { backdrop-filter: blur(var(--blur-2xl)) }
 ```
 
 ```css
-.backdrop-blur-3xl { backdrop-filter: var(--blur-3xl) }
+.backdrop-blur-3xl { backdrop-filter: blur(var(--blur-3xl)) }
 ```
 
 ```css

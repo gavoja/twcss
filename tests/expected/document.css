@@ -37898,22 +37898,22 @@ ul, ol { list-style: none; }
 .mask-size-\[inherit\] { mask-size: inherit; }
 .mask-type-alpha { mask-type: alpha; }
 .mask-type-luminance { mask-type: luminance; }
-.blur-xs { filter: var(--blur-xs); }
-.blur-sm { filter: var(--blur-sm); }
-.blur-md { filter: var(--blur-md); }
-.blur-lg { filter: var(--blur-lg); }
-.blur-xl { filter: var(--blur-xl); }
-.blur-2xl { filter: var(--blur-2xl); }
-.blur-3xl { filter: var(--blur-3xl); }
+.blur-xs { filter: blur(var(--blur-xs)); }
+.blur-sm { filter: blur(var(--blur-sm)); }
+.blur-md { filter: blur(var(--blur-md)); }
+.blur-lg { filter: blur(var(--blur-lg)); }
+.blur-xl { filter: blur(var(--blur-xl)); }
+.blur-2xl { filter: blur(var(--blur-2xl)); }
+.blur-3xl { filter: blur(var(--blur-3xl)); }
 .blur-\(--my-var\) { filter: blur(var(--my-var)); }
 .blur-\[inherit\] { }
-.backdrop-blur-xs { backdrop-filter: var(--blur-xs); }
-.backdrop-blur-sm { backdrop-filter: var(--blur-sm); }
-.backdrop-blur-md { backdrop-filter: var(--blur-md); }
-.backdrop-blur-lg { backdrop-filter: var(--blur-lg); }
-.backdrop-blur-xl { backdrop-filter: var(--blur-xl); }
-.backdrop-blur-2xl { backdrop-filter: var(--blur-2xl); }
-.backdrop-blur-3xl { backdrop-filter: var(--blur-3xl); }
+.backdrop-blur-xs { backdrop-filter: blur(var(--blur-xs)); }
+.backdrop-blur-sm { backdrop-filter: blur(var(--blur-sm)); }
+.backdrop-blur-md { backdrop-filter: blur(var(--blur-md)); }
+.backdrop-blur-lg { backdrop-filter: blur(var(--blur-lg)); }
+.backdrop-blur-xl { backdrop-filter: blur(var(--blur-xl)); }
+.backdrop-blur-2xl { backdrop-filter: blur(var(--blur-2xl)); }
+.backdrop-blur-3xl { backdrop-filter: blur(var(--blur-3xl)); }
 .backdrop-blur-\(--my-var\) { backdrop-filter: blur(var(--my-var)); }
 .backdrop-blur-\[inherit\] { }
 .brightness-23 { filter: brightness(23%); }

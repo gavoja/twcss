@@ -24,13 +24,13 @@ export const BLEND_MODES = [
 ]
 
 export const BLURS = [
-  ['xs', 'var(--blur-xs)'],
-  ['sm', 'var(--blur-sm)'],
-  ['md', 'var(--blur-md)'],
-  ['lg', 'var(--blur-lg)'],
-  ['xl', 'var(--blur-xl)'],
-  ['2xl', 'var(--blur-2xl)'],
-  ['3xl', 'var(--blur-3xl)'],
+  ['xs', 'blur(var(--blur-xs))'],
+  ['sm', 'blur(var(--blur-sm))'],
+  ['md', 'blur(var(--blur-md))'],
+  ['lg', 'blur(var(--blur-lg))'],
+  ['xl', 'blur(var(--blur-xl))'],
+  ['2xl', 'blur(var(--blur-2xl))'],
+  ['3xl', 'blur(var(--blur-3xl))'],
   ['none', 'none']
 ]
 
