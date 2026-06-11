@@ -31,6 +31,7 @@ const PARSER = new RegExp([
 export const tw = { instances: new Map() }
 
 export function init (root = document, extensions = {}) {
+  console.log('initializing twcss', { root, extensions })
   extend(extensions || {})
 
   // Initialize for the document.
@@ -130,7 +131,7 @@ async function mutationHandler (instance, mutations) {
 // Class processing and style injection
 // -----------------------------------------------------------------------------
 
-function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {}, preflight = [] }) {
+export function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {}, preflight = [] }) {
   for (const [name, value] of Object.entries(classes)) {
     UTILS.set(name, value)
   }

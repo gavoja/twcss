@@ -1,35 +1,7 @@
 /* global HTMLElement, customElements */
-import { init, tw } from 'twcss/compiler'
+import { init, extend, tw } from 'twcss/compiler'
 import { UTILS } from 'twcss/utils'
 import { STATES, STRING_SIZES, QUERIES } from 'twcss/constants'
-
-globalThis.tw = tw
-
-init(document, {
-  classes: {
-    foo: '{ width: 50px; height: 50px }',
-    'hide-last-child': '> :last-child { display: none }',
-    'animate-spin': '{ animation: spin 3s linear infinite }',
-    'after': '{ content: "after" }',
-    'active': '{ content: "active" }',
-    'sm': '{ content: "sm" }',
-    'xl': '{ content: "xl" }', // Custom
-  },
-  colors: {
-    octarine: '0.9 0.4 20',
-  },
-  keyframes: {
-    spin: 'to { transform: rotate(360deg) }',
-  },
-  queries: {
-    xl: '@media screen and (min-width: 1280px)',
-    'after': '[RESERVED]',
-    'active': '[RESERVED]',
-  },
-  preflight: [
-    'body { width: 1000px; margin: 0 auto }'
-  ]
-})
 
 function register (name, callback) {
   class CustomElement extends HTMLElement {
@@ -176,20 +148,47 @@ function delay (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-function main () {
+document.addEventListener('DOMContentLoaded', async () => {
+  globalThis.tw = tw
+
+  // Extend globally.
+  extend({
+    classes: {
+      foo: '{ width: 50px; height: 50px }',
+      'hide-last-child': '> :last-child { display: none }',
+      'animate-spin': '{ animation: spin 3s linear infinite }',
+      'after': '{ content: "after" }',
+      'active': '{ content: "active" }',
+      'sm': '{ content: "sm" }',
+      'xl': '{ content: "xl" }', // Custom
+    },
+    colors: {
+      octarine: '0.9 0.4 20',
+    },
+    keyframes: {
+      spin: 'to { transform: rotate(360deg) }',
+    },
+    queries: {
+      xl: '@media screen and (min-width: 1280px)',
+      'after': '[RESERVED]',
+      'active': '[RESERVED]',
+    },
+    preflight: [
+      'body { width: 1000px; margin: 0 auto }'
+    ]
+  })
+
   registerOuterInner()
 
-  document.addEventListener('DOMContentLoaded', async () => {
-    addTestDiv()
-    addCustomElement('custom-element-1')
-    const el = addCustomElement('custom-element-2')
-    await delay(10)
-    el.remove()
+  init(document)
 
-    addDivWithPrefixedClasses()
-    addDivWithCustomClasses()
-    addDivWithAllClasses()
-  })
-}
+  addTestDiv()
+  addCustomElement('custom-element-1')
+  const el = addCustomElement('custom-element-2')
+  await delay(10)
+  el.remove()
 
-main()
+  addDivWithPrefixedClasses()
+  addDivWithCustomClasses()
+  addDivWithAllClasses()
+})
