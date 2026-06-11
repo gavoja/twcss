@@ -7,8 +7,8 @@ import { UTILS } from './utils.js'
 
 /* eslint-disable @stylistic/indent */
 const PARSER = new RegExp([
-  '(?<negative>-?)?', // Minus sign
   '((?<prefix>[a-z0-9-@:]+):)?',
+  '(?<negative>-?)?', // Minus sign
   '(?<util>',
     // Values
     '((?<base>[a-z-]+-)(',

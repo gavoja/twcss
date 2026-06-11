@@ -101,6 +101,7 @@ function addDivWithAllClasses () {
     if (value.number) {
       classes.push(`${cls}23`)
       classes.push(`-${cls}23`)
+      classes.push(`md:hover:after:-${cls}45`)
     }
 
     if (value.fraction) {
