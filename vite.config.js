@@ -1,48 +1,45 @@
+import { defineConfig } from 'vite'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
-import { build as viteBuild, defineConfig } from 'vite'
 
-const twcssEntry = resolve(__dirname, 'vite/scripts/twcss.js')
-
-function twcssIifeBuildPlugin () {
+function emitIndexPlugin () {
+  let resolvedConfig
   return {
-    name: 'twcss-iife-build',
-    apply: 'build',
+    name: 'emit-index',
+    configResolved (config) {
+      resolvedConfig = config
+    },
     async closeBundle () {
-      await viteBuild({
-        configFile: false,
-        build: {
-          outDir: 'dist',
-          emptyOutDir: false,
-          lib: {
-            entry: twcssEntry,
-            name: 'twcss',
-            formats: ['iife'],
-            fileName: () => 'twcss.min.js'
-          }
-        }
-      })
+      const sourcePath = resolve(resolvedConfig.root, 'index.html')
+      const outDir = resolve(resolvedConfig.root, resolvedConfig.build.outDir)
+      const targetPath = resolve(outDir, 'index.html')
+
+      const sourceHtml = await readFile(sourcePath, 'utf8')
+      const transformedHtml = sourceHtml
+        .replace(/\s+type=(['"])module\1/g, '')
+        .replace(/src=(['"])scripts\/twcss\.js\1/g, 'src="twcss.min.js"')
+
+      await mkdir(outDir, { recursive: true })
+      await writeFile(targetPath, transformedHtml, 'utf8')
     }
   }
 }
 
-export default defineConfig({
-  root: 'vite',
-  plugins: [twcssIifeBuildPlugin()],
-  build: {
-    outDir: '../dist',
-    emptyOutDir: true,
-    rolldownOptions: {
-      input: {
-        'main': 'index.html',
-        'benchmark-twcss': 'scripts/benchmark-twcss.js',
-        'benchmark-inline': 'scripts/benchmark-inline.js',
-        'test': 'scripts/test.js'
-      },
-      output: [{
-        format: 'esm',
-        entryFileNames: '[name].js',
-        chunkFileNames: 'assets/[name].js'
-      }]
+export default defineConfig(() => {
+  return {
+    root: 'vite',
+    plugins: [
+      emitIndexPlugin()
+    ],
+    build: {
+      outDir: '../target',
+      emptyOutDir: true,
+      lib: {
+        entry: 'scripts/twcss.js',
+        name: 'twcss',
+        formats: ['iife'],
+        fileName: () => 'twcss.min.js'
+      }
     }
   }
 })

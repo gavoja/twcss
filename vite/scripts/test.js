@@ -1,7 +1,9 @@
 /* global HTMLElement, customElements */
-import { init } from 'twcss/compiler'
+import { init, tw } from 'twcss/compiler'
 import { UTILS } from 'twcss/utils'
 import { STATES, STRING_SIZES, QUERIES } from 'twcss/constants'
+
+globalThis.tw = tw
 
 init(document, {
   classes: {
