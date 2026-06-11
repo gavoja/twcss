@@ -1,0 +1,1 @@
+import"./assets/twcss.js";document.addEventListener(`DOMContentLoaded`,()=>{let e=document.createElement(`div`);e.setAttribute(`tw`,`p-1 flex gap-1 flex-wrap`),document.body.appendChild(e);for(let t=0;t<1e4;t++){let n=document.createElement(`div`);n.setAttribute(`tw`,`inline-block bg-black text-white rounded-sm p-1 w-[${t+32}px]`),n.textContent=t,e.appendChild(n)}});
