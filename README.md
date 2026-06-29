@@ -4,7 +4,7 @@ A fast minimalist utility-first CSS runtime inspired by Tailwind and Twind.
 
 ## Motivation
 
-Tailwind is awesome, but it requires a build setup. Twind exists, but the project appears to be dead.
+Tailwind is awesome, but it requires a build setup. Twind exists, but the project appears to be inactive.
 
 ## Features
 
@@ -14,10 +14,10 @@ Tailwind is awesome, but it requires a build setup. Twind exists, but the projec
 
 ## Usage
 
-Node, Deno, Bun:
+Node, Deno, and Bun:
 
 ```js
-import 'twcss' // Initialises TWCSS automatically on document.
+import 'twcss' // Initialises TWCSS automatically on the document.
 ```
 
 Directly in browser:
@@ -45,7 +45,7 @@ function Wrapper ({ children, isRounded }) {
 }
 ```
 
-If you prefer to use Twind's approach, do:
+If you prefer Twind's approach, use:
 
 ```jsx
 import { init } from 'twcss/compiler'
@@ -53,14 +53,14 @@ import { init } from 'twcss/compiler'
 const tw = init(document) // Pass document or shadow root.
 
 function Button ({ children }) {
-  return <button className="{tw('p-4 rounded-xl')}">{children}</button>
+  return <button className={tw('p-4 rounded-xl')}>{children}</button>
 }
 ```
 
 Once imported, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructable stylesheets. Simple CSS preflight is included.
 
 > [!NOTE]
-> TWCSS uses the `tw` attribute to detect changes. All elements with a `tw` attribute and without a `class` attribute are hidden by default to prevent any unwanted layout shift or repaint. Once a `tw` attribute change is detected, all new styles are generated and the `class` attribute is set accordingly.
+> TWCSS uses the `tw` attribute to detect changes. All elements with a `tw` attribute and without a `class` attribute are hidden by default to prevent unwanted layout shifts or repaints. When a change to the `tw` attribute is detected, new styles are generated and the `class` attribute is set accordingly.
 > For this feature to work properly, TWCSS needs to be loaded before the page content is added.
 
 ## Extensibility
@@ -74,12 +74,12 @@ import { init } from 'twcss/compiler'
 
 // Initialises TWCSS explicitly.
 init(document, {
-  // Keys are class names and values are blobs of CSS.
+  // Keys are class names, and values are blobs of CSS.
   classes: {
-    // The below will yield:
+    // The following will yield:
     // .foo { width: 123px; height: 123px }
     'foo': '{ width: 123px; height: 123px }',
-    // The below will yield:
+    // The following will yield:
     // .hide-last-child > :last-child { display: none }
     'hide-last-child': '> :last-child { display: none }',
     // You can use custom keyframes here.
@@ -117,7 +117,7 @@ HTML:
 ```
 
 > [!WARNING]
-> Custom queries must not clash with states or pseudo element.
+> Custom queries must not clash with states or pseudo-elements.
 
 ## Compatibility
 
@@ -138,7 +138,7 @@ Currently unsupported Tailwind 4 features:
 
 Changes:
 
-- Default media queries for viewports are `sm`, `md` and `lg`. Feel free to extend them.
+- Default media queries for viewports are `sm`, `md`, and `lg`. Feel free to extend them.
 - Default animations serve the following use cases:
   - `expand` for showing menus and opening accordions,
   - `toast` for popping a notification up from the bottom,
@@ -146,4 +146,4 @@ Changes:
 - [:has()](https://tailwindcss.com/docs/hover-focus-and-other-states#has) works only with states via `has-` prefix (e.g. `has-checked`).
 - [:not()](https://tailwindcss.com/docs/hover-focus-and-other-states#not) works only with states via `not-` prefix (e.g. `not-focus`).
 - [Transition property](https://tailwindcss.com/docs/transition-property) does not set the transition duration. Use `duration-*` explicitly.
-- **New:** `scrollbar-gutter`, `scrollbar-width` and `scrollbar-color` support.
+- **New:** Support for `scrollbar-gutter`, `scrollbar-width`, and `scrollbar-color`.
