@@ -132,7 +132,7 @@ TWCSS aims at compatibility with Tailwind 4. This is not always possible without
 
 Currently unsupported Tailwind 4 features:
 
-- Composite properties; all styles must remain atomic in order to prevent unintentional overrides steming from the CSS order of precendence. Those are:
+- Composite properties; all styles must remain atomic in order to prevent unintentional overrides stemming from the CSS order of precedence. Those are:
   - `text-<size>/<number>`
   - `rounded-s-`, `rounded-e-`, `rounded-t-`, `rounded-r-`, `rounded-b-`, `rounded-l-`
   - `size-`,
