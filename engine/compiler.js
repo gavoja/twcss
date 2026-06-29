@@ -130,7 +130,7 @@ async function mutationHandler (instance, mutations) {
 // Class processing and style injection
 // -----------------------------------------------------------------------------
 
-export function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {}, preflight = [] }) {
+function extend ({ classes = {}, colors = {}, keyframes = {}, queries = {}, preflight = [] }) {
   for (const [name, value] of Object.entries(classes)) {
     UTILS.set(name, value)
   }
