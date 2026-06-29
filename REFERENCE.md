@@ -93,51 +93,6 @@ All container queries are relative to the ancestor with `@container` class.
 ```
 
 ```css
-/* landscape */
-@media (orientation: landscape)
-```
-
-```css
-/* portrait */
-@media (orientation: portrait)
-```
-
-```css
-/* light */
-@media (prefers-color-scheme: light)
-```
-
-```css
-/* dark */
-@media (prefers-color-scheme: dark)
-```
-
-```css
-/* inverted-colors */
-@media (inverted-colors: inverted)
-```
-
-```css
-/* pointer-coarse */
-@media (pointer: coarse)
-```
-
-```css
-/* pointer-fine */
-@media (pointer: fine)
-```
-
-```css
-/* pointer-none */
-@media (pointer: none)
-```
-
-```css
-/* print */
-@media print
-```
-
-```css
 /* @3xs */
 @container (width >= 256px)
 ```
@@ -265,6 +220,96 @@ All container queries are relative to the ancestor with `@container` class.
 ```css
 /* @max-7xl */
 @container (width < 1280px)
+```
+
+```css
+/* light */
+@media (prefers-color-scheme: light)
+```
+
+```css
+/* dark */
+@media (prefers-color-scheme: dark)
+```
+
+```css
+/* motion-safe */
+@media (prefers-reduced-motion: no-preference)
+```
+
+```css
+/* motion-reduce */
+@media (prefers-reduced-motion: reduce)
+```
+
+```css
+/* contrast-more */
+@media (prefers-contrast: more)
+```
+
+```css
+/* contrast-less */
+@media (prefers-contrast: less)
+```
+
+```css
+/* forced-colors */
+@media (forced-colors: active)
+```
+
+```css
+/* inverted-colors */
+@media (inverted-colors: inverted)
+```
+
+```css
+/* pointer-coarse */
+@media (pointer: coarse)
+```
+
+```css
+/* pointer-fine */
+@media (pointer: fine)
+```
+
+```css
+/* pointer-none */
+@media (pointer: none)
+```
+
+```css
+/* any-pointer-fine */
+@media (any-pointer: fine)
+```
+
+```css
+/* any-pointer-coarse */
+@media (any-pointer: coarse)
+```
+
+```css
+/* any-pointer-none */
+@media (any-pointer: none)
+```
+
+```css
+/* portrait */
+@media (orientation: portrait)
+```
+
+```css
+/* landscape */
+@media (orientation: landscape)
+```
+
+```css
+/* noscript */
+@media (scripting: none)
+```
+
+```css
+/* print */
+@media print
 ```
 
 ### Prefixes
@@ -6787,23 +6832,19 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ```
 
 ```css
-.leading-tight { line-height: 1.25 }
+.leading-<number> { line-height: calc(<number> * 4px) }
 ```
 
 ```css
-.leading-snug { line-height: 1.375 }
+.-leading-<number> { line-height: calc(-<number> * 4px) }
 ```
 
 ```css
-.leading-normal { line-height: 1.5 }
+.leading-[<value>] { line-height: <value> }
 ```
 
 ```css
-.leading-relaxed { line-height: 1.625 }
-```
-
-```css
-.leading-loose { line-height: 2 }
+.leading-(<custom-property>) { line-height: var(<custom-property>) }
 ```
 
 ### list-style-image
@@ -9124,38 +9165,6 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 .scale-(<custom-property>) { scale: var(<custom-property>) }
 ```
 
-```css
-.scale-x-<number> { scale: <number>% 100% }
-```
-
-```css
-.-scale-x-<number> { scale: -<number>% 100% }
-```
-
-```css
-.scale-x-[<value>] { scale: <value> }
-```
-
-```css
-.scale-x-(<custom-property>) { scale: var(<custom-property>) }
-```
-
-```css
-.scale-y-<number> { scale: 100% <number>% }
-```
-
-```css
-.-scale-y-<number> { scale: 100% -<number>% }
-```
-
-```css
-.scale-y-[<value>] { scale: <value> }
-```
-
-```css
-.scale-y-(<custom-property>) { scale: var(<custom-property>) }
-```
-
 ### transform
 
 ```css
@@ -9172,38 +9181,6 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ```css
 .skew-(<custom-property>) { transform: var(<custom-property>) }
-```
-
-```css
-.skew-x-<number> { transform: skewX(<number>deg) }
-```
-
-```css
-.-skew-x-<number> { transform: skewX(-<number>deg) }
-```
-
-```css
-.skew-x-[<value>] { transform: <value> }
-```
-
-```css
-.skew-x-(<custom-property>) { transform: var(<custom-property>) }
-```
-
-```css
-.skew-y-<number> { transform: skewY(<number>deg) }
-```
-
-```css
-.-skew-y-<number> { transform: skewY(-<number>deg) }
-```
-
-```css
-.skew-y-[<value>] { transform: <value> }
-```
-
-```css
-.skew-y-(<custom-property>) { transform: var(<custom-property>) }
 ```
 
 ```css
@@ -9408,270 +9385,6 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 .translate-(<custom-property>) { translate: var(<custom-property>) }
 ```
 
-```css
-.translate-x-auto { translate: auto }
-```
-
-```css
-.translate-x-px { translate: 1px }
-```
-
-```css
-.-translate-x-px { translate: -1px }
-```
-
-```css
-.translate-x-full { translate: 100% }
-```
-
-```css
-.-translate-x-full { translate: -100% }
-```
-
-```css
-.translate-x-screen { translate: 100vw }
-```
-
-```css
-.translate-x-dvw { translate: 100vw }
-```
-
-```css
-.translate-x-dvh { translate: 100vh }
-```
-
-```css
-.translate-x-lvw { translate: 100lvw }
-```
-
-```css
-.translate-x-lvh { translate: 100lvh }
-```
-
-```css
-.translate-x-svw { translate: 100svw }
-```
-
-```css
-.translate-x-svh { translate: 100svh }
-```
-
-```css
-.translate-x-min { translate: min-content }
-```
-
-```css
-.translate-x-max { translate: max-content }
-```
-
-```css
-.translate-x-fit { translate: fit-content }
-```
-
-```css
-.translate-x-3xs { translate: 256px }
-```
-
-```css
-.translate-x-2xs { translate: 288px }
-```
-
-```css
-.translate-x-xs { translate: 320px }
-```
-
-```css
-.translate-x-sm { translate: 384px }
-```
-
-```css
-.translate-x-md { translate: 448px }
-```
-
-```css
-.translate-x-lg { translate: 512px }
-```
-
-```css
-.translate-x-xl { translate: 576px }
-```
-
-```css
-.translate-x-2xl { translate: 672px }
-```
-
-```css
-.translate-x-3xl { translate: 768px }
-```
-
-```css
-.translate-x-4xl { translate: 896px }
-```
-
-```css
-.translate-x-5xl { translate: 1024px }
-```
-
-```css
-.translate-x-6xl { translate: 1152px }
-```
-
-```css
-.translate-x-7xl { translate: 1280px }
-```
-
-```css
-.translate-x-<number> { translate: calc(<number> * 4px) }
-```
-
-```css
-.-translate-x-<number> { translate: calc(-<number> * 4px) }
-```
-
-```css
-.translate-x-<fraction> { translate: calc(<fraction> * 100%) }
-```
-
-```css
-.translate-x-[<value>] { translate: <value> }
-```
-
-```css
-.translate-x-(<custom-property>) { translate: var(<custom-property>) }
-```
-
-```css
-.translate-y-auto { translate: 0 auto }
-```
-
-```css
-.translate-y-px { translate: 0 1px }
-```
-
-```css
-.-translate-y-px { translate: 0 -1px }
-```
-
-```css
-.translate-y-full { translate: 0 100% }
-```
-
-```css
-.-translate-y-full { translate: 0 -100% }
-```
-
-```css
-.translate-y-screen { translate: 0 100vw }
-```
-
-```css
-.translate-y-dvw { translate: 0 100vw }
-```
-
-```css
-.translate-y-dvh { translate: 0 100vh }
-```
-
-```css
-.translate-y-lvw { translate: 0 100lvw }
-```
-
-```css
-.translate-y-lvh { translate: 0 100lvh }
-```
-
-```css
-.translate-y-svw { translate: 0 100svw }
-```
-
-```css
-.translate-y-svh { translate: 0 100svh }
-```
-
-```css
-.translate-y-min { translate: 0 min-content }
-```
-
-```css
-.translate-y-max { translate: 0 max-content }
-```
-
-```css
-.translate-y-fit { translate: 0 fit-content }
-```
-
-```css
-.translate-y-3xs { translate: 0 256px }
-```
-
-```css
-.translate-y-2xs { translate: 0 288px }
-```
-
-```css
-.translate-y-xs { translate: 0 320px }
-```
-
-```css
-.translate-y-sm { translate: 0 384px }
-```
-
-```css
-.translate-y-md { translate: 0 448px }
-```
-
-```css
-.translate-y-lg { translate: 0 512px }
-```
-
-```css
-.translate-y-xl { translate: 0 576px }
-```
-
-```css
-.translate-y-2xl { translate: 0 672px }
-```
-
-```css
-.translate-y-3xl { translate: 0 768px }
-```
-
-```css
-.translate-y-4xl { translate: 0 896px }
-```
-
-```css
-.translate-y-5xl { translate: 0 1024px }
-```
-
-```css
-.translate-y-6xl { translate: 0 1152px }
-```
-
-```css
-.translate-y-7xl { translate: 0 1280px }
-```
-
-```css
-.translate-y-<number> { translate: 0 calc(<number> * 4px) }
-```
-
-```css
-.-translate-y-<number> { translate: 0 calc(-<number> * 4px) }
-```
-
-```css
-.translate-y-<fraction> { translate: 0 calc(<fraction> * 100%) }
-```
-
-```css
-.translate-y-[<value>] { translate: <value> }
-```
-
-```css
-.translate-y-(<custom-property>) { translate: var(<custom-property>) }
-```
-
 ## Interactivity
 
 ### accent-color
@@ -9733,7 +9446,23 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ```
 
 ```css
+.cursor-none { cursor: none }
+```
+
+```css
+.cursor-context-menu { cursor: context-menu }
+```
+
+```css
+.cursor-help { cursor: help }
+```
+
+```css
 .cursor-pointer { cursor: pointer }
+```
+
+```css
+.cursor-progress { cursor: progress }
 ```
 
 ```css
@@ -9741,7 +9470,27 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ```
 
 ```css
+.cursor-cell { cursor: cell }
+```
+
+```css
+.cursor-crosshair { cursor: crosshair }
+```
+
+```css
 .cursor-text { cursor: text }
+```
+
+```css
+.cursor-vertical-text { cursor: vertical-text }
+```
+
+```css
+.cursor-alias { cursor: alias }
+```
+
+```css
+.cursor-copy { cursor: copy }
 ```
 
 ```css
@@ -9749,7 +9498,87 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ```
 
 ```css
+.cursor-no-drop { cursor: no-drop }
+```
+
+```css
 .cursor-not-allowed { cursor: not-allowed }
+```
+
+```css
+.cursor-grab { cursor: grab }
+```
+
+```css
+.cursor-grabbing { cursor: grabbing }
+```
+
+```css
+.cursor-all-scroll { cursor: all-scroll }
+```
+
+```css
+.cursor-col-resize { cursor: col-resize }
+```
+
+```css
+.cursor-row-resize { cursor: row-resize }
+```
+
+```css
+.cursor-n-resize { cursor: n-resize }
+```
+
+```css
+.cursor-e-resize { cursor: e-resize }
+```
+
+```css
+.cursor-s-resize { cursor: s-resize }
+```
+
+```css
+.cursor-w-resize { cursor: w-resize }
+```
+
+```css
+.cursor-ne-resize { cursor: ne-resize }
+```
+
+```css
+.cursor-nw-resize { cursor: nw-resize }
+```
+
+```css
+.cursor-se-resize { cursor: se-resize }
+```
+
+```css
+.cursor-sw-resize { cursor: sw-resize }
+```
+
+```css
+.cursor-ew-resize { cursor: ew-resize }
+```
+
+```css
+.cursor-ns-resize { cursor: ns-resize }
+```
+
+```css
+.cursor-nesw-resize { cursor: nesw-resize }
+```
+
+```css
+.cursor-nwse-resize { cursor: nwse-resize }
+```
+
+```css
+.cursor-zoom-in { cursor: zoom-in }
+```
+
+```css
+.cursor-zoom-out { cursor: zoom-out }
 ```
 
 ### field-sizing

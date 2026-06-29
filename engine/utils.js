@@ -643,11 +643,7 @@ const ENTRIES = [
   // line-height
   ['leading', 'line-height', [
     ['none', 1],
-    ['tight', 1.25],
-    ['snug', 1.375],
-    ['normal', 1.5],
-    ['relaxed', 1.625],
-    ['loose', 2]
+    { raw: '$', number: N }
   ]],
 
   // list-style-image
@@ -1306,22 +1302,10 @@ const ENTRIES = [
   ['scale', [
     { raw: '$', number: '$% $%' }
   ]],
-  ['scale-x', 'scale', [
-    { raw: '$ 100%', number: '$% 100%' }
-  ]],
-  ['scale-y', 'scale', [
-    { raw: '100% $', number: '100% $%' }
-  ]],
 
   // skew
   ['skew', 'transform', [
     { raw: 'skewX($) skewY($)', number: 'skewX($deg) skewY($deg)' }
-  ]],
-  ['skew-x', 'transform', [
-    { raw: 'skewX($)', number: 'skewX($deg)' }
-  ]],
-  ['skew-y', 'transform', [
-    { raw: 'skewY($)', number: 'skewY($deg)' }
   ]],
 
   // transform
@@ -1345,12 +1329,6 @@ const ENTRIES = [
   // translate
   ['translate', [
     { raw: '$', number: `${N} ${N}`, fraction: `${F} ${F}`, string: '$ $' }
-  ]],
-  ['translate-x', 'translate', [
-    { raw: '$', number: `${N}`, fraction: `${F}`, string: '$' }
-  ]],
-  ['translate-y', 'translate', [
-    { raw: '0 $', number: `0 ${N}`, fraction: `0 ${F}`, string: '0 $' }
   ]],
 
   // ---------------------------------------------------------------------------
@@ -1383,11 +1361,40 @@ const ENTRIES = [
   ['cursor', [
     'auto',
     'default',
+    'none',
+    'context-menu',
+    'help',
     'pointer',
+    'progress',
     'wait',
+    'cell',
+    'crosshair',
     'text',
+    'vertical-text',
+    'alias',
+    'copy',
     'move',
-    'not-allowed'
+    'no-drop',
+    'not-allowed',
+    'grab',
+    'grabbing',
+    'all-scroll',
+    'col-resize',
+    'row-resize',
+    'n-resize',
+    'e-resize',
+    's-resize',
+    'w-resize',
+    'ne-resize',
+    'nw-resize',
+    'se-resize',
+    'sw-resize',
+    'ew-resize',
+    'ns-resize',
+    'nesw-resize',
+    'nwse-resize',
+    'zoom-in',
+    'zoom-out'
   ]],
 
   // field-sizing

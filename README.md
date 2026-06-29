@@ -132,16 +132,27 @@ TWCSS aims at compatibility with Tailwind 4. This is not always possible without
 
 Currently unsupported Tailwind 4 features:
 
+- Composite properties; all styles must remain atomic in order to prevent unintentional overrides steming from the CSS order of precendence. Those are:
+  - `text-<size>/<number>`
+  - `rounded-s-`, `rounded-e-`, `rounded-t-`, `rounded-r-`, `rounded-b-`, `rounded-l-`
+  - `size-`,
+  - `space-x-reverse`, `space-y-reverse`
+- Transforms for individual coordinates; use `-[]` syntax instead. Those are:
+  - `rotate-x`, `rotate-y`, `rotate-z`
+  - `scale-x`, `scale-y`, `scale-z`
+  - `skew-x`, `skew-y`, `skew-z`
+  - `translate-x`, `translate-y`, `translate-z`  
 - [Styling based on parent state](https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-the-descendants-of-a-group) via `group-` prefix.
 - [Styling based on sibling state](https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-sibling-state) via `peer-` prefix.
-- [Composite text size](https://tailwindcss.com/docs/line-height) - `text-<size>/<number>`. Font size and line height must be set separately.
 - [Background gradients](https://tailwindcss.com/docs/background-image#adding-a-linear-gradient) - `bg-linear-`, `bg-radial-`, `bg-conic`. Use `bg-[]` instead.
-- [Composite border radius](https://tailwindcss.com/docs/border-radius) - `rounded-s-`, `rounded-e-`, `rounded-t-`, `rounded-r-`, `rounded-b-`, `rounded-l-`.
 - [Border divisions](https://tailwindcss.com/docs/border-style) - `divide-`.
 - [Hidden outline](https://tailwindcss.com/docs/outline-style) - `outline-hidden`. Use `outline-transparent` to hide the outline instead.
 - [Shadow colors](https://tailwindcss.com/docs/box-shadow#setting-the-shadow-color); shadows are always black.
 - [Custom shadows](https://tailwindcss.com/docs/box-shadow#adding-an-inset-shadow) - `inset-`, `ring-`, `inset-ring-`. Use `bg-[]` instead.
 - [Mask image gradients](https://tailwindcss.com/docs/mask-image); use `mask-[]` instead.
+- [Translations](https://tailwindcss.com/docs/translate) for X, Y and Z cannot be combined; use `translate-[]` instead.
+- [Scale](https://tailwindcss.com/docs/scale) for X, Y and Z cannot be combined; use `scale-[]` instead.
+- [Hover, focus and other states](https://tailwindcss.com/docs/hover-focus-and-other-states#quick-reference) that are not based on media queries or argumentless pseudo elements.
 
 Changes:
 
