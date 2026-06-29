@@ -14,7 +14,7 @@ Tailwind is awesome, but it requires a build setup. Twind exists, but the projec
 
 ## Usage
 
-Node, Deno, and Bun:
+Node, Deno, Bun:
 
 ```js
 import 'twcss' // Initialises TWCSS automatically on the document.
@@ -50,18 +50,25 @@ If you prefer Twind's approach, use:
 ```jsx
 import { init } from 'twcss/compiler'
 
-const tw = init(document) // Pass document or shadow root.
+// Explicit manual initialisation - pass document or shadow root.
+const tw = init(document)
 
 function Button ({ children }) {
   return <button className={tw('p-4 rounded-xl')}>{children}</button>
 }
 ```
 
-Once imported, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructable stylesheets. Simple CSS preflight is included.
-
 > [!NOTE]
 > TWCSS uses the `tw` attribute to detect changes. All elements with a `tw` attribute and without a `class` attribute are hidden by default to prevent unwanted layout shifts or repaints. When a change to the `tw` attribute is detected, new styles are generated and the `class` attribute is set accordingly.
 > For this feature to work properly, TWCSS needs to be loaded before the page content is added.
+
+Caveats:
+
+- The `init()` call explicitly initialises TWCSS on `document` or a selected shadow root.
+- Once initialised, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructable stylesheets.
+- All registered custom elements within the DOM subtree of the initialised ancestor, either existing or added dynamically, are handled automatically.
+- Custom elements registered after the initialisation need to be explicitly initialised with `init()` call.
+- Simple CSS preflight is included.
 
 ## Extensibility
 
