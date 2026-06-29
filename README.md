@@ -4,7 +4,7 @@ A fast minimalist utility-first CSS runtime inspired by Tailwind and Twind.
 
 ## Motivation
 
-Tailwind is awesome, but it requires a build setup. Twind exists, but the project appears to be dead.
+Tailwind is awesome, but it requires a build setup. Twind exists, but the project appears to be inactive.
 
 ## Features
 
@@ -17,7 +17,7 @@ Tailwind is awesome, but it requires a build setup. Twind exists, but the projec
 Node, Deno, Bun:
 
 ```js
-import 'twcss' // Initialises TWCSS automatically on document.
+import 'twcss' // Initialises TWCSS automatically on the document.
 ```
 
 Directly in browser:
@@ -45,23 +45,30 @@ function Wrapper ({ children, isRounded }) {
 }
 ```
 
-If you prefer to use Twind's approach, do:
+If you prefer Twind's approach, use:
 
 ```jsx
 import { init } from 'twcss/compiler'
 
-const tw = init(document) // Pass document or shadow root.
+// Explicit manual initialisation - pass document or shadow root.
+const tw = init(document)
 
 function Button ({ children }) {
-  return <button className="{tw('p-4 rounded-xl')}">{children}</button>
+  return <button className={tw('p-4 rounded-xl')}>{children}</button>
 }
 ```
 
-Once imported, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructable stylesheets. Simple CSS preflight is included.
-
 > [!NOTE]
-> TWCSS uses the `tw` attribute to detect changes. All elements with a `tw` attribute and without a `class` attribute are hidden by default to prevent any unwanted layout shift or repaint. Once a `tw` attribute change is detected, all new styles are generated and the `class` attribute is set accordingly.
+> TWCSS uses the `tw` attribute to detect changes. All elements with a `tw` attribute and without a `class` attribute are hidden by default to prevent unwanted layout shifts or repaints. When a change to the `tw` attribute is detected, new styles are generated and the `class` attribute is set accordingly.
 > For this feature to work properly, TWCSS needs to be loaded before the page content is added.
+
+Caveats:
+
+- The `init()` call explicitly initialises TWCSS on `document` or a selected shadow root.
+- Once initialised, TWCSS detects DOM changes with a mutation observer and generates styles on the fly via constructable stylesheets.
+- All registered custom elements within the DOM subtree of the initialised ancestor, either existing or added dynamically, are handled automatically.
+- Custom elements registered after the initialisation need to be explicitly initialised with `init()` call.
+- Simple CSS preflight is included.
 
 ## Extensibility
 
@@ -74,12 +81,12 @@ import { init } from 'twcss/compiler'
 
 // Initialises TWCSS explicitly.
 init(document, {
-  // Keys are class names and values are blobs of CSS.
+  // Keys are class names, and values are blobs of CSS.
   classes: {
-    // The below will yield:
+    // The following will yield:
     // .foo { width: 123px; height: 123px }
     'foo': '{ width: 123px; height: 123px }',
-    // The below will yield:
+    // The following will yield:
     // .hide-last-child > :last-child { display: none }
     'hide-last-child': '> :last-child { display: none }',
     // You can use custom keyframes here.
@@ -117,7 +124,7 @@ HTML:
 ```
 
 > [!WARNING]
-> Custom queries must not clash with states or pseudo element.
+> Custom queries must not clash with states or pseudo-elements.
 
 ## Compatibility
 
@@ -125,20 +132,31 @@ TWCSS aims at compatibility with Tailwind 4. This is not always possible without
 
 Currently unsupported Tailwind 4 features:
 
+- Composite properties; all styles must remain atomic in order to prevent unintentional overrides stemming from the CSS order of precedence. Those are:
+  - `text-<size>/<number>`
+  - `rounded-s-`, `rounded-e-`, `rounded-t-`, `rounded-r-`, `rounded-b-`, `rounded-l-`
+  - `size-`,
+  - `space-x-reverse`, `space-y-reverse`
+- Transforms for individual coordinates; use `-[]` syntax instead. Those are:
+  - `rotate-x`, `rotate-y`, `rotate-z`
+  - `scale-x`, `scale-y`, `scale-z`
+  - `skew-x`, `skew-y`, `skew-z`
+  - `translate-x`, `translate-y`, `translate-z`  
 - [Styling based on parent state](https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-the-descendants-of-a-group) via `group-` prefix.
 - [Styling based on sibling state](https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-sibling-state) via `peer-` prefix.
-- [Composite text size](https://tailwindcss.com/docs/line-height) - `text-<size>/<number>`. Font size and line height must be set separately.
 - [Background gradients](https://tailwindcss.com/docs/background-image#adding-a-linear-gradient) - `bg-linear-`, `bg-radial-`, `bg-conic`. Use `bg-[]` instead.
-- [Composite border radius](https://tailwindcss.com/docs/border-radius) - `rounded-s-`, `rounded-e-`, `rounded-t-`, `rounded-r-`, `rounded-b-`, `rounded-l-`.
 - [Border divisions](https://tailwindcss.com/docs/border-style) - `divide-`.
 - [Hidden outline](https://tailwindcss.com/docs/outline-style) - `outline-hidden`. Use `outline-transparent` to hide the outline instead.
 - [Shadow colors](https://tailwindcss.com/docs/box-shadow#setting-the-shadow-color); shadows are always black.
 - [Custom shadows](https://tailwindcss.com/docs/box-shadow#adding-an-inset-shadow) - `inset-`, `ring-`, `inset-ring-`. Use `bg-[]` instead.
 - [Mask image gradients](https://tailwindcss.com/docs/mask-image); use `mask-[]` instead.
+- [Translations](https://tailwindcss.com/docs/translate) for X, Y and Z cannot be combined; use `translate-[]` instead.
+- [Scale](https://tailwindcss.com/docs/scale) for X, Y and Z cannot be combined; use `scale-[]` instead.
+- [Hover, focus and other states](https://tailwindcss.com/docs/hover-focus-and-other-states#quick-reference) that are not based on media queries or argumentless pseudo elements.
 
 Changes:
 
-- Default media queries for viewports are `sm`, `md` and `lg`. Feel free to extend them.
+- Default media queries for viewports are `sm`, `md`, and `lg`. Feel free to extend them.
 - Default animations serve the following use cases:
   - `expand` for showing menus and opening accordions,
   - `toast` for popping a notification up from the bottom,
@@ -146,4 +164,4 @@ Changes:
 - [:has()](https://tailwindcss.com/docs/hover-focus-and-other-states#has) works only with states via `has-` prefix (e.g. `has-checked`).
 - [:not()](https://tailwindcss.com/docs/hover-focus-and-other-states#not) works only with states via `not-` prefix (e.g. `not-focus`).
 - [Transition property](https://tailwindcss.com/docs/transition-property) does not set the transition duration. Use `duration-*` explicitly.
-- **New:** `scrollbar-gutter`, `scrollbar-width` and `scrollbar-color` support.
+- **New:** Support for `scrollbar-gutter`, `scrollbar-width`, and `scrollbar-color`.

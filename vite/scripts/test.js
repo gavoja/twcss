@@ -1,33 +1,54 @@
 /* global HTMLElement, customElements */
-import { init } from 'twcss/compiler'
+import { init, tw } from 'twcss/compiler'
 import { UTILS } from 'twcss/utils'
 import { STATES, STRING_SIZES, QUERIES } from 'twcss/constants'
 
-init(document, {
-  classes: {
-    foo: '{ width: 50px; height: 50px }',
-    'hide-last-child': '> :last-child { display: none }',
-    'animate-spin': '{ animation: spin 3s linear infinite }',
-    'after': '{ content: "after" }',
-    'active': '{ content: "active" }',
-    'sm': '{ content: "sm" }',
-    'xl': '{ content: "xl" }', // Custom
-  },
-  colors: {
-    octarine: '0.9 0.4 20',
-  },
-  keyframes: {
-    spin: 'to { transform: rotate(360deg) }',
-  },
-  queries: {
-    xl: '@media screen and (min-width: 1280px)',
-    'after': '[RESERVED]',
-    'active': '[RESERVED]',
-  },
-  preflight: [
-    'body { width: 1000px; margin: 0 auto }'
-  ]
+document.addEventListener('DOMContentLoaded', async () => {
+  globalThis.tw = tw
+
+  // Init TWCSS and extend.
+  init(document, {
+    classes: {
+      foo: '{ width: 50px; height: 50px }',
+      'hide-last-child': '> :last-child { display: none }',
+      'animate-spin': '{ animation: spin 3s linear infinite }',
+      'after': '{ content: "after" }',
+      'active': '{ content: "active" }',
+      'sm': '{ content: "sm" }',
+      'xl': '{ content: "xl" }', // Custom
+    },
+    colors: {
+      octarine: '0.9 0.4 20',
+    },
+    keyframes: {
+      spin: 'to { transform: rotate(360deg) }',
+    },
+    queries: {
+      xl: '@media screen and (min-width: 1280px)',
+      'after': '[RESERVED]',
+      'active': '[RESERVED]',
+    },
+    preflight: [
+      'body { width: 1000px; margin: 0 auto }'
+    ]
+  })
+
+  registerOuterInner()
+
+  addTestDiv()
+  addCustomElement('custom-element-1')
+  const el = addCustomElement('custom-element-2')
+  await delay(10)
+  el.remove()
+
+  addDivWithPrefixedClasses()
+  addDivWithCustomClasses()
+  addDivWithAllClasses()
 })
+
+// -----------------------------------------------------------------------------
+// Helpers
+// -----------------------------------------------------------------------------
 
 function register (name, callback) {
   class CustomElement extends HTMLElement {
@@ -42,11 +63,17 @@ function register (name, callback) {
 }
 
 function registerOuterInner () {
-  register('inner-element-1', () => `
-    <div tw="p-4 bg-fuchsia-300 border-2 rounded-md w-[300px]">
-      Shadow DOM: custom-element-1
-    </div>
-  `)
+  // Every new registered root needs to be explicitly intialized with TWCSS.
+  // - TWCSS does not detect newly registered elements that are already in the DOM.
+  // - Some of them may not need TWCSS support and this is up to the user.
+  register('inner-element-1', shadowRoot => {
+    init(shadowRoot)
+    return `
+      <div tw="p-4 bg-fuchsia-300 border-2 rounded-md w-[300px]">
+        Shadow DOM: custom-element-1
+      </div>
+    `
+  })
 
   register('inner-element-2', shadowRoot => {
     const add = init(shadowRoot)
@@ -58,13 +85,16 @@ function registerOuterInner () {
     `
   })
 
-  register('outer-element', () => `
-    <div tw="bg-blue-300 p-4 rounded-md border-2 space-y-4">
-      <div>Shadow DOM: outer-element</div>
-      <inner-element-1 tw="block"></inner-element-1>
-      <inner-element-2 tw="block"></inner-element-2>
-    </div>
-  `)
+  register('outer-element', shadowRoot => {
+    init(shadowRoot)
+    return `
+      <div tw="bg-blue-300 p-4 rounded-md border-2 space-y-4">
+        <div>Shadow DOM: outer-element</div>
+        <inner-element-1 tw="block"></inner-element-1>
+        <inner-element-2 tw="block"></inner-element-2>
+      </div>
+    `
+  })
 }
 
 function addTestDiv () {
@@ -173,21 +203,3 @@ function addDivWithCustomClasses () {
 function delay (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
-
-function main () {
-  registerOuterInner()
-
-  document.addEventListener('DOMContentLoaded', async () => {
-    addTestDiv()
-    addCustomElement('custom-element-1')
-    const el = addCustomElement('custom-element-2')
-    await delay(10)
-    el.remove()
-
-    addDivWithPrefixedClasses()
-    addDivWithCustomClasses()
-    addDivWithAllClasses()
-  })
-}
-
-main()

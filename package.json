@@ -32,8 +32,10 @@
     "./preflight": "./engine/preflight.js"
   },
   "scripts": {
-    "start": "npx ebp --dev",
-    "build": "npx ebp --iife",
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "test": "npx playwright test",
     "lint": "npx eslint && npx rumdl check .",
     "format": "npx eslint --fix",
@@ -48,13 +50,12 @@
     "diff": "^9.0.0",
     "dotenv": "^17.2.3",
     "dotenv-cli": "^11.0.0",
-    "esbuild": "^0.28.0",
-    "esbuild-plus": "^0.3.0",
     "eslint": "^9.39.1",
     "neostandard": "^0.13.0",
     "playwright": "^1.55.0",
     "release-it": "^20.0.1",
-    "rumdl": "^0.2.10"
+    "rumdl": "^0.2.10",
+    "vite": "^8.0.12"
   },
   "overrides": {
     "undici": "^6.24.0"
