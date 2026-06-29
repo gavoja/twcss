@@ -31,7 +31,6 @@ const PARSER = new RegExp([
 export const tw = { instances: new Map() }
 
 export function init (root = document, extensions = {}) {
-  console.log('initializing twcss', { root, extensions })
   extend(extensions || {})
 
   // Initialize for the document.
