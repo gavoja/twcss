@@ -1302,10 +1302,22 @@ const ENTRIES = [
   ['scale', [
     { raw: '$', number: '$% $%' }
   ]],
+  ['scale-x', 'scale', [
+    { raw: '$ 100%', number: '$% 100%' }
+  ]],
+  ['scale-y', 'scale', [
+    { raw: '100% $', number: '100% $%' }
+  ]],
 
   // skew
   ['skew', 'transform', [
     { raw: 'skewX($) skewY($)', number: 'skewX($deg) skewY($deg)' }
+  ]],
+  ['skew-x', 'transform', [
+    { raw: 'skewX($)', number: 'skewX($deg)' }
+  ]],
+  ['skew-y', 'transform', [
+    { raw: 'skewY($)', number: 'skewY($deg)' }
   ]],
 
   // transform
@@ -1329,6 +1341,12 @@ const ENTRIES = [
   // translate
   ['translate', [
     { raw: '$', number: `${N} ${N}`, fraction: `${F} ${F}`, string: '$ $' }
+  ]],
+  ['translate-x', 'translate', [
+    { raw: '$', number: `${N}`, fraction: `${F}`, string: '$' }
+  ]],
+  ['translate-y', 'translate', [
+    { raw: '0 $', number: `0 ${N}`, fraction: `0 ${F}`, string: '0 $' }
   ]],
 
   // ---------------------------------------------------------------------------

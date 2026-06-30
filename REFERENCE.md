@@ -9165,6 +9165,38 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 .scale-(<custom-property>) { scale: var(<custom-property>) }
 ```
 
+```css
+.scale-x-<number> { scale: <number>% 100% }
+```
+
+```css
+.-scale-x-<number> { scale: -<number>% 100% }
+```
+
+```css
+.scale-x-[<value>] { scale: <value> }
+```
+
+```css
+.scale-x-(<custom-property>) { scale: var(<custom-property>) }
+```
+
+```css
+.scale-y-<number> { scale: 100% <number>% }
+```
+
+```css
+.-scale-y-<number> { scale: 100% -<number>% }
+```
+
+```css
+.scale-y-[<value>] { scale: <value> }
+```
+
+```css
+.scale-y-(<custom-property>) { scale: var(<custom-property>) }
+```
+
 ### transform
 
 ```css
@@ -9181,6 +9213,38 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ```css
 .skew-(<custom-property>) { transform: var(<custom-property>) }
+```
+
+```css
+.skew-x-<number> { transform: skewX(<number>deg) }
+```
+
+```css
+.-skew-x-<number> { transform: skewX(-<number>deg) }
+```
+
+```css
+.skew-x-[<value>] { transform: <value> }
+```
+
+```css
+.skew-x-(<custom-property>) { transform: var(<custom-property>) }
+```
+
+```css
+.skew-y-<number> { transform: skewY(<number>deg) }
+```
+
+```css
+.-skew-y-<number> { transform: skewY(-<number>deg) }
+```
+
+```css
+.skew-y-[<value>] { transform: <value> }
+```
+
+```css
+.skew-y-(<custom-property>) { transform: var(<custom-property>) }
 ```
 
 ```css
@@ -9383,6 +9447,270 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 
 ```css
 .translate-(<custom-property>) { translate: var(<custom-property>) }
+```
+
+```css
+.translate-x-auto { translate: auto }
+```
+
+```css
+.translate-x-px { translate: 1px }
+```
+
+```css
+.-translate-x-px { translate: -1px }
+```
+
+```css
+.translate-x-full { translate: 100% }
+```
+
+```css
+.-translate-x-full { translate: -100% }
+```
+
+```css
+.translate-x-screen { translate: 100vw }
+```
+
+```css
+.translate-x-dvw { translate: 100vw }
+```
+
+```css
+.translate-x-dvh { translate: 100vh }
+```
+
+```css
+.translate-x-lvw { translate: 100lvw }
+```
+
+```css
+.translate-x-lvh { translate: 100lvh }
+```
+
+```css
+.translate-x-svw { translate: 100svw }
+```
+
+```css
+.translate-x-svh { translate: 100svh }
+```
+
+```css
+.translate-x-min { translate: min-content }
+```
+
+```css
+.translate-x-max { translate: max-content }
+```
+
+```css
+.translate-x-fit { translate: fit-content }
+```
+
+```css
+.translate-x-3xs { translate: 256px }
+```
+
+```css
+.translate-x-2xs { translate: 288px }
+```
+
+```css
+.translate-x-xs { translate: 320px }
+```
+
+```css
+.translate-x-sm { translate: 384px }
+```
+
+```css
+.translate-x-md { translate: 448px }
+```
+
+```css
+.translate-x-lg { translate: 512px }
+```
+
+```css
+.translate-x-xl { translate: 576px }
+```
+
+```css
+.translate-x-2xl { translate: 672px }
+```
+
+```css
+.translate-x-3xl { translate: 768px }
+```
+
+```css
+.translate-x-4xl { translate: 896px }
+```
+
+```css
+.translate-x-5xl { translate: 1024px }
+```
+
+```css
+.translate-x-6xl { translate: 1152px }
+```
+
+```css
+.translate-x-7xl { translate: 1280px }
+```
+
+```css
+.translate-x-<number> { translate: calc(<number> * 4px) }
+```
+
+```css
+.-translate-x-<number> { translate: calc(-<number> * 4px) }
+```
+
+```css
+.translate-x-<fraction> { translate: calc(<fraction> * 100%) }
+```
+
+```css
+.translate-x-[<value>] { translate: <value> }
+```
+
+```css
+.translate-x-(<custom-property>) { translate: var(<custom-property>) }
+```
+
+```css
+.translate-y-auto { translate: 0 auto }
+```
+
+```css
+.translate-y-px { translate: 0 1px }
+```
+
+```css
+.-translate-y-px { translate: 0 -1px }
+```
+
+```css
+.translate-y-full { translate: 0 100% }
+```
+
+```css
+.-translate-y-full { translate: 0 -100% }
+```
+
+```css
+.translate-y-screen { translate: 0 100vw }
+```
+
+```css
+.translate-y-dvw { translate: 0 100vw }
+```
+
+```css
+.translate-y-dvh { translate: 0 100vh }
+```
+
+```css
+.translate-y-lvw { translate: 0 100lvw }
+```
+
+```css
+.translate-y-lvh { translate: 0 100lvh }
+```
+
+```css
+.translate-y-svw { translate: 0 100svw }
+```
+
+```css
+.translate-y-svh { translate: 0 100svh }
+```
+
+```css
+.translate-y-min { translate: 0 min-content }
+```
+
+```css
+.translate-y-max { translate: 0 max-content }
+```
+
+```css
+.translate-y-fit { translate: 0 fit-content }
+```
+
+```css
+.translate-y-3xs { translate: 0 256px }
+```
+
+```css
+.translate-y-2xs { translate: 0 288px }
+```
+
+```css
+.translate-y-xs { translate: 0 320px }
+```
+
+```css
+.translate-y-sm { translate: 0 384px }
+```
+
+```css
+.translate-y-md { translate: 0 448px }
+```
+
+```css
+.translate-y-lg { translate: 0 512px }
+```
+
+```css
+.translate-y-xl { translate: 0 576px }
+```
+
+```css
+.translate-y-2xl { translate: 0 672px }
+```
+
+```css
+.translate-y-3xl { translate: 0 768px }
+```
+
+```css
+.translate-y-4xl { translate: 0 896px }
+```
+
+```css
+.translate-y-5xl { translate: 0 1024px }
+```
+
+```css
+.translate-y-6xl { translate: 0 1152px }
+```
+
+```css
+.translate-y-7xl { translate: 0 1280px }
+```
+
+```css
+.translate-y-<number> { translate: 0 calc(<number> * 4px) }
+```
+
+```css
+.-translate-y-<number> { translate: 0 calc(-<number> * 4px) }
+```
+
+```css
+.translate-y-<fraction> { translate: 0 calc(<fraction> * 100%) }
+```
+
+```css
+.translate-y-[<value>] { translate: <value> }
+```
+
+```css
+.translate-y-(<custom-property>) { translate: var(<custom-property>) }
 ```
 
 ## Interactivity

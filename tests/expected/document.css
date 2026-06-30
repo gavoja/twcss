@@ -18999,10 +18999,28 @@
   .md\:hover\:after\:-scale-45:hover::after { scale: -0.45; }
 }
 @media screen and (min-width: 600px) and (max-width: 959px) {
+  .md\:hover\:after\:-scale-x-45:hover::after { scale: -0.45 1; }
+}
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  .md\:hover\:after\:-scale-y-45:hover::after { scale: 1 -0.45; }
+}
+@media screen and (min-width: 600px) and (max-width: 959px) {
   .md\:hover\:after\:-skew-45:hover::after { transform: skewX(-45deg) skewY(-45deg); }
 }
 @media screen and (min-width: 600px) and (max-width: 959px) {
+  .md\:hover\:after\:-skew-x-45:hover::after { transform: skewX(-45deg); }
+}
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  .md\:hover\:after\:-skew-y-45:hover::after { transform: skewY(-45deg); }
+}
+@media screen and (min-width: 600px) and (max-width: 959px) {
   .md\:hover\:after\:-translate-45:hover::after { translate: calc(-180px) calc(-180px); }
+}
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  .md\:hover\:after\:-translate-x-45:hover::after { translate: calc(-180px); }
+}
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  .md\:hover\:after\:-translate-y-45:hover::after { translate: 0px calc(-180px); }
 }
 @media screen and (min-width: 600px) and (max-width: 959px) {
   .md\:hover\:after\:-scroll-m-45:hover::after { scroll-margin: calc(-180px); }
@@ -41919,10 +41937,26 @@ ul, ol { list-style: none; }
 .-scale-23 { scale: -0.23; }
 .scale-\(--my-var\) { scale: var(--my-var); }
 .scale-\[inherit\] { scale: inherit; }
+.scale-x-23 { scale: 0.23 1; }
+.-scale-x-23 { scale: -0.23 1; }
+.scale-x-\(--my-var\) { scale: var(--my-var) 100%; }
+.scale-x-\[inherit\] { }
+.scale-y-23 { scale: 1 0.23; }
+.-scale-y-23 { scale: 1 -0.23; }
+.scale-y-\(--my-var\) { scale: 100% var(--my-var); }
+.scale-y-\[inherit\] { }
 .skew-23 { transform: skewX(23deg) skewY(23deg); }
 .-skew-23 { transform: skewX(-23deg) skewY(-23deg); }
 .skew-\(--my-var\) { transform: skewX(var(--my-var)) skewY(var(--my-var)); }
 .skew-\[inherit\] { }
+.skew-x-23 { transform: skewX(23deg); }
+.-skew-x-23 { transform: skewX(-23deg); }
+.skew-x-\(--my-var\) { transform: skewX(var(--my-var)); }
+.skew-x-\[inherit\] { }
+.skew-y-23 { transform: skewY(23deg); }
+.-skew-y-23 { transform: skewY(-23deg); }
+.skew-y-\(--my-var\) { transform: skewY(var(--my-var)); }
+.skew-y-\[inherit\] { }
 .transform-\(--my-var\) { transform: var(--my-var); }
 .transform-\[inherit\] { transform: inherit; }
 .origin-top-left { transform-origin: left top; }
@@ -41996,6 +42030,122 @@ ul, ol { list-style: none; }
 .-translate-1\/4 { translate: calc(-25%) calc(-25%); }
 .translate-\(--my-var\) { translate: var(--my-var); }
 .translate-\[inherit\] { translate: inherit; }
+.translate-x-auto { }
+.-translate-x-auto { }
+.translate-x-px { translate: 1px; }
+.-translate-x-px { translate: -1px; }
+.translate-x-full { translate: 100%; }
+.-translate-x-full { translate: -100%; }
+.translate-x-screen { translate: 100vw; }
+.-translate-x-screen { translate: -100vw; }
+.translate-x-dvw { translate: 100vw; }
+.-translate-x-dvw { translate: -100vw; }
+.translate-x-dvh { translate: 100vh; }
+.-translate-x-dvh { translate: -100vh; }
+.translate-x-lvw { translate: 100lvw; }
+.-translate-x-lvw { translate: -100lvw; }
+.translate-x-lvh { translate: 100lvh; }
+.-translate-x-lvh { translate: -100lvh; }
+.translate-x-svw { translate: 100svw; }
+.-translate-x-svw { translate: -100svw; }
+.translate-x-svh { translate: 100svh; }
+.-translate-x-svh { translate: -100svh; }
+.translate-x-min { }
+.-translate-x-min { }
+.translate-x-max { }
+.-translate-x-max { }
+.translate-x-fit { }
+.-translate-x-fit { }
+.translate-x-3xs { translate: 256px; }
+.-translate-x-3xs { translate: -256px; }
+.translate-x-2xs { translate: 288px; }
+.-translate-x-2xs { translate: -288px; }
+.translate-x-xs { translate: 320px; }
+.-translate-x-xs { translate: -320px; }
+.translate-x-sm { translate: 384px; }
+.-translate-x-sm { translate: -384px; }
+.translate-x-md { translate: 448px; }
+.-translate-x-md { translate: -448px; }
+.translate-x-lg { translate: 512px; }
+.-translate-x-lg { translate: -512px; }
+.translate-x-xl { translate: 576px; }
+.-translate-x-xl { translate: -576px; }
+.translate-x-2xl { translate: 672px; }
+.-translate-x-2xl { translate: -672px; }
+.translate-x-3xl { translate: 768px; }
+.-translate-x-3xl { translate: -768px; }
+.translate-x-4xl { translate: 896px; }
+.-translate-x-4xl { translate: -896px; }
+.translate-x-5xl { translate: 1024px; }
+.-translate-x-5xl { translate: -1024px; }
+.translate-x-6xl { translate: 1152px; }
+.-translate-x-6xl { translate: -1152px; }
+.translate-x-7xl { translate: 1280px; }
+.-translate-x-7xl { translate: -1280px; }
+.translate-x-23 { translate: calc(92px); }
+.-translate-x-23 { translate: calc(-92px); }
+.translate-x-1\/4 { translate: calc(25%); }
+.-translate-x-1\/4 { translate: calc(-25%); }
+.translate-x-\(--my-var\) { translate: var(--my-var); }
+.translate-x-\[inherit\] { translate: inherit; }
+.translate-y-auto { }
+.-translate-y-auto { }
+.translate-y-px { translate: 0px 1px; }
+.-translate-y-px { translate: 0px -1px; }
+.translate-y-full { translate: 0px 100%; }
+.-translate-y-full { translate: 0px -100%; }
+.translate-y-screen { translate: 0px 100vw; }
+.-translate-y-screen { translate: 0px -100vw; }
+.translate-y-dvw { translate: 0px 100vw; }
+.-translate-y-dvw { translate: 0px -100vw; }
+.translate-y-dvh { translate: 0px 100vh; }
+.-translate-y-dvh { translate: 0px -100vh; }
+.translate-y-lvw { translate: 0px 100lvw; }
+.-translate-y-lvw { translate: 0px -100lvw; }
+.translate-y-lvh { translate: 0px 100lvh; }
+.-translate-y-lvh { translate: 0px -100lvh; }
+.translate-y-svw { translate: 0px 100svw; }
+.-translate-y-svw { translate: 0px -100svw; }
+.translate-y-svh { translate: 0px 100svh; }
+.-translate-y-svh { translate: 0px -100svh; }
+.translate-y-min { }
+.-translate-y-min { }
+.translate-y-max { }
+.-translate-y-max { }
+.translate-y-fit { }
+.-translate-y-fit { }
+.translate-y-3xs { translate: 0px 256px; }
+.-translate-y-3xs { translate: 0px -256px; }
+.translate-y-2xs { translate: 0px 288px; }
+.-translate-y-2xs { translate: 0px -288px; }
+.translate-y-xs { translate: 0px 320px; }
+.-translate-y-xs { translate: 0px -320px; }
+.translate-y-sm { translate: 0px 384px; }
+.-translate-y-sm { translate: 0px -384px; }
+.translate-y-md { translate: 0px 448px; }
+.-translate-y-md { translate: 0px -448px; }
+.translate-y-lg { translate: 0px 512px; }
+.-translate-y-lg { translate: 0px -512px; }
+.translate-y-xl { translate: 0px 576px; }
+.-translate-y-xl { translate: 0px -576px; }
+.translate-y-2xl { translate: 0px 672px; }
+.-translate-y-2xl { translate: 0px -672px; }
+.translate-y-3xl { translate: 0px 768px; }
+.-translate-y-3xl { translate: 0px -768px; }
+.translate-y-4xl { translate: 0px 896px; }
+.-translate-y-4xl { translate: 0px -896px; }
+.translate-y-5xl { translate: 0px 1024px; }
+.-translate-y-5xl { translate: 0px -1024px; }
+.translate-y-6xl { translate: 0px 1152px; }
+.-translate-y-6xl { translate: 0px -1152px; }
+.translate-y-7xl { translate: 0px 1280px; }
+.-translate-y-7xl { translate: 0px -1280px; }
+.translate-y-23 { translate: 0px calc(92px); }
+.-translate-y-23 { translate: 0px calc(-92px); }
+.translate-y-1\/4 { translate: 0px calc(25%); }
+.-translate-y-1\/4 { translate: 0px calc(-25%); }
+.translate-y-\(--my-var\) { translate: 0 var(--my-var); }
+.translate-y-\[inherit\] { }
 .accent-inherit { accent-color: inherit; }
 .accent-transparent { accent-color: transparent; }
 .accent-current { accent-color: currentcolor; }
