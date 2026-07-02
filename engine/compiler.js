@@ -180,7 +180,8 @@ function createSheet () {
 }
 
 function updateClass (instance, el) {
-  el.className = addRules(instance, el.getAttribute('tw'))
+  // Cannot use el.className, because it is read only for SVG elements.
+  el.setAttribute('class', addRules(instance, el.getAttribute('tw')))
 }
 
 function addRules (instance, className) {
