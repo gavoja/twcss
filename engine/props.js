@@ -15,7 +15,7 @@ export const PROPS = [
     ['3xl', '24px'],
     ['4xl', '32px'],
     ['full', '50%'],
-    ['none', '0']
+    ['none', '0'],
   ].map(([size, value]) => [`--radius-${size}`, value]),
 
   // Text sizes
@@ -32,7 +32,7 @@ export const PROPS = [
     ['6xl', 60],
     ['7xl', 72],
     ['8xl', 96],
-    ['9xl', 128]
+    ['9xl', 128],
   ].map(([size, value]) => [`--text-${size}`, `${value}px`]),
 
   // Line heights (for text sizes)
@@ -49,7 +49,7 @@ export const PROPS = [
     ['6xl', 1],
     ['7xl', 1],
     ['8xl', 1],
-    ['9xl', 1]
+    ['9xl', 1],
   ].map(([size, value]) => [`--text-${size}--line-height`, `${value}`]),
 
   // Blurs
@@ -61,6 +61,6 @@ export const PROPS = [
     ['lg', 16],
     ['xl', 24],
     ['2xl', 40],
-    ['3xl', 64]
-  ].map(([size, value]) => [`--blur-${size}`, `${value}px`])
+    ['3xl', 64],
+  ].map(([size, value]) => [`--blur-${size}`, `${value}px`]),
 ]

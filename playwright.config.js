@@ -6,7 +6,7 @@ export default defineConfig({
   testDir: 'tests/cases',
   fullyParallel: true,
   reporter: [
-    ['list', { printSteps: true }]
+    ['list', { printSteps: true }],
   ],
   workers: 1,
   timeout: 20_000,
@@ -17,11 +17,11 @@ export default defineConfig({
       ...devices['Desktop Chrome'],
       headless: true,
       viewport: { width: 1600, height: 900 },
-    }
+    },
   }],
   webServer: {
     command: 'npm start',
     url: URL,
-    reuseExistingServer: true
-  }
+    reuseExistingServer: true,
+  },
 })

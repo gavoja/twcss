@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       'active': '[RESERVED]',
     },
     preflight: [
-      'body { width: 1000px; margin: 0 auto }'
-    ]
+      'body { width: 1000px; margin: 0 auto }',
+    ],
   })
 
   registerOuterInner()
@@ -103,7 +103,7 @@ function addTestDiv () {
   innerDiv.textContent = 'Inner DIV'
 
   const div = document.createElement('div')
-  const array = ['bg-violet-300 p-4 rounded-md', 'w-[calc(50%_-_50px)]', true && 'h-[200px]', false && 'color-red-500']
+  const array = ['bg-violet-300 p-4 rounded-md', 'w-[calc(50%_-_50px)]', 'h-[200px]', false]
   div.setAttribute('tw', array)
   div.appendChild(innerDiv)
 
@@ -194,7 +194,7 @@ function addDivWithCustomClasses () {
   const div = document.createElement('div')
   div.setAttribute(
     'tw',
-    'm-[30px] foo hide-last-child animate-spin bg-octarine/20 text-octarine xl:bg-red-300 flex items-center justify-center'
+    'm-[30px] foo hide-last-child animate-spin bg-octarine/20 text-octarine xl:bg-red-300 flex items-center justify-center',
   )
   div.textContent = 'Spin'
   document.body.appendChild(div)

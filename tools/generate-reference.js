@@ -1,4 +1,5 @@
 /* global Iterator */
+/* eslint-disable sonarjs/cognitive-complexity */
 import chroma from 'chroma-js'
 import fs from 'node:fs'
 

@@ -5,7 +5,7 @@ import { PREFLIGHT } from './preflight.js'
 import { PROPS } from './props.js'
 import { UTILS } from './utils.js'
 
-/* eslint-disable @stylistic/indent */
+/* eslint-disable indent */
 const PARSER = new RegExp([
   '((?<prefix>[a-z0-9-@:]+):)?',
   '(?<negative>-?)?', // Minus sign
@@ -20,7 +20,7 @@ const PARSER = new RegExp([
     ')$)|',
     // Default
     '(.+)',
-  ')'
+  ')',
 ].join(''))
 
 // -----------------------------------------------------------------------------
@@ -49,7 +49,7 @@ export function init (root = document, extensions = {}) {
     usedRules: new Set(),
     sheet,
     mqRulesStartIndex: sheet.cssRules.length,
-    observer: new MutationObserver(mutations => mutationHandler(instance, mutations))
+    observer: new MutationObserver(mutations => mutationHandler(instance, mutations)),
   }
 
   // Add instance to the map.
@@ -116,12 +116,14 @@ async function mutationHandler (instance, mutations) {
   }
 
   // If any nodes were removed, check if any shadow roots were disconnected.
-  if (clean) {
-    for (const inst of tw.instances.values()) {
-      if (!inst.root.isConnected) {
-        inst.observer.disconnect()
-        tw.instances.delete(inst.root)
-      }
+  clean && cleanUpInstances()
+}
+
+function cleanUpInstances () {
+  for (const inst of tw.instances.values()) {
+    if (!inst.root.isConnected) {
+      inst.observer.disconnect()
+      tw.instances.delete(inst.root)
     }
   }
 }
@@ -243,6 +245,7 @@ function dolar (str, replacement) {
   return str.replaceAll(/\$/g, replacement)
 }
 
+/* eslint-disable sonarjs/cognitive-complexity */
 function parse (cls) {
   const groups = cls.match(PARSER).groups
   const { negative, prefix, util, base, number, fraction, string, raw, custom } = groups

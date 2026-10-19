@@ -13,12 +13,12 @@ const ENTRIES = [
     ['square', '1 / 1'],
     ['video', '16 / 9'],
     'auto',
-    { raw: '$', fraction: '$' }
+    { raw: '$', fraction: '$' },
   ]],
 
   // columns
   ['columns', [
-    { raw: '$', number: '$', fraction: '$', string: '$' }
+    { raw: '$', number: '$', fraction: '$', string: '$' },
   ]],
 
   // break-after
@@ -29,7 +29,7 @@ const ENTRIES = [
     'page',
     'left',
     'right',
-    'column'
+    'column',
   ]],
 
   // break-before
@@ -40,7 +40,7 @@ const ENTRIES = [
     'page',
     'left',
     'right',
-    'column'
+    'column',
   ]],
 
   // break-inside
@@ -48,19 +48,19 @@ const ENTRIES = [
     'auto',
     'avoid',
     'avoid-page',
-    'avoid-column'
+    'avoid-column',
   ]],
 
   // box-decoration-break
   ['box-decoration', 'box-decoration-break', [
     'clone',
-    'slice'
+    'slice',
   ]],
 
   // box-sizing
   ['box', 'box-sizing', [
     ['border', 'border-box'],
-    ['content', 'content-box']
+    ['content', 'content-box'],
   ]],
 
   // display
@@ -77,7 +77,7 @@ const ENTRIES = [
     'table',
     'inline-table',
     'list-item',
-    ['hidden', 'none']
+    ['hidden', 'none'],
   ]],
   ['sr-only', 'clip: rect(0, 0, 0, 0); position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; white-space: nowrap; border-width: 0'],
   ['not-sr-only', 'clip: auto; position: static; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; white-space: normal'],
@@ -88,7 +88,7 @@ const ENTRIES = [
     ['end', 'inline-end'],
     'left',
     'right',
-    'none'
+    'none',
   ]],
 
   // clear
@@ -98,13 +98,13 @@ const ENTRIES = [
     'left',
     'right',
     'both',
-    'none'
+    'none',
   ]],
 
   // isolation
   ['', 'isolation', [
     ['isolate', 'isolate'],
-    ['isolation-auto', 'auto']
+    ['isolation-auto', 'auto'],
   ]],
 
   // object-fit
@@ -113,7 +113,7 @@ const ENTRIES = [
     'cover',
     'fill',
     'none',
-    'scale-down'
+    'scale-down',
   ]],
 
   // object-position
@@ -127,7 +127,7 @@ const ENTRIES = [
     ['right-bottom', 'right bottom'],
     ['right-top', 'right top'],
     'top',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // overflow
@@ -144,20 +144,20 @@ const ENTRIES = [
   ['scrollbar-gutter', [
     'auto',
     'stable',
-    ['both', 'stable both-edges']
+    ['both', 'stable both-edges'],
   ]],
 
   // scrollbar-width
   ['scrollbar-width', [
     'auto',
     'thin',
-    'none'
+    'none',
   ]],
 
   // scrollbar-color
   ['scrollbar-color', [
     'auto',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // position
@@ -166,49 +166,49 @@ const ENTRIES = [
     'fixed',
     'absolute',
     'relative',
-    'sticky'
+    'sticky',
   ]],
 
   // top / right / bottom / left
   ['inset', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
   ['inset-x', 'inset-inline', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
   ['inset-y', 'inset-block', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
   ['start', 'inset-inline-start', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
   ['end', 'inset-inline-end', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
   ['top', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
   ['right', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
   ['bottom', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
   ['left', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
 
   // visibility
   ['', 'visibility', [
     'visible',
     ['invisible', 'hidden'],
-    'collapse'
+    'collapse',
   ]],
 
   // z-index
   ['z', 'z-index', [
     'auto',
-    { raw: '$', number: '$' }
+    { raw: '$', number: '$' },
   ]],
 
   // ---------------------------------------------------------------------------
@@ -217,7 +217,7 @@ const ENTRIES = [
 
   // flex-basis
   ['basis', 'flex-basis', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
 
   // flex-direction
@@ -225,14 +225,14 @@ const ENTRIES = [
     'row',
     'row-reverse',
     ['col', 'column'],
-    ['col-reverse', 'column-reverse']
+    ['col-reverse', 'column-reverse'],
   ]],
 
   // flex-wrap
   ['flex', 'flex-wrap', [
     'nowrap',
     'wrap',
-    'wrap-reverse'
+    'wrap-reverse',
   ]],
 
   // flex
@@ -240,19 +240,19 @@ const ENTRIES = [
     ['auto', '1 1 auto'],
     ['initial', '0 1 auto'],
     'none',
-    { raw: '$', number: '$', fraction: F }
+    { raw: '$', number: '$', fraction: F },
   ]],
 
   // flex-grow
   ['grow', 'flex-grow', [
     ['', 1],
-    { raw: '$', number: '$' }
+    { raw: '$', number: '$' },
   ]],
 
   // flex-shrink
   ['shrink', 'flex-shrink', [
     ['', 1],
-    { raw: '$', number: '$' }
+    { raw: '$', number: '$' },
   ]],
 
   // order
@@ -260,57 +260,57 @@ const ENTRIES = [
     ['first', '-9999'],
     ['last', '9999'],
     ['none', '0'],
-    { raw: '$', number: '$' }
+    { raw: '$', number: '$' },
   ]],
 
   // grid-template-columns
   ['grid-cols', 'grid-template-columns', [
     'none',
     'subgrid',
-    { raw: '$', number: 'repeat($, minmax(0, 1fr))' }
+    { raw: '$', number: 'repeat($, minmax(0, 1fr))' },
   ]],
 
   // grid-column
   ['col-span', 'grid-column', [
     ['full', '1 / -1'],
-    { raw: 'span $ / span $', number: 'span $ / span $' }
+    { raw: 'span $ / span $', number: 'span $ / span $' },
   ]],
   ['col-start', 'grid-column-start', [
     'auto',
-    { raw: '$', number: '$' }
+    { raw: '$', number: '$' },
   ]],
   ['col-end', 'grid-column-end', [
     'auto',
-    { raw: '$', number: '$' }
+    { raw: '$', number: '$' },
   ]],
   ['col', 'grid-column', [
     'auto',
-    { raw: '$', number: '$' }
+    { raw: '$', number: '$' },
   ]],
 
   // grid-template-rows
   ['grid-rows', 'grid-template-rows', [
     'none',
     'subgrid',
-    { raw: '$', number: 'repeat($, minmax(0, 1fr))' }
+    { raw: '$', number: 'repeat($, minmax(0, 1fr))' },
   ]],
 
   // grid-row
   ['row-span', 'grid-row', [
     ['full', '1 / -1'],
-    { raw: 'span $ / span $', number: 'span $ / span $' }
+    { raw: 'span $ / span $', number: 'span $ / span $' },
   ]],
   ['row-start', 'grid-row-start', [
     'auto',
-    { raw: '$', number: '$' }
+    { raw: '$', number: '$' },
   ]],
   ['row-end', 'grid-row-end', [
     'auto',
-    { raw: '$', number: '$' }
+    { raw: '$', number: '$' },
   ]],
   ['row', 'grid-row', [
     'auto',
-    { raw: '$', number: '$' }
+    { raw: '$', number: '$' },
   ]],
 
   // grid-auto-flow
@@ -319,7 +319,7 @@ const ENTRIES = [
     ['col', 'column'],
     'dense',
     ['row-dense', 'row dense'],
-    ['col-dense', 'column dense']
+    ['col-dense', 'column dense'],
   ]],
 
   // grid-auto-columns
@@ -328,7 +328,7 @@ const ENTRIES = [
     ['min', 'min-content'],
     ['max', 'max-content'],
     ['fr', 'minmax(0, 1fr)'],
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // Flexbox & Grid - grid-auto-rows
@@ -337,18 +337,18 @@ const ENTRIES = [
     ['min', 'min-content'],
     ['max', 'max-content'],
     ['fr', 'minmax(0, 1fr)'],
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // gap
   ['gap', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['gap-x', 'column-gap', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['gap-y', 'row-gap', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
 
   // justify-content
@@ -360,7 +360,7 @@ const ENTRIES = [
     ['around', 'space-around'],
     ['evenly', 'space-evenly'],
     'stretch',
-    'normal'
+    'normal',
   ]],
 
   // justify-items
@@ -369,7 +369,7 @@ const ENTRIES = [
     'end',
     'center',
     'stretch',
-    'normal'
+    'normal',
   ]],
 
   // justify-self
@@ -378,7 +378,7 @@ const ENTRIES = [
     'start',
     'end',
     'center',
-    'stretch'
+    'stretch',
   ]],
 
   // align-content
@@ -391,7 +391,7 @@ const ENTRIES = [
     ['around', 'space-around'],
     ['evenly', 'space-evenly'],
     'baseline',
-    'stretch'
+    'stretch',
   ]],
 
   // align-items
@@ -403,7 +403,7 @@ const ENTRIES = [
     ['center-safe', 'safe center'],
     'baseline',
     ['baseline-last', 'last baseline'],
-    'stretch'
+    'stretch',
   ]],
 
   // align-self
@@ -413,7 +413,7 @@ const ENTRIES = [
     ['end', 'flex-end'],
     'center',
     'stretch',
-    'baseline'
+    'baseline',
   ]],
 
   // place-content
@@ -425,7 +425,7 @@ const ENTRIES = [
     ['around', 'space-around'],
     ['evenly', 'space-evenly'],
     'baseline',
-    'stretch'
+    'stretch',
   ]],
 
   // place-items
@@ -434,7 +434,7 @@ const ENTRIES = [
     'end',
     'center',
     'baseline',
-    'stretch'
+    'stretch',
   ]],
 
   // place-self
@@ -443,7 +443,7 @@ const ENTRIES = [
     'start',
     'end',
     'center',
-    'stretch'
+    'stretch',
   ]],
 
   // ---------------------------------------------------------------------------
@@ -452,96 +452,96 @@ const ENTRIES = [
 
   // padding
   ['p', 'padding', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['px', 'padding-inline', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['py', 'padding-block', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['ps', 'padding-inline-start', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['pe', 'padding-inline-end', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['pt', 'padding-top', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['pr', 'padding-right', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['pb', 'padding-bottom', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['pl', 'padding-left', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
 
   // maring
   ['m', 'margin', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['mx', 'margin-inline', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['my', 'margin-block', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['ms', 'margin-inline-start', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['me', 'margin-inline-end', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['mt', 'margin-top', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['mr', 'margin-right', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['mb', 'margin-bottom', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['ml', 'margin-left', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
   ['space-x', 'margin-inline-end', [
-    { raw: '$', number: N, string: '$', prefix: '> :not(:last-child)' }
+    { raw: '$', number: N, string: '$', prefix: '> :not(:last-child)' },
   ]],
   ['space-y', 'margin-bottom', [
-    { raw: '$', number: N, string: '$', prefix: '> :not(:last-child)' }
+    { raw: '$', number: N, string: '$', prefix: '> :not(:last-child)' },
   ]],
 
   // width
   ['w', 'width', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
 
   // min-width
   ['min-w', 'min-width', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
 
   // max-width
   ['max-w', 'max-width', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
 
   // height
   ['h', 'height', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
 
   // min-width
   ['min-h', 'min-height', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
 
   // max-width
   ['max-h', 'max-height', [
-    { raw: '$', number: N, fraction: F, string: '$' }
+    { raw: '$', number: N, fraction: F, string: '$' },
   ]],
 
   // ---------------------------------------------------------------------------
@@ -553,7 +553,7 @@ const ENTRIES = [
   ['font-serif', 'font-family: var(--font-serif)'],
   ['font-mono', 'font-family: var(--font-mono)'],
   ['font', 'font-family', [
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // font-size
@@ -571,7 +571,7 @@ const ENTRIES = [
   ['text-8xl', 'font-size: var(--text-8xl); line-height: var(--text-8xl--line-height)'],
   ['text-9xl', 'font-size: var(--text-9xl); line-height: var(--text-9xl--line-height)'],
   ['text', 'font-size', [
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // font-smoothing
@@ -581,7 +581,7 @@ const ENTRIES = [
   // font-style
   ['', 'font-style', [
     'italic',
-    ['not-italic', 'normal']
+    ['not-italic', 'normal'],
   ]],
 
   // font-weight
@@ -594,7 +594,7 @@ const ENTRIES = [
     ['semibold', 600],
     ['bold', 700],
     ['extrabold', 800],
-    ['black', 900]
+    ['black', 900],
   ]],
 
   // font-stretch
@@ -607,7 +607,7 @@ const ENTRIES = [
     'semi-expanded',
     'expanded',
     'extra-expanded',
-    'ultra-expanded'
+    'ultra-expanded',
   ]],
 
   // font-variant-numeric
@@ -620,7 +620,7 @@ const ENTRIES = [
     'proportional-nums',
     'tabular-nums',
     'diagonal-fractions',
-    'stacked-fractions'
+    'stacked-fractions',
   ]],
 
   // letter-spacing
@@ -631,31 +631,31 @@ const ENTRIES = [
     ['wide', '0.025em'],
     ['wider', '0.05em'],
     ['widest', '0.1em'],
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // line-clamp
   ['line-clamp', 'overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp', [
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // line-height
   ['leading', 'line-height', [
     ['none', 1],
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
 
   // list-style-image
   ['list-image', 'list-style-image', [
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // list-style-position
   ['list', 'list-style-position', [
     'inside',
-    'outside'
+    'outside',
   ]],
 
   // list-style-type
@@ -663,7 +663,7 @@ const ENTRIES = [
     'disc',
     'decimal',
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // text-align
@@ -673,7 +673,7 @@ const ENTRIES = [
     'right',
     'justify',
     'start',
-    'end'
+    'end',
   ]],
 
   // text-color
@@ -684,7 +684,7 @@ const ENTRIES = [
     'underline',
     'overline',
     'line-through',
-    ['no-underline', 'none']
+    ['no-underline', 'none'],
   ]],
 
   // text-decoration-color
@@ -696,33 +696,33 @@ const ENTRIES = [
     'double',
     'dotted',
     'dashed',
-    'wavy'
+    'wavy',
   ]],
 
   // text-decoration-thickness
   ['decoration', 'text-decoration-thickness', [
     'auto',
     'from-font',
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
 
   // text-undeline-offset
   ['underline-offset', 'text-underline-offset', [
     'auto',
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
 
   // text-transform
   ['', 'text-transform', [
     'uppercase',
-    'lowercase', 'capitalize', ['normal-case', 'none']
+    'lowercase', 'capitalize', ['normal-case', 'none'],
   ]],
 
   // text-overflow
   ['truncate', 'text-overflow: ellipsis; overflow: hidden; white-space: nowrap'],
   ['overflow', 'text-overflow', [
     'ellipsis',
-    'clip'
+    'clip',
   ]],
 
   // text-wrap
@@ -730,12 +730,12 @@ const ENTRIES = [
     'wrap',
     'nowrap',
     'balance',
-    'pretty'
+    'pretty',
   ]],
 
   // text-indent
   ['indent', 'text-indent', [
-    { raw: '$', number: N, string: '$' }
+    { raw: '$', number: N, string: '$' },
   ]],
 
   // vertical-align
@@ -748,7 +748,7 @@ const ENTRIES = [
     'text-bottom',
     'sub',
     'super',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // white-space
@@ -758,34 +758,34 @@ const ENTRIES = [
     'pre',
     'pre-line',
     'pre-wrap',
-    'break-spaces'
+    'break-spaces',
   ]],
 
   // word-break
   ['break', 'word-break', [
     'normal',
     ['all', 'break-all'],
-    ['keep', 'keep-all']
+    ['keep', 'keep-all'],
   ]],
 
   // overflow-wrap
   ['wrap', 'overflow-wrap', [
     'break-word',
     'anywhere',
-    'normal'
+    'normal',
   ]],
 
   // hyphens
   ['hyphens', [
     'none',
     'manual',
-    'auto'
+    'auto',
   ]],
 
   // content
   ['content', [
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // ---------------------------------------------------------------------------
@@ -796,7 +796,7 @@ const ENTRIES = [
   ['bg', 'background-attachment', [
     'fixed',
     'local',
-    'scroll'
+    'scroll',
   ]],
 
   // background-clip
@@ -804,7 +804,7 @@ const ENTRIES = [
     ['border', 'border-box'],
     ['padding', 'padding-box'],
     ['content', 'content-box'],
-    'text'
+    'text',
   ]],
 
   // background-color
@@ -813,20 +813,20 @@ const ENTRIES = [
   // background-image
   ['bg', 'background-image', [
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // background-origin
   ['bg', 'background-origin', [
     'border-box',
     'padding-box',
-    'content-box'
+    'content-box',
   ]],
 
   // background-position
   ['bg', 'background-position', ORIGINS],
   ['bg-position', 'background-position', [
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // background-repeat
@@ -836,17 +836,17 @@ const ENTRIES = [
     'repeat-y',
     'space',
     'round',
-    'no-repeat'
+    'no-repeat',
   ]],
 
   // background-size
   ['bg', 'background-size', [
     'auto',
     'cover',
-    'contain'
+    'contain',
   ]],
   ['bg-size', 'background-size', [
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // ---------------------------------------------------------------------------
@@ -856,77 +856,77 @@ const ENTRIES = [
   // border-radius
   ['rounded', 'border-radius', [
     ...RADII,
-    { raw: '$' }
+    { raw: '$' },
   ]],
   ['rounded-ss', 'border-start-start-radius', [
     ...RADII,
-    { raw: '$' }
+    { raw: '$' },
   ]],
   ['rounded-se', 'border-start-end-radius', [
     ...RADII,
-    { raw: '$' }
+    { raw: '$' },
   ]],
   ['rounded-ee', 'border-end-end-radius', [
     ...RADII,
-    { raw: '$' }
+    { raw: '$' },
   ]],
   ['rounded-es', 'border-end-start-radius', [
     ...RADII,
-    { raw: '$' }
+    { raw: '$' },
   ]],
   ['rounded-tl', 'border-top-left-radius', [
     ...RADII,
-    { raw: '$' }
+    { raw: '$' },
   ]],
   ['rounded-tr', 'border-top-right-radius', [
     ...RADII,
-    { raw: '$' }
+    { raw: '$' },
   ]],
   ['rounded-br', 'border-bottom-right-radius', [
     ...RADII,
-    { raw: '$' }
+    { raw: '$' },
   ]],
   ['rounded-bl', 'border-bottom-left-radius', [
     ...RADII,
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // border-width
   ['border', 'border-width', [
     ['', '1px'],
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
   ['border-x', 'border-inline-width', [
     ['', '1px'],
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
   ['border-y', 'border-block-width', [
     ['', '1px'],
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
   ['border-s', 'border-inline-start-width', [
     ['', '1px'],
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
   ['border-e', 'border-inline-end-width', [
     ['', '1px'],
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
   ['border-t', 'border-top-width', [
     ['', '1px'],
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
   ['border-r', 'border-right-width', [
     ['', '1px'],
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
   ['border-b', 'border-bottom-width', [
     ['', '1px'],
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
   ['border-l', 'border-left-width', [
     ['', '1px'],
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
 
   // border-color
@@ -939,13 +939,13 @@ const ENTRIES = [
     'dotted',
     'double',
     'hidden',
-    'none'
+    'none',
   ]],
 
   // outline-width
   ['outline', 'outline-width', [
     ['', '1px'],
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
 
   // outline-color
@@ -957,12 +957,12 @@ const ENTRIES = [
     'dashed',
     'dotted',
     'double',
-    'none'
+    'none',
   ]],
 
   // outline-offset
   ['outline-offset', [
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
 
   // ---------------------------------------------------------------------------
@@ -978,7 +978,7 @@ const ENTRIES = [
     ['xl', '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)'],
     ['2xl', '0 25px 50px -12px rgb(0 0 0 / 0.25)'],
     ['none', '0 0 rgb(0 0 0 / 0)'],
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // text-shadow
@@ -989,12 +989,12 @@ const ENTRIES = [
     ['md', '0px 1px 1px rgb(0 0 0 / 0.1), 0px 1px 2px rgb(0 0 0 / 0.1), 0px 2px 4px rgb(0 0 0 / 0.1)'],
     ['lg', '0px 1px 2px rgb(0 0 0 / 0.1), 0px 3px 2px rgb(0 0 0 / 0.1), 0px 4px 8px rgb(0 0 0 / 0.1)'],
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // opacity
   ['opacity', [
-    { raw: '$', number: '$%' }
+    { raw: '$', number: '$%' },
   ]],
 
   // mix-blend-mode
@@ -1011,7 +1011,7 @@ const ENTRIES = [
     ['clip-fill', 'fill-box'],
     ['clip-stroke', 'stroke-box'],
     ['clip-view', 'view-box'],
-    'no-clip'
+    'no-clip',
   ]],
 
   // mask-composite
@@ -1019,20 +1019,20 @@ const ENTRIES = [
     'add',
     'subtract',
     'intersect',
-    'exclude'
+    'exclude',
   ]],
 
   // mask-image
   ['mask', 'mask-image', [
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // mask-mode
   ['mask', 'mask-mode', [
     'alpha',
     'luminance',
-    ['match', 'match-source']
+    ['match', 'match-source'],
   ]],
 
   // mask-origin
@@ -1042,13 +1042,13 @@ const ENTRIES = [
     ['content', 'content-box'],
     ['fill', 'fill-box'],
     ['stroke', 'stroke-box'],
-    ['view', 'view-box']
+    ['view', 'view-box'],
   ]],
 
   // mask-position
   ['mask', 'mask-position', ORIGINS],
   ['mask-position', [
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // mask-repeat
@@ -1058,24 +1058,24 @@ const ENTRIES = [
     'repeat-x',
     'repeat-y',
     ['repeat-space', 'space'],
-    ['repeat-round', 'round']
+    ['repeat-round', 'round'],
   ]],
 
   // mask-size
   ['mask', 'mask-size', [
     'auto',
     'cover',
-    'contain'
+    'contain',
   ]],
 
   ['mask-size', [
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // mask-type
   ['mask-type', [
     'alpha',
-    'luminance'
+    'luminance',
   ]],
 
   // ---------------------------------------------------------------------------
@@ -1085,26 +1085,26 @@ const ENTRIES = [
   // blur
   ['blur', 'filter', [
     ...BLURS,
-    { raw: 'blur($)' }
+    { raw: 'blur($)' },
   ]],
   ['backdrop-blur', 'backdrop-filter', [
     ...BLURS,
-    { raw: 'blur($)' }
+    { raw: 'blur($)' },
   ]],
 
   // brightness
   ['brightness', 'filter', [
-    { raw: 'brightness($)', number: 'brightness($%)' }
+    { raw: 'brightness($)', number: 'brightness($%)' },
   ]],
   ['backdrop-brightness', 'backdrop-filter', [
-    { raw: 'brightness($)', number: 'brightness($%)' }
+    { raw: 'brightness($)', number: 'brightness($%)' },
   ]],
   // contrast
   ['contrast', 'filter', [
-    { raw: 'contrast($)', number: 'contrast($%)' }
+    { raw: 'contrast($)', number: 'contrast($%)' },
   ]],
   ['backdrop-contrast', 'backdrop-filter', [
-    { raw: 'contrast($)', number: 'contrast($%)' }
+    { raw: 'contrast($)', number: 'contrast($%)' },
   ]],
 
   // drop-shadow
@@ -1116,68 +1116,68 @@ const ENTRIES = [
     ['xl', 'drop-shadow(0 9px 7px rgb(0 0 0 / 0.1))'],
     ['2xl', 'drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))'],
     ['none', 'drop-shadow(0 0 rgba(0, 0, 0, 0))'],
-    { raw: 'drop-shadow($)' }
+    { raw: 'drop-shadow($)' },
   ]],
 
   // grayscale
   ['grayscale', 'filter', [
     ['', 'grayscale(100%)'],
-    { raw: 'grayscale($)', number: 'grayscale($%)' }
+    { raw: 'grayscale($)', number: 'grayscale($%)' },
   ]],
   ['backdrop-grayscale', 'backdrop-filter', [
     ['', 'grayscale(100%)'],
-    { raw: 'grayscale($)', number: 'grayscale($%)' }
+    { raw: 'grayscale($)', number: 'grayscale($%)' },
   ]],
 
   // hue-rotate
   ['hue-rotate', 'filter', [
-    { raw: 'hue-rotate($)', number: 'hue-rotate($deg)' }
+    { raw: 'hue-rotate($)', number: 'hue-rotate($deg)' },
   ]],
   ['backdrop-hue-rotate', 'backdrop-filter', [
-    { raw: 'hue-rotate($)', number: 'hue-rotate($deg)' }
+    { raw: 'hue-rotate($)', number: 'hue-rotate($deg)' },
   ]],
 
   // invert
   ['invert', 'filter', [
     ['', 'invert(100%)'],
-    { raw: 'invert($)', number: 'invert($%)' }
+    { raw: 'invert($)', number: 'invert($%)' },
   ]],
   ['backdrop-invert', 'backdrop-filter', [
     ['', 'invert(100%)'],
-    { raw: 'invert($)', number: 'invert($%)' }
+    { raw: 'invert($)', number: 'invert($%)' },
   ]],
 
   // backdrop-opaity
   ['backdrop-opacity', 'backdrop-filter', [
-    { raw: 'opacity($)', number: 'opacity($%)' }
+    { raw: 'opacity($)', number: 'opacity($%)' },
   ]],
 
   // saturate
   ['saturate', 'filter', [
-    { raw: 'saturate($)', number: 'saturate($%)' }
+    { raw: 'saturate($)', number: 'saturate($%)' },
   ]],
   ['backdrop-saturate', 'backdrop-filter', [
-    { raw: 'saturate($)', number: 'saturate($%)' }
+    { raw: 'saturate($)', number: 'saturate($%)' },
   ]],
 
   // sepia
   ['sepia', 'filter', [
     ['', 'sepia(100%)'],
-    { raw: 'sepia($)', number: 'sepia($%)' }
+    { raw: 'sepia($)', number: 'sepia($%)' },
   ]],
   ['backdrop-sepia', 'backdrop-filter', [
     ['', 'sepia(100%)'],
-    { raw: 'sepia($)', number: 'sepia($%)' }
+    { raw: 'sepia($)', number: 'sepia($%)' },
   ]],
 
   // misc
   ['filter', 'filter', [
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
   ['backdrop-filter', 'backdrop-filter', [
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // ---------------------------------------------------------------------------
@@ -1187,30 +1187,30 @@ const ENTRIES = [
   // border-collapse
   ['border', 'border-collapse', [
     'collapse',
-    'separate'
+    'separate',
   ]],
 
   // border-spacing
   ['border-spacing', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['border-spacing-x', 'border-spacing', [
-    { raw: '$ 0', number: `${N} 0` }
+    { raw: '$ 0', number: `${N} 0` },
   ]],
   ['border-spacing-y', 'border-spacing', [
-    { raw: '0 $', number: `0 ${N}` }
+    { raw: '0 $', number: `0 ${N}` },
   ]],
 
   // table-layout
   ['table', 'table-layout', [
     'auto',
-    'fixed'
+    'fixed',
   ]],
 
   // caption-side
   ['caption', 'caption-side', [
     'top',
-    'bottom'
+    'bottom',
   ]],
 
   // ---------------------------------------------------------------------------
@@ -1226,19 +1226,19 @@ const ENTRIES = [
     ['shadow', 'box-shadow'],
     'transform',
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // transition-behavior
   ['transition', 'transition-behavior', [
     'normal',
-    ['discrete', 'allow-discrete']
+    ['discrete', 'allow-discrete'],
   ]],
 
   // transition-duration
   ['duration', 'transition-duration', [
     'initial',
-    { raw: '$', number: '$ms' }
+    { raw: '$', number: '$ms' },
   ]],
 
   // transition-timing-function
@@ -1248,12 +1248,12 @@ const ENTRIES = [
     ['out', 'ease-out'],
     ['in-out', 'ease-in-out'],
     'initial',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // transition-delay
   ['delay', 'transition-delay', [
-    { raw: '$', number: '$ms' }
+    { raw: '$', number: '$ms' },
   ]],
 
   // animations
@@ -1262,7 +1262,7 @@ const ENTRIES = [
     ['toast', `toast ${ANIM_TIME} ease-in-out`],
     ['fade', `fade ${ANIM_TIME} ease-in-out`],
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // ---------------------------------------------------------------------------
@@ -1272,7 +1272,7 @@ const ENTRIES = [
   // backface-visibility
   ['backface', 'backface-visibility', [
     'visible',
-    'hidden'
+    'hidden',
   ]],
 
   // perspective
@@ -1283,70 +1283,70 @@ const ENTRIES = [
     ['midrange', '800px'],
     ['distant', '1200px'],
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // perspective-origin
   ['perspective-origin', [
     ...ORIGINS,
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // rotate
   ['rotate', [
     'none',
-    { raw: '$', number: '$deg' }
+    { raw: '$', number: '$deg' },
   ]],
 
   // scale
   ['scale', [
-    { raw: '$', number: '$% $%' }
+    { raw: '$', number: '$% $%' },
   ]],
   ['scale-x', 'scale', [
-    { raw: '$ 100%', number: '$% 100%' }
+    { raw: '$ 100%', number: '$% 100%' },
   ]],
   ['scale-y', 'scale', [
-    { raw: '100% $', number: '100% $%' }
+    { raw: '100% $', number: '100% $%' },
   ]],
 
   // skew
   ['skew', 'transform', [
-    { raw: 'skewX($) skewY($)', number: 'skewX($deg) skewY($deg)' }
+    { raw: 'skewX($) skewY($)', number: 'skewX($deg) skewY($deg)' },
   ]],
   ['skew-x', 'transform', [
-    { raw: 'skewX($)', number: 'skewX($deg)' }
+    { raw: 'skewX($)', number: 'skewX($deg)' },
   ]],
   ['skew-y', 'transform', [
-    { raw: 'skewY($)', number: 'skewY($deg)' }
+    { raw: 'skewY($)', number: 'skewY($deg)' },
   ]],
 
   // transform
   ['transform', [
     'none',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // transform-origin
   ['origin', 'transform-origin', [
     ...ORIGINS,
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // transform-style
   ['transform', 'transform-style', [
     ['3d', 'preserve-3d'],
-    'flat'
+    'flat',
   ]],
 
   // translate
   ['translate', [
-    { raw: '$', number: `${N} ${N}`, fraction: `${F} ${F}`, string: '$ $' }
+    { raw: '$', number: `${N} ${N}`, fraction: `${F} ${F}`, string: '$ $' },
   ]],
   ['translate-x', 'translate', [
-    { raw: '$', number: `${N}`, fraction: `${F}`, string: '$' }
+    { raw: '$', number: `${N}`, fraction: `${F}`, string: '$' },
   ]],
   ['translate-y', 'translate', [
-    { raw: '0 $', number: `0 ${N}`, fraction: `0 ${F}`, string: '0 $' }
+    { raw: '0 $', number: `0 ${N}`, fraction: `0 ${F}`, string: '0 $' },
   ]],
 
   // ---------------------------------------------------------------------------
@@ -1359,7 +1359,7 @@ const ENTRIES = [
   // appearance
   ['appearance', [
     'none',
-    'auto'
+    'auto',
   ]],
 
   // caret-color
@@ -1372,7 +1372,7 @@ const ENTRIES = [
     'light',
     ['light-dark', 'light dark'],
     ['only-dark', 'only dark'],
-    ['only-light', 'only light']
+    ['only-light', 'only light'],
   ]],
 
   // cursor
@@ -1412,19 +1412,19 @@ const ENTRIES = [
     'nesw-resize',
     'nwse-resize',
     'zoom-in',
-    'zoom-out'
+    'zoom-out',
   ]],
 
   // field-sizing
   ['field-sizing', [
     'fixed',
-    'content'
+    'content',
   ]],
 
   // pointer-events
   ['pointer-events', [
     'none',
-    'auto'
+    'auto',
   ]],
 
   // resize
@@ -1432,71 +1432,71 @@ const ENTRIES = [
     'none',
     ['x', 'horizontal'],
     ['y', 'vertical'],
-    'both'
+    'both',
   ]],
 
   // scroll-behavior
   ['scroll', 'scroll-behavior', [
     'auto',
-    'smooth'
+    'smooth',
   ]],
 
   // scroll-margin
   ['scroll-m', 'scroll-margin', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-mx', 'scroll-margin-inline', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-my', 'scroll-margin-block', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-ms', 'scroll-margin-inline-start', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-me', 'scroll-margin-inline-end', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-mt', 'scroll-margin-top', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-mr', 'scroll-margin-right', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-mb', 'scroll-margin-bottom', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-ml', 'scroll-margin-left', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
 
   // scroll-padding
   ['scroll-p', 'scroll-padding', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-px', 'scroll-padding-inline', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-py', 'scroll-padding-block', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-ps', 'scroll-padding-inline-start', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-pe', 'scroll-padding-inline-end', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-pt', 'scroll-padding-top', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-pr', 'scroll-padding-right', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-pb', 'scroll-padding-bottom', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
   ['scroll-pl', 'scroll-padding-left', [
-    { raw: '$', number: N }
+    { raw: '$', number: N },
   ]],
 
   // scroll-snap-align
@@ -1504,13 +1504,13 @@ const ENTRIES = [
     'start',
     'end',
     'center',
-    ['align-none', 'none']
+    ['align-none', 'none'],
   ]],
 
   // sroll-snap-stop
   ['snap', 'scroll-snap-stop', [
     'normal',
-    'always'
+    'always',
   ]],
 
   // scroll-snap-type
@@ -1518,7 +1518,7 @@ const ENTRIES = [
     'none',
     ['x', 'x mandatory'],
     ['y', 'y mandatory'],
-    ['both', 'both proximity']
+    ['both', 'both proximity'],
   ]],
 
   // touch-action
@@ -1532,7 +1532,7 @@ const ENTRIES = [
     'pan-up',
     'pan-down',
     'pinch-zoom',
-    'manipulation'
+    'manipulation',
   ]],
 
   // user-select
@@ -1540,7 +1540,7 @@ const ENTRIES = [
     'text',
     'all',
     'auto',
-    'none'
+    'none',
   ]],
 
   // will-change
@@ -1549,7 +1549,7 @@ const ENTRIES = [
     ['scroll', 'scroll-position'],
     'contents',
     'transform',
-    { raw: '$' }
+    { raw: '$' },
   ]],
 
   // ---------------------------------------------------------------------------
@@ -1564,7 +1564,7 @@ const ENTRIES = [
 
   // stroke-width
   ['stroke', 'stroke-width', [
-    { raw: '$', number: '$px' }
+    { raw: '$', number: '$px' },
   ]],
 
   // ---------------------------------------------------------------------------
@@ -1572,10 +1572,11 @@ const ENTRIES = [
   // ---------------------------------------------------------------------------
   ['forced-color-adjust', [
     'auto',
-    'none'
-  ]]
+    'none',
+  ]],
 ]
 
+/* eslint-disable sonarjs/cognitive-complexity */
 export const UTILS = (() => {
   // Returns a map of styles.
   const utils = new Map()

@@ -31,7 +31,7 @@ export const BLURS = [
   ['xl', 'blur(var(--blur-xl))'],
   ['2xl', 'blur(var(--blur-2xl))'],
   ['3xl', 'blur(var(--blur-3xl))'],
-  ['none', 'none']
+  ['none', 'none'],
 ]
 
 export const N = 'calc($ * 4px)'
@@ -47,7 +47,7 @@ export const ORIGINS = [
   'right',
   ['bottom-left', 'bottom left'],
   'bottom',
-  ['bottom-right', 'bottom right']
+  ['bottom-right', 'bottom right'],
 ]
 
 export const OVERFLOWS = ['auto', 'hidden', 'clip', 'visible', 'scroll', 'visible']
@@ -64,7 +64,7 @@ export const RADII = [
   ['3xl', 'var(--radius-3xl)'],
   ['4xl', 'var(--radius-4xl)'],
   ['full', 'var(--radius-full)'],
-  ['none', 'var(--radius-none)']
+  ['none', 'var(--radius-none)'],
 ]
 
 //
