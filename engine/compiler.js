@@ -188,6 +188,9 @@ function updateClass (instance, el) {
 
 function addRules (instance, className) {
   const timestamp = Date.now()
+  // Split classes.
+  // Classes can contain commas due to array serialization.
+  // Make sure commas outsude square branches are only used as separators.
   const classes = (className || '').match(/(?:\[[^[\]]*\]|[^\s,[])+/g) ?? []
 
   const outClasses = new Set()
