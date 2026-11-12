@@ -159,5 +159,6 @@ Changes:
 - [:has()](https://tailwindcss.com/docs/hover-focus-and-other-states#has) works only with states via `has-` prefix (e.g. `has-checked`).
 - [:not()](https://tailwindcss.com/docs/hover-focus-and-other-states#not) works only with states via `not-` prefix (e.g. `not-focus`).
 - [Transition property](https://tailwindcss.com/docs/transition-property) does not set the transition duration. Use `duration-*` explicitly.
+- Text color supports raw values via `color-[]` instead of `text-[]`, since the latter is already used for font size. Tailwind has a clash here.
 - **New:** Support for `scrollbar-gutter`, `scrollbar-width`, and `scrollbar-color`.
 - **New:** Support for `word-spacing`.

@@ -25737,6 +25737,8 @@ ul, ol { list-style: none; }
 .text-white\/90 { color: oklch(1 0 0 / 0.9); }
 .text-white\/95 { color: oklch(1 0 0 / 0.95); }
 .text-white\/100 { color: oklch(1 0 0); }
+.color-\(--my-var\) { color: var(--my-var); }
+.color-\[inherit\] { color: inherit; }
 .underline { text-decoration-line: underline; }
 .overline { text-decoration-line: overline; }
 .line-through { text-decoration-line: line-through; }

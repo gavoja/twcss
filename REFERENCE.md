@@ -6935,6 +6935,14 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 .text-<color> { color: oklch(...) }
 ```
 
+```css
+.color-[<value>] { color: <value> }
+```
+
+```css
+.color-(<custom-property>) { color: var(<custom-property>) }
+```
+
 ### text-decoration-line
 
 ```css

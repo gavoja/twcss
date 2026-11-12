@@ -683,6 +683,9 @@ const ENTRIES = [
 
   // text-color
   ['text', 'color', COLORS],
+  ['color', [
+    { raw: '$' },
+  ]],
 
   // text-decoration-line
   ['', 'text-decoration-line', [
