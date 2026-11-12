@@ -634,6 +634,11 @@ const ENTRIES = [
     { raw: '$' },
   ]],
 
+  // word-spacing
+  ['word-spacing', [
+    { raw: '$' },
+  ]],
+
   // line-clamp
   ['line-clamp', 'overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp', [
     'none',

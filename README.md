@@ -160,3 +160,4 @@ Changes:
 - [:not()](https://tailwindcss.com/docs/hover-focus-and-other-states#not) works only with states via `not-` prefix (e.g. `not-focus`).
 - [Transition property](https://tailwindcss.com/docs/transition-property) does not set the transition duration. Use `duration-*` explicitly.
 - **New:** Support for `scrollbar-gutter`, `scrollbar-width`, and `scrollbar-color`.
+- **New:** Support for `word-spacing`.

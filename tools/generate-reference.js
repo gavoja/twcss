@@ -111,6 +111,7 @@ const HIERARCHY = {
     'font-stretch': ['font-stretch'],
     'font-variant-numeric': ['font-variant-numeric'],
     'letter-spacing': ['letter-spacing'],
+    'word-spacing': ['word-spacing'],
     'line-clamp': ['overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp'],
     'line-height': ['line-height'],
     'list-style-image': ['list-style-image'],

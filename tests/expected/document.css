@@ -21808,6 +21808,8 @@ ul, ol { list-style: none; }
 .tracking-widest { letter-spacing: 0.1em; }
 .tracking-\(--my-var\) { letter-spacing: var(--my-var); }
 .tracking-\[inherit\] { letter-spacing: inherit; }
+.word-spacing-\(--my-var\) { word-spacing: var(--my-var); }
+.word-spacing-\[inherit\] { word-spacing: inherit; }
 .line-clamp-\(--my-var\) { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: var(--my-var); }
 .line-clamp-\[inherit\] { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: inherit; }
 .leading-23 { line-height: calc(92px); }

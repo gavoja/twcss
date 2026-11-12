@@ -6796,6 +6796,16 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 .tracking-(<custom-property>) { letter-spacing: var(<custom-property>) }
 ```
 
+### word-spacing
+
+```css
+.word-spacing-[<value>] { word-spacing: <value> }
+```
+
+```css
+.word-spacing-(<custom-property>) { word-spacing: var(<custom-property>) }
+```
+
 ### line-clamp
 
 ```css
