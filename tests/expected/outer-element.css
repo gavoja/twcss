@@ -73,7 +73,7 @@ ul, ol { list-style: none; }
 @property --font-mono { syntax: "*"; inherits: true; initial-value: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 @property --font-serif { syntax: "*"; inherits: true; initial-value: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
 @property --font-sans { syntax: "*"; inherits: true; initial-value: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
-.bg-blue-300 { background-color: oklch(0.809 0.105 251.813); }
+.bg-\[linear-gradient\(90deg\,_oklch\(0\.809_0\.105_251\.813\)\,_oklch\(0\.656_0\.241_354\.308\)\)\] { background: linear-gradient(90deg, oklch(0.809 0.105 251.813), oklch(0.656 0.241 354.308)); }
 .p-4 { padding: calc(16px); }
 .rounded-md { border-radius: var(--radius-md); }
 .border-2 { border-width: 2px; }

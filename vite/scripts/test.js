@@ -88,7 +88,7 @@ function registerOuterInner () {
   register('outer-element', shadowRoot => {
     init(shadowRoot)
     return `
-      <div tw="bg-blue-300 p-4 rounded-md border-2 space-y-4">
+      <div tw="bg-[linear-gradient(90deg,_oklch(0.809_0.105_251.813),_oklch(0.656_0.241_354.308))] p-4 rounded-md border-2 space-y-4">
         <div>Shadow DOM: outer-element</div>
         <inner-element-1 tw="block"></inner-element-1>
         <inner-element-2 tw="block"></inner-element-2>

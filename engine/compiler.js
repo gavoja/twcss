@@ -188,7 +188,8 @@ function updateClass (instance, el) {
 
 function addRules (instance, className) {
   const timestamp = Date.now()
-  const classes = (className || '').split(/[ ,]+/)
+  const classes = (className || '').match(/(?:\[[^[\]]*\]|[^\s,[])+/g) ?? []
+
   const outClasses = new Set()
 
   for (const cls of classes) {

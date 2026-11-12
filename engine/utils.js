@@ -797,6 +797,11 @@ const ENTRIES = [
   // Backgrounds
   // ---------------------------------------------------------------------------
 
+  // background
+  ['bg', 'background', [
+    { raw: '$' },
+  ]],
+
   // background-attachment
   ['bg', 'background-attachment', [
     'fixed',
@@ -818,6 +823,8 @@ const ENTRIES = [
   // background-image
   ['bg', 'background-image', [
     'none',
+  ]],
+  ['bg-image', 'background-image', [
     { raw: '$' },
   ]],
 

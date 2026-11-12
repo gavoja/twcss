@@ -7384,11 +7384,11 @@ Also supported: `black`, `white`, `inherit`, `transparent` and `current`.
 ```
 
 ```css
-.bg-[<value>] { background-image: <value> }
+.bg-image-[<value>] { background-image: <value> }
 ```
 
 ```css
-.bg-(<custom-property>) { background-image: var(<custom-property>) }
+.bg-image-(<custom-property>) { background-image: var(<custom-property>) }
 ```
 
 ### background-origin

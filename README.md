@@ -143,7 +143,7 @@ Currently unsupported Tailwind 4 features:
 - [Border divisions](https://tailwindcss.com/docs/border-style) - `divide-`.
 - [Hidden outline](https://tailwindcss.com/docs/outline-style) - `outline-hidden`. Use `outline-transparent` to hide the outline instead.
 - [Shadow colors](https://tailwindcss.com/docs/box-shadow#setting-the-shadow-color); shadows are always black.
-- [Custom shadows](https://tailwindcss.com/docs/box-shadow#adding-an-inset-shadow) - `inset-`, `ring-`, `inset-ring-`. Use `bg-[]` instead.
+- [Custom shadows](https://tailwindcss.com/docs/box-shadow#adding-an-inset-shadow) - `inset-`, `ring-`, `inset-ring-`. Use `bg-[]` and `bg-image-[]` instead.
 - [Mask image gradients](https://tailwindcss.com/docs/mask-image); use `mask-[]` instead.
 - [Translations](https://tailwindcss.com/docs/translate) for X, Y and Z cannot be combined; use `translate-[]` instead.
 - [Scale](https://tailwindcss.com/docs/scale) for X, Y and Z cannot be combined; use `scale-[]` instead.

@@ -29756,6 +29756,8 @@ ul, ol { list-style: none; }
 .hyphens-auto { hyphens: auto; }
 .content-\(--my-var\) { content: var(--my-var); }
 .content-\[inherit\] { content: inherit; }
+.bg-\(--my-var\) { background: var(--my-var); }
+.bg-\[inherit\] { background: inherit; }
 .bg-fixed { background-attachment: fixed; }
 .bg-local { background-attachment: local; }
 .bg-scroll { background-attachment: scroll; }
@@ -33668,8 +33670,8 @@ ul, ol { list-style: none; }
 .bg-white\/90 { background-color: oklch(1 0 0 / 0.9); }
 .bg-white\/95 { background-color: oklch(1 0 0 / 0.95); }
 .bg-white\/100 { background-color: oklch(1 0 0); }
-.bg-\(--my-var\) { background-image: var(--my-var); }
-.bg-\[inherit\] { background-image: inherit; }
+.bg-image-\(--my-var\) { background-image: var(--my-var); }
+.bg-image-\[inherit\] { background-image: inherit; }
 .bg-border-box { background-origin: border-box; }
 .bg-padding-box { background-origin: padding-box; }
 .bg-content-box { background-origin: content-box; }
@@ -58077,4 +58079,4 @@ ul, ol { list-style: none; }
 .stroke-octarine\/100 { stroke: oklch(0.9 0.4 20); }
 .font-\[JetBrains_Mono\] { font-family: "JetBrains Mono"; }
 .p-\[1px_2px_3px_4px\] { padding: 1px 2px 3px 4px; }
-.bg-\[url\(https\:\/\/picsum\.photos\/id\/11\/1280\/720\)\] { background-image: url("https://picsum.photos/id/11/1280/720"); }
+.bg-\[url\(https\:\/\/picsum\.photos\/id\/11\/1280\/720\)\] { background: url("https://picsum.photos/id/11/1280/720"); }
